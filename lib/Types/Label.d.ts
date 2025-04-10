@@ -1,28 +1,30 @@
 export interface Label {
     /** Label uniq ID */
-    id: string;
+    id: string
     /** Label name */
-    name: string;
+    name: string
     /** Label color ID */
-    color: number;
+    color: number
     /** Is label has been deleted */
-    deleted: boolean;
+    deleted: boolean
     /** WhatsApp has 5 predefined labels (New customer, New order & etc) */
-    predefinedId?: string;
+    predefinedId?: string
 }
+
 export interface LabelActionBody {
-    id: string;
+    id: string
     /** Label name */
-    name?: string;
+    name?: string
     /** Label color ID */
-    color?: number;
+    color?: number
     /** Is label has been deleted */
-    deleted?: boolean;
+    deleted?: boolean
     /** WhatsApp has 5 predefined labels (New customer, New order & etc) */
-    predefinedId?: number;
+    predefinedId?: number
 }
+
 /** WhatsApp has 20 predefined colors */
-export declare enum LabelColor {
+export declare const enum LabelColor {
     Color1 = 0,
     Color2 = 1,
     Color3 = 2,

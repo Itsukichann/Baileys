@@ -1,4 +1,5 @@
-import { AuthenticationState } from '../Types';
+import { AuthenticationState } from '../Types'
+
 /**
  * stores the full authentication state in a single folder.
  * Far more efficient than singlefileauthstate
@@ -7,6 +8,6 @@ import { AuthenticationState } from '../Types';
  * Would recommend writing an auth state for use with a proper SQL or No-SQL DB
  * */
 export declare const useMultiFileAuthState: (folder: string) => Promise<{
-    state: AuthenticationState;
-    saveCreds: () => Promise<void>;
-}>;
+    state: AuthenticationState
+    saveCreds: () => Promise<void>
+}>

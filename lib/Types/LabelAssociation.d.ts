@@ -1,29 +1,35 @@
 /** Association type */
-export declare enum LabelAssociationType {
+export declare const enum LabelAssociationType {
     Chat = "label_jid",
     Message = "label_message"
 }
-export type LabelAssociationTypes = `${LabelAssociationType}`;
+
+export type LabelAssociationTypes = LabelAssociationType
+
 /** Association for chat */
 export interface ChatLabelAssociation {
-    type: LabelAssociationType.Chat;
-    chatId: string;
-    labelId: string;
+    type: LabelAssociationType.Chat
+    chatId: string
+    labelId: string
 }
+
 /** Association for message */
 export interface MessageLabelAssociation {
-    type: LabelAssociationType.Message;
-    chatId: string;
-    messageId: string;
-    labelId: string;
+    type: LabelAssociationType.Message
+    chatId: string
+    messageId: string
+    labelId: string
 }
-export type LabelAssociation = ChatLabelAssociation | MessageLabelAssociation;
+
+export type LabelAssociation = ChatLabelAssociation | MessageLabelAssociation
+
 /** Body for add/remove chat label association action */
 export interface ChatLabelAssociationActionBody {
-    labelId: string;
+    labelId: string
 }
+
 /** body for add/remove message label association action */
 export interface MessageLabelAssociationActionBody {
-    labelId: string;
-    messageId: string;
+    labelId: string
+    messageId: string
 }

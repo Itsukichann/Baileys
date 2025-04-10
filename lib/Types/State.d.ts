@@ -1,27 +1,29 @@
-import { Contact } from './Contact';
-export type WAConnectionState = 'open' | 'connecting' | 'close';
+import { Contact } from './Contact'
+
+export type WAConnectionState = 'open' | 'connecting' | 'close'
+
 export type ConnectionState = {
     /** connection is now open, connecting or closed */
-    connection: WAConnectionState;
+    connection: WAConnectionState
     /** the error that caused the connection to close */
     lastDisconnect?: {
-        error: Error | undefined;
-        date: Date;
-    };
+        error: Error | undefined
+        date: Date
+    }
     /** is this a new login */
-    isNewLogin?: boolean;
+    isNewLogin?: boolean
     /** the current QR code */
-    qr?: string;
+    qr?: string
     /** has the device received all pending notifications while it was offline */
-    receivedPendingNotifications?: boolean;
+    receivedPendingNotifications?: boolean
     /** legacy connection options */
     legacy?: {
-        phoneConnected: boolean;
-        user?: Contact;
-    };
+        phoneConnected: boolean
+        user?: Contact
+    }
     /**
      * if the client is shown as an active, online client.
      * If this is false, the primary phone and other devices will receive notifs
      * */
-    isOnline?: boolean;
-};
+    isOnline?: boolean
+}

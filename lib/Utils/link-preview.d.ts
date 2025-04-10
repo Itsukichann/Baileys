@@ -1,21 +1,23 @@
-import { AxiosRequestConfig } from 'axios';
-import { WAMediaUploadFunction, WAUrlInfo } from '../Types';
-import { ILogger } from './logger';
+import { AxiosRequestConfig } from 'axios'
+import { WAMediaUploadFunction, WAUrlInfo } from '../Types'
+import { ILogger } from './logger'
+
 export type URLGenerationOptions = {
-    thumbnailWidth: number;
+    thumbnailWidth: number
     fetchOpts: {
         /** Timeout in ms */
-        timeout: number;
-        proxyUrl?: string;
-        headers?: AxiosRequestConfig<{}>['headers'];
-    };
-    uploadImage?: WAMediaUploadFunction;
-    logger?: ILogger;
-};
+        timeout: number
+        proxyUrl?: string
+        headers?: AxiosRequestConfig<{}>['headers']
+    }
+    uploadImage?: WAMediaUploadFunction
+    logger?: ILogger
+}
+
 /**
  * Given a piece of text, checks for any URL present, generates link preview for the same and returns it
  * Return undefined if the fetch failed or no URL was found
  * @param text first matched URL in text
  * @returns the URL info required to generate link preview
  */
-export declare const getUrlInfo: (text: string, opts?: URLGenerationOptions) => Promise<WAUrlInfo | undefined>;
+export declare const getUrlInfo: (text: string, opts?: URLGenerationOptions) => Promise<WAUrlInfo | undefined>

@@ -1,57 +1,64 @@
-import { Contact } from './Contact';
+import { Contact } from './Contact'
+
 export type GroupParticipant = (Contact & {
-    isAdmin?: boolean;
-    isSuperAdmin?: boolean;
-    admin?: 'admin' | 'superadmin' | null;
-});
-export type ParticipantAction = 'add' | 'remove' | 'promote' | 'demote' | 'modify';
-export type RequestJoinAction = 'created' | 'revoked' | 'rejected';
-export type RequestJoinMethod = 'invite_link' | 'linked_group_join' | 'non_admin_add' | undefined;
+    isAdmin?: boolean
+    isSuperAdmin?: boolean
+    admin?: 'admin' | 'superadmin' | null
+})
+
+export type ParticipantAction = 'add' | 'remove' | 'promote' | 'demote' | 'modify'
+
+export type RequestJoinAction = 'created' | 'revoked' | 'rejected'
+
+export type RequestJoinMethod = 'invite_link' | 'linked_group_join' | 'non_admin_add' | undefined
+
 export interface GroupMetadata {
-    id: string;
-    owner: string | undefined;
-    subject: string;
+    id: string
+    owner: string | undefined
+    subject: string
     /** group subject owner */
-    subjectOwner?: string;
+    subjectOwner?: string
     /** group subject modification date */
-    subjectTime?: number;
-    creation?: number;
-    desc?: string;
-    descOwner?: string;
-    descId?: string;
+    subjectTime?: number
+    creation?: number
+    desc?: string
+    descOwner?: string
+    descId?: string
     /** if this group is part of a community, it returns the jid of the community to which it belongs */
-    linkedParent?: string;
+    linkedParent?: string
     /** is set when the group only allows admins to change group settings */
-    restrict?: boolean;
+    restrict?: boolean
     /** is set when the group only allows admins to write messages */
-    announce?: boolean;
+    announce?: boolean
     /** is set when the group also allows members to add participants */
-    memberAddMode?: boolean;
+    memberAddMode?: boolean
     /** Request approval to join the group */
-    joinApprovalMode?: boolean;
+    joinApprovalMode?: boolean
     /** is this a community */
-    isCommunity?: boolean;
+    isCommunity?: boolean
     /** is this the announce of a community */
-    isCommunityAnnounce?: boolean;
+    isCommunityAnnounce?: boolean
     /** number of group participants */
-    size?: number;
-    participants: GroupParticipant[];
-    picture?: string;
-    ephemeralDuration?: number;
-    inviteCode?: string;
+    size?: number
+    participants: GroupParticipant[]
+    picture?: string
+    ephemeralDuration?: number
+    inviteCode?: string
     /** the person who added you to group or changed some setting in group */
-    author?: string;
+    author?: string
 }
+
 export interface WAGroupCreateResponse {
-    status: number;
-    gid?: string;
+    status: number
+    gid?: string
     participants?: [{
-        [key: string]: {};
-    }];
+        [key: string]: {}
+    }]
 }
+
 export interface GroupModificationResponse {
-    status: number;
+    status: number
     participants?: {
-        [key: string]: {};
-    };
+        [key: string]: {}
+    }
 }

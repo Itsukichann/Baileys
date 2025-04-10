@@ -1,3 +1,3 @@
-export * from './Protocols';
-export * from './USyncQuery';
-export * from './USyncUser';
+export * from './Protocols'
+export * from './USyncQuery'
+export * from './USyncUser'
