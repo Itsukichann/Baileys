@@ -1922,6 +1922,18 @@ export namespace proto {
 
                 /** AIRichResponseLatexExpression fontHeight */
                 fontHeight?: (number|null);
+                
+                /** AIRichResponseLatexExpression imageTopPadding */
+                imageTopPadding?: (number|null);
+
+                /** AIRichResponseLatexExpression imageLeadingPadding */
+                imageLeadingPadding?: (number|null);
+
+                /** AIRichResponseLatexExpression imageBottomPadding */
+                imageBottomPadding?: (number|null);
+
+                /** AIRichResponseLatexExpression imageTrailingPadding */
+                imageTrailingPadding?: (number|null);
             }
 
             /** Represents a AIRichResponseLatexExpression. */
@@ -1947,6 +1959,18 @@ export namespace proto {
 
                 /** AIRichResponseLatexExpression fontHeight. */
                 public fontHeight?: (number|null);
+                
+                /** AIRichResponseLatexExpression imageTopPadding. */
+                public imageTopPadding?: (number|null);
+
+                /** AIRichResponseLatexExpression imageLeadingPadding. */
+                public imageLeadingPadding?: (number|null);
+
+                /** AIRichResponseLatexExpression imageBottomPadding. */
+                public imageBottomPadding?: (number|null);
+
+                /** AIRichResponseLatexExpression imageTrailingPadding. */
+               public  imageTrailingPadding?: (number|null);
 
                 /**
                  * Creates a new AIRichResponseLatexExpression instance using the specified properties.
@@ -3740,7 +3764,10 @@ export namespace proto {
             AGENTIC_PLANNING = 27,
             ACCOUNT_LINKING = 28,
             STREAMING_DISAGGREGATION = 29,
-            RICH_RESPONSE_GRID_IMAGE_3P = 30
+            RICH_RESPONSE_GRID_IMAGE_3P = 30,
+            RICH_RESPONSE_LATEXT_INLINE = 31,
+            QUERY_PLAN = 32, 
+            PROACTIVE_MESSAGE = 33
         }
     }
 
@@ -4578,6 +4605,9 @@ export namespace proto {
 
         /** BotMetadata richResponseSourcesMetadata */
         richResponseSourcesMetadata?: (proto.IBotSourcesMetadata|null);
+        
+        /** BotMetadata aiConversationContext */
+        aiConversationContext?: (Uint8Array|null);
     }
 
     /** Represents a BotMetadata. */
@@ -4645,6 +4675,9 @@ export namespace proto {
 
         /** BotMetadata richResponseSourcesMetadata. */
         public richResponseSourcesMetadata?: (proto.IBotSourcesMetadata|null);
+        
+        /** BotMetadata aiConversationContext. */
+        public aiConversationContext?: (Uint8Array|null);
 
         /**
          * Creates a new BotMetadata instance using the specified properties.
@@ -31173,6 +31206,12 @@ export namespace proto {
 
             /** ProtocolMessage limitSharing */
             limitSharing?: (proto.ILimitSharing|null);
+            
+            /** ProtocolMessage aiPsiMetadata */
+            aiPsiMetadata?: (Uint8Array|null);
+            
+            /** ProtocolMessage aiQueryFanout */
+            aiQueryFanout?: (proto.IAIQueryFanout|null);
         }
 
         /** Represents a ProtocolMessage. */
@@ -31246,6 +31285,12 @@ export namespace proto {
 
             /** ProtocolMessage limitSharing. */
             public limitSharing?: (proto.ILimitSharing|null);
+            
+            /** ProtocolMessage aiPsiMetadata. */
+            public aiPsiMetadata?: (Uint8Array|null);
+            
+            /** ProtocolMessage aiQueryFanout. */
+            public aiQueryFanout?: (proto.IAIQueryFanout|null);
 
             /**
              * Creates a new ProtocolMessage instance using the specified properties.
@@ -31351,7 +31396,9 @@ export namespace proto {
                 BOT_MEMU_ONBOARDING_MESSAGE = 24,
                 STATUS_MENTION_MESSAGE = 25,
                 STOP_GENERATION_MESSAGE = 26,
-                LIMIT_SHARING = 27
+                LIMIT_SHARING = 27,
+                AI_PSI_METADATA = 28,
+                AI_QUERY_FANOUT = 29
             }
         }
 
@@ -49517,10 +49564,118 @@ export namespace proto {
             public static getTypeUrl(typeUrlPrefix?: string): string;
         }
     }
+    
+    /** Properties of a AIQueryFanout. */
+    interface IAIQueryFanout {
+    	
+        /** AIQueryFanout messageKey. */
+        messageKey?: (proto.MessageKey|null);
+        
+        /** AIQueryFanout message. */
+        message?: (proto.Message|null);
+        
+        /** AIQueryFanout timestamp. */
+        timestamp?: (number|Long|null);
+    }
+    
+    class AIQueryFanout implements IAIQueryFanout {
+    	
+        /**
+         * Constructs a new AIQueryFanout.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: proto.IAIQueryFanout);
+
+        /** AIQueryFanout messageKey. */
+        public messageKey?: (proto.MessageKey|null);
+
+        /** AIQueryFanout message. */
+        public message?: (proto.Message|null);
+
+        /** AIQueryFanout timestamp. */
+        public timestamp?: (number|Long|null);
+
+        /**
+         * Creates a new AIQueryFanout instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns AIQueryFanout instance
+         */
+        public static create(properties?: proto.IAIQueryFanout): proto.AIQueryFanout;
+
+        /**
+         * Encodes the specified AIQueryFanout message. Does not implicitly {@link proto.AIQueryFanout.verify|verify} messages.
+         * @param message AIQueryFanout message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: proto.IAIQueryFanout, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified AIQueryFanout message, length delimited. Does not implicitly {@link proto.AIQueryFanout.verify|verify} messages.
+         * @param message AIQueryFanout message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: proto.IAIQueryFanout, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a AIQueryFanout message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns AIQueryFanout
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): proto.AIQueryFanout;
+
+        /**
+         * Decodes a AIQueryFanout message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns AIQueryFanout
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): proto.AIQueryFanout;
+
+        /**
+         * Verifies a AIQueryFanout message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a AIQueryFanout message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns AIQueryFanout
+         */
+        public static fromObject(object: { [k: string]: any }): proto.AIQueryFanout;
+
+        /**
+         * Creates a plain object from a AIQueryFanout message. Also converts values to other types if specified.
+         * @param message AIQueryFanout
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: proto.AIQueryFanout, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this AIQueryFanout to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for AIQueryFanout
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
 
     /** Properties of a UserPassword. */
     interface IUserPassword {
-
+    	
         /** UserPassword encoding */
         encoding?: (proto.UserPassword.Encoding|null);
 
