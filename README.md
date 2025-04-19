@@ -1426,13 +1426,30 @@ await suki.sendStatusMentions(
 ### Send Album Message
 ```ts
 await suki.sendAlbumMessage(
-   jid, 
-   [{
-       type: 'image', or video
-       data: Buffer // or  data: { url:
-       caption: 'caption'
-   }]
-{ quoted: 'message' , annotations: [] delay: '5000' })
+    jid,
+    [
+       {
+          image: { url: 'https://example.jpg' }, 
+          caption: 'Hello World'
+       },
+       {
+          image: Buffer, 
+          caption: 'Hello World'
+       },
+       {
+           video: { url: 'https://example.mp4' }, 
+           caption: 'Hello World'
+       }, 
+       {
+           video: Buffer, 
+           caption: 'Hello World'
+       }
+    ],
+    { 
+       quoted: message, 
+       delay: 2000 
+    }
+)
 ```
 ### Shop Message
 ```ts
