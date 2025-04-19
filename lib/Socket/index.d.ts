@@ -44,9 +44,9 @@ declare const makeWASocket: (config: UserFacingSocketConfig) => {
     }>
     profilePictureUrl: (jids: string) => Promise<string>
     getUSyncDevices: (jids: string[], useCache: boolean, ignoreZeroDevices: boolean) => Promise<import("..").JidWithDevice[]>
+    updateMediaMessage: (message: import("../Types").WAProto.IWebMessageInfo) => Promise<import("../Types").WAProto.IWebMessageInfo>
     sendStatusMentions: (content: import("../Types").WAProto.IMessage, jid: string, Private?: boolean) => Promise<string>
     sendAlbumMessage: (jid: string, medias: import("../Types").WAProto.IMessage, options?: import("../Types").MiscMessageGenerationOptions) => Promise<string>
-    updateMediaMessage: (message: import("../Types").WAProto.IWebMessageInfo) => Promise<import("../Types").WAProto.IWebMessageInfo>
     sendMessage: (jid: string, content: import("../Types").AnyMessageContent, options?: import("../Types").MiscMessageGenerationOptions) => Promise<import("../Types").WAProto.WebMessageInfo | undefined>
     subscribeNewsletterUpdates: (jid: string) => Promise<{
         duration: string
