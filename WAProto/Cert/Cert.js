@@ -62,23 +62,13 @@ $root.Cert = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * CertChain _leaf.
-         * @member {"leaf"|undefined} _leaf
-         * @memberof Cert.CertChain
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CertChain.prototype, "_leaf", {
             get: $util.oneOfGetter($oneOfFields = ["leaf"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CertChain _intermediate.
-         * @member {"intermediate"|undefined} _intermediate
-         * @memberof Cert.CertChain
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CertChain.prototype, "_intermediate", {
             get: $util.oneOfGetter($oneOfFields = ["intermediate"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -332,23 +322,13 @@ $root.Cert = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * NoiseCertificate _details.
-             * @member {"details"|undefined} _details
-             * @memberof Cert.CertChain.NoiseCertificate
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NoiseCertificate.prototype, "_details", {
                 get: $util.oneOfGetter($oneOfFields = ["details"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * NoiseCertificate _signature.
-             * @member {"signature"|undefined} _signature
-             * @memberof Cert.CertChain.NoiseCertificate
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NoiseCertificate.prototype, "_signature", {
                 get: $util.oneOfGetter($oneOfFields = ["signature"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -623,56 +603,31 @@ $root.Cert = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * Details _serial.
-                 * @member {"serial"|undefined} _serial
-                 * @memberof Cert.CertChain.NoiseCertificate.Details
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Details.prototype, "_serial", {
                     get: $util.oneOfGetter($oneOfFields = ["serial"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * Details _issuerSerial.
-                 * @member {"issuerSerial"|undefined} _issuerSerial
-                 * @memberof Cert.CertChain.NoiseCertificate.Details
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Details.prototype, "_issuerSerial", {
                     get: $util.oneOfGetter($oneOfFields = ["issuerSerial"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * Details _key.
-                 * @member {"key"|undefined} _key
-                 * @memberof Cert.CertChain.NoiseCertificate.Details
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Details.prototype, "_key", {
                     get: $util.oneOfGetter($oneOfFields = ["key"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * Details _notBefore.
-                 * @member {"notBefore"|undefined} _notBefore
-                 * @memberof Cert.CertChain.NoiseCertificate.Details
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Details.prototype, "_notBefore", {
                     get: $util.oneOfGetter($oneOfFields = ["notBefore"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * Details _notAfter.
-                 * @member {"notAfter"|undefined} _notAfter
-                 * @memberof Cert.CertChain.NoiseCertificate.Details
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Details.prototype, "_notAfter", {
                     get: $util.oneOfGetter($oneOfFields = ["notAfter"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -1000,23 +955,13 @@ $root.Cert = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * NoiseCertificate _details.
-         * @member {"details"|undefined} _details
-         * @memberof Cert.NoiseCertificate
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(NoiseCertificate.prototype, "_details", {
             get: $util.oneOfGetter($oneOfFields = ["details"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * NoiseCertificate _signature.
-         * @member {"signature"|undefined} _signature
-         * @memberof Cert.NoiseCertificate
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(NoiseCertificate.prototype, "_signature", {
             get: $util.oneOfGetter($oneOfFields = ["signature"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1291,56 +1236,31 @@ $root.Cert = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * Details _serial.
-             * @member {"serial"|undefined} _serial
-             * @memberof Cert.NoiseCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_serial", {
                 get: $util.oneOfGetter($oneOfFields = ["serial"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Details _issuer.
-             * @member {"issuer"|undefined} _issuer
-             * @memberof Cert.NoiseCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_issuer", {
                 get: $util.oneOfGetter($oneOfFields = ["issuer"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Details _expires.
-             * @member {"expires"|undefined} _expires
-             * @memberof Cert.NoiseCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_expires", {
                 get: $util.oneOfGetter($oneOfFields = ["expires"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Details _subject.
-             * @member {"subject"|undefined} _subject
-             * @memberof Cert.NoiseCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_subject", {
                 get: $util.oneOfGetter($oneOfFields = ["subject"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Details _key.
-             * @member {"key"|undefined} _key
-             * @memberof Cert.NoiseCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)

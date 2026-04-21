@@ -18,6 +18,772 @@ $root.AICommon = (function() {
      */
     var AICommon = {};
 
+    AICommon.BotAgentDeepLinkMetadata = (function() {
+
+        /**
+         * Properties of a BotAgentDeepLinkMetadata.
+         * @memberof AICommon
+         * @interface IBotAgentDeepLinkMetadata
+         * @property {string|null} [token] BotAgentDeepLinkMetadata token
+         */
+
+        /**
+         * Constructs a new BotAgentDeepLinkMetadata.
+         * @memberof AICommon
+         * @classdesc Represents a BotAgentDeepLinkMetadata.
+         * @implements IBotAgentDeepLinkMetadata
+         * @constructor
+         * @param {AICommon.IBotAgentDeepLinkMetadata=} [properties] Properties to set
+         */
+        function BotAgentDeepLinkMetadata(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BotAgentDeepLinkMetadata token.
+         * @member {string|null|undefined} token
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @instance
+         */
+        BotAgentDeepLinkMetadata.prototype.token = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotAgentDeepLinkMetadata.prototype, "_token", {
+            get: $util.oneOfGetter($oneOfFields = ["token"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new BotAgentDeepLinkMetadata instance using the specified properties.
+         * @function create
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {AICommon.IBotAgentDeepLinkMetadata=} [properties] Properties to set
+         * @returns {AICommon.BotAgentDeepLinkMetadata} BotAgentDeepLinkMetadata instance
+         */
+        BotAgentDeepLinkMetadata.create = function create(properties) {
+            return new BotAgentDeepLinkMetadata(properties);
+        };
+
+        /**
+         * Encodes the specified BotAgentDeepLinkMetadata message. Does not implicitly {@link AICommon.BotAgentDeepLinkMetadata.verify|verify} messages.
+         * @function encode
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {AICommon.IBotAgentDeepLinkMetadata} message BotAgentDeepLinkMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotAgentDeepLinkMetadata.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.token != null && Object.hasOwnProperty.call(message, "token"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BotAgentDeepLinkMetadata message, length delimited. Does not implicitly {@link AICommon.BotAgentDeepLinkMetadata.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {AICommon.IBotAgentDeepLinkMetadata} message BotAgentDeepLinkMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotAgentDeepLinkMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BotAgentDeepLinkMetadata message from the specified reader or buffer.
+         * @function decode
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AICommon.BotAgentDeepLinkMetadata} BotAgentDeepLinkMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotAgentDeepLinkMetadata.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotAgentDeepLinkMetadata();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.token = reader.string();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a BotAgentDeepLinkMetadata message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AICommon.BotAgentDeepLinkMetadata} BotAgentDeepLinkMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotAgentDeepLinkMetadata.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BotAgentDeepLinkMetadata message.
+         * @function verify
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BotAgentDeepLinkMetadata.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            var properties = {};
+            if (message.token != null && message.hasOwnProperty("token")) {
+                properties._token = 1;
+                if (!$util.isString(message.token))
+                    return "token: string expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BotAgentDeepLinkMetadata message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AICommon.BotAgentDeepLinkMetadata} BotAgentDeepLinkMetadata
+         */
+        BotAgentDeepLinkMetadata.fromObject = function fromObject(object) {
+            if (object instanceof $root.AICommon.BotAgentDeepLinkMetadata)
+                return object;
+            var message = new $root.AICommon.BotAgentDeepLinkMetadata();
+            if (object.token != null)
+                message.token = String(object.token);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BotAgentDeepLinkMetadata message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {AICommon.BotAgentDeepLinkMetadata} message BotAgentDeepLinkMetadata
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BotAgentDeepLinkMetadata.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (message.token != null && message.hasOwnProperty("token")) {
+                object.token = message.token;
+                if (options.oneofs)
+                    object._token = "token";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BotAgentDeepLinkMetadata to JSON.
+         * @function toJSON
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BotAgentDeepLinkMetadata.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotAgentDeepLinkMetadata
+         * @function getTypeUrl
+         * @memberof AICommon.BotAgentDeepLinkMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotAgentDeepLinkMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/AICommon.BotAgentDeepLinkMetadata";
+        };
+
+        return BotAgentDeepLinkMetadata;
+    })();
+
+    AICommon.BotAgentMetadata = (function() {
+
+        /**
+         * Properties of a BotAgentMetadata.
+         * @memberof AICommon
+         * @interface IBotAgentMetadata
+         * @property {AICommon.IBotAgentDeepLinkMetadata|null} [deepLinkMetadata] BotAgentMetadata deepLinkMetadata
+         */
+
+        /**
+         * Constructs a new BotAgentMetadata.
+         * @memberof AICommon
+         * @classdesc Represents a BotAgentMetadata.
+         * @implements IBotAgentMetadata
+         * @constructor
+         * @param {AICommon.IBotAgentMetadata=} [properties] Properties to set
+         */
+        function BotAgentMetadata(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BotAgentMetadata deepLinkMetadata.
+         * @member {AICommon.IBotAgentDeepLinkMetadata|null|undefined} deepLinkMetadata
+         * @memberof AICommon.BotAgentMetadata
+         * @instance
+         */
+        BotAgentMetadata.prototype.deepLinkMetadata = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotAgentMetadata.prototype, "_deepLinkMetadata", {
+            get: $util.oneOfGetter($oneOfFields = ["deepLinkMetadata"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new BotAgentMetadata instance using the specified properties.
+         * @function create
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {AICommon.IBotAgentMetadata=} [properties] Properties to set
+         * @returns {AICommon.BotAgentMetadata} BotAgentMetadata instance
+         */
+        BotAgentMetadata.create = function create(properties) {
+            return new BotAgentMetadata(properties);
+        };
+
+        /**
+         * Encodes the specified BotAgentMetadata message. Does not implicitly {@link AICommon.BotAgentMetadata.verify|verify} messages.
+         * @function encode
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {AICommon.IBotAgentMetadata} message BotAgentMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotAgentMetadata.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.deepLinkMetadata != null && Object.hasOwnProperty.call(message, "deepLinkMetadata"))
+                $root.AICommon.BotAgentDeepLinkMetadata.encode(message.deepLinkMetadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BotAgentMetadata message, length delimited. Does not implicitly {@link AICommon.BotAgentMetadata.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {AICommon.IBotAgentMetadata} message BotAgentMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotAgentMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BotAgentMetadata message from the specified reader or buffer.
+         * @function decode
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AICommon.BotAgentMetadata} BotAgentMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotAgentMetadata.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotAgentMetadata();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.deepLinkMetadata = $root.AICommon.BotAgentDeepLinkMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a BotAgentMetadata message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AICommon.BotAgentMetadata} BotAgentMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotAgentMetadata.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BotAgentMetadata message.
+         * @function verify
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BotAgentMetadata.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            var properties = {};
+            if (message.deepLinkMetadata != null && message.hasOwnProperty("deepLinkMetadata")) {
+                properties._deepLinkMetadata = 1;
+                {
+                    var error = $root.AICommon.BotAgentDeepLinkMetadata.verify(message.deepLinkMetadata);
+                    if (error)
+                        return "deepLinkMetadata." + error;
+                }
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BotAgentMetadata message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AICommon.BotAgentMetadata} BotAgentMetadata
+         */
+        BotAgentMetadata.fromObject = function fromObject(object) {
+            if (object instanceof $root.AICommon.BotAgentMetadata)
+                return object;
+            var message = new $root.AICommon.BotAgentMetadata();
+            if (object.deepLinkMetadata != null) {
+                if (typeof object.deepLinkMetadata !== "object")
+                    throw TypeError(".AICommon.BotAgentMetadata.deepLinkMetadata: object expected");
+                message.deepLinkMetadata = $root.AICommon.BotAgentDeepLinkMetadata.fromObject(object.deepLinkMetadata);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BotAgentMetadata message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {AICommon.BotAgentMetadata} message BotAgentMetadata
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BotAgentMetadata.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (message.deepLinkMetadata != null && message.hasOwnProperty("deepLinkMetadata")) {
+                object.deepLinkMetadata = $root.AICommon.BotAgentDeepLinkMetadata.toObject(message.deepLinkMetadata, options);
+                if (options.oneofs)
+                    object._deepLinkMetadata = "deepLinkMetadata";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BotAgentMetadata to JSON.
+         * @function toJSON
+         * @memberof AICommon.BotAgentMetadata
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BotAgentMetadata.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotAgentMetadata
+         * @function getTypeUrl
+         * @memberof AICommon.BotAgentMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotAgentMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/AICommon.BotAgentMetadata";
+        };
+
+        return BotAgentMetadata;
+    })();
+
+    AICommon.BotInfrastructureDiagnostics = (function() {
+
+        /**
+         * Properties of a BotInfrastructureDiagnostics.
+         * @memberof AICommon
+         * @interface IBotInfrastructureDiagnostics
+         * @property {AICommon.BotInfrastructureDiagnostics.BotBackend|null} [botBackend] BotInfrastructureDiagnostics botBackend
+         * @property {Array.<string>|null} [toolsUsed] BotInfrastructureDiagnostics toolsUsed
+         * @property {boolean|null} [isThinking] BotInfrastructureDiagnostics isThinking
+         */
+
+        /**
+         * Constructs a new BotInfrastructureDiagnostics.
+         * @memberof AICommon
+         * @classdesc Represents a BotInfrastructureDiagnostics.
+         * @implements IBotInfrastructureDiagnostics
+         * @constructor
+         * @param {AICommon.IBotInfrastructureDiagnostics=} [properties] Properties to set
+         */
+        function BotInfrastructureDiagnostics(properties) {
+            this.toolsUsed = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BotInfrastructureDiagnostics botBackend.
+         * @member {AICommon.BotInfrastructureDiagnostics.BotBackend|null|undefined} botBackend
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @instance
+         */
+        BotInfrastructureDiagnostics.prototype.botBackend = null;
+
+        /**
+         * BotInfrastructureDiagnostics toolsUsed.
+         * @member {Array.<string>} toolsUsed
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @instance
+         */
+        BotInfrastructureDiagnostics.prototype.toolsUsed = $util.emptyArray;
+
+        /**
+         * BotInfrastructureDiagnostics isThinking.
+         * @member {boolean|null|undefined} isThinking
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @instance
+         */
+        BotInfrastructureDiagnostics.prototype.isThinking = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotInfrastructureDiagnostics.prototype, "_botBackend", {
+            get: $util.oneOfGetter($oneOfFields = ["botBackend"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotInfrastructureDiagnostics.prototype, "_isThinking", {
+            get: $util.oneOfGetter($oneOfFields = ["isThinking"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new BotInfrastructureDiagnostics instance using the specified properties.
+         * @function create
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {AICommon.IBotInfrastructureDiagnostics=} [properties] Properties to set
+         * @returns {AICommon.BotInfrastructureDiagnostics} BotInfrastructureDiagnostics instance
+         */
+        BotInfrastructureDiagnostics.create = function create(properties) {
+            return new BotInfrastructureDiagnostics(properties);
+        };
+
+        /**
+         * Encodes the specified BotInfrastructureDiagnostics message. Does not implicitly {@link AICommon.BotInfrastructureDiagnostics.verify|verify} messages.
+         * @function encode
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {AICommon.IBotInfrastructureDiagnostics} message BotInfrastructureDiagnostics message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotInfrastructureDiagnostics.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.botBackend != null && Object.hasOwnProperty.call(message, "botBackend"))
+                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.botBackend);
+            if (message.toolsUsed != null && message.toolsUsed.length)
+                for (var i = 0; i < message.toolsUsed.length; ++i)
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.toolsUsed[i]);
+            if (message.isThinking != null && Object.hasOwnProperty.call(message, "isThinking"))
+                writer.uint32(/* id 3, wireType 0 =*/24).bool(message.isThinking);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BotInfrastructureDiagnostics message, length delimited. Does not implicitly {@link AICommon.BotInfrastructureDiagnostics.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {AICommon.IBotInfrastructureDiagnostics} message BotInfrastructureDiagnostics message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotInfrastructureDiagnostics.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BotInfrastructureDiagnostics message from the specified reader or buffer.
+         * @function decode
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AICommon.BotInfrastructureDiagnostics} BotInfrastructureDiagnostics
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotInfrastructureDiagnostics.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotInfrastructureDiagnostics();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.botBackend = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        if (!(message.toolsUsed && message.toolsUsed.length))
+                            message.toolsUsed = [];
+                        message.toolsUsed.push(reader.string());
+                        break;
+                    }
+                case 3: {
+                        message.isThinking = reader.bool();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a BotInfrastructureDiagnostics message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AICommon.BotInfrastructureDiagnostics} BotInfrastructureDiagnostics
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotInfrastructureDiagnostics.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BotInfrastructureDiagnostics message.
+         * @function verify
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BotInfrastructureDiagnostics.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            var properties = {};
+            if (message.botBackend != null && message.hasOwnProperty("botBackend")) {
+                properties._botBackend = 1;
+                switch (message.botBackend) {
+                default:
+                    return "botBackend: enum value expected";
+                case 0:
+                case 1:
+                    break;
+                }
+            }
+            if (message.toolsUsed != null && message.hasOwnProperty("toolsUsed")) {
+                if (!Array.isArray(message.toolsUsed))
+                    return "toolsUsed: array expected";
+                for (var i = 0; i < message.toolsUsed.length; ++i)
+                    if (!$util.isString(message.toolsUsed[i]))
+                        return "toolsUsed: string[] expected";
+            }
+            if (message.isThinking != null && message.hasOwnProperty("isThinking")) {
+                properties._isThinking = 1;
+                if (typeof message.isThinking !== "boolean")
+                    return "isThinking: boolean expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BotInfrastructureDiagnostics message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AICommon.BotInfrastructureDiagnostics} BotInfrastructureDiagnostics
+         */
+        BotInfrastructureDiagnostics.fromObject = function fromObject(object) {
+            if (object instanceof $root.AICommon.BotInfrastructureDiagnostics)
+                return object;
+            var message = new $root.AICommon.BotInfrastructureDiagnostics();
+            switch (object.botBackend) {
+            default:
+                if (typeof object.botBackend === "number") {
+                    message.botBackend = object.botBackend;
+                    break;
+                }
+                break;
+            case "AAPI":
+            case 0:
+                message.botBackend = 0;
+                break;
+            case "CLIPPY":
+            case 1:
+                message.botBackend = 1;
+                break;
+            }
+            if (object.toolsUsed) {
+                if (!Array.isArray(object.toolsUsed))
+                    throw TypeError(".AICommon.BotInfrastructureDiagnostics.toolsUsed: array expected");
+                message.toolsUsed = [];
+                for (var i = 0; i < object.toolsUsed.length; ++i)
+                    message.toolsUsed[i] = String(object.toolsUsed[i]);
+            }
+            if (object.isThinking != null)
+                message.isThinking = Boolean(object.isThinking);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BotInfrastructureDiagnostics message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {AICommon.BotInfrastructureDiagnostics} message BotInfrastructureDiagnostics
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BotInfrastructureDiagnostics.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults)
+                object.toolsUsed = [];
+            if (message.botBackend != null && message.hasOwnProperty("botBackend")) {
+                object.botBackend = options.enums === String ? $root.AICommon.BotInfrastructureDiagnostics.BotBackend[message.botBackend] === undefined ? message.botBackend : $root.AICommon.BotInfrastructureDiagnostics.BotBackend[message.botBackend] : message.botBackend;
+                if (options.oneofs)
+                    object._botBackend = "botBackend";
+            }
+            if (message.toolsUsed && message.toolsUsed.length) {
+                object.toolsUsed = [];
+                for (var j = 0; j < message.toolsUsed.length; ++j)
+                    object.toolsUsed[j] = message.toolsUsed[j];
+            }
+            if (message.isThinking != null && message.hasOwnProperty("isThinking")) {
+                object.isThinking = message.isThinking;
+                if (options.oneofs)
+                    object._isThinking = "isThinking";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BotInfrastructureDiagnostics to JSON.
+         * @function toJSON
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BotInfrastructureDiagnostics.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotInfrastructureDiagnostics
+         * @function getTypeUrl
+         * @memberof AICommon.BotInfrastructureDiagnostics
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotInfrastructureDiagnostics.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/AICommon.BotInfrastructureDiagnostics";
+        };
+
+        /**
+         * BotBackend enum.
+         * @name AICommon.BotInfrastructureDiagnostics.BotBackend
+         * @enum {number}
+         * @property {number} AAPI=0 AAPI value
+         * @property {number} CLIPPY=1 CLIPPY value
+         */
+        BotInfrastructureDiagnostics.BotBackend = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "AAPI"] = 0;
+            values[valuesById[1] = "CLIPPY"] = 1;
+            return values;
+        })();
+
+        return BotInfrastructureDiagnostics;
+    })();
+
     AICommon.AIHomeState = (function() {
 
         /**
@@ -73,12 +839,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * AIHomeState _lastFetchTime.
-         * @member {"lastFetchTime"|undefined} _lastFetchTime
-         * @memberof AICommon.AIHomeState
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(AIHomeState.prototype, "_lastFetchTime", {
             get: $util.oneOfGetter($oneOfFields = ["lastFetchTime"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -351,6 +1112,7 @@ $root.AICommon = (function() {
              * @property {string|null} [imageWdsIdentifier] AIHomeOption imageWdsIdentifier
              * @property {string|null} [imageTintColor] AIHomeOption imageTintColor
              * @property {string|null} [imageBackgroundColor] AIHomeOption imageBackgroundColor
+             * @property {string|null} [cardTypeId] AIHomeOption cardTypeId
              */
 
             /**
@@ -424,83 +1186,62 @@ $root.AICommon = (function() {
              */
             AIHomeOption.prototype.imageBackgroundColor = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * AIHomeOption _type.
-             * @member {"type"|undefined} _type
+             * AIHomeOption cardTypeId.
+             * @member {string|null|undefined} cardTypeId
              * @memberof AICommon.AIHomeState.AIHomeOption
              * @instance
              */
+            AIHomeOption.prototype.cardTypeId = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIHomeOption.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AIHomeOption _title.
-             * @member {"title"|undefined} _title
-             * @memberof AICommon.AIHomeState.AIHomeOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIHomeOption.prototype, "_title", {
                 get: $util.oneOfGetter($oneOfFields = ["title"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AIHomeOption _promptText.
-             * @member {"promptText"|undefined} _promptText
-             * @memberof AICommon.AIHomeState.AIHomeOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIHomeOption.prototype, "_promptText", {
                 get: $util.oneOfGetter($oneOfFields = ["promptText"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AIHomeOption _sessionId.
-             * @member {"sessionId"|undefined} _sessionId
-             * @memberof AICommon.AIHomeState.AIHomeOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIHomeOption.prototype, "_sessionId", {
                 get: $util.oneOfGetter($oneOfFields = ["sessionId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AIHomeOption _imageWdsIdentifier.
-             * @member {"imageWdsIdentifier"|undefined} _imageWdsIdentifier
-             * @memberof AICommon.AIHomeState.AIHomeOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIHomeOption.prototype, "_imageWdsIdentifier", {
                 get: $util.oneOfGetter($oneOfFields = ["imageWdsIdentifier"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AIHomeOption _imageTintColor.
-             * @member {"imageTintColor"|undefined} _imageTintColor
-             * @memberof AICommon.AIHomeState.AIHomeOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIHomeOption.prototype, "_imageTintColor", {
                 get: $util.oneOfGetter($oneOfFields = ["imageTintColor"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AIHomeOption _imageBackgroundColor.
-             * @member {"imageBackgroundColor"|undefined} _imageBackgroundColor
-             * @memberof AICommon.AIHomeState.AIHomeOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIHomeOption.prototype, "_imageBackgroundColor", {
                 get: $util.oneOfGetter($oneOfFields = ["imageBackgroundColor"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(AIHomeOption.prototype, "_cardTypeId", {
+                get: $util.oneOfGetter($oneOfFields = ["cardTypeId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -542,6 +1283,8 @@ $root.AICommon = (function() {
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.imageTintColor);
                 if (message.imageBackgroundColor != null && Object.hasOwnProperty.call(message, "imageBackgroundColor"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.imageBackgroundColor);
+                if (message.cardTypeId != null && Object.hasOwnProperty.call(message, "cardTypeId"))
+                    writer.uint32(/* id 8, wireType 2 =*/66).string(message.cardTypeId);
                 return writer;
             };
 
@@ -606,6 +1349,10 @@ $root.AICommon = (function() {
                             message.imageBackgroundColor = reader.string();
                             break;
                         }
+                    case 8: {
+                            message.cardTypeId = reader.string();
+                            break;
+                        }
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -651,6 +1398,7 @@ $root.AICommon = (function() {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 }
@@ -683,6 +1431,11 @@ $root.AICommon = (function() {
                     properties._imageBackgroundColor = 1;
                     if (!$util.isString(message.imageBackgroundColor))
                         return "imageBackgroundColor: string expected";
+                }
+                if (message.cardTypeId != null && message.hasOwnProperty("cardTypeId")) {
+                    properties._cardTypeId = 1;
+                    if (!$util.isString(message.cardTypeId))
+                        return "cardTypeId: string expected";
                 }
                 return null;
             };
@@ -722,6 +1475,10 @@ $root.AICommon = (function() {
                 case 3:
                     message.type = 3;
                     break;
+                case "COLLABORATE":
+                case 4:
+                    message.type = 4;
+                    break;
                 }
                 if (object.title != null)
                     message.title = String(object.title);
@@ -735,6 +1492,8 @@ $root.AICommon = (function() {
                     message.imageTintColor = String(object.imageTintColor);
                 if (object.imageBackgroundColor != null)
                     message.imageBackgroundColor = String(object.imageBackgroundColor);
+                if (object.cardTypeId != null)
+                    message.cardTypeId = String(object.cardTypeId);
                 return message;
             };
 
@@ -786,6 +1545,11 @@ $root.AICommon = (function() {
                     if (options.oneofs)
                         object._imageBackgroundColor = "imageBackgroundColor";
                 }
+                if (message.cardTypeId != null && message.hasOwnProperty("cardTypeId")) {
+                    object.cardTypeId = message.cardTypeId;
+                    if (options.oneofs)
+                        object._cardTypeId = "cardTypeId";
+                }
                 return object;
             };
 
@@ -823,6 +1587,7 @@ $root.AICommon = (function() {
              * @property {number} CREATE_IMAGE=1 CREATE_IMAGE value
              * @property {number} ANIMATE_PHOTO=2 ANIMATE_PHOTO value
              * @property {number} ANALYZE_FILE=3 ANALYZE_FILE value
+             * @property {number} COLLABORATE=4 COLLABORATE value
              */
             AIHomeOption.AIHomeActionType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -830,6 +1595,7 @@ $root.AICommon = (function() {
                 values[valuesById[1] = "CREATE_IMAGE"] = 1;
                 values[valuesById[2] = "ANIMATE_PHOTO"] = 2;
                 values[valuesById[3] = "ANALYZE_FILE"] = 3;
+                values[valuesById[4] = "COLLABORATE"] = 4;
                 return values;
             })();
 
@@ -874,12 +1640,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotDocumentMessageMetadata _pluginType.
-         * @member {"pluginType"|undefined} _pluginType
-         * @memberof AICommon.BotDocumentMessageMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotDocumentMessageMetadata.prototype, "_pluginType", {
             get: $util.oneOfGetter($oneOfFields = ["pluginType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1148,34 +1909,19 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SessionTransparencyMetadata _disclaimerText.
-         * @member {"disclaimerText"|undefined} _disclaimerText
-         * @memberof AICommon.SessionTransparencyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionTransparencyMetadata.prototype, "_disclaimerText", {
             get: $util.oneOfGetter($oneOfFields = ["disclaimerText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionTransparencyMetadata _hcaId.
-         * @member {"hcaId"|undefined} _hcaId
-         * @memberof AICommon.SessionTransparencyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionTransparencyMetadata.prototype, "_hcaId", {
             get: $util.oneOfGetter($oneOfFields = ["hcaId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionTransparencyMetadata _sessionTransparencyType.
-         * @member {"sessionTransparencyType"|undefined} _sessionTransparencyType
-         * @memberof AICommon.SessionTransparencyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionTransparencyMetadata.prototype, "_sessionTransparencyType", {
             get: $util.oneOfGetter($oneOfFields = ["sessionTransparencyType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1457,23 +2203,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * AIRegenerateMetadata _messageKey.
-         * @member {"messageKey"|undefined} _messageKey
-         * @memberof AICommon.AIRegenerateMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(AIRegenerateMetadata.prototype, "_messageKey", {
             get: $util.oneOfGetter($oneOfFields = ["messageKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * AIRegenerateMetadata _responseTimestampMs.
-         * @member {"responseTimestampMs"|undefined} _responseTimestampMs
-         * @memberof AICommon.AIRegenerateMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(AIRegenerateMetadata.prototype, "_responseTimestampMs", {
             get: $util.oneOfGetter($oneOfFields = ["responseTimestampMs"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1690,3135 +2426,6 @@ $root.AICommon = (function() {
         return AIRegenerateMetadata;
     })();
 
-    AICommon.AIRichResponseSubMessage = (function() {
-
-        /**
-         * Properties of a AIRichResponseSubMessage.
-         * @memberof AICommon
-         * @interface IAIRichResponseSubMessage
-         * @property {AICommon.AIRichResponseSubMessageType|null} [messageType] AIRichResponseSubMessage messageType
-         * @property {AICommon.IAIRichResponseGridImageMetadata|null} [gridImageMetadata] AIRichResponseSubMessage gridImageMetadata
-         * @property {string|null} [messageText] AIRichResponseSubMessage messageText
-         * @property {AICommon.IAIRichResponseInlineImageMetadata|null} [imageMetadata] AIRichResponseSubMessage imageMetadata
-         * @property {AICommon.IAIRichResponseCodeMetadata|null} [codeMetadata] AIRichResponseSubMessage codeMetadata
-         * @property {AICommon.IAIRichResponseTableMetadata|null} [tableMetadata] AIRichResponseSubMessage tableMetadata
-         * @property {AICommon.IAIRichResponseDynamicMetadata|null} [dynamicMetadata] AIRichResponseSubMessage dynamicMetadata
-         * @property {AICommon.IAIRichResponseLatexMetadata|null} [latexMetadata] AIRichResponseSubMessage latexMetadata
-         * @property {AICommon.IAIRichResponseMapMetadata|null} [mapMetadata] AIRichResponseSubMessage mapMetadata
-         * @property {AICommon.IAIRichResponseContentItemsMetadata|null} [contentItemsMetadata] AIRichResponseSubMessage contentItemsMetadata
-         */
-
-        /**
-         * Constructs a new AIRichResponseSubMessage.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseSubMessage.
-         * @implements IAIRichResponseSubMessage
-         * @constructor
-         * @param {AICommon.IAIRichResponseSubMessage=} [properties] Properties to set
-         */
-        function AIRichResponseSubMessage(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseSubMessage messageType.
-         * @member {AICommon.AIRichResponseSubMessageType|null|undefined} messageType
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.messageType = null;
-
-        /**
-         * AIRichResponseSubMessage gridImageMetadata.
-         * @member {AICommon.IAIRichResponseGridImageMetadata|null|undefined} gridImageMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.gridImageMetadata = null;
-
-        /**
-         * AIRichResponseSubMessage messageText.
-         * @member {string|null|undefined} messageText
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.messageText = null;
-
-        /**
-         * AIRichResponseSubMessage imageMetadata.
-         * @member {AICommon.IAIRichResponseInlineImageMetadata|null|undefined} imageMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.imageMetadata = null;
-
-        /**
-         * AIRichResponseSubMessage codeMetadata.
-         * @member {AICommon.IAIRichResponseCodeMetadata|null|undefined} codeMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.codeMetadata = null;
-
-        /**
-         * AIRichResponseSubMessage tableMetadata.
-         * @member {AICommon.IAIRichResponseTableMetadata|null|undefined} tableMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.tableMetadata = null;
-
-        /**
-         * AIRichResponseSubMessage dynamicMetadata.
-         * @member {AICommon.IAIRichResponseDynamicMetadata|null|undefined} dynamicMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.dynamicMetadata = null;
-
-        /**
-         * AIRichResponseSubMessage latexMetadata.
-         * @member {AICommon.IAIRichResponseLatexMetadata|null|undefined} latexMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.latexMetadata = null;
-
-        /**
-         * AIRichResponseSubMessage mapMetadata.
-         * @member {AICommon.IAIRichResponseMapMetadata|null|undefined} mapMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.mapMetadata = null;
-
-        /**
-         * AIRichResponseSubMessage contentItemsMetadata.
-         * @member {AICommon.IAIRichResponseContentItemsMetadata|null|undefined} contentItemsMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        AIRichResponseSubMessage.prototype.contentItemsMetadata = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseSubMessage _messageType.
-         * @member {"messageType"|undefined} _messageType
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_messageType", {
-            get: $util.oneOfGetter($oneOfFields = ["messageType"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _gridImageMetadata.
-         * @member {"gridImageMetadata"|undefined} _gridImageMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_gridImageMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["gridImageMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _messageText.
-         * @member {"messageText"|undefined} _messageText
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_messageText", {
-            get: $util.oneOfGetter($oneOfFields = ["messageText"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _imageMetadata.
-         * @member {"imageMetadata"|undefined} _imageMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_imageMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["imageMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _codeMetadata.
-         * @member {"codeMetadata"|undefined} _codeMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_codeMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["codeMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _tableMetadata.
-         * @member {"tableMetadata"|undefined} _tableMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_tableMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["tableMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _dynamicMetadata.
-         * @member {"dynamicMetadata"|undefined} _dynamicMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_dynamicMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["dynamicMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _latexMetadata.
-         * @member {"latexMetadata"|undefined} _latexMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_latexMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["latexMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _mapMetadata.
-         * @member {"mapMetadata"|undefined} _mapMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_mapMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["mapMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseSubMessage _contentItemsMetadata.
-         * @member {"contentItemsMetadata"|undefined} _contentItemsMetadata
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseSubMessage.prototype, "_contentItemsMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["contentItemsMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseSubMessage instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {AICommon.IAIRichResponseSubMessage=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseSubMessage} AIRichResponseSubMessage instance
-         */
-        AIRichResponseSubMessage.create = function create(properties) {
-            return new AIRichResponseSubMessage(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseSubMessage message. Does not implicitly {@link AICommon.AIRichResponseSubMessage.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {AICommon.IAIRichResponseSubMessage} message AIRichResponseSubMessage message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseSubMessage.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.messageType != null && Object.hasOwnProperty.call(message, "messageType"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.messageType);
-            if (message.gridImageMetadata != null && Object.hasOwnProperty.call(message, "gridImageMetadata"))
-                $root.AICommon.AIRichResponseGridImageMetadata.encode(message.gridImageMetadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            if (message.messageText != null && Object.hasOwnProperty.call(message, "messageText"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.messageText);
-            if (message.imageMetadata != null && Object.hasOwnProperty.call(message, "imageMetadata"))
-                $root.AICommon.AIRichResponseInlineImageMetadata.encode(message.imageMetadata, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.codeMetadata != null && Object.hasOwnProperty.call(message, "codeMetadata"))
-                $root.AICommon.AIRichResponseCodeMetadata.encode(message.codeMetadata, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.tableMetadata != null && Object.hasOwnProperty.call(message, "tableMetadata"))
-                $root.AICommon.AIRichResponseTableMetadata.encode(message.tableMetadata, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.dynamicMetadata != null && Object.hasOwnProperty.call(message, "dynamicMetadata"))
-                $root.AICommon.AIRichResponseDynamicMetadata.encode(message.dynamicMetadata, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.latexMetadata != null && Object.hasOwnProperty.call(message, "latexMetadata"))
-                $root.AICommon.AIRichResponseLatexMetadata.encode(message.latexMetadata, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-            if (message.mapMetadata != null && Object.hasOwnProperty.call(message, "mapMetadata"))
-                $root.AICommon.AIRichResponseMapMetadata.encode(message.mapMetadata, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-            if (message.contentItemsMetadata != null && Object.hasOwnProperty.call(message, "contentItemsMetadata"))
-                $root.AICommon.AIRichResponseContentItemsMetadata.encode(message.contentItemsMetadata, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseSubMessage message, length delimited. Does not implicitly {@link AICommon.AIRichResponseSubMessage.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {AICommon.IAIRichResponseSubMessage} message AIRichResponseSubMessage message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseSubMessage.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseSubMessage message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseSubMessage} AIRichResponseSubMessage
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseSubMessage.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseSubMessage();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.messageType = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.gridImageMetadata = $root.AICommon.AIRichResponseGridImageMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 3: {
-                        message.messageText = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.imageMetadata = $root.AICommon.AIRichResponseInlineImageMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 5: {
-                        message.codeMetadata = $root.AICommon.AIRichResponseCodeMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 6: {
-                        message.tableMetadata = $root.AICommon.AIRichResponseTableMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 7: {
-                        message.dynamicMetadata = $root.AICommon.AIRichResponseDynamicMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 8: {
-                        message.latexMetadata = $root.AICommon.AIRichResponseLatexMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 9: {
-                        message.mapMetadata = $root.AICommon.AIRichResponseMapMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 10: {
-                        message.contentItemsMetadata = $root.AICommon.AIRichResponseContentItemsMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseSubMessage message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseSubMessage} AIRichResponseSubMessage
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseSubMessage.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseSubMessage message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseSubMessage.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.messageType != null && message.hasOwnProperty("messageType")) {
-                properties._messageType = 1;
-                switch (message.messageType) {
-                default:
-                    return "messageType: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                    break;
-                }
-            }
-            if (message.gridImageMetadata != null && message.hasOwnProperty("gridImageMetadata")) {
-                properties._gridImageMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseGridImageMetadata.verify(message.gridImageMetadata);
-                    if (error)
-                        return "gridImageMetadata." + error;
-                }
-            }
-            if (message.messageText != null && message.hasOwnProperty("messageText")) {
-                properties._messageText = 1;
-                if (!$util.isString(message.messageText))
-                    return "messageText: string expected";
-            }
-            if (message.imageMetadata != null && message.hasOwnProperty("imageMetadata")) {
-                properties._imageMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseInlineImageMetadata.verify(message.imageMetadata);
-                    if (error)
-                        return "imageMetadata." + error;
-                }
-            }
-            if (message.codeMetadata != null && message.hasOwnProperty("codeMetadata")) {
-                properties._codeMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseCodeMetadata.verify(message.codeMetadata);
-                    if (error)
-                        return "codeMetadata." + error;
-                }
-            }
-            if (message.tableMetadata != null && message.hasOwnProperty("tableMetadata")) {
-                properties._tableMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseTableMetadata.verify(message.tableMetadata);
-                    if (error)
-                        return "tableMetadata." + error;
-                }
-            }
-            if (message.dynamicMetadata != null && message.hasOwnProperty("dynamicMetadata")) {
-                properties._dynamicMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseDynamicMetadata.verify(message.dynamicMetadata);
-                    if (error)
-                        return "dynamicMetadata." + error;
-                }
-            }
-            if (message.latexMetadata != null && message.hasOwnProperty("latexMetadata")) {
-                properties._latexMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseLatexMetadata.verify(message.latexMetadata);
-                    if (error)
-                        return "latexMetadata." + error;
-                }
-            }
-            if (message.mapMetadata != null && message.hasOwnProperty("mapMetadata")) {
-                properties._mapMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseMapMetadata.verify(message.mapMetadata);
-                    if (error)
-                        return "mapMetadata." + error;
-                }
-            }
-            if (message.contentItemsMetadata != null && message.hasOwnProperty("contentItemsMetadata")) {
-                properties._contentItemsMetadata = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseContentItemsMetadata.verify(message.contentItemsMetadata);
-                    if (error)
-                        return "contentItemsMetadata." + error;
-                }
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseSubMessage message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseSubMessage} AIRichResponseSubMessage
-         */
-        AIRichResponseSubMessage.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseSubMessage)
-                return object;
-            var message = new $root.AICommon.AIRichResponseSubMessage();
-            switch (object.messageType) {
-            default:
-                if (typeof object.messageType === "number") {
-                    message.messageType = object.messageType;
-                    break;
-                }
-                break;
-            case "AI_RICH_RESPONSE_UNKNOWN":
-            case 0:
-                message.messageType = 0;
-                break;
-            case "AI_RICH_RESPONSE_GRID_IMAGE":
-            case 1:
-                message.messageType = 1;
-                break;
-            case "AI_RICH_RESPONSE_TEXT":
-            case 2:
-                message.messageType = 2;
-                break;
-            case "AI_RICH_RESPONSE_INLINE_IMAGE":
-            case 3:
-                message.messageType = 3;
-                break;
-            case "AI_RICH_RESPONSE_TABLE":
-            case 4:
-                message.messageType = 4;
-                break;
-            case "AI_RICH_RESPONSE_CODE":
-            case 5:
-                message.messageType = 5;
-                break;
-            case "AI_RICH_RESPONSE_DYNAMIC":
-            case 6:
-                message.messageType = 6;
-                break;
-            case "AI_RICH_RESPONSE_MAP":
-            case 7:
-                message.messageType = 7;
-                break;
-            case "AI_RICH_RESPONSE_LATEX":
-            case 8:
-                message.messageType = 8;
-                break;
-            case "AI_RICH_RESPONSE_CONTENT_ITEMS":
-            case 9:
-                message.messageType = 9;
-                break;
-            }
-            if (object.gridImageMetadata != null) {
-                if (typeof object.gridImageMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.gridImageMetadata: object expected");
-                message.gridImageMetadata = $root.AICommon.AIRichResponseGridImageMetadata.fromObject(object.gridImageMetadata);
-            }
-            if (object.messageText != null)
-                message.messageText = String(object.messageText);
-            if (object.imageMetadata != null) {
-                if (typeof object.imageMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.imageMetadata: object expected");
-                message.imageMetadata = $root.AICommon.AIRichResponseInlineImageMetadata.fromObject(object.imageMetadata);
-            }
-            if (object.codeMetadata != null) {
-                if (typeof object.codeMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.codeMetadata: object expected");
-                message.codeMetadata = $root.AICommon.AIRichResponseCodeMetadata.fromObject(object.codeMetadata);
-            }
-            if (object.tableMetadata != null) {
-                if (typeof object.tableMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.tableMetadata: object expected");
-                message.tableMetadata = $root.AICommon.AIRichResponseTableMetadata.fromObject(object.tableMetadata);
-            }
-            if (object.dynamicMetadata != null) {
-                if (typeof object.dynamicMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.dynamicMetadata: object expected");
-                message.dynamicMetadata = $root.AICommon.AIRichResponseDynamicMetadata.fromObject(object.dynamicMetadata);
-            }
-            if (object.latexMetadata != null) {
-                if (typeof object.latexMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.latexMetadata: object expected");
-                message.latexMetadata = $root.AICommon.AIRichResponseLatexMetadata.fromObject(object.latexMetadata);
-            }
-            if (object.mapMetadata != null) {
-                if (typeof object.mapMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.mapMetadata: object expected");
-                message.mapMetadata = $root.AICommon.AIRichResponseMapMetadata.fromObject(object.mapMetadata);
-            }
-            if (object.contentItemsMetadata != null) {
-                if (typeof object.contentItemsMetadata !== "object")
-                    throw TypeError(".AICommon.AIRichResponseSubMessage.contentItemsMetadata: object expected");
-                message.contentItemsMetadata = $root.AICommon.AIRichResponseContentItemsMetadata.fromObject(object.contentItemsMetadata);
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseSubMessage message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {AICommon.AIRichResponseSubMessage} message AIRichResponseSubMessage
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseSubMessage.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (message.messageType != null && message.hasOwnProperty("messageType")) {
-                object.messageType = options.enums === String ? $root.AICommon.AIRichResponseSubMessageType[message.messageType] === undefined ? message.messageType : $root.AICommon.AIRichResponseSubMessageType[message.messageType] : message.messageType;
-                if (options.oneofs)
-                    object._messageType = "messageType";
-            }
-            if (message.gridImageMetadata != null && message.hasOwnProperty("gridImageMetadata")) {
-                object.gridImageMetadata = $root.AICommon.AIRichResponseGridImageMetadata.toObject(message.gridImageMetadata, options);
-                if (options.oneofs)
-                    object._gridImageMetadata = "gridImageMetadata";
-            }
-            if (message.messageText != null && message.hasOwnProperty("messageText")) {
-                object.messageText = message.messageText;
-                if (options.oneofs)
-                    object._messageText = "messageText";
-            }
-            if (message.imageMetadata != null && message.hasOwnProperty("imageMetadata")) {
-                object.imageMetadata = $root.AICommon.AIRichResponseInlineImageMetadata.toObject(message.imageMetadata, options);
-                if (options.oneofs)
-                    object._imageMetadata = "imageMetadata";
-            }
-            if (message.codeMetadata != null && message.hasOwnProperty("codeMetadata")) {
-                object.codeMetadata = $root.AICommon.AIRichResponseCodeMetadata.toObject(message.codeMetadata, options);
-                if (options.oneofs)
-                    object._codeMetadata = "codeMetadata";
-            }
-            if (message.tableMetadata != null && message.hasOwnProperty("tableMetadata")) {
-                object.tableMetadata = $root.AICommon.AIRichResponseTableMetadata.toObject(message.tableMetadata, options);
-                if (options.oneofs)
-                    object._tableMetadata = "tableMetadata";
-            }
-            if (message.dynamicMetadata != null && message.hasOwnProperty("dynamicMetadata")) {
-                object.dynamicMetadata = $root.AICommon.AIRichResponseDynamicMetadata.toObject(message.dynamicMetadata, options);
-                if (options.oneofs)
-                    object._dynamicMetadata = "dynamicMetadata";
-            }
-            if (message.latexMetadata != null && message.hasOwnProperty("latexMetadata")) {
-                object.latexMetadata = $root.AICommon.AIRichResponseLatexMetadata.toObject(message.latexMetadata, options);
-                if (options.oneofs)
-                    object._latexMetadata = "latexMetadata";
-            }
-            if (message.mapMetadata != null && message.hasOwnProperty("mapMetadata")) {
-                object.mapMetadata = $root.AICommon.AIRichResponseMapMetadata.toObject(message.mapMetadata, options);
-                if (options.oneofs)
-                    object._mapMetadata = "mapMetadata";
-            }
-            if (message.contentItemsMetadata != null && message.hasOwnProperty("contentItemsMetadata")) {
-                object.contentItemsMetadata = $root.AICommon.AIRichResponseContentItemsMetadata.toObject(message.contentItemsMetadata, options);
-                if (options.oneofs)
-                    object._contentItemsMetadata = "contentItemsMetadata";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseSubMessage to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseSubMessage.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseSubMessage
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseSubMessage
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseSubMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseSubMessage";
-        };
-
-        return AIRichResponseSubMessage;
-    })();
-
-    AICommon.AIRichResponseContentItemsMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseContentItemsMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseContentItemsMetadata
-         * @property {Array.<AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata>|null} [itemsMetadata] AIRichResponseContentItemsMetadata itemsMetadata
-         * @property {AICommon.AIRichResponseContentItemsMetadata.ContentType|null} [contentType] AIRichResponseContentItemsMetadata contentType
-         */
-
-        /**
-         * Constructs a new AIRichResponseContentItemsMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseContentItemsMetadata.
-         * @implements IAIRichResponseContentItemsMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseContentItemsMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseContentItemsMetadata(properties) {
-            this.itemsMetadata = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseContentItemsMetadata itemsMetadata.
-         * @member {Array.<AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata>} itemsMetadata
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @instance
-         */
-        AIRichResponseContentItemsMetadata.prototype.itemsMetadata = $util.emptyArray;
-
-        /**
-         * AIRichResponseContentItemsMetadata contentType.
-         * @member {AICommon.AIRichResponseContentItemsMetadata.ContentType|null|undefined} contentType
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @instance
-         */
-        AIRichResponseContentItemsMetadata.prototype.contentType = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseContentItemsMetadata _contentType.
-         * @member {"contentType"|undefined} _contentType
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseContentItemsMetadata.prototype, "_contentType", {
-            get: $util.oneOfGetter($oneOfFields = ["contentType"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseContentItemsMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseContentItemsMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseContentItemsMetadata} AIRichResponseContentItemsMetadata instance
-         */
-        AIRichResponseContentItemsMetadata.create = function create(properties) {
-            return new AIRichResponseContentItemsMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseContentItemsMetadata message. Does not implicitly {@link AICommon.AIRichResponseContentItemsMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseContentItemsMetadata} message AIRichResponseContentItemsMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseContentItemsMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.itemsMetadata != null && message.itemsMetadata.length)
-                for (var i = 0; i < message.itemsMetadata.length; ++i)
-                    $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.encode(message.itemsMetadata[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.contentType != null && Object.hasOwnProperty.call(message, "contentType"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.contentType);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseContentItemsMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseContentItemsMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseContentItemsMetadata} message AIRichResponseContentItemsMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseContentItemsMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseContentItemsMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseContentItemsMetadata} AIRichResponseContentItemsMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseContentItemsMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseContentItemsMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.itemsMetadata && message.itemsMetadata.length))
-                            message.itemsMetadata = [];
-                        message.itemsMetadata.push($root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 2: {
-                        message.contentType = reader.int32();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseContentItemsMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseContentItemsMetadata} AIRichResponseContentItemsMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseContentItemsMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseContentItemsMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseContentItemsMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.itemsMetadata != null && message.hasOwnProperty("itemsMetadata")) {
-                if (!Array.isArray(message.itemsMetadata))
-                    return "itemsMetadata: array expected";
-                for (var i = 0; i < message.itemsMetadata.length; ++i) {
-                    var error = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.verify(message.itemsMetadata[i]);
-                    if (error)
-                        return "itemsMetadata." + error;
-                }
-            }
-            if (message.contentType != null && message.hasOwnProperty("contentType")) {
-                properties._contentType = 1;
-                switch (message.contentType) {
-                default:
-                    return "contentType: enum value expected";
-                case 0:
-                case 1:
-                    break;
-                }
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseContentItemsMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseContentItemsMetadata} AIRichResponseContentItemsMetadata
-         */
-        AIRichResponseContentItemsMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseContentItemsMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseContentItemsMetadata();
-            if (object.itemsMetadata) {
-                if (!Array.isArray(object.itemsMetadata))
-                    throw TypeError(".AICommon.AIRichResponseContentItemsMetadata.itemsMetadata: array expected");
-                message.itemsMetadata = [];
-                for (var i = 0; i < object.itemsMetadata.length; ++i) {
-                    if (typeof object.itemsMetadata[i] !== "object")
-                        throw TypeError(".AICommon.AIRichResponseContentItemsMetadata.itemsMetadata: object expected");
-                    message.itemsMetadata[i] = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.fromObject(object.itemsMetadata[i]);
-                }
-            }
-            switch (object.contentType) {
-            default:
-                if (typeof object.contentType === "number") {
-                    message.contentType = object.contentType;
-                    break;
-                }
-                break;
-            case "DEFAULT":
-            case 0:
-                message.contentType = 0;
-                break;
-            case "CAROUSEL":
-            case 1:
-                message.contentType = 1;
-                break;
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseContentItemsMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {AICommon.AIRichResponseContentItemsMetadata} message AIRichResponseContentItemsMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseContentItemsMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.arrays || options.defaults)
-                object.itemsMetadata = [];
-            if (message.itemsMetadata && message.itemsMetadata.length) {
-                object.itemsMetadata = [];
-                for (var j = 0; j < message.itemsMetadata.length; ++j)
-                    object.itemsMetadata[j] = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.toObject(message.itemsMetadata[j], options);
-            }
-            if (message.contentType != null && message.hasOwnProperty("contentType")) {
-                object.contentType = options.enums === String ? $root.AICommon.AIRichResponseContentItemsMetadata.ContentType[message.contentType] === undefined ? message.contentType : $root.AICommon.AIRichResponseContentItemsMetadata.ContentType[message.contentType] : message.contentType;
-                if (options.oneofs)
-                    object._contentType = "contentType";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseContentItemsMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseContentItemsMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseContentItemsMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseContentItemsMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseContentItemsMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseContentItemsMetadata";
-        };
-
-        AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata = (function() {
-
-            /**
-             * Properties of a AIRichResponseContentItemMetadata.
-             * @memberof AICommon.AIRichResponseContentItemsMetadata
-             * @interface IAIRichResponseContentItemMetadata
-             * @property {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem|null} [reelItem] AIRichResponseContentItemMetadata reelItem
-             */
-
-            /**
-             * Constructs a new AIRichResponseContentItemMetadata.
-             * @memberof AICommon.AIRichResponseContentItemsMetadata
-             * @classdesc Represents a AIRichResponseContentItemMetadata.
-             * @implements IAIRichResponseContentItemMetadata
-             * @constructor
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata=} [properties] Properties to set
-             */
-            function AIRichResponseContentItemMetadata(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * AIRichResponseContentItemMetadata reelItem.
-             * @member {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem|null|undefined} reelItem
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @instance
-             */
-            AIRichResponseContentItemMetadata.prototype.reelItem = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AIRichResponseContentItemMetadata aIRichResponseContentItem.
-             * @member {"reelItem"|undefined} aIRichResponseContentItem
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseContentItemMetadata.prototype, "aIRichResponseContentItem", {
-                get: $util.oneOfGetter($oneOfFields = ["reelItem"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new AIRichResponseContentItemMetadata instance using the specified properties.
-             * @function create
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata=} [properties] Properties to set
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata} AIRichResponseContentItemMetadata instance
-             */
-            AIRichResponseContentItemMetadata.create = function create(properties) {
-                return new AIRichResponseContentItemMetadata(properties);
-            };
-
-            /**
-             * Encodes the specified AIRichResponseContentItemMetadata message. Does not implicitly {@link AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.verify|verify} messages.
-             * @function encode
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata} message AIRichResponseContentItemMetadata message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseContentItemMetadata.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.reelItem != null && Object.hasOwnProperty.call(message, "reelItem"))
-                    $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.encode(message.reelItem, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Encodes the specified AIRichResponseContentItemMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseContentItemMetadata} message AIRichResponseContentItemMetadata message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseContentItemMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a AIRichResponseContentItemMetadata message from the specified reader or buffer.
-             * @function decode
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata} AIRichResponseContentItemMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseContentItemMetadata.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.reelItem = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.decode(reader, reader.uint32());
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a AIRichResponseContentItemMetadata message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata} AIRichResponseContentItemMetadata
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseContentItemMetadata.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a AIRichResponseContentItemMetadata message.
-             * @function verify
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            AIRichResponseContentItemMetadata.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.reelItem != null && message.hasOwnProperty("reelItem")) {
-                    properties.aIRichResponseContentItem = 1;
-                    {
-                        var error = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.verify(message.reelItem);
-                        if (error)
-                            return "reelItem." + error;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Creates a AIRichResponseContentItemMetadata message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata} AIRichResponseContentItemMetadata
-             */
-            AIRichResponseContentItemMetadata.fromObject = function fromObject(object) {
-                if (object instanceof $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata)
-                    return object;
-                var message = new $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata();
-                if (object.reelItem != null) {
-                    if (typeof object.reelItem !== "object")
-                        throw TypeError(".AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.reelItem: object expected");
-                    message.reelItem = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.fromObject(object.reelItem);
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a AIRichResponseContentItemMetadata message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata} message AIRichResponseContentItemMetadata
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            AIRichResponseContentItemMetadata.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.reelItem != null && message.hasOwnProperty("reelItem")) {
-                    object.reelItem = $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.toObject(message.reelItem, options);
-                    if (options.oneofs)
-                        object.aIRichResponseContentItem = "reelItem";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this AIRichResponseContentItemMetadata to JSON.
-             * @function toJSON
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            AIRichResponseContentItemMetadata.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseContentItemMetadata
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseContentItemMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata";
-            };
-
-            return AIRichResponseContentItemMetadata;
-        })();
-
-        AIRichResponseContentItemsMetadata.AIRichResponseReelItem = (function() {
-
-            /**
-             * Properties of a AIRichResponseReelItem.
-             * @memberof AICommon.AIRichResponseContentItemsMetadata
-             * @interface IAIRichResponseReelItem
-             * @property {string|null} [title] AIRichResponseReelItem title
-             * @property {string|null} [profileIconUrl] AIRichResponseReelItem profileIconUrl
-             * @property {string|null} [thumbnailUrl] AIRichResponseReelItem thumbnailUrl
-             * @property {string|null} [videoUrl] AIRichResponseReelItem videoUrl
-             */
-
-            /**
-             * Constructs a new AIRichResponseReelItem.
-             * @memberof AICommon.AIRichResponseContentItemsMetadata
-             * @classdesc Represents a AIRichResponseReelItem.
-             * @implements IAIRichResponseReelItem
-             * @constructor
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem=} [properties] Properties to set
-             */
-            function AIRichResponseReelItem(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * AIRichResponseReelItem title.
-             * @member {string|null|undefined} title
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            AIRichResponseReelItem.prototype.title = null;
-
-            /**
-             * AIRichResponseReelItem profileIconUrl.
-             * @member {string|null|undefined} profileIconUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            AIRichResponseReelItem.prototype.profileIconUrl = null;
-
-            /**
-             * AIRichResponseReelItem thumbnailUrl.
-             * @member {string|null|undefined} thumbnailUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            AIRichResponseReelItem.prototype.thumbnailUrl = null;
-
-            /**
-             * AIRichResponseReelItem videoUrl.
-             * @member {string|null|undefined} videoUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            AIRichResponseReelItem.prototype.videoUrl = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AIRichResponseReelItem _title.
-             * @member {"title"|undefined} _title
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseReelItem.prototype, "_title", {
-                get: $util.oneOfGetter($oneOfFields = ["title"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseReelItem _profileIconUrl.
-             * @member {"profileIconUrl"|undefined} _profileIconUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseReelItem.prototype, "_profileIconUrl", {
-                get: $util.oneOfGetter($oneOfFields = ["profileIconUrl"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseReelItem _thumbnailUrl.
-             * @member {"thumbnailUrl"|undefined} _thumbnailUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseReelItem.prototype, "_thumbnailUrl", {
-                get: $util.oneOfGetter($oneOfFields = ["thumbnailUrl"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseReelItem _videoUrl.
-             * @member {"videoUrl"|undefined} _videoUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseReelItem.prototype, "_videoUrl", {
-                get: $util.oneOfGetter($oneOfFields = ["videoUrl"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new AIRichResponseReelItem instance using the specified properties.
-             * @function create
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem=} [properties] Properties to set
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem} AIRichResponseReelItem instance
-             */
-            AIRichResponseReelItem.create = function create(properties) {
-                return new AIRichResponseReelItem(properties);
-            };
-
-            /**
-             * Encodes the specified AIRichResponseReelItem message. Does not implicitly {@link AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.verify|verify} messages.
-             * @function encode
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem} message AIRichResponseReelItem message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseReelItem.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.title != null && Object.hasOwnProperty.call(message, "title"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.title);
-                if (message.profileIconUrl != null && Object.hasOwnProperty.call(message, "profileIconUrl"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.profileIconUrl);
-                if (message.thumbnailUrl != null && Object.hasOwnProperty.call(message, "thumbnailUrl"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.thumbnailUrl);
-                if (message.videoUrl != null && Object.hasOwnProperty.call(message, "videoUrl"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.videoUrl);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified AIRichResponseReelItem message, length delimited. Does not implicitly {@link AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.IAIRichResponseReelItem} message AIRichResponseReelItem message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseReelItem.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a AIRichResponseReelItem message from the specified reader or buffer.
-             * @function decode
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem} AIRichResponseReelItem
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseReelItem.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.title = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.profileIconUrl = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.thumbnailUrl = reader.string();
-                            break;
-                        }
-                    case 4: {
-                            message.videoUrl = reader.string();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a AIRichResponseReelItem message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem} AIRichResponseReelItem
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseReelItem.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a AIRichResponseReelItem message.
-             * @function verify
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            AIRichResponseReelItem.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.title != null && message.hasOwnProperty("title")) {
-                    properties._title = 1;
-                    if (!$util.isString(message.title))
-                        return "title: string expected";
-                }
-                if (message.profileIconUrl != null && message.hasOwnProperty("profileIconUrl")) {
-                    properties._profileIconUrl = 1;
-                    if (!$util.isString(message.profileIconUrl))
-                        return "profileIconUrl: string expected";
-                }
-                if (message.thumbnailUrl != null && message.hasOwnProperty("thumbnailUrl")) {
-                    properties._thumbnailUrl = 1;
-                    if (!$util.isString(message.thumbnailUrl))
-                        return "thumbnailUrl: string expected";
-                }
-                if (message.videoUrl != null && message.hasOwnProperty("videoUrl")) {
-                    properties._videoUrl = 1;
-                    if (!$util.isString(message.videoUrl))
-                        return "videoUrl: string expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a AIRichResponseReelItem message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem} AIRichResponseReelItem
-             */
-            AIRichResponseReelItem.fromObject = function fromObject(object) {
-                if (object instanceof $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem)
-                    return object;
-                var message = new $root.AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem();
-                if (object.title != null)
-                    message.title = String(object.title);
-                if (object.profileIconUrl != null)
-                    message.profileIconUrl = String(object.profileIconUrl);
-                if (object.thumbnailUrl != null)
-                    message.thumbnailUrl = String(object.thumbnailUrl);
-                if (object.videoUrl != null)
-                    message.videoUrl = String(object.videoUrl);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a AIRichResponseReelItem message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem} message AIRichResponseReelItem
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            AIRichResponseReelItem.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.title != null && message.hasOwnProperty("title")) {
-                    object.title = message.title;
-                    if (options.oneofs)
-                        object._title = "title";
-                }
-                if (message.profileIconUrl != null && message.hasOwnProperty("profileIconUrl")) {
-                    object.profileIconUrl = message.profileIconUrl;
-                    if (options.oneofs)
-                        object._profileIconUrl = "profileIconUrl";
-                }
-                if (message.thumbnailUrl != null && message.hasOwnProperty("thumbnailUrl")) {
-                    object.thumbnailUrl = message.thumbnailUrl;
-                    if (options.oneofs)
-                        object._thumbnailUrl = "thumbnailUrl";
-                }
-                if (message.videoUrl != null && message.hasOwnProperty("videoUrl")) {
-                    object.videoUrl = message.videoUrl;
-                    if (options.oneofs)
-                        object._videoUrl = "videoUrl";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this AIRichResponseReelItem to JSON.
-             * @function toJSON
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            AIRichResponseReelItem.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseReelItem
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseReelItem.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseContentItemsMetadata.AIRichResponseReelItem";
-            };
-
-            return AIRichResponseReelItem;
-        })();
-
-        /**
-         * ContentType enum.
-         * @name AICommon.AIRichResponseContentItemsMetadata.ContentType
-         * @enum {number}
-         * @property {number} DEFAULT=0 DEFAULT value
-         * @property {number} CAROUSEL=1 CAROUSEL value
-         */
-        AIRichResponseContentItemsMetadata.ContentType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "DEFAULT"] = 0;
-            values[valuesById[1] = "CAROUSEL"] = 1;
-            return values;
-        })();
-
-        return AIRichResponseContentItemsMetadata;
-    })();
-
-    AICommon.AIRichResponseMapMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseMapMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseMapMetadata
-         * @property {number|null} [centerLatitude] AIRichResponseMapMetadata centerLatitude
-         * @property {number|null} [centerLongitude] AIRichResponseMapMetadata centerLongitude
-         * @property {number|null} [latitudeDelta] AIRichResponseMapMetadata latitudeDelta
-         * @property {number|null} [longitudeDelta] AIRichResponseMapMetadata longitudeDelta
-         * @property {Array.<AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation>|null} [annotations] AIRichResponseMapMetadata annotations
-         * @property {boolean|null} [showInfoList] AIRichResponseMapMetadata showInfoList
-         */
-
-        /**
-         * Constructs a new AIRichResponseMapMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseMapMetadata.
-         * @implements IAIRichResponseMapMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseMapMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseMapMetadata(properties) {
-            this.annotations = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseMapMetadata centerLatitude.
-         * @member {number|null|undefined} centerLatitude
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        AIRichResponseMapMetadata.prototype.centerLatitude = null;
-
-        /**
-         * AIRichResponseMapMetadata centerLongitude.
-         * @member {number|null|undefined} centerLongitude
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        AIRichResponseMapMetadata.prototype.centerLongitude = null;
-
-        /**
-         * AIRichResponseMapMetadata latitudeDelta.
-         * @member {number|null|undefined} latitudeDelta
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        AIRichResponseMapMetadata.prototype.latitudeDelta = null;
-
-        /**
-         * AIRichResponseMapMetadata longitudeDelta.
-         * @member {number|null|undefined} longitudeDelta
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        AIRichResponseMapMetadata.prototype.longitudeDelta = null;
-
-        /**
-         * AIRichResponseMapMetadata annotations.
-         * @member {Array.<AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation>} annotations
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        AIRichResponseMapMetadata.prototype.annotations = $util.emptyArray;
-
-        /**
-         * AIRichResponseMapMetadata showInfoList.
-         * @member {boolean|null|undefined} showInfoList
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        AIRichResponseMapMetadata.prototype.showInfoList = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseMapMetadata _centerLatitude.
-         * @member {"centerLatitude"|undefined} _centerLatitude
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseMapMetadata.prototype, "_centerLatitude", {
-            get: $util.oneOfGetter($oneOfFields = ["centerLatitude"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseMapMetadata _centerLongitude.
-         * @member {"centerLongitude"|undefined} _centerLongitude
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseMapMetadata.prototype, "_centerLongitude", {
-            get: $util.oneOfGetter($oneOfFields = ["centerLongitude"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseMapMetadata _latitudeDelta.
-         * @member {"latitudeDelta"|undefined} _latitudeDelta
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseMapMetadata.prototype, "_latitudeDelta", {
-            get: $util.oneOfGetter($oneOfFields = ["latitudeDelta"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseMapMetadata _longitudeDelta.
-         * @member {"longitudeDelta"|undefined} _longitudeDelta
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseMapMetadata.prototype, "_longitudeDelta", {
-            get: $util.oneOfGetter($oneOfFields = ["longitudeDelta"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseMapMetadata _showInfoList.
-         * @member {"showInfoList"|undefined} _showInfoList
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseMapMetadata.prototype, "_showInfoList", {
-            get: $util.oneOfGetter($oneOfFields = ["showInfoList"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseMapMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseMapMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseMapMetadata} AIRichResponseMapMetadata instance
-         */
-        AIRichResponseMapMetadata.create = function create(properties) {
-            return new AIRichResponseMapMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseMapMetadata message. Does not implicitly {@link AICommon.AIRichResponseMapMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseMapMetadata} message AIRichResponseMapMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseMapMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.centerLatitude != null && Object.hasOwnProperty.call(message, "centerLatitude"))
-                writer.uint32(/* id 1, wireType 1 =*/9).double(message.centerLatitude);
-            if (message.centerLongitude != null && Object.hasOwnProperty.call(message, "centerLongitude"))
-                writer.uint32(/* id 2, wireType 1 =*/17).double(message.centerLongitude);
-            if (message.latitudeDelta != null && Object.hasOwnProperty.call(message, "latitudeDelta"))
-                writer.uint32(/* id 3, wireType 1 =*/25).double(message.latitudeDelta);
-            if (message.longitudeDelta != null && Object.hasOwnProperty.call(message, "longitudeDelta"))
-                writer.uint32(/* id 4, wireType 1 =*/33).double(message.longitudeDelta);
-            if (message.annotations != null && message.annotations.length)
-                for (var i = 0; i < message.annotations.length; ++i)
-                    $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.encode(message.annotations[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.showInfoList != null && Object.hasOwnProperty.call(message, "showInfoList"))
-                writer.uint32(/* id 6, wireType 0 =*/48).bool(message.showInfoList);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseMapMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseMapMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseMapMetadata} message AIRichResponseMapMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseMapMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseMapMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseMapMetadata} AIRichResponseMapMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseMapMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseMapMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.centerLatitude = reader.double();
-                        break;
-                    }
-                case 2: {
-                        message.centerLongitude = reader.double();
-                        break;
-                    }
-                case 3: {
-                        message.latitudeDelta = reader.double();
-                        break;
-                    }
-                case 4: {
-                        message.longitudeDelta = reader.double();
-                        break;
-                    }
-                case 5: {
-                        if (!(message.annotations && message.annotations.length))
-                            message.annotations = [];
-                        message.annotations.push($root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 6: {
-                        message.showInfoList = reader.bool();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseMapMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseMapMetadata} AIRichResponseMapMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseMapMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseMapMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseMapMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.centerLatitude != null && message.hasOwnProperty("centerLatitude")) {
-                properties._centerLatitude = 1;
-                if (typeof message.centerLatitude !== "number")
-                    return "centerLatitude: number expected";
-            }
-            if (message.centerLongitude != null && message.hasOwnProperty("centerLongitude")) {
-                properties._centerLongitude = 1;
-                if (typeof message.centerLongitude !== "number")
-                    return "centerLongitude: number expected";
-            }
-            if (message.latitudeDelta != null && message.hasOwnProperty("latitudeDelta")) {
-                properties._latitudeDelta = 1;
-                if (typeof message.latitudeDelta !== "number")
-                    return "latitudeDelta: number expected";
-            }
-            if (message.longitudeDelta != null && message.hasOwnProperty("longitudeDelta")) {
-                properties._longitudeDelta = 1;
-                if (typeof message.longitudeDelta !== "number")
-                    return "longitudeDelta: number expected";
-            }
-            if (message.annotations != null && message.hasOwnProperty("annotations")) {
-                if (!Array.isArray(message.annotations))
-                    return "annotations: array expected";
-                for (var i = 0; i < message.annotations.length; ++i) {
-                    var error = $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.verify(message.annotations[i]);
-                    if (error)
-                        return "annotations." + error;
-                }
-            }
-            if (message.showInfoList != null && message.hasOwnProperty("showInfoList")) {
-                properties._showInfoList = 1;
-                if (typeof message.showInfoList !== "boolean")
-                    return "showInfoList: boolean expected";
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseMapMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseMapMetadata} AIRichResponseMapMetadata
-         */
-        AIRichResponseMapMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseMapMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseMapMetadata();
-            if (object.centerLatitude != null)
-                message.centerLatitude = Number(object.centerLatitude);
-            if (object.centerLongitude != null)
-                message.centerLongitude = Number(object.centerLongitude);
-            if (object.latitudeDelta != null)
-                message.latitudeDelta = Number(object.latitudeDelta);
-            if (object.longitudeDelta != null)
-                message.longitudeDelta = Number(object.longitudeDelta);
-            if (object.annotations) {
-                if (!Array.isArray(object.annotations))
-                    throw TypeError(".AICommon.AIRichResponseMapMetadata.annotations: array expected");
-                message.annotations = [];
-                for (var i = 0; i < object.annotations.length; ++i) {
-                    if (typeof object.annotations[i] !== "object")
-                        throw TypeError(".AICommon.AIRichResponseMapMetadata.annotations: object expected");
-                    message.annotations[i] = $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.fromObject(object.annotations[i]);
-                }
-            }
-            if (object.showInfoList != null)
-                message.showInfoList = Boolean(object.showInfoList);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseMapMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {AICommon.AIRichResponseMapMetadata} message AIRichResponseMapMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseMapMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.arrays || options.defaults)
-                object.annotations = [];
-            if (message.centerLatitude != null && message.hasOwnProperty("centerLatitude")) {
-                object.centerLatitude = options.json && !isFinite(message.centerLatitude) ? String(message.centerLatitude) : message.centerLatitude;
-                if (options.oneofs)
-                    object._centerLatitude = "centerLatitude";
-            }
-            if (message.centerLongitude != null && message.hasOwnProperty("centerLongitude")) {
-                object.centerLongitude = options.json && !isFinite(message.centerLongitude) ? String(message.centerLongitude) : message.centerLongitude;
-                if (options.oneofs)
-                    object._centerLongitude = "centerLongitude";
-            }
-            if (message.latitudeDelta != null && message.hasOwnProperty("latitudeDelta")) {
-                object.latitudeDelta = options.json && !isFinite(message.latitudeDelta) ? String(message.latitudeDelta) : message.latitudeDelta;
-                if (options.oneofs)
-                    object._latitudeDelta = "latitudeDelta";
-            }
-            if (message.longitudeDelta != null && message.hasOwnProperty("longitudeDelta")) {
-                object.longitudeDelta = options.json && !isFinite(message.longitudeDelta) ? String(message.longitudeDelta) : message.longitudeDelta;
-                if (options.oneofs)
-                    object._longitudeDelta = "longitudeDelta";
-            }
-            if (message.annotations && message.annotations.length) {
-                object.annotations = [];
-                for (var j = 0; j < message.annotations.length; ++j)
-                    object.annotations[j] = $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.toObject(message.annotations[j], options);
-            }
-            if (message.showInfoList != null && message.hasOwnProperty("showInfoList")) {
-                object.showInfoList = message.showInfoList;
-                if (options.oneofs)
-                    object._showInfoList = "showInfoList";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseMapMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseMapMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseMapMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseMapMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseMapMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseMapMetadata";
-        };
-
-        AIRichResponseMapMetadata.AIRichResponseMapAnnotation = (function() {
-
-            /**
-             * Properties of a AIRichResponseMapAnnotation.
-             * @memberof AICommon.AIRichResponseMapMetadata
-             * @interface IAIRichResponseMapAnnotation
-             * @property {number|null} [annotationNumber] AIRichResponseMapAnnotation annotationNumber
-             * @property {number|null} [latitude] AIRichResponseMapAnnotation latitude
-             * @property {number|null} [longitude] AIRichResponseMapAnnotation longitude
-             * @property {string|null} [title] AIRichResponseMapAnnotation title
-             * @property {string|null} [body] AIRichResponseMapAnnotation body
-             */
-
-            /**
-             * Constructs a new AIRichResponseMapAnnotation.
-             * @memberof AICommon.AIRichResponseMapMetadata
-             * @classdesc Represents a AIRichResponseMapAnnotation.
-             * @implements IAIRichResponseMapAnnotation
-             * @constructor
-             * @param {AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation=} [properties] Properties to set
-             */
-            function AIRichResponseMapAnnotation(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * AIRichResponseMapAnnotation annotationNumber.
-             * @member {number|null|undefined} annotationNumber
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            AIRichResponseMapAnnotation.prototype.annotationNumber = null;
-
-            /**
-             * AIRichResponseMapAnnotation latitude.
-             * @member {number|null|undefined} latitude
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            AIRichResponseMapAnnotation.prototype.latitude = null;
-
-            /**
-             * AIRichResponseMapAnnotation longitude.
-             * @member {number|null|undefined} longitude
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            AIRichResponseMapAnnotation.prototype.longitude = null;
-
-            /**
-             * AIRichResponseMapAnnotation title.
-             * @member {string|null|undefined} title
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            AIRichResponseMapAnnotation.prototype.title = null;
-
-            /**
-             * AIRichResponseMapAnnotation body.
-             * @member {string|null|undefined} body
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            AIRichResponseMapAnnotation.prototype.body = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AIRichResponseMapAnnotation _annotationNumber.
-             * @member {"annotationNumber"|undefined} _annotationNumber
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseMapAnnotation.prototype, "_annotationNumber", {
-                get: $util.oneOfGetter($oneOfFields = ["annotationNumber"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseMapAnnotation _latitude.
-             * @member {"latitude"|undefined} _latitude
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseMapAnnotation.prototype, "_latitude", {
-                get: $util.oneOfGetter($oneOfFields = ["latitude"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseMapAnnotation _longitude.
-             * @member {"longitude"|undefined} _longitude
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseMapAnnotation.prototype, "_longitude", {
-                get: $util.oneOfGetter($oneOfFields = ["longitude"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseMapAnnotation _title.
-             * @member {"title"|undefined} _title
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseMapAnnotation.prototype, "_title", {
-                get: $util.oneOfGetter($oneOfFields = ["title"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseMapAnnotation _body.
-             * @member {"body"|undefined} _body
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseMapAnnotation.prototype, "_body", {
-                get: $util.oneOfGetter($oneOfFields = ["body"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new AIRichResponseMapAnnotation instance using the specified properties.
-             * @function create
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation=} [properties] Properties to set
-             * @returns {AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation} AIRichResponseMapAnnotation instance
-             */
-            AIRichResponseMapAnnotation.create = function create(properties) {
-                return new AIRichResponseMapAnnotation(properties);
-            };
-
-            /**
-             * Encodes the specified AIRichResponseMapAnnotation message. Does not implicitly {@link AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.verify|verify} messages.
-             * @function encode
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation} message AIRichResponseMapAnnotation message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseMapAnnotation.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.annotationNumber != null && Object.hasOwnProperty.call(message, "annotationNumber"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.annotationNumber);
-                if (message.latitude != null && Object.hasOwnProperty.call(message, "latitude"))
-                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.latitude);
-                if (message.longitude != null && Object.hasOwnProperty.call(message, "longitude"))
-                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.longitude);
-                if (message.title != null && Object.hasOwnProperty.call(message, "title"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.title);
-                if (message.body != null && Object.hasOwnProperty.call(message, "body"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.body);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified AIRichResponseMapAnnotation message, length delimited. Does not implicitly {@link AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {AICommon.AIRichResponseMapMetadata.IAIRichResponseMapAnnotation} message AIRichResponseMapAnnotation message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseMapAnnotation.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a AIRichResponseMapAnnotation message from the specified reader or buffer.
-             * @function decode
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation} AIRichResponseMapAnnotation
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseMapAnnotation.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.annotationNumber = reader.uint32();
-                            break;
-                        }
-                    case 2: {
-                            message.latitude = reader.double();
-                            break;
-                        }
-                    case 3: {
-                            message.longitude = reader.double();
-                            break;
-                        }
-                    case 4: {
-                            message.title = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.body = reader.string();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a AIRichResponseMapAnnotation message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation} AIRichResponseMapAnnotation
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseMapAnnotation.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a AIRichResponseMapAnnotation message.
-             * @function verify
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            AIRichResponseMapAnnotation.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.annotationNumber != null && message.hasOwnProperty("annotationNumber")) {
-                    properties._annotationNumber = 1;
-                    if (!$util.isInteger(message.annotationNumber))
-                        return "annotationNumber: integer expected";
-                }
-                if (message.latitude != null && message.hasOwnProperty("latitude")) {
-                    properties._latitude = 1;
-                    if (typeof message.latitude !== "number")
-                        return "latitude: number expected";
-                }
-                if (message.longitude != null && message.hasOwnProperty("longitude")) {
-                    properties._longitude = 1;
-                    if (typeof message.longitude !== "number")
-                        return "longitude: number expected";
-                }
-                if (message.title != null && message.hasOwnProperty("title")) {
-                    properties._title = 1;
-                    if (!$util.isString(message.title))
-                        return "title: string expected";
-                }
-                if (message.body != null && message.hasOwnProperty("body")) {
-                    properties._body = 1;
-                    if (!$util.isString(message.body))
-                        return "body: string expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a AIRichResponseMapAnnotation message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation} AIRichResponseMapAnnotation
-             */
-            AIRichResponseMapAnnotation.fromObject = function fromObject(object) {
-                if (object instanceof $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation)
-                    return object;
-                var message = new $root.AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation();
-                if (object.annotationNumber != null)
-                    message.annotationNumber = object.annotationNumber >>> 0;
-                if (object.latitude != null)
-                    message.latitude = Number(object.latitude);
-                if (object.longitude != null)
-                    message.longitude = Number(object.longitude);
-                if (object.title != null)
-                    message.title = String(object.title);
-                if (object.body != null)
-                    message.body = String(object.body);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a AIRichResponseMapAnnotation message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation} message AIRichResponseMapAnnotation
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            AIRichResponseMapAnnotation.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.annotationNumber != null && message.hasOwnProperty("annotationNumber")) {
-                    object.annotationNumber = message.annotationNumber;
-                    if (options.oneofs)
-                        object._annotationNumber = "annotationNumber";
-                }
-                if (message.latitude != null && message.hasOwnProperty("latitude")) {
-                    object.latitude = options.json && !isFinite(message.latitude) ? String(message.latitude) : message.latitude;
-                    if (options.oneofs)
-                        object._latitude = "latitude";
-                }
-                if (message.longitude != null && message.hasOwnProperty("longitude")) {
-                    object.longitude = options.json && !isFinite(message.longitude) ? String(message.longitude) : message.longitude;
-                    if (options.oneofs)
-                        object._longitude = "longitude";
-                }
-                if (message.title != null && message.hasOwnProperty("title")) {
-                    object.title = message.title;
-                    if (options.oneofs)
-                        object._title = "title";
-                }
-                if (message.body != null && message.hasOwnProperty("body")) {
-                    object.body = message.body;
-                    if (options.oneofs)
-                        object._body = "body";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this AIRichResponseMapAnnotation to JSON.
-             * @function toJSON
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            AIRichResponseMapAnnotation.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseMapAnnotation
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseMapAnnotation.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseMapMetadata.AIRichResponseMapAnnotation";
-            };
-
-            return AIRichResponseMapAnnotation;
-        })();
-
-        return AIRichResponseMapMetadata;
-    })();
-
-    AICommon.AIRichResponseLatexMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseLatexMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseLatexMetadata
-         * @property {string|null} [text] AIRichResponseLatexMetadata text
-         * @property {Array.<AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression>|null} [expressions] AIRichResponseLatexMetadata expressions
-         */
-
-        /**
-         * Constructs a new AIRichResponseLatexMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseLatexMetadata.
-         * @implements IAIRichResponseLatexMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseLatexMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseLatexMetadata(properties) {
-            this.expressions = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseLatexMetadata text.
-         * @member {string|null|undefined} text
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @instance
-         */
-        AIRichResponseLatexMetadata.prototype.text = null;
-
-        /**
-         * AIRichResponseLatexMetadata expressions.
-         * @member {Array.<AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression>} expressions
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @instance
-         */
-        AIRichResponseLatexMetadata.prototype.expressions = $util.emptyArray;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseLatexMetadata _text.
-         * @member {"text"|undefined} _text
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseLatexMetadata.prototype, "_text", {
-            get: $util.oneOfGetter($oneOfFields = ["text"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseLatexMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseLatexMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseLatexMetadata} AIRichResponseLatexMetadata instance
-         */
-        AIRichResponseLatexMetadata.create = function create(properties) {
-            return new AIRichResponseLatexMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseLatexMetadata message. Does not implicitly {@link AICommon.AIRichResponseLatexMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseLatexMetadata} message AIRichResponseLatexMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseLatexMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.text != null && Object.hasOwnProperty.call(message, "text"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.text);
-            if (message.expressions != null && message.expressions.length)
-                for (var i = 0; i < message.expressions.length; ++i)
-                    $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.encode(message.expressions[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseLatexMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseLatexMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseLatexMetadata} message AIRichResponseLatexMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseLatexMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseLatexMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseLatexMetadata} AIRichResponseLatexMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseLatexMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseLatexMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.text = reader.string();
-                        break;
-                    }
-                case 2: {
-                        if (!(message.expressions && message.expressions.length))
-                            message.expressions = [];
-                        message.expressions.push($root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.decode(reader, reader.uint32()));
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseLatexMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseLatexMetadata} AIRichResponseLatexMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseLatexMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseLatexMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseLatexMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.text != null && message.hasOwnProperty("text")) {
-                properties._text = 1;
-                if (!$util.isString(message.text))
-                    return "text: string expected";
-            }
-            if (message.expressions != null && message.hasOwnProperty("expressions")) {
-                if (!Array.isArray(message.expressions))
-                    return "expressions: array expected";
-                for (var i = 0; i < message.expressions.length; ++i) {
-                    var error = $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.verify(message.expressions[i]);
-                    if (error)
-                        return "expressions." + error;
-                }
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseLatexMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseLatexMetadata} AIRichResponseLatexMetadata
-         */
-        AIRichResponseLatexMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseLatexMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseLatexMetadata();
-            if (object.text != null)
-                message.text = String(object.text);
-            if (object.expressions) {
-                if (!Array.isArray(object.expressions))
-                    throw TypeError(".AICommon.AIRichResponseLatexMetadata.expressions: array expected");
-                message.expressions = [];
-                for (var i = 0; i < object.expressions.length; ++i) {
-                    if (typeof object.expressions[i] !== "object")
-                        throw TypeError(".AICommon.AIRichResponseLatexMetadata.expressions: object expected");
-                    message.expressions[i] = $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.fromObject(object.expressions[i]);
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseLatexMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {AICommon.AIRichResponseLatexMetadata} message AIRichResponseLatexMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseLatexMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.arrays || options.defaults)
-                object.expressions = [];
-            if (message.text != null && message.hasOwnProperty("text")) {
-                object.text = message.text;
-                if (options.oneofs)
-                    object._text = "text";
-            }
-            if (message.expressions && message.expressions.length) {
-                object.expressions = [];
-                for (var j = 0; j < message.expressions.length; ++j)
-                    object.expressions[j] = $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.toObject(message.expressions[j], options);
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseLatexMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseLatexMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseLatexMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseLatexMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseLatexMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseLatexMetadata";
-        };
-
-        AIRichResponseLatexMetadata.AIRichResponseLatexExpression = (function() {
-
-            /**
-             * Properties of a AIRichResponseLatexExpression.
-             * @memberof AICommon.AIRichResponseLatexMetadata
-             * @interface IAIRichResponseLatexExpression
-             * @property {string|null} [latexExpression] AIRichResponseLatexExpression latexExpression
-             * @property {string|null} [url] AIRichResponseLatexExpression url
-             * @property {number|null} [width] AIRichResponseLatexExpression width
-             * @property {number|null} [height] AIRichResponseLatexExpression height
-             * @property {number|null} [fontHeight] AIRichResponseLatexExpression fontHeight
-             * @property {number|null} [imageTopPadding] AIRichResponseLatexExpression imageTopPadding
-             * @property {number|null} [imageLeadingPadding] AIRichResponseLatexExpression imageLeadingPadding
-             * @property {number|null} [imageBottomPadding] AIRichResponseLatexExpression imageBottomPadding
-             * @property {number|null} [imageTrailingPadding] AIRichResponseLatexExpression imageTrailingPadding
-             */
-
-            /**
-             * Constructs a new AIRichResponseLatexExpression.
-             * @memberof AICommon.AIRichResponseLatexMetadata
-             * @classdesc Represents a AIRichResponseLatexExpression.
-             * @implements IAIRichResponseLatexExpression
-             * @constructor
-             * @param {AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression=} [properties] Properties to set
-             */
-            function AIRichResponseLatexExpression(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * AIRichResponseLatexExpression latexExpression.
-             * @member {string|null|undefined} latexExpression
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.latexExpression = null;
-
-            /**
-             * AIRichResponseLatexExpression url.
-             * @member {string|null|undefined} url
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.url = null;
-
-            /**
-             * AIRichResponseLatexExpression width.
-             * @member {number|null|undefined} width
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.width = null;
-
-            /**
-             * AIRichResponseLatexExpression height.
-             * @member {number|null|undefined} height
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.height = null;
-
-            /**
-             * AIRichResponseLatexExpression fontHeight.
-             * @member {number|null|undefined} fontHeight
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.fontHeight = null;
-
-            /**
-             * AIRichResponseLatexExpression imageTopPadding.
-             * @member {number|null|undefined} imageTopPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.imageTopPadding = null;
-
-            /**
-             * AIRichResponseLatexExpression imageLeadingPadding.
-             * @member {number|null|undefined} imageLeadingPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.imageLeadingPadding = null;
-
-            /**
-             * AIRichResponseLatexExpression imageBottomPadding.
-             * @member {number|null|undefined} imageBottomPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.imageBottomPadding = null;
-
-            /**
-             * AIRichResponseLatexExpression imageTrailingPadding.
-             * @member {number|null|undefined} imageTrailingPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            AIRichResponseLatexExpression.prototype.imageTrailingPadding = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AIRichResponseLatexExpression _latexExpression.
-             * @member {"latexExpression"|undefined} _latexExpression
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_latexExpression", {
-                get: $util.oneOfGetter($oneOfFields = ["latexExpression"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _url.
-             * @member {"url"|undefined} _url
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_url", {
-                get: $util.oneOfGetter($oneOfFields = ["url"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _width.
-             * @member {"width"|undefined} _width
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_width", {
-                get: $util.oneOfGetter($oneOfFields = ["width"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _height.
-             * @member {"height"|undefined} _height
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_height", {
-                get: $util.oneOfGetter($oneOfFields = ["height"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _fontHeight.
-             * @member {"fontHeight"|undefined} _fontHeight
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_fontHeight", {
-                get: $util.oneOfGetter($oneOfFields = ["fontHeight"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _imageTopPadding.
-             * @member {"imageTopPadding"|undefined} _imageTopPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_imageTopPadding", {
-                get: $util.oneOfGetter($oneOfFields = ["imageTopPadding"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _imageLeadingPadding.
-             * @member {"imageLeadingPadding"|undefined} _imageLeadingPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_imageLeadingPadding", {
-                get: $util.oneOfGetter($oneOfFields = ["imageLeadingPadding"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _imageBottomPadding.
-             * @member {"imageBottomPadding"|undefined} _imageBottomPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_imageBottomPadding", {
-                get: $util.oneOfGetter($oneOfFields = ["imageBottomPadding"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseLatexExpression _imageTrailingPadding.
-             * @member {"imageTrailingPadding"|undefined} _imageTrailingPadding
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseLatexExpression.prototype, "_imageTrailingPadding", {
-                get: $util.oneOfGetter($oneOfFields = ["imageTrailingPadding"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new AIRichResponseLatexExpression instance using the specified properties.
-             * @function create
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression=} [properties] Properties to set
-             * @returns {AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression} AIRichResponseLatexExpression instance
-             */
-            AIRichResponseLatexExpression.create = function create(properties) {
-                return new AIRichResponseLatexExpression(properties);
-            };
-
-            /**
-             * Encodes the specified AIRichResponseLatexExpression message. Does not implicitly {@link AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.verify|verify} messages.
-             * @function encode
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression} message AIRichResponseLatexExpression message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseLatexExpression.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.latexExpression != null && Object.hasOwnProperty.call(message, "latexExpression"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.latexExpression);
-                if (message.url != null && Object.hasOwnProperty.call(message, "url"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.url);
-                if (message.width != null && Object.hasOwnProperty.call(message, "width"))
-                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.width);
-                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
-                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.height);
-                if (message.fontHeight != null && Object.hasOwnProperty.call(message, "fontHeight"))
-                    writer.uint32(/* id 5, wireType 1 =*/41).double(message.fontHeight);
-                if (message.imageTopPadding != null && Object.hasOwnProperty.call(message, "imageTopPadding"))
-                    writer.uint32(/* id 6, wireType 1 =*/49).double(message.imageTopPadding);
-                if (message.imageLeadingPadding != null && Object.hasOwnProperty.call(message, "imageLeadingPadding"))
-                    writer.uint32(/* id 7, wireType 1 =*/57).double(message.imageLeadingPadding);
-                if (message.imageBottomPadding != null && Object.hasOwnProperty.call(message, "imageBottomPadding"))
-                    writer.uint32(/* id 8, wireType 1 =*/65).double(message.imageBottomPadding);
-                if (message.imageTrailingPadding != null && Object.hasOwnProperty.call(message, "imageTrailingPadding"))
-                    writer.uint32(/* id 9, wireType 1 =*/73).double(message.imageTrailingPadding);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified AIRichResponseLatexExpression message, length delimited. Does not implicitly {@link AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {AICommon.AIRichResponseLatexMetadata.IAIRichResponseLatexExpression} message AIRichResponseLatexExpression message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseLatexExpression.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a AIRichResponseLatexExpression message from the specified reader or buffer.
-             * @function decode
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression} AIRichResponseLatexExpression
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseLatexExpression.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.latexExpression = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.url = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.width = reader.double();
-                            break;
-                        }
-                    case 4: {
-                            message.height = reader.double();
-                            break;
-                        }
-                    case 5: {
-                            message.fontHeight = reader.double();
-                            break;
-                        }
-                    case 6: {
-                            message.imageTopPadding = reader.double();
-                            break;
-                        }
-                    case 7: {
-                            message.imageLeadingPadding = reader.double();
-                            break;
-                        }
-                    case 8: {
-                            message.imageBottomPadding = reader.double();
-                            break;
-                        }
-                    case 9: {
-                            message.imageTrailingPadding = reader.double();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a AIRichResponseLatexExpression message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression} AIRichResponseLatexExpression
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseLatexExpression.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a AIRichResponseLatexExpression message.
-             * @function verify
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            AIRichResponseLatexExpression.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.latexExpression != null && message.hasOwnProperty("latexExpression")) {
-                    properties._latexExpression = 1;
-                    if (!$util.isString(message.latexExpression))
-                        return "latexExpression: string expected";
-                }
-                if (message.url != null && message.hasOwnProperty("url")) {
-                    properties._url = 1;
-                    if (!$util.isString(message.url))
-                        return "url: string expected";
-                }
-                if (message.width != null && message.hasOwnProperty("width")) {
-                    properties._width = 1;
-                    if (typeof message.width !== "number")
-                        return "width: number expected";
-                }
-                if (message.height != null && message.hasOwnProperty("height")) {
-                    properties._height = 1;
-                    if (typeof message.height !== "number")
-                        return "height: number expected";
-                }
-                if (message.fontHeight != null && message.hasOwnProperty("fontHeight")) {
-                    properties._fontHeight = 1;
-                    if (typeof message.fontHeight !== "number")
-                        return "fontHeight: number expected";
-                }
-                if (message.imageTopPadding != null && message.hasOwnProperty("imageTopPadding")) {
-                    properties._imageTopPadding = 1;
-                    if (typeof message.imageTopPadding !== "number")
-                        return "imageTopPadding: number expected";
-                }
-                if (message.imageLeadingPadding != null && message.hasOwnProperty("imageLeadingPadding")) {
-                    properties._imageLeadingPadding = 1;
-                    if (typeof message.imageLeadingPadding !== "number")
-                        return "imageLeadingPadding: number expected";
-                }
-                if (message.imageBottomPadding != null && message.hasOwnProperty("imageBottomPadding")) {
-                    properties._imageBottomPadding = 1;
-                    if (typeof message.imageBottomPadding !== "number")
-                        return "imageBottomPadding: number expected";
-                }
-                if (message.imageTrailingPadding != null && message.hasOwnProperty("imageTrailingPadding")) {
-                    properties._imageTrailingPadding = 1;
-                    if (typeof message.imageTrailingPadding !== "number")
-                        return "imageTrailingPadding: number expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a AIRichResponseLatexExpression message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression} AIRichResponseLatexExpression
-             */
-            AIRichResponseLatexExpression.fromObject = function fromObject(object) {
-                if (object instanceof $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression)
-                    return object;
-                var message = new $root.AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression();
-                if (object.latexExpression != null)
-                    message.latexExpression = String(object.latexExpression);
-                if (object.url != null)
-                    message.url = String(object.url);
-                if (object.width != null)
-                    message.width = Number(object.width);
-                if (object.height != null)
-                    message.height = Number(object.height);
-                if (object.fontHeight != null)
-                    message.fontHeight = Number(object.fontHeight);
-                if (object.imageTopPadding != null)
-                    message.imageTopPadding = Number(object.imageTopPadding);
-                if (object.imageLeadingPadding != null)
-                    message.imageLeadingPadding = Number(object.imageLeadingPadding);
-                if (object.imageBottomPadding != null)
-                    message.imageBottomPadding = Number(object.imageBottomPadding);
-                if (object.imageTrailingPadding != null)
-                    message.imageTrailingPadding = Number(object.imageTrailingPadding);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a AIRichResponseLatexExpression message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression} message AIRichResponseLatexExpression
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            AIRichResponseLatexExpression.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.latexExpression != null && message.hasOwnProperty("latexExpression")) {
-                    object.latexExpression = message.latexExpression;
-                    if (options.oneofs)
-                        object._latexExpression = "latexExpression";
-                }
-                if (message.url != null && message.hasOwnProperty("url")) {
-                    object.url = message.url;
-                    if (options.oneofs)
-                        object._url = "url";
-                }
-                if (message.width != null && message.hasOwnProperty("width")) {
-                    object.width = options.json && !isFinite(message.width) ? String(message.width) : message.width;
-                    if (options.oneofs)
-                        object._width = "width";
-                }
-                if (message.height != null && message.hasOwnProperty("height")) {
-                    object.height = options.json && !isFinite(message.height) ? String(message.height) : message.height;
-                    if (options.oneofs)
-                        object._height = "height";
-                }
-                if (message.fontHeight != null && message.hasOwnProperty("fontHeight")) {
-                    object.fontHeight = options.json && !isFinite(message.fontHeight) ? String(message.fontHeight) : message.fontHeight;
-                    if (options.oneofs)
-                        object._fontHeight = "fontHeight";
-                }
-                if (message.imageTopPadding != null && message.hasOwnProperty("imageTopPadding")) {
-                    object.imageTopPadding = options.json && !isFinite(message.imageTopPadding) ? String(message.imageTopPadding) : message.imageTopPadding;
-                    if (options.oneofs)
-                        object._imageTopPadding = "imageTopPadding";
-                }
-                if (message.imageLeadingPadding != null && message.hasOwnProperty("imageLeadingPadding")) {
-                    object.imageLeadingPadding = options.json && !isFinite(message.imageLeadingPadding) ? String(message.imageLeadingPadding) : message.imageLeadingPadding;
-                    if (options.oneofs)
-                        object._imageLeadingPadding = "imageLeadingPadding";
-                }
-                if (message.imageBottomPadding != null && message.hasOwnProperty("imageBottomPadding")) {
-                    object.imageBottomPadding = options.json && !isFinite(message.imageBottomPadding) ? String(message.imageBottomPadding) : message.imageBottomPadding;
-                    if (options.oneofs)
-                        object._imageBottomPadding = "imageBottomPadding";
-                }
-                if (message.imageTrailingPadding != null && message.hasOwnProperty("imageTrailingPadding")) {
-                    object.imageTrailingPadding = options.json && !isFinite(message.imageTrailingPadding) ? String(message.imageTrailingPadding) : message.imageTrailingPadding;
-                    if (options.oneofs)
-                        object._imageTrailingPadding = "imageTrailingPadding";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this AIRichResponseLatexExpression to JSON.
-             * @function toJSON
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            AIRichResponseLatexExpression.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseLatexExpression
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseLatexExpression.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseLatexMetadata.AIRichResponseLatexExpression";
-            };
-
-            return AIRichResponseLatexExpression;
-        })();
-
-        return AIRichResponseLatexMetadata;
-    })();
-
     AICommon.AIRichResponseUnifiedResponse = (function() {
 
         /**
@@ -4854,12 +2461,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * AIRichResponseUnifiedResponse _data.
-         * @member {"data"|undefined} _data
-         * @memberof AICommon.AIRichResponseUnifiedResponse
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(AIRichResponseUnifiedResponse.prototype, "_data", {
             get: $util.oneOfGetter($oneOfFields = ["data"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -5045,2470 +2647,6 @@ $root.AICommon = (function() {
         return AIRichResponseUnifiedResponse;
     })();
 
-    AICommon.AIRichResponseDynamicMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseDynamicMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseDynamicMetadata
-         * @property {AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType|null} [type] AIRichResponseDynamicMetadata type
-         * @property {number|Long|null} [version] AIRichResponseDynamicMetadata version
-         * @property {string|null} [url] AIRichResponseDynamicMetadata url
-         * @property {number|null} [loopCount] AIRichResponseDynamicMetadata loopCount
-         */
-
-        /**
-         * Constructs a new AIRichResponseDynamicMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseDynamicMetadata.
-         * @implements IAIRichResponseDynamicMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseDynamicMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseDynamicMetadata(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseDynamicMetadata type.
-         * @member {AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType|null|undefined} type
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        AIRichResponseDynamicMetadata.prototype.type = null;
-
-        /**
-         * AIRichResponseDynamicMetadata version.
-         * @member {number|Long|null|undefined} version
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        AIRichResponseDynamicMetadata.prototype.version = null;
-
-        /**
-         * AIRichResponseDynamicMetadata url.
-         * @member {string|null|undefined} url
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        AIRichResponseDynamicMetadata.prototype.url = null;
-
-        /**
-         * AIRichResponseDynamicMetadata loopCount.
-         * @member {number|null|undefined} loopCount
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        AIRichResponseDynamicMetadata.prototype.loopCount = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseDynamicMetadata _type.
-         * @member {"type"|undefined} _type
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseDynamicMetadata.prototype, "_type", {
-            get: $util.oneOfGetter($oneOfFields = ["type"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseDynamicMetadata _version.
-         * @member {"version"|undefined} _version
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseDynamicMetadata.prototype, "_version", {
-            get: $util.oneOfGetter($oneOfFields = ["version"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseDynamicMetadata _url.
-         * @member {"url"|undefined} _url
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseDynamicMetadata.prototype, "_url", {
-            get: $util.oneOfGetter($oneOfFields = ["url"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseDynamicMetadata _loopCount.
-         * @member {"loopCount"|undefined} _loopCount
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseDynamicMetadata.prototype, "_loopCount", {
-            get: $util.oneOfGetter($oneOfFields = ["loopCount"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseDynamicMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseDynamicMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseDynamicMetadata} AIRichResponseDynamicMetadata instance
-         */
-        AIRichResponseDynamicMetadata.create = function create(properties) {
-            return new AIRichResponseDynamicMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseDynamicMetadata message. Does not implicitly {@link AICommon.AIRichResponseDynamicMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseDynamicMetadata} message AIRichResponseDynamicMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseDynamicMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-            if (message.version != null && Object.hasOwnProperty.call(message, "version"))
-                writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.version);
-            if (message.url != null && Object.hasOwnProperty.call(message, "url"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.url);
-            if (message.loopCount != null && Object.hasOwnProperty.call(message, "loopCount"))
-                writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.loopCount);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseDynamicMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseDynamicMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseDynamicMetadata} message AIRichResponseDynamicMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseDynamicMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseDynamicMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseDynamicMetadata} AIRichResponseDynamicMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseDynamicMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseDynamicMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.type = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.version = reader.uint64();
-                        break;
-                    }
-                case 3: {
-                        message.url = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.loopCount = reader.uint32();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseDynamicMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseDynamicMetadata} AIRichResponseDynamicMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseDynamicMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseDynamicMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseDynamicMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.type != null && message.hasOwnProperty("type")) {
-                properties._type = 1;
-                switch (message.type) {
-                default:
-                    return "type: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
-            }
-            if (message.version != null && message.hasOwnProperty("version")) {
-                properties._version = 1;
-                if (!$util.isInteger(message.version) && !(message.version && $util.isInteger(message.version.low) && $util.isInteger(message.version.high)))
-                    return "version: integer|Long expected";
-            }
-            if (message.url != null && message.hasOwnProperty("url")) {
-                properties._url = 1;
-                if (!$util.isString(message.url))
-                    return "url: string expected";
-            }
-            if (message.loopCount != null && message.hasOwnProperty("loopCount")) {
-                properties._loopCount = 1;
-                if (!$util.isInteger(message.loopCount))
-                    return "loopCount: integer expected";
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseDynamicMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseDynamicMetadata} AIRichResponseDynamicMetadata
-         */
-        AIRichResponseDynamicMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseDynamicMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseDynamicMetadata();
-            switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
-            case "AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_UNKNOWN":
-            case 0:
-                message.type = 0;
-                break;
-            case "AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_IMAGE":
-            case 1:
-                message.type = 1;
-                break;
-            case "AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_GIF":
-            case 2:
-                message.type = 2;
-                break;
-            }
-            if (object.version != null)
-                if ($util.Long)
-                    (message.version = $util.Long.fromValue(object.version)).unsigned = true;
-                else if (typeof object.version === "string")
-                    message.version = parseInt(object.version, 10);
-                else if (typeof object.version === "number")
-                    message.version = object.version;
-                else if (typeof object.version === "object")
-                    message.version = new $util.LongBits(object.version.low >>> 0, object.version.high >>> 0).toNumber(true);
-            if (object.url != null)
-                message.url = String(object.url);
-            if (object.loopCount != null)
-                message.loopCount = object.loopCount >>> 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseDynamicMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {AICommon.AIRichResponseDynamicMetadata} message AIRichResponseDynamicMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseDynamicMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (message.type != null && message.hasOwnProperty("type")) {
-                object.type = options.enums === String ? $root.AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType[message.type] === undefined ? message.type : $root.AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType[message.type] : message.type;
-                if (options.oneofs)
-                    object._type = "type";
-            }
-            if (message.version != null && message.hasOwnProperty("version")) {
-                if (typeof message.version === "number")
-                    object.version = options.longs === String ? String(message.version) : message.version;
-                else
-                    object.version = options.longs === String ? $util.Long.prototype.toString.call(message.version) : options.longs === Number ? new $util.LongBits(message.version.low >>> 0, message.version.high >>> 0).toNumber(true) : message.version;
-                if (options.oneofs)
-                    object._version = "version";
-            }
-            if (message.url != null && message.hasOwnProperty("url")) {
-                object.url = message.url;
-                if (options.oneofs)
-                    object._url = "url";
-            }
-            if (message.loopCount != null && message.hasOwnProperty("loopCount")) {
-                object.loopCount = message.loopCount;
-                if (options.oneofs)
-                    object._loopCount = "loopCount";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseDynamicMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseDynamicMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseDynamicMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseDynamicMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseDynamicMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseDynamicMetadata";
-        };
-
-        /**
-         * AIRichResponseDynamicMetadataType enum.
-         * @name AICommon.AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType
-         * @enum {number}
-         * @property {number} AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_UNKNOWN=0 AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_UNKNOWN value
-         * @property {number} AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_IMAGE=1 AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_IMAGE value
-         * @property {number} AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_GIF=2 AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_GIF value
-         */
-        AIRichResponseDynamicMetadata.AIRichResponseDynamicMetadataType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_UNKNOWN"] = 0;
-            values[valuesById[1] = "AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_IMAGE"] = 1;
-            values[valuesById[2] = "AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_GIF"] = 2;
-            return values;
-        })();
-
-        return AIRichResponseDynamicMetadata;
-    })();
-
-    AICommon.AIRichResponseTableMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseTableMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseTableMetadata
-         * @property {Array.<AICommon.AIRichResponseTableMetadata.IAIRichResponseTableRow>|null} [rows] AIRichResponseTableMetadata rows
-         * @property {string|null} [title] AIRichResponseTableMetadata title
-         */
-
-        /**
-         * Constructs a new AIRichResponseTableMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseTableMetadata.
-         * @implements IAIRichResponseTableMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseTableMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseTableMetadata(properties) {
-            this.rows = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseTableMetadata rows.
-         * @member {Array.<AICommon.AIRichResponseTableMetadata.IAIRichResponseTableRow>} rows
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @instance
-         */
-        AIRichResponseTableMetadata.prototype.rows = $util.emptyArray;
-
-        /**
-         * AIRichResponseTableMetadata title.
-         * @member {string|null|undefined} title
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @instance
-         */
-        AIRichResponseTableMetadata.prototype.title = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseTableMetadata _title.
-         * @member {"title"|undefined} _title
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseTableMetadata.prototype, "_title", {
-            get: $util.oneOfGetter($oneOfFields = ["title"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseTableMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseTableMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseTableMetadata} AIRichResponseTableMetadata instance
-         */
-        AIRichResponseTableMetadata.create = function create(properties) {
-            return new AIRichResponseTableMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseTableMetadata message. Does not implicitly {@link AICommon.AIRichResponseTableMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseTableMetadata} message AIRichResponseTableMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseTableMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.rows != null && message.rows.length)
-                for (var i = 0; i < message.rows.length; ++i)
-                    $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.encode(message.rows[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.title != null && Object.hasOwnProperty.call(message, "title"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.title);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseTableMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseTableMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseTableMetadata} message AIRichResponseTableMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseTableMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseTableMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseTableMetadata} AIRichResponseTableMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseTableMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseTableMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        if (!(message.rows && message.rows.length))
-                            message.rows = [];
-                        message.rows.push($root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.decode(reader, reader.uint32()));
-                        break;
-                    }
-                case 2: {
-                        message.title = reader.string();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseTableMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseTableMetadata} AIRichResponseTableMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseTableMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseTableMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseTableMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.rows != null && message.hasOwnProperty("rows")) {
-                if (!Array.isArray(message.rows))
-                    return "rows: array expected";
-                for (var i = 0; i < message.rows.length; ++i) {
-                    var error = $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.verify(message.rows[i]);
-                    if (error)
-                        return "rows." + error;
-                }
-            }
-            if (message.title != null && message.hasOwnProperty("title")) {
-                properties._title = 1;
-                if (!$util.isString(message.title))
-                    return "title: string expected";
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseTableMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseTableMetadata} AIRichResponseTableMetadata
-         */
-        AIRichResponseTableMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseTableMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseTableMetadata();
-            if (object.rows) {
-                if (!Array.isArray(object.rows))
-                    throw TypeError(".AICommon.AIRichResponseTableMetadata.rows: array expected");
-                message.rows = [];
-                for (var i = 0; i < object.rows.length; ++i) {
-                    if (typeof object.rows[i] !== "object")
-                        throw TypeError(".AICommon.AIRichResponseTableMetadata.rows: object expected");
-                    message.rows[i] = $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.fromObject(object.rows[i]);
-                }
-            }
-            if (object.title != null)
-                message.title = String(object.title);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseTableMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {AICommon.AIRichResponseTableMetadata} message AIRichResponseTableMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseTableMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.arrays || options.defaults)
-                object.rows = [];
-            if (message.rows && message.rows.length) {
-                object.rows = [];
-                for (var j = 0; j < message.rows.length; ++j)
-                    object.rows[j] = $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.toObject(message.rows[j], options);
-            }
-            if (message.title != null && message.hasOwnProperty("title")) {
-                object.title = message.title;
-                if (options.oneofs)
-                    object._title = "title";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseTableMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseTableMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseTableMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseTableMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseTableMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseTableMetadata";
-        };
-
-        AIRichResponseTableMetadata.AIRichResponseTableRow = (function() {
-
-            /**
-             * Properties of a AIRichResponseTableRow.
-             * @memberof AICommon.AIRichResponseTableMetadata
-             * @interface IAIRichResponseTableRow
-             * @property {Array.<string>|null} [items] AIRichResponseTableRow items
-             * @property {boolean|null} [isHeading] AIRichResponseTableRow isHeading
-             */
-
-            /**
-             * Constructs a new AIRichResponseTableRow.
-             * @memberof AICommon.AIRichResponseTableMetadata
-             * @classdesc Represents a AIRichResponseTableRow.
-             * @implements IAIRichResponseTableRow
-             * @constructor
-             * @param {AICommon.AIRichResponseTableMetadata.IAIRichResponseTableRow=} [properties] Properties to set
-             */
-            function AIRichResponseTableRow(properties) {
-                this.items = [];
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * AIRichResponseTableRow items.
-             * @member {Array.<string>} items
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @instance
-             */
-            AIRichResponseTableRow.prototype.items = $util.emptyArray;
-
-            /**
-             * AIRichResponseTableRow isHeading.
-             * @member {boolean|null|undefined} isHeading
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @instance
-             */
-            AIRichResponseTableRow.prototype.isHeading = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AIRichResponseTableRow _isHeading.
-             * @member {"isHeading"|undefined} _isHeading
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseTableRow.prototype, "_isHeading", {
-                get: $util.oneOfGetter($oneOfFields = ["isHeading"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new AIRichResponseTableRow instance using the specified properties.
-             * @function create
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {AICommon.AIRichResponseTableMetadata.IAIRichResponseTableRow=} [properties] Properties to set
-             * @returns {AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow} AIRichResponseTableRow instance
-             */
-            AIRichResponseTableRow.create = function create(properties) {
-                return new AIRichResponseTableRow(properties);
-            };
-
-            /**
-             * Encodes the specified AIRichResponseTableRow message. Does not implicitly {@link AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.verify|verify} messages.
-             * @function encode
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {AICommon.AIRichResponseTableMetadata.IAIRichResponseTableRow} message AIRichResponseTableRow message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseTableRow.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.items != null && message.items.length)
-                    for (var i = 0; i < message.items.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.items[i]);
-                if (message.isHeading != null && Object.hasOwnProperty.call(message, "isHeading"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isHeading);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified AIRichResponseTableRow message, length delimited. Does not implicitly {@link AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {AICommon.AIRichResponseTableMetadata.IAIRichResponseTableRow} message AIRichResponseTableRow message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseTableRow.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a AIRichResponseTableRow message from the specified reader or buffer.
-             * @function decode
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow} AIRichResponseTableRow
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseTableRow.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            if (!(message.items && message.items.length))
-                                message.items = [];
-                            message.items.push(reader.string());
-                            break;
-                        }
-                    case 2: {
-                            message.isHeading = reader.bool();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a AIRichResponseTableRow message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow} AIRichResponseTableRow
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseTableRow.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a AIRichResponseTableRow message.
-             * @function verify
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            AIRichResponseTableRow.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.items != null && message.hasOwnProperty("items")) {
-                    if (!Array.isArray(message.items))
-                        return "items: array expected";
-                    for (var i = 0; i < message.items.length; ++i)
-                        if (!$util.isString(message.items[i]))
-                            return "items: string[] expected";
-                }
-                if (message.isHeading != null && message.hasOwnProperty("isHeading")) {
-                    properties._isHeading = 1;
-                    if (typeof message.isHeading !== "boolean")
-                        return "isHeading: boolean expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a AIRichResponseTableRow message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow} AIRichResponseTableRow
-             */
-            AIRichResponseTableRow.fromObject = function fromObject(object) {
-                if (object instanceof $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow)
-                    return object;
-                var message = new $root.AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow();
-                if (object.items) {
-                    if (!Array.isArray(object.items))
-                        throw TypeError(".AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow.items: array expected");
-                    message.items = [];
-                    for (var i = 0; i < object.items.length; ++i)
-                        message.items[i] = String(object.items[i]);
-                }
-                if (object.isHeading != null)
-                    message.isHeading = Boolean(object.isHeading);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a AIRichResponseTableRow message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow} message AIRichResponseTableRow
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            AIRichResponseTableRow.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (options.arrays || options.defaults)
-                    object.items = [];
-                if (message.items && message.items.length) {
-                    object.items = [];
-                    for (var j = 0; j < message.items.length; ++j)
-                        object.items[j] = message.items[j];
-                }
-                if (message.isHeading != null && message.hasOwnProperty("isHeading")) {
-                    object.isHeading = message.isHeading;
-                    if (options.oneofs)
-                        object._isHeading = "isHeading";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this AIRichResponseTableRow to JSON.
-             * @function toJSON
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            AIRichResponseTableRow.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseTableRow
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseTableRow.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseTableMetadata.AIRichResponseTableRow";
-            };
-
-            return AIRichResponseTableRow;
-        })();
-
-        return AIRichResponseTableMetadata;
-    })();
-
-    AICommon.AIRichResponseCodeMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseCodeMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseCodeMetadata
-         * @property {string|null} [codeLanguage] AIRichResponseCodeMetadata codeLanguage
-         * @property {Array.<AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock>|null} [codeBlocks] AIRichResponseCodeMetadata codeBlocks
-         */
-
-        /**
-         * Constructs a new AIRichResponseCodeMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseCodeMetadata.
-         * @implements IAIRichResponseCodeMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseCodeMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseCodeMetadata(properties) {
-            this.codeBlocks = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseCodeMetadata codeLanguage.
-         * @member {string|null|undefined} codeLanguage
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @instance
-         */
-        AIRichResponseCodeMetadata.prototype.codeLanguage = null;
-
-        /**
-         * AIRichResponseCodeMetadata codeBlocks.
-         * @member {Array.<AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock>} codeBlocks
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @instance
-         */
-        AIRichResponseCodeMetadata.prototype.codeBlocks = $util.emptyArray;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseCodeMetadata _codeLanguage.
-         * @member {"codeLanguage"|undefined} _codeLanguage
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseCodeMetadata.prototype, "_codeLanguage", {
-            get: $util.oneOfGetter($oneOfFields = ["codeLanguage"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseCodeMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseCodeMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseCodeMetadata} AIRichResponseCodeMetadata instance
-         */
-        AIRichResponseCodeMetadata.create = function create(properties) {
-            return new AIRichResponseCodeMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseCodeMetadata message. Does not implicitly {@link AICommon.AIRichResponseCodeMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseCodeMetadata} message AIRichResponseCodeMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseCodeMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.codeLanguage != null && Object.hasOwnProperty.call(message, "codeLanguage"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.codeLanguage);
-            if (message.codeBlocks != null && message.codeBlocks.length)
-                for (var i = 0; i < message.codeBlocks.length; ++i)
-                    $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.encode(message.codeBlocks[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseCodeMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseCodeMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseCodeMetadata} message AIRichResponseCodeMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseCodeMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseCodeMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseCodeMetadata} AIRichResponseCodeMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseCodeMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseCodeMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.codeLanguage = reader.string();
-                        break;
-                    }
-                case 2: {
-                        if (!(message.codeBlocks && message.codeBlocks.length))
-                            message.codeBlocks = [];
-                        message.codeBlocks.push($root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.decode(reader, reader.uint32()));
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseCodeMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseCodeMetadata} AIRichResponseCodeMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseCodeMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseCodeMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseCodeMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.codeLanguage != null && message.hasOwnProperty("codeLanguage")) {
-                properties._codeLanguage = 1;
-                if (!$util.isString(message.codeLanguage))
-                    return "codeLanguage: string expected";
-            }
-            if (message.codeBlocks != null && message.hasOwnProperty("codeBlocks")) {
-                if (!Array.isArray(message.codeBlocks))
-                    return "codeBlocks: array expected";
-                for (var i = 0; i < message.codeBlocks.length; ++i) {
-                    var error = $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.verify(message.codeBlocks[i]);
-                    if (error)
-                        return "codeBlocks." + error;
-                }
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseCodeMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseCodeMetadata} AIRichResponseCodeMetadata
-         */
-        AIRichResponseCodeMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseCodeMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseCodeMetadata();
-            if (object.codeLanguage != null)
-                message.codeLanguage = String(object.codeLanguage);
-            if (object.codeBlocks) {
-                if (!Array.isArray(object.codeBlocks))
-                    throw TypeError(".AICommon.AIRichResponseCodeMetadata.codeBlocks: array expected");
-                message.codeBlocks = [];
-                for (var i = 0; i < object.codeBlocks.length; ++i) {
-                    if (typeof object.codeBlocks[i] !== "object")
-                        throw TypeError(".AICommon.AIRichResponseCodeMetadata.codeBlocks: object expected");
-                    message.codeBlocks[i] = $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.fromObject(object.codeBlocks[i]);
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseCodeMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {AICommon.AIRichResponseCodeMetadata} message AIRichResponseCodeMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseCodeMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.arrays || options.defaults)
-                object.codeBlocks = [];
-            if (message.codeLanguage != null && message.hasOwnProperty("codeLanguage")) {
-                object.codeLanguage = message.codeLanguage;
-                if (options.oneofs)
-                    object._codeLanguage = "codeLanguage";
-            }
-            if (message.codeBlocks && message.codeBlocks.length) {
-                object.codeBlocks = [];
-                for (var j = 0; j < message.codeBlocks.length; ++j)
-                    object.codeBlocks[j] = $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.toObject(message.codeBlocks[j], options);
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseCodeMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseCodeMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseCodeMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseCodeMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseCodeMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseCodeMetadata";
-        };
-
-        AIRichResponseCodeMetadata.AIRichResponseCodeBlock = (function() {
-
-            /**
-             * Properties of a AIRichResponseCodeBlock.
-             * @memberof AICommon.AIRichResponseCodeMetadata
-             * @interface IAIRichResponseCodeBlock
-             * @property {AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType|null} [highlightType] AIRichResponseCodeBlock highlightType
-             * @property {string|null} [codeContent] AIRichResponseCodeBlock codeContent
-             */
-
-            /**
-             * Constructs a new AIRichResponseCodeBlock.
-             * @memberof AICommon.AIRichResponseCodeMetadata
-             * @classdesc Represents a AIRichResponseCodeBlock.
-             * @implements IAIRichResponseCodeBlock
-             * @constructor
-             * @param {AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock=} [properties] Properties to set
-             */
-            function AIRichResponseCodeBlock(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * AIRichResponseCodeBlock highlightType.
-             * @member {AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType|null|undefined} highlightType
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @instance
-             */
-            AIRichResponseCodeBlock.prototype.highlightType = null;
-
-            /**
-             * AIRichResponseCodeBlock codeContent.
-             * @member {string|null|undefined} codeContent
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @instance
-             */
-            AIRichResponseCodeBlock.prototype.codeContent = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AIRichResponseCodeBlock _highlightType.
-             * @member {"highlightType"|undefined} _highlightType
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseCodeBlock.prototype, "_highlightType", {
-                get: $util.oneOfGetter($oneOfFields = ["highlightType"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * AIRichResponseCodeBlock _codeContent.
-             * @member {"codeContent"|undefined} _codeContent
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @instance
-             */
-            Object.defineProperty(AIRichResponseCodeBlock.prototype, "_codeContent", {
-                get: $util.oneOfGetter($oneOfFields = ["codeContent"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new AIRichResponseCodeBlock instance using the specified properties.
-             * @function create
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock=} [properties] Properties to set
-             * @returns {AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock} AIRichResponseCodeBlock instance
-             */
-            AIRichResponseCodeBlock.create = function create(properties) {
-                return new AIRichResponseCodeBlock(properties);
-            };
-
-            /**
-             * Encodes the specified AIRichResponseCodeBlock message. Does not implicitly {@link AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.verify|verify} messages.
-             * @function encode
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock} message AIRichResponseCodeBlock message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseCodeBlock.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.highlightType != null && Object.hasOwnProperty.call(message, "highlightType"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.highlightType);
-                if (message.codeContent != null && Object.hasOwnProperty.call(message, "codeContent"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.codeContent);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified AIRichResponseCodeBlock message, length delimited. Does not implicitly {@link AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {AICommon.AIRichResponseCodeMetadata.IAIRichResponseCodeBlock} message AIRichResponseCodeBlock message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AIRichResponseCodeBlock.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a AIRichResponseCodeBlock message from the specified reader or buffer.
-             * @function decode
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock} AIRichResponseCodeBlock
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseCodeBlock.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.highlightType = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.codeContent = reader.string();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a AIRichResponseCodeBlock message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock} AIRichResponseCodeBlock
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AIRichResponseCodeBlock.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a AIRichResponseCodeBlock message.
-             * @function verify
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            AIRichResponseCodeBlock.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.highlightType != null && message.hasOwnProperty("highlightType")) {
-                    properties._highlightType = 1;
-                    switch (message.highlightType) {
-                    default:
-                        return "highlightType: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                        break;
-                    }
-                }
-                if (message.codeContent != null && message.hasOwnProperty("codeContent")) {
-                    properties._codeContent = 1;
-                    if (!$util.isString(message.codeContent))
-                        return "codeContent: string expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a AIRichResponseCodeBlock message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock} AIRichResponseCodeBlock
-             */
-            AIRichResponseCodeBlock.fromObject = function fromObject(object) {
-                if (object instanceof $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock)
-                    return object;
-                var message = new $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock();
-                switch (object.highlightType) {
-                default:
-                    if (typeof object.highlightType === "number") {
-                        message.highlightType = object.highlightType;
-                        break;
-                    }
-                    break;
-                case "AI_RICH_RESPONSE_CODE_HIGHLIGHT_DEFAULT":
-                case 0:
-                    message.highlightType = 0;
-                    break;
-                case "AI_RICH_RESPONSE_CODE_HIGHLIGHT_KEYWORD":
-                case 1:
-                    message.highlightType = 1;
-                    break;
-                case "AI_RICH_RESPONSE_CODE_HIGHLIGHT_METHOD":
-                case 2:
-                    message.highlightType = 2;
-                    break;
-                case "AI_RICH_RESPONSE_CODE_HIGHLIGHT_STRING":
-                case 3:
-                    message.highlightType = 3;
-                    break;
-                case "AI_RICH_RESPONSE_CODE_HIGHLIGHT_NUMBER":
-                case 4:
-                    message.highlightType = 4;
-                    break;
-                case "AI_RICH_RESPONSE_CODE_HIGHLIGHT_COMMENT":
-                case 5:
-                    message.highlightType = 5;
-                    break;
-                }
-                if (object.codeContent != null)
-                    message.codeContent = String(object.codeContent);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a AIRichResponseCodeBlock message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock} message AIRichResponseCodeBlock
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            AIRichResponseCodeBlock.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.highlightType != null && message.hasOwnProperty("highlightType")) {
-                    object.highlightType = options.enums === String ? $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType[message.highlightType] === undefined ? message.highlightType : $root.AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType[message.highlightType] : message.highlightType;
-                    if (options.oneofs)
-                        object._highlightType = "highlightType";
-                }
-                if (message.codeContent != null && message.hasOwnProperty("codeContent")) {
-                    object.codeContent = message.codeContent;
-                    if (options.oneofs)
-                        object._codeContent = "codeContent";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this AIRichResponseCodeBlock to JSON.
-             * @function toJSON
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            AIRichResponseCodeBlock.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AIRichResponseCodeBlock
-             * @function getTypeUrl
-             * @memberof AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AIRichResponseCodeBlock.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeBlock";
-            };
-
-            return AIRichResponseCodeBlock;
-        })();
-
-        /**
-         * AIRichResponseCodeHighlightType enum.
-         * @name AICommon.AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType
-         * @enum {number}
-         * @property {number} AI_RICH_RESPONSE_CODE_HIGHLIGHT_DEFAULT=0 AI_RICH_RESPONSE_CODE_HIGHLIGHT_DEFAULT value
-         * @property {number} AI_RICH_RESPONSE_CODE_HIGHLIGHT_KEYWORD=1 AI_RICH_RESPONSE_CODE_HIGHLIGHT_KEYWORD value
-         * @property {number} AI_RICH_RESPONSE_CODE_HIGHLIGHT_METHOD=2 AI_RICH_RESPONSE_CODE_HIGHLIGHT_METHOD value
-         * @property {number} AI_RICH_RESPONSE_CODE_HIGHLIGHT_STRING=3 AI_RICH_RESPONSE_CODE_HIGHLIGHT_STRING value
-         * @property {number} AI_RICH_RESPONSE_CODE_HIGHLIGHT_NUMBER=4 AI_RICH_RESPONSE_CODE_HIGHLIGHT_NUMBER value
-         * @property {number} AI_RICH_RESPONSE_CODE_HIGHLIGHT_COMMENT=5 AI_RICH_RESPONSE_CODE_HIGHLIGHT_COMMENT value
-         */
-        AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "AI_RICH_RESPONSE_CODE_HIGHLIGHT_DEFAULT"] = 0;
-            values[valuesById[1] = "AI_RICH_RESPONSE_CODE_HIGHLIGHT_KEYWORD"] = 1;
-            values[valuesById[2] = "AI_RICH_RESPONSE_CODE_HIGHLIGHT_METHOD"] = 2;
-            values[valuesById[3] = "AI_RICH_RESPONSE_CODE_HIGHLIGHT_STRING"] = 3;
-            values[valuesById[4] = "AI_RICH_RESPONSE_CODE_HIGHLIGHT_NUMBER"] = 4;
-            values[valuesById[5] = "AI_RICH_RESPONSE_CODE_HIGHLIGHT_COMMENT"] = 5;
-            return values;
-        })();
-
-        return AIRichResponseCodeMetadata;
-    })();
-
-    AICommon.AIRichResponseInlineImageMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseInlineImageMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseInlineImageMetadata
-         * @property {AICommon.IAIRichResponseImageURL|null} [imageUrl] AIRichResponseInlineImageMetadata imageUrl
-         * @property {string|null} [imageText] AIRichResponseInlineImageMetadata imageText
-         * @property {AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment|null} [alignment] AIRichResponseInlineImageMetadata alignment
-         * @property {string|null} [tapLinkUrl] AIRichResponseInlineImageMetadata tapLinkUrl
-         */
-
-        /**
-         * Constructs a new AIRichResponseInlineImageMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseInlineImageMetadata.
-         * @implements IAIRichResponseInlineImageMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseInlineImageMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseInlineImageMetadata(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseInlineImageMetadata imageUrl.
-         * @member {AICommon.IAIRichResponseImageURL|null|undefined} imageUrl
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        AIRichResponseInlineImageMetadata.prototype.imageUrl = null;
-
-        /**
-         * AIRichResponseInlineImageMetadata imageText.
-         * @member {string|null|undefined} imageText
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        AIRichResponseInlineImageMetadata.prototype.imageText = null;
-
-        /**
-         * AIRichResponseInlineImageMetadata alignment.
-         * @member {AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment|null|undefined} alignment
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        AIRichResponseInlineImageMetadata.prototype.alignment = null;
-
-        /**
-         * AIRichResponseInlineImageMetadata tapLinkUrl.
-         * @member {string|null|undefined} tapLinkUrl
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        AIRichResponseInlineImageMetadata.prototype.tapLinkUrl = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseInlineImageMetadata _imageUrl.
-         * @member {"imageUrl"|undefined} _imageUrl
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseInlineImageMetadata.prototype, "_imageUrl", {
-            get: $util.oneOfGetter($oneOfFields = ["imageUrl"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseInlineImageMetadata _imageText.
-         * @member {"imageText"|undefined} _imageText
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseInlineImageMetadata.prototype, "_imageText", {
-            get: $util.oneOfGetter($oneOfFields = ["imageText"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseInlineImageMetadata _alignment.
-         * @member {"alignment"|undefined} _alignment
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseInlineImageMetadata.prototype, "_alignment", {
-            get: $util.oneOfGetter($oneOfFields = ["alignment"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseInlineImageMetadata _tapLinkUrl.
-         * @member {"tapLinkUrl"|undefined} _tapLinkUrl
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseInlineImageMetadata.prototype, "_tapLinkUrl", {
-            get: $util.oneOfGetter($oneOfFields = ["tapLinkUrl"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseInlineImageMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseInlineImageMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseInlineImageMetadata} AIRichResponseInlineImageMetadata instance
-         */
-        AIRichResponseInlineImageMetadata.create = function create(properties) {
-            return new AIRichResponseInlineImageMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseInlineImageMetadata message. Does not implicitly {@link AICommon.AIRichResponseInlineImageMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseInlineImageMetadata} message AIRichResponseInlineImageMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseInlineImageMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.imageUrl != null && Object.hasOwnProperty.call(message, "imageUrl"))
-                $root.AICommon.AIRichResponseImageURL.encode(message.imageUrl, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.imageText != null && Object.hasOwnProperty.call(message, "imageText"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.imageText);
-            if (message.alignment != null && Object.hasOwnProperty.call(message, "alignment"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.alignment);
-            if (message.tapLinkUrl != null && Object.hasOwnProperty.call(message, "tapLinkUrl"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.tapLinkUrl);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseInlineImageMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseInlineImageMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseInlineImageMetadata} message AIRichResponseInlineImageMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseInlineImageMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseInlineImageMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseInlineImageMetadata} AIRichResponseInlineImageMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseInlineImageMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseInlineImageMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.imageUrl = $root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        message.imageText = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.alignment = reader.int32();
-                        break;
-                    }
-                case 4: {
-                        message.tapLinkUrl = reader.string();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseInlineImageMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseInlineImageMetadata} AIRichResponseInlineImageMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseInlineImageMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseInlineImageMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseInlineImageMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.imageUrl != null && message.hasOwnProperty("imageUrl")) {
-                properties._imageUrl = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseImageURL.verify(message.imageUrl);
-                    if (error)
-                        return "imageUrl." + error;
-                }
-            }
-            if (message.imageText != null && message.hasOwnProperty("imageText")) {
-                properties._imageText = 1;
-                if (!$util.isString(message.imageText))
-                    return "imageText: string expected";
-            }
-            if (message.alignment != null && message.hasOwnProperty("alignment")) {
-                properties._alignment = 1;
-                switch (message.alignment) {
-                default:
-                    return "alignment: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                    break;
-                }
-            }
-            if (message.tapLinkUrl != null && message.hasOwnProperty("tapLinkUrl")) {
-                properties._tapLinkUrl = 1;
-                if (!$util.isString(message.tapLinkUrl))
-                    return "tapLinkUrl: string expected";
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseInlineImageMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseInlineImageMetadata} AIRichResponseInlineImageMetadata
-         */
-        AIRichResponseInlineImageMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseInlineImageMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseInlineImageMetadata();
-            if (object.imageUrl != null) {
-                if (typeof object.imageUrl !== "object")
-                    throw TypeError(".AICommon.AIRichResponseInlineImageMetadata.imageUrl: object expected");
-                message.imageUrl = $root.AICommon.AIRichResponseImageURL.fromObject(object.imageUrl);
-            }
-            if (object.imageText != null)
-                message.imageText = String(object.imageText);
-            switch (object.alignment) {
-            default:
-                if (typeof object.alignment === "number") {
-                    message.alignment = object.alignment;
-                    break;
-                }
-                break;
-            case "AI_RICH_RESPONSE_IMAGE_LAYOUT_LEADING_ALIGNED":
-            case 0:
-                message.alignment = 0;
-                break;
-            case "AI_RICH_RESPONSE_IMAGE_LAYOUT_TRAILING_ALIGNED":
-            case 1:
-                message.alignment = 1;
-                break;
-            case "AI_RICH_RESPONSE_IMAGE_LAYOUT_CENTER_ALIGNED":
-            case 2:
-                message.alignment = 2;
-                break;
-            }
-            if (object.tapLinkUrl != null)
-                message.tapLinkUrl = String(object.tapLinkUrl);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseInlineImageMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {AICommon.AIRichResponseInlineImageMetadata} message AIRichResponseInlineImageMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseInlineImageMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (message.imageUrl != null && message.hasOwnProperty("imageUrl")) {
-                object.imageUrl = $root.AICommon.AIRichResponseImageURL.toObject(message.imageUrl, options);
-                if (options.oneofs)
-                    object._imageUrl = "imageUrl";
-            }
-            if (message.imageText != null && message.hasOwnProperty("imageText")) {
-                object.imageText = message.imageText;
-                if (options.oneofs)
-                    object._imageText = "imageText";
-            }
-            if (message.alignment != null && message.hasOwnProperty("alignment")) {
-                object.alignment = options.enums === String ? $root.AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment[message.alignment] === undefined ? message.alignment : $root.AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment[message.alignment] : message.alignment;
-                if (options.oneofs)
-                    object._alignment = "alignment";
-            }
-            if (message.tapLinkUrl != null && message.hasOwnProperty("tapLinkUrl")) {
-                object.tapLinkUrl = message.tapLinkUrl;
-                if (options.oneofs)
-                    object._tapLinkUrl = "tapLinkUrl";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseInlineImageMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseInlineImageMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseInlineImageMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseInlineImageMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseInlineImageMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseInlineImageMetadata";
-        };
-
-        /**
-         * AIRichResponseImageAlignment enum.
-         * @name AICommon.AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment
-         * @enum {number}
-         * @property {number} AI_RICH_RESPONSE_IMAGE_LAYOUT_LEADING_ALIGNED=0 AI_RICH_RESPONSE_IMAGE_LAYOUT_LEADING_ALIGNED value
-         * @property {number} AI_RICH_RESPONSE_IMAGE_LAYOUT_TRAILING_ALIGNED=1 AI_RICH_RESPONSE_IMAGE_LAYOUT_TRAILING_ALIGNED value
-         * @property {number} AI_RICH_RESPONSE_IMAGE_LAYOUT_CENTER_ALIGNED=2 AI_RICH_RESPONSE_IMAGE_LAYOUT_CENTER_ALIGNED value
-         */
-        AIRichResponseInlineImageMetadata.AIRichResponseImageAlignment = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "AI_RICH_RESPONSE_IMAGE_LAYOUT_LEADING_ALIGNED"] = 0;
-            values[valuesById[1] = "AI_RICH_RESPONSE_IMAGE_LAYOUT_TRAILING_ALIGNED"] = 1;
-            values[valuesById[2] = "AI_RICH_RESPONSE_IMAGE_LAYOUT_CENTER_ALIGNED"] = 2;
-            return values;
-        })();
-
-        return AIRichResponseInlineImageMetadata;
-    })();
-
-    AICommon.AIRichResponseGridImageMetadata = (function() {
-
-        /**
-         * Properties of a AIRichResponseGridImageMetadata.
-         * @memberof AICommon
-         * @interface IAIRichResponseGridImageMetadata
-         * @property {AICommon.IAIRichResponseImageURL|null} [gridImageUrl] AIRichResponseGridImageMetadata gridImageUrl
-         * @property {Array.<AICommon.IAIRichResponseImageURL>|null} [imageUrls] AIRichResponseGridImageMetadata imageUrls
-         */
-
-        /**
-         * Constructs a new AIRichResponseGridImageMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseGridImageMetadata.
-         * @implements IAIRichResponseGridImageMetadata
-         * @constructor
-         * @param {AICommon.IAIRichResponseGridImageMetadata=} [properties] Properties to set
-         */
-        function AIRichResponseGridImageMetadata(properties) {
-            this.imageUrls = [];
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseGridImageMetadata gridImageUrl.
-         * @member {AICommon.IAIRichResponseImageURL|null|undefined} gridImageUrl
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @instance
-         */
-        AIRichResponseGridImageMetadata.prototype.gridImageUrl = null;
-
-        /**
-         * AIRichResponseGridImageMetadata imageUrls.
-         * @member {Array.<AICommon.IAIRichResponseImageURL>} imageUrls
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @instance
-         */
-        AIRichResponseGridImageMetadata.prototype.imageUrls = $util.emptyArray;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseGridImageMetadata _gridImageUrl.
-         * @member {"gridImageUrl"|undefined} _gridImageUrl
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseGridImageMetadata.prototype, "_gridImageUrl", {
-            get: $util.oneOfGetter($oneOfFields = ["gridImageUrl"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseGridImageMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseGridImageMetadata=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseGridImageMetadata} AIRichResponseGridImageMetadata instance
-         */
-        AIRichResponseGridImageMetadata.create = function create(properties) {
-            return new AIRichResponseGridImageMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseGridImageMetadata message. Does not implicitly {@link AICommon.AIRichResponseGridImageMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseGridImageMetadata} message AIRichResponseGridImageMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseGridImageMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.gridImageUrl != null && Object.hasOwnProperty.call(message, "gridImageUrl"))
-                $root.AICommon.AIRichResponseImageURL.encode(message.gridImageUrl, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-            if (message.imageUrls != null && message.imageUrls.length)
-                for (var i = 0; i < message.imageUrls.length; ++i)
-                    $root.AICommon.AIRichResponseImageURL.encode(message.imageUrls[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseGridImageMetadata message, length delimited. Does not implicitly {@link AICommon.AIRichResponseGridImageMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {AICommon.IAIRichResponseGridImageMetadata} message AIRichResponseGridImageMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseGridImageMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseGridImageMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseGridImageMetadata} AIRichResponseGridImageMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseGridImageMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseGridImageMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.gridImageUrl = $root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 2: {
-                        if (!(message.imageUrls && message.imageUrls.length))
-                            message.imageUrls = [];
-                        message.imageUrls.push($root.AICommon.AIRichResponseImageURL.decode(reader, reader.uint32()));
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseGridImageMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseGridImageMetadata} AIRichResponseGridImageMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseGridImageMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseGridImageMetadata message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseGridImageMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.gridImageUrl != null && message.hasOwnProperty("gridImageUrl")) {
-                properties._gridImageUrl = 1;
-                {
-                    var error = $root.AICommon.AIRichResponseImageURL.verify(message.gridImageUrl);
-                    if (error)
-                        return "gridImageUrl." + error;
-                }
-            }
-            if (message.imageUrls != null && message.hasOwnProperty("imageUrls")) {
-                if (!Array.isArray(message.imageUrls))
-                    return "imageUrls: array expected";
-                for (var i = 0; i < message.imageUrls.length; ++i) {
-                    var error = $root.AICommon.AIRichResponseImageURL.verify(message.imageUrls[i]);
-                    if (error)
-                        return "imageUrls." + error;
-                }
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseGridImageMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseGridImageMetadata} AIRichResponseGridImageMetadata
-         */
-        AIRichResponseGridImageMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseGridImageMetadata)
-                return object;
-            var message = new $root.AICommon.AIRichResponseGridImageMetadata();
-            if (object.gridImageUrl != null) {
-                if (typeof object.gridImageUrl !== "object")
-                    throw TypeError(".AICommon.AIRichResponseGridImageMetadata.gridImageUrl: object expected");
-                message.gridImageUrl = $root.AICommon.AIRichResponseImageURL.fromObject(object.gridImageUrl);
-            }
-            if (object.imageUrls) {
-                if (!Array.isArray(object.imageUrls))
-                    throw TypeError(".AICommon.AIRichResponseGridImageMetadata.imageUrls: array expected");
-                message.imageUrls = [];
-                for (var i = 0; i < object.imageUrls.length; ++i) {
-                    if (typeof object.imageUrls[i] !== "object")
-                        throw TypeError(".AICommon.AIRichResponseGridImageMetadata.imageUrls: object expected");
-                    message.imageUrls[i] = $root.AICommon.AIRichResponseImageURL.fromObject(object.imageUrls[i]);
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseGridImageMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {AICommon.AIRichResponseGridImageMetadata} message AIRichResponseGridImageMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseGridImageMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.arrays || options.defaults)
-                object.imageUrls = [];
-            if (message.gridImageUrl != null && message.hasOwnProperty("gridImageUrl")) {
-                object.gridImageUrl = $root.AICommon.AIRichResponseImageURL.toObject(message.gridImageUrl, options);
-                if (options.oneofs)
-                    object._gridImageUrl = "gridImageUrl";
-            }
-            if (message.imageUrls && message.imageUrls.length) {
-                object.imageUrls = [];
-                for (var j = 0; j < message.imageUrls.length; ++j)
-                    object.imageUrls[j] = $root.AICommon.AIRichResponseImageURL.toObject(message.imageUrls[j], options);
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseGridImageMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseGridImageMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseGridImageMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseGridImageMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseGridImageMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseGridImageMetadata";
-        };
-
-        return AIRichResponseGridImageMetadata;
-    })();
-
-    AICommon.AIRichResponseImageURL = (function() {
-
-        /**
-         * Properties of a AIRichResponseImageURL.
-         * @memberof AICommon
-         * @interface IAIRichResponseImageURL
-         * @property {string|null} [imagePreviewUrl] AIRichResponseImageURL imagePreviewUrl
-         * @property {string|null} [imageHighResUrl] AIRichResponseImageURL imageHighResUrl
-         * @property {string|null} [sourceUrl] AIRichResponseImageURL sourceUrl
-         */
-
-        /**
-         * Constructs a new AIRichResponseImageURL.
-         * @memberof AICommon
-         * @classdesc Represents a AIRichResponseImageURL.
-         * @implements IAIRichResponseImageURL
-         * @constructor
-         * @param {AICommon.IAIRichResponseImageURL=} [properties] Properties to set
-         */
-        function AIRichResponseImageURL(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * AIRichResponseImageURL imagePreviewUrl.
-         * @member {string|null|undefined} imagePreviewUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @instance
-         */
-        AIRichResponseImageURL.prototype.imagePreviewUrl = null;
-
-        /**
-         * AIRichResponseImageURL imageHighResUrl.
-         * @member {string|null|undefined} imageHighResUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @instance
-         */
-        AIRichResponseImageURL.prototype.imageHighResUrl = null;
-
-        /**
-         * AIRichResponseImageURL sourceUrl.
-         * @member {string|null|undefined} sourceUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @instance
-         */
-        AIRichResponseImageURL.prototype.sourceUrl = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * AIRichResponseImageURL _imagePreviewUrl.
-         * @member {"imagePreviewUrl"|undefined} _imagePreviewUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseImageURL.prototype, "_imagePreviewUrl", {
-            get: $util.oneOfGetter($oneOfFields = ["imagePreviewUrl"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseImageURL _imageHighResUrl.
-         * @member {"imageHighResUrl"|undefined} _imageHighResUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseImageURL.prototype, "_imageHighResUrl", {
-            get: $util.oneOfGetter($oneOfFields = ["imageHighResUrl"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * AIRichResponseImageURL _sourceUrl.
-         * @member {"sourceUrl"|undefined} _sourceUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @instance
-         */
-        Object.defineProperty(AIRichResponseImageURL.prototype, "_sourceUrl", {
-            get: $util.oneOfGetter($oneOfFields = ["sourceUrl"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new AIRichResponseImageURL instance using the specified properties.
-         * @function create
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {AICommon.IAIRichResponseImageURL=} [properties] Properties to set
-         * @returns {AICommon.AIRichResponseImageURL} AIRichResponseImageURL instance
-         */
-        AIRichResponseImageURL.create = function create(properties) {
-            return new AIRichResponseImageURL(properties);
-        };
-
-        /**
-         * Encodes the specified AIRichResponseImageURL message. Does not implicitly {@link AICommon.AIRichResponseImageURL.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {AICommon.IAIRichResponseImageURL} message AIRichResponseImageURL message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseImageURL.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.imagePreviewUrl != null && Object.hasOwnProperty.call(message, "imagePreviewUrl"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.imagePreviewUrl);
-            if (message.imageHighResUrl != null && Object.hasOwnProperty.call(message, "imageHighResUrl"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.imageHighResUrl);
-            if (message.sourceUrl != null && Object.hasOwnProperty.call(message, "sourceUrl"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.sourceUrl);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified AIRichResponseImageURL message, length delimited. Does not implicitly {@link AICommon.AIRichResponseImageURL.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {AICommon.IAIRichResponseImageURL} message AIRichResponseImageURL message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        AIRichResponseImageURL.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a AIRichResponseImageURL message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.AIRichResponseImageURL} AIRichResponseImageURL
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseImageURL.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIRichResponseImageURL();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.imagePreviewUrl = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.imageHighResUrl = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.sourceUrl = reader.string();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a AIRichResponseImageURL message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.AIRichResponseImageURL} AIRichResponseImageURL
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        AIRichResponseImageURL.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a AIRichResponseImageURL message.
-         * @function verify
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        AIRichResponseImageURL.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.imagePreviewUrl != null && message.hasOwnProperty("imagePreviewUrl")) {
-                properties._imagePreviewUrl = 1;
-                if (!$util.isString(message.imagePreviewUrl))
-                    return "imagePreviewUrl: string expected";
-            }
-            if (message.imageHighResUrl != null && message.hasOwnProperty("imageHighResUrl")) {
-                properties._imageHighResUrl = 1;
-                if (!$util.isString(message.imageHighResUrl))
-                    return "imageHighResUrl: string expected";
-            }
-            if (message.sourceUrl != null && message.hasOwnProperty("sourceUrl")) {
-                properties._sourceUrl = 1;
-                if (!$util.isString(message.sourceUrl))
-                    return "sourceUrl: string expected";
-            }
-            return null;
-        };
-
-        /**
-         * Creates a AIRichResponseImageURL message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.AIRichResponseImageURL} AIRichResponseImageURL
-         */
-        AIRichResponseImageURL.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.AIRichResponseImageURL)
-                return object;
-            var message = new $root.AICommon.AIRichResponseImageURL();
-            if (object.imagePreviewUrl != null)
-                message.imagePreviewUrl = String(object.imagePreviewUrl);
-            if (object.imageHighResUrl != null)
-                message.imageHighResUrl = String(object.imageHighResUrl);
-            if (object.sourceUrl != null)
-                message.sourceUrl = String(object.sourceUrl);
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a AIRichResponseImageURL message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {AICommon.AIRichResponseImageURL} message AIRichResponseImageURL
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        AIRichResponseImageURL.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (message.imagePreviewUrl != null && message.hasOwnProperty("imagePreviewUrl")) {
-                object.imagePreviewUrl = message.imagePreviewUrl;
-                if (options.oneofs)
-                    object._imagePreviewUrl = "imagePreviewUrl";
-            }
-            if (message.imageHighResUrl != null && message.hasOwnProperty("imageHighResUrl")) {
-                object.imageHighResUrl = message.imageHighResUrl;
-                if (options.oneofs)
-                    object._imageHighResUrl = "imageHighResUrl";
-            }
-            if (message.sourceUrl != null && message.hasOwnProperty("sourceUrl")) {
-                object.sourceUrl = message.sourceUrl;
-                if (options.oneofs)
-                    object._sourceUrl = "sourceUrl";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this AIRichResponseImageURL to JSON.
-         * @function toJSON
-         * @memberof AICommon.AIRichResponseImageURL
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        AIRichResponseImageURL.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for AIRichResponseImageURL
-         * @function getTypeUrl
-         * @memberof AICommon.AIRichResponseImageURL
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        AIRichResponseImageURL.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.AIRichResponseImageURL";
-        };
-
-        return AIRichResponseImageURL;
-    })();
-
     AICommon.BotMessageSharingInfo = (function() {
 
         /**
@@ -7553,23 +2691,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotMessageSharingInfo _botEntryPointOrigin.
-         * @member {"botEntryPointOrigin"|undefined} _botEntryPointOrigin
-         * @memberof AICommon.BotMessageSharingInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMessageSharingInfo.prototype, "_botEntryPointOrigin", {
             get: $util.oneOfGetter($oneOfFields = ["botEntryPointOrigin"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMessageSharingInfo _forwardScore.
-         * @member {"forwardScore"|undefined} _forwardScore
-         * @memberof AICommon.BotMessageSharingInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMessageSharingInfo.prototype, "_forwardScore", {
             get: $util.oneOfGetter($oneOfFields = ["forwardScore"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -7727,6 +2855,15 @@ $root.AICommon = (function() {
                 case 36:
                 case 37:
                 case 38:
+                case 39:
+                case 40:
+                case 41:
+                case 45:
+                case 46:
+                case 47:
+                case 54:
+                case 55:
+                case 56:
                     break;
                 }
             }
@@ -7913,6 +3050,42 @@ $root.AICommon = (function() {
             case 38:
                 message.botEntryPointOrigin = 38;
                 break;
+            case "MEDIA_PICKER_1_ON_1_CHAT":
+            case 39:
+                message.botEntryPointOrigin = 39;
+                break;
+            case "MEDIA_PICKER_GROUP_CHAT":
+            case 40:
+                message.botEntryPointOrigin = 40;
+                break;
+            case "ASK_META_AI_NO_SEARCH_RESULTS":
+            case 41:
+                message.botEntryPointOrigin = 41;
+                break;
+            case "META_AI_SETTINGS":
+            case 45:
+                message.botEntryPointOrigin = 45;
+                break;
+            case "WEB_INTRO_PANEL":
+            case 46:
+                message.botEntryPointOrigin = 46;
+                break;
+            case "WEB_NAVIGATION_BAR":
+            case 47:
+                message.botEntryPointOrigin = 47;
+                break;
+            case "GROUP_MEMBER":
+            case 54:
+                message.botEntryPointOrigin = 54;
+                break;
+            case "CHATLIST_SEARCH":
+            case 55:
+                message.botEntryPointOrigin = 55;
+                break;
+            case "NEW_CHAT_LIST":
+            case 56:
+                message.botEntryPointOrigin = 56;
+                break;
             }
             if (object.forwardScore != null)
                 message.forwardScore = object.forwardScore >>> 0;
@@ -8027,34 +3200,19 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ForwardedAIBotMessageInfo _botName.
-         * @member {"botName"|undefined} _botName
-         * @memberof AICommon.ForwardedAIBotMessageInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ForwardedAIBotMessageInfo.prototype, "_botName", {
             get: $util.oneOfGetter($oneOfFields = ["botName"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ForwardedAIBotMessageInfo _botJid.
-         * @member {"botJid"|undefined} _botJid
-         * @memberof AICommon.ForwardedAIBotMessageInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ForwardedAIBotMessageInfo.prototype, "_botJid", {
             get: $util.oneOfGetter($oneOfFields = ["botJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ForwardedAIBotMessageInfo _creatorName.
-         * @member {"creatorName"|undefined} _creatorName
-         * @memberof AICommon.ForwardedAIBotMessageInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ForwardedAIBotMessageInfo.prototype, "_creatorName", {
             get: $util.oneOfGetter($oneOfFields = ["creatorName"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -8362,78 +3520,43 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotFeedbackMessage _messageKey.
-         * @member {"messageKey"|undefined} _messageKey
-         * @memberof AICommon.BotFeedbackMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotFeedbackMessage.prototype, "_messageKey", {
             get: $util.oneOfGetter($oneOfFields = ["messageKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotFeedbackMessage _kind.
-         * @member {"kind"|undefined} _kind
-         * @memberof AICommon.BotFeedbackMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotFeedbackMessage.prototype, "_kind", {
             get: $util.oneOfGetter($oneOfFields = ["kind"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotFeedbackMessage _text.
-         * @member {"text"|undefined} _text
-         * @memberof AICommon.BotFeedbackMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotFeedbackMessage.prototype, "_text", {
             get: $util.oneOfGetter($oneOfFields = ["text"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotFeedbackMessage _kindNegative.
-         * @member {"kindNegative"|undefined} _kindNegative
-         * @memberof AICommon.BotFeedbackMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotFeedbackMessage.prototype, "_kindNegative", {
             get: $util.oneOfGetter($oneOfFields = ["kindNegative"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotFeedbackMessage _kindPositive.
-         * @member {"kindPositive"|undefined} _kindPositive
-         * @memberof AICommon.BotFeedbackMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotFeedbackMessage.prototype, "_kindPositive", {
             get: $util.oneOfGetter($oneOfFields = ["kindPositive"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotFeedbackMessage _kindReport.
-         * @member {"kindReport"|undefined} _kindReport
-         * @memberof AICommon.BotFeedbackMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotFeedbackMessage.prototype, "_kindReport", {
             get: $util.oneOfGetter($oneOfFields = ["kindReport"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotFeedbackMessage _sideBySideSurveyMetadata.
-         * @member {"sideBySideSurveyMetadata"|undefined} _sideBySideSurveyMetadata
-         * @memberof AICommon.BotFeedbackMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotFeedbackMessage.prototype, "_sideBySideSurveyMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["sideBySideSurveyMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -9057,100 +4180,55 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SideBySideSurveyMetadata _selectedRequestId.
-             * @member {"selectedRequestId"|undefined} _selectedRequestId
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_selectedRequestId", {
                 get: $util.oneOfGetter($oneOfFields = ["selectedRequestId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _surveyId.
-             * @member {"surveyId"|undefined} _surveyId
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_surveyId", {
                 get: $util.oneOfGetter($oneOfFields = ["surveyId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _simonSessionFbid.
-             * @member {"simonSessionFbid"|undefined} _simonSessionFbid
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_simonSessionFbid", {
                 get: $util.oneOfGetter($oneOfFields = ["simonSessionFbid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _responseOtid.
-             * @member {"responseOtid"|undefined} _responseOtid
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_responseOtid", {
                 get: $util.oneOfGetter($oneOfFields = ["responseOtid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _responseTimestampMsString.
-             * @member {"responseTimestampMsString"|undefined} _responseTimestampMsString
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_responseTimestampMsString", {
                 get: $util.oneOfGetter($oneOfFields = ["responseTimestampMsString"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _isSelectedResponsePrimary.
-             * @member {"isSelectedResponsePrimary"|undefined} _isSelectedResponsePrimary
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_isSelectedResponsePrimary", {
                 get: $util.oneOfGetter($oneOfFields = ["isSelectedResponsePrimary"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _messageIdToEdit.
-             * @member {"messageIdToEdit"|undefined} _messageIdToEdit
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_messageIdToEdit", {
                 get: $util.oneOfGetter($oneOfFields = ["messageIdToEdit"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _analyticsData.
-             * @member {"analyticsData"|undefined} _analyticsData
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_analyticsData", {
                 get: $util.oneOfGetter($oneOfFields = ["analyticsData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideSurveyMetadata _metaAiAnalyticsData.
-             * @member {"metaAiAnalyticsData"|undefined} _metaAiAnalyticsData
-             * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideSurveyMetadata.prototype, "_metaAiAnalyticsData", {
                 get: $util.oneOfGetter($oneOfFields = ["metaAiAnalyticsData"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9539,34 +4617,19 @@ $root.AICommon = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * SideBySideSurveyAnalyticsData _tessaEvent.
-                 * @member {"tessaEvent"|undefined} _tessaEvent
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SideBySideSurveyAnalyticsData.prototype, "_tessaEvent", {
                     get: $util.oneOfGetter($oneOfFields = ["tessaEvent"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SideBySideSurveyAnalyticsData _tessaSessionFbid.
-                 * @member {"tessaSessionFbid"|undefined} _tessaSessionFbid
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SideBySideSurveyAnalyticsData.prototype, "_tessaSessionFbid", {
                     get: $util.oneOfGetter($oneOfFields = ["tessaSessionFbid"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SideBySideSurveyAnalyticsData _simonSessionFbid.
-                 * @member {"simonSessionFbid"|undefined} _simonSessionFbid
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SideBySideSurveyAnalyticsData.prototype, "_simonSessionFbid", {
                     get: $util.oneOfGetter($oneOfFields = ["simonSessionFbid"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -9892,100 +4955,55 @@ $root.AICommon = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _surveyId.
-                 * @member {"surveyId"|undefined} _surveyId
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_surveyId", {
                     get: $util.oneOfGetter($oneOfFields = ["surveyId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _primaryResponseId.
-                 * @member {"primaryResponseId"|undefined} _primaryResponseId
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_primaryResponseId", {
                     get: $util.oneOfGetter($oneOfFields = ["primaryResponseId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _testArmName.
-                 * @member {"testArmName"|undefined} _testArmName
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_testArmName", {
                     get: $util.oneOfGetter($oneOfFields = ["testArmName"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _timestampMsString.
-                 * @member {"timestampMsString"|undefined} _timestampMsString
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_timestampMsString", {
                     get: $util.oneOfGetter($oneOfFields = ["timestampMsString"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _ctaImpressionEvent.
-                 * @member {"ctaImpressionEvent"|undefined} _ctaImpressionEvent
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_ctaImpressionEvent", {
                     get: $util.oneOfGetter($oneOfFields = ["ctaImpressionEvent"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _ctaClickEvent.
-                 * @member {"ctaClickEvent"|undefined} _ctaClickEvent
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_ctaClickEvent", {
                     get: $util.oneOfGetter($oneOfFields = ["ctaClickEvent"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _cardImpressionEvent.
-                 * @member {"cardImpressionEvent"|undefined} _cardImpressionEvent
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_cardImpressionEvent", {
                     get: $util.oneOfGetter($oneOfFields = ["cardImpressionEvent"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _responseEvent.
-                 * @member {"responseEvent"|undefined} _responseEvent
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_responseEvent", {
                     get: $util.oneOfGetter($oneOfFields = ["responseEvent"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * SidebySideSurveyMetaAiAnalyticsData _abandonEvent.
-                 * @member {"abandonEvent"|undefined} _abandonEvent
-                 * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(SidebySideSurveyMetaAiAnalyticsData.prototype, "_abandonEvent", {
                     get: $util.oneOfGetter($oneOfFields = ["abandonEvent"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -10374,12 +5392,7 @@ $root.AICommon = (function() {
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
-                    /**
-                     * SideBySideSurveyAbandonEventData _abandonDwellTimeMsString.
-                     * @member {"abandonDwellTimeMsString"|undefined} _abandonDwellTimeMsString
-                     * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData
-                     * @instance
-                     */
+                    // Virtual OneOf for proto3 optional field
                     Object.defineProperty(SideBySideSurveyAbandonEventData.prototype, "_abandonDwellTimeMsString", {
                         get: $util.oneOfGetter($oneOfFields = ["abandonDwellTimeMsString"]),
                         set: $util.oneOfSetter($oneOfFields)
@@ -10606,23 +5619,13 @@ $root.AICommon = (function() {
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
-                    /**
-                     * SideBySideSurveyCTAClickEventData _isSurveyExpired.
-                     * @member {"isSurveyExpired"|undefined} _isSurveyExpired
-                     * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData
-                     * @instance
-                     */
+                    // Virtual OneOf for proto3 optional field
                     Object.defineProperty(SideBySideSurveyCTAClickEventData.prototype, "_isSurveyExpired", {
                         get: $util.oneOfGetter($oneOfFields = ["isSurveyExpired"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
-                    /**
-                     * SideBySideSurveyCTAClickEventData _clickDwellTimeMsString.
-                     * @member {"clickDwellTimeMsString"|undefined} _clickDwellTimeMsString
-                     * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData
-                     * @instance
-                     */
+                    // Virtual OneOf for proto3 optional field
                     Object.defineProperty(SideBySideSurveyCTAClickEventData.prototype, "_clickDwellTimeMsString", {
                         get: $util.oneOfGetter($oneOfFields = ["clickDwellTimeMsString"]),
                         set: $util.oneOfSetter($oneOfFields)
@@ -10858,12 +5861,7 @@ $root.AICommon = (function() {
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
-                    /**
-                     * SideBySideSurveyCTAImpressionEventData _isSurveyExpired.
-                     * @member {"isSurveyExpired"|undefined} _isSurveyExpired
-                     * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData
-                     * @instance
-                     */
+                    // Virtual OneOf for proto3 optional field
                     Object.defineProperty(SideBySideSurveyCTAImpressionEventData.prototype, "_isSurveyExpired", {
                         get: $util.oneOfGetter($oneOfFields = ["isSurveyExpired"]),
                         set: $util.oneOfSetter($oneOfFields)
@@ -11267,23 +6265,13 @@ $root.AICommon = (function() {
                     // OneOf field names bound to virtual getters and setters
                     var $oneOfFields;
 
-                    /**
-                     * SideBySideSurveyResponseEventData _responseDwellTimeMsString.
-                     * @member {"responseDwellTimeMsString"|undefined} _responseDwellTimeMsString
-                     * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData
-                     * @instance
-                     */
+                    // Virtual OneOf for proto3 optional field
                     Object.defineProperty(SideBySideSurveyResponseEventData.prototype, "_responseDwellTimeMsString", {
                         get: $util.oneOfGetter($oneOfFields = ["responseDwellTimeMsString"]),
                         set: $util.oneOfSetter($oneOfFields)
                     });
 
-                    /**
-                     * SideBySideSurveyResponseEventData _selectedResponseId.
-                     * @member {"selectedResponseId"|undefined} _selectedResponseId
-                     * @memberof AICommon.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData
-                     * @instance
-                     */
+                    // Virtual OneOf for proto3 optional field
                     Object.defineProperty(SideBySideSurveyResponseEventData.prototype, "_selectedResponseId", {
                         get: $util.oneOfGetter($oneOfFields = ["selectedResponseId"]),
                         set: $util.oneOfSetter($oneOfFields)
@@ -11528,12 +6516,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotGroupParticipantMetadata _botFbid.
-         * @member {"botFbid"|undefined} _botFbid
-         * @memberof AICommon.BotGroupParticipantMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotGroupParticipantMetadata.prototype, "_botFbid", {
             get: $util.oneOfGetter($oneOfFields = ["botFbid"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -11714,6 +6697,257 @@ $root.AICommon = (function() {
         };
 
         return BotGroupParticipantMetadata;
+    })();
+
+    AICommon.BotRenderingConfigMetadata = (function() {
+
+        /**
+         * Properties of a BotRenderingConfigMetadata.
+         * @memberof AICommon
+         * @interface IBotRenderingConfigMetadata
+         * @property {string|null} [bloksVersioningId] BotRenderingConfigMetadata bloksVersioningId
+         * @property {number|null} [pixelDensity] BotRenderingConfigMetadata pixelDensity
+         */
+
+        /**
+         * Constructs a new BotRenderingConfigMetadata.
+         * @memberof AICommon
+         * @classdesc Represents a BotRenderingConfigMetadata.
+         * @implements IBotRenderingConfigMetadata
+         * @constructor
+         * @param {AICommon.IBotRenderingConfigMetadata=} [properties] Properties to set
+         */
+        function BotRenderingConfigMetadata(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BotRenderingConfigMetadata bloksVersioningId.
+         * @member {string|null|undefined} bloksVersioningId
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @instance
+         */
+        BotRenderingConfigMetadata.prototype.bloksVersioningId = null;
+
+        /**
+         * BotRenderingConfigMetadata pixelDensity.
+         * @member {number|null|undefined} pixelDensity
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @instance
+         */
+        BotRenderingConfigMetadata.prototype.pixelDensity = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotRenderingConfigMetadata.prototype, "_bloksVersioningId", {
+            get: $util.oneOfGetter($oneOfFields = ["bloksVersioningId"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotRenderingConfigMetadata.prototype, "_pixelDensity", {
+            get: $util.oneOfGetter($oneOfFields = ["pixelDensity"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new BotRenderingConfigMetadata instance using the specified properties.
+         * @function create
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {AICommon.IBotRenderingConfigMetadata=} [properties] Properties to set
+         * @returns {AICommon.BotRenderingConfigMetadata} BotRenderingConfigMetadata instance
+         */
+        BotRenderingConfigMetadata.create = function create(properties) {
+            return new BotRenderingConfigMetadata(properties);
+        };
+
+        /**
+         * Encodes the specified BotRenderingConfigMetadata message. Does not implicitly {@link AICommon.BotRenderingConfigMetadata.verify|verify} messages.
+         * @function encode
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {AICommon.IBotRenderingConfigMetadata} message BotRenderingConfigMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotRenderingConfigMetadata.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.bloksVersioningId != null && Object.hasOwnProperty.call(message, "bloksVersioningId"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.bloksVersioningId);
+            if (message.pixelDensity != null && Object.hasOwnProperty.call(message, "pixelDensity"))
+                writer.uint32(/* id 2, wireType 1 =*/17).double(message.pixelDensity);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BotRenderingConfigMetadata message, length delimited. Does not implicitly {@link AICommon.BotRenderingConfigMetadata.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {AICommon.IBotRenderingConfigMetadata} message BotRenderingConfigMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotRenderingConfigMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BotRenderingConfigMetadata message from the specified reader or buffer.
+         * @function decode
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AICommon.BotRenderingConfigMetadata} BotRenderingConfigMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotRenderingConfigMetadata.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotRenderingConfigMetadata();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.bloksVersioningId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.pixelDensity = reader.double();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a BotRenderingConfigMetadata message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AICommon.BotRenderingConfigMetadata} BotRenderingConfigMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotRenderingConfigMetadata.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BotRenderingConfigMetadata message.
+         * @function verify
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BotRenderingConfigMetadata.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            var properties = {};
+            if (message.bloksVersioningId != null && message.hasOwnProperty("bloksVersioningId")) {
+                properties._bloksVersioningId = 1;
+                if (!$util.isString(message.bloksVersioningId))
+                    return "bloksVersioningId: string expected";
+            }
+            if (message.pixelDensity != null && message.hasOwnProperty("pixelDensity")) {
+                properties._pixelDensity = 1;
+                if (typeof message.pixelDensity !== "number")
+                    return "pixelDensity: number expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BotRenderingConfigMetadata message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AICommon.BotRenderingConfigMetadata} BotRenderingConfigMetadata
+         */
+        BotRenderingConfigMetadata.fromObject = function fromObject(object) {
+            if (object instanceof $root.AICommon.BotRenderingConfigMetadata)
+                return object;
+            var message = new $root.AICommon.BotRenderingConfigMetadata();
+            if (object.bloksVersioningId != null)
+                message.bloksVersioningId = String(object.bloksVersioningId);
+            if (object.pixelDensity != null)
+                message.pixelDensity = Number(object.pixelDensity);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BotRenderingConfigMetadata message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {AICommon.BotRenderingConfigMetadata} message BotRenderingConfigMetadata
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BotRenderingConfigMetadata.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (message.bloksVersioningId != null && message.hasOwnProperty("bloksVersioningId")) {
+                object.bloksVersioningId = message.bloksVersioningId;
+                if (options.oneofs)
+                    object._bloksVersioningId = "bloksVersioningId";
+            }
+            if (message.pixelDensity != null && message.hasOwnProperty("pixelDensity")) {
+                object.pixelDensity = options.json && !isFinite(message.pixelDensity) ? String(message.pixelDensity) : message.pixelDensity;
+                if (options.oneofs)
+                    object._pixelDensity = "pixelDensity";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BotRenderingConfigMetadata to JSON.
+         * @function toJSON
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BotRenderingConfigMetadata.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotRenderingConfigMetadata
+         * @function getTypeUrl
+         * @memberof AICommon.BotRenderingConfigMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotRenderingConfigMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/AICommon.BotRenderingConfigMetadata";
+        };
+
+        return BotRenderingConfigMetadata;
     })();
 
     AICommon.BotGroupMetadata = (function() {
@@ -11948,7 +7182,6 @@ $root.AICommon = (function() {
          * Properties of a BotMetadata.
          * @memberof AICommon
          * @interface IBotMetadata
-         * @property {AICommon.IBotAvatarMetadata|null} [avatarMetadata] BotMetadata avatarMetadata
          * @property {string|null} [personaId] BotMetadata personaId
          * @property {AICommon.IBotPluginMetadata|null} [pluginMetadata] BotMetadata pluginMetadata
          * @property {AICommon.IBotSuggestedPromptMetadata|null} [suggestedPromptMetadata] BotMetadata suggestedPromptMetadata
@@ -11983,6 +7216,10 @@ $root.AICommon = (function() {
          * @property {AICommon.ISessionTransparencyMetadata|null} [sessionTransparencyMetadata] BotMetadata sessionTransparencyMetadata
          * @property {AICommon.IBotDocumentMessageMetadata|null} [botDocumentMessageMetadata] BotMetadata botDocumentMessageMetadata
          * @property {AICommon.IBotGroupMetadata|null} [botGroupMetadata] BotMetadata botGroupMetadata
+         * @property {AICommon.IBotRenderingConfigMetadata|null} [botRenderingConfigMetadata] BotMetadata botRenderingConfigMetadata
+         * @property {AICommon.IBotInfrastructureDiagnostics|null} [botInfrastructureDiagnostics] BotMetadata botInfrastructureDiagnostics
+         * @property {AICommon.IAIMediaCollectionMetadata|null} [aiMediaCollectionMetadata] BotMetadata aiMediaCollectionMetadata
+         * @property {AICommon.IBotCommandMetadata|null} [commandMetadata] BotMetadata commandMetadata
          * @property {Uint8Array|null} [internalMetadata] BotMetadata internalMetadata
          */
 
@@ -12000,14 +7237,6 @@ $root.AICommon = (function() {
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
-        /**
-         * BotMetadata avatarMetadata.
-         * @member {AICommon.IBotAvatarMetadata|null|undefined} avatarMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
-        BotMetadata.prototype.avatarMetadata = null;
 
         /**
          * BotMetadata personaId.
@@ -12282,6 +7511,38 @@ $root.AICommon = (function() {
         BotMetadata.prototype.botGroupMetadata = null;
 
         /**
+         * BotMetadata botRenderingConfigMetadata.
+         * @member {AICommon.IBotRenderingConfigMetadata|null|undefined} botRenderingConfigMetadata
+         * @memberof AICommon.BotMetadata
+         * @instance
+         */
+        BotMetadata.prototype.botRenderingConfigMetadata = null;
+
+        /**
+         * BotMetadata botInfrastructureDiagnostics.
+         * @member {AICommon.IBotInfrastructureDiagnostics|null|undefined} botInfrastructureDiagnostics
+         * @memberof AICommon.BotMetadata
+         * @instance
+         */
+        BotMetadata.prototype.botInfrastructureDiagnostics = null;
+
+        /**
+         * BotMetadata aiMediaCollectionMetadata.
+         * @member {AICommon.IAIMediaCollectionMetadata|null|undefined} aiMediaCollectionMetadata
+         * @memberof AICommon.BotMetadata
+         * @instance
+         */
+        BotMetadata.prototype.aiMediaCollectionMetadata = null;
+
+        /**
+         * BotMetadata commandMetadata.
+         * @member {AICommon.IBotCommandMetadata|null|undefined} commandMetadata
+         * @memberof AICommon.BotMetadata
+         * @instance
+         */
+        BotMetadata.prototype.commandMetadata = null;
+
+        /**
          * BotMetadata internalMetadata.
          * @member {Uint8Array|null|undefined} internalMetadata
          * @memberof AICommon.BotMetadata
@@ -12292,397 +7553,235 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotMetadata _avatarMetadata.
-         * @member {"avatarMetadata"|undefined} _avatarMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
-        Object.defineProperty(BotMetadata.prototype, "_avatarMetadata", {
-            get: $util.oneOfGetter($oneOfFields = ["avatarMetadata"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * BotMetadata _personaId.
-         * @member {"personaId"|undefined} _personaId
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_personaId", {
             get: $util.oneOfGetter($oneOfFields = ["personaId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _pluginMetadata.
-         * @member {"pluginMetadata"|undefined} _pluginMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_pluginMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["pluginMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _suggestedPromptMetadata.
-         * @member {"suggestedPromptMetadata"|undefined} _suggestedPromptMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_suggestedPromptMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["suggestedPromptMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _invokerJid.
-         * @member {"invokerJid"|undefined} _invokerJid
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_invokerJid", {
             get: $util.oneOfGetter($oneOfFields = ["invokerJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _sessionMetadata.
-         * @member {"sessionMetadata"|undefined} _sessionMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_sessionMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["sessionMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _memuMetadata.
-         * @member {"memuMetadata"|undefined} _memuMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_memuMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["memuMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _timezone.
-         * @member {"timezone"|undefined} _timezone
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_timezone", {
             get: $util.oneOfGetter($oneOfFields = ["timezone"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _reminderMetadata.
-         * @member {"reminderMetadata"|undefined} _reminderMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_reminderMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["reminderMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _modelMetadata.
-         * @member {"modelMetadata"|undefined} _modelMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_modelMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["modelMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _messageDisclaimerText.
-         * @member {"messageDisclaimerText"|undefined} _messageDisclaimerText
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_messageDisclaimerText", {
             get: $util.oneOfGetter($oneOfFields = ["messageDisclaimerText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _progressIndicatorMetadata.
-         * @member {"progressIndicatorMetadata"|undefined} _progressIndicatorMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_progressIndicatorMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["progressIndicatorMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _capabilityMetadata.
-         * @member {"capabilityMetadata"|undefined} _capabilityMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_capabilityMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["capabilityMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _imagineMetadata.
-         * @member {"imagineMetadata"|undefined} _imagineMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_imagineMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["imagineMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _memoryMetadata.
-         * @member {"memoryMetadata"|undefined} _memoryMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_memoryMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["memoryMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _renderingMetadata.
-         * @member {"renderingMetadata"|undefined} _renderingMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_renderingMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["renderingMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botMetricsMetadata.
-         * @member {"botMetricsMetadata"|undefined} _botMetricsMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botMetricsMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botMetricsMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botLinkedAccountsMetadata.
-         * @member {"botLinkedAccountsMetadata"|undefined} _botLinkedAccountsMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botLinkedAccountsMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botLinkedAccountsMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _richResponseSourcesMetadata.
-         * @member {"richResponseSourcesMetadata"|undefined} _richResponseSourcesMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_richResponseSourcesMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["richResponseSourcesMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _aiConversationContext.
-         * @member {"aiConversationContext"|undefined} _aiConversationContext
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_aiConversationContext", {
             get: $util.oneOfGetter($oneOfFields = ["aiConversationContext"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botPromotionMessageMetadata.
-         * @member {"botPromotionMessageMetadata"|undefined} _botPromotionMessageMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botPromotionMessageMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botPromotionMessageMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botModeSelectionMetadata.
-         * @member {"botModeSelectionMetadata"|undefined} _botModeSelectionMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botModeSelectionMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botModeSelectionMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botQuotaMetadata.
-         * @member {"botQuotaMetadata"|undefined} _botQuotaMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botQuotaMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botQuotaMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botAgeCollectionMetadata.
-         * @member {"botAgeCollectionMetadata"|undefined} _botAgeCollectionMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botAgeCollectionMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botAgeCollectionMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _conversationStarterPromptId.
-         * @member {"conversationStarterPromptId"|undefined} _conversationStarterPromptId
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_conversationStarterPromptId", {
             get: $util.oneOfGetter($oneOfFields = ["conversationStarterPromptId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botResponseId.
-         * @member {"botResponseId"|undefined} _botResponseId
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botResponseId", {
             get: $util.oneOfGetter($oneOfFields = ["botResponseId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _verificationMetadata.
-         * @member {"verificationMetadata"|undefined} _verificationMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_verificationMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["verificationMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _unifiedResponseMutation.
-         * @member {"unifiedResponseMutation"|undefined} _unifiedResponseMutation
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_unifiedResponseMutation", {
             get: $util.oneOfGetter($oneOfFields = ["unifiedResponseMutation"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botMessageOriginMetadata.
-         * @member {"botMessageOriginMetadata"|undefined} _botMessageOriginMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botMessageOriginMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botMessageOriginMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _inThreadSurveyMetadata.
-         * @member {"inThreadSurveyMetadata"|undefined} _inThreadSurveyMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_inThreadSurveyMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["inThreadSurveyMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botThreadInfo.
-         * @member {"botThreadInfo"|undefined} _botThreadInfo
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botThreadInfo", {
             get: $util.oneOfGetter($oneOfFields = ["botThreadInfo"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _regenerateMetadata.
-         * @member {"regenerateMetadata"|undefined} _regenerateMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_regenerateMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["regenerateMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _sessionTransparencyMetadata.
-         * @member {"sessionTransparencyMetadata"|undefined} _sessionTransparencyMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_sessionTransparencyMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["sessionTransparencyMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botDocumentMessageMetadata.
-         * @member {"botDocumentMessageMetadata"|undefined} _botDocumentMessageMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botDocumentMessageMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botDocumentMessageMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _botGroupMetadata.
-         * @member {"botGroupMetadata"|undefined} _botGroupMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_botGroupMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["botGroupMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetadata _internalMetadata.
-         * @member {"internalMetadata"|undefined} _internalMetadata
-         * @memberof AICommon.BotMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotMetadata.prototype, "_botRenderingConfigMetadata", {
+            get: $util.oneOfGetter($oneOfFields = ["botRenderingConfigMetadata"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotMetadata.prototype, "_botInfrastructureDiagnostics", {
+            get: $util.oneOfGetter($oneOfFields = ["botInfrastructureDiagnostics"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotMetadata.prototype, "_aiMediaCollectionMetadata", {
+            get: $util.oneOfGetter($oneOfFields = ["aiMediaCollectionMetadata"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotMetadata.prototype, "_commandMetadata", {
+            get: $util.oneOfGetter($oneOfFields = ["commandMetadata"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetadata.prototype, "_internalMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["internalMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -12712,8 +7811,6 @@ $root.AICommon = (function() {
         BotMetadata.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.avatarMetadata != null && Object.hasOwnProperty.call(message, "avatarMetadata"))
-                $root.AICommon.BotAvatarMetadata.encode(message.avatarMetadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
             if (message.personaId != null && Object.hasOwnProperty.call(message, "personaId"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.personaId);
             if (message.pluginMetadata != null && Object.hasOwnProperty.call(message, "pluginMetadata"))
@@ -12782,6 +7879,14 @@ $root.AICommon = (function() {
                 $root.AICommon.BotDocumentMessageMetadata.encode(message.botDocumentMessageMetadata, writer.uint32(/* id 34, wireType 2 =*/274).fork()).ldelim();
             if (message.botGroupMetadata != null && Object.hasOwnProperty.call(message, "botGroupMetadata"))
                 $root.AICommon.BotGroupMetadata.encode(message.botGroupMetadata, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
+            if (message.botRenderingConfigMetadata != null && Object.hasOwnProperty.call(message, "botRenderingConfigMetadata"))
+                $root.AICommon.BotRenderingConfigMetadata.encode(message.botRenderingConfigMetadata, writer.uint32(/* id 36, wireType 2 =*/290).fork()).ldelim();
+            if (message.botInfrastructureDiagnostics != null && Object.hasOwnProperty.call(message, "botInfrastructureDiagnostics"))
+                $root.AICommon.BotInfrastructureDiagnostics.encode(message.botInfrastructureDiagnostics, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
+            if (message.aiMediaCollectionMetadata != null && Object.hasOwnProperty.call(message, "aiMediaCollectionMetadata"))
+                $root.AICommon.AIMediaCollectionMetadata.encode(message.aiMediaCollectionMetadata, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
+            if (message.commandMetadata != null && Object.hasOwnProperty.call(message, "commandMetadata"))
+                $root.AICommon.BotCommandMetadata.encode(message.commandMetadata, writer.uint32(/* id 39, wireType 2 =*/314).fork()).ldelim();
             if (message.internalMetadata != null && Object.hasOwnProperty.call(message, "internalMetadata"))
                 writer.uint32(/* id 999, wireType 2 =*/7994).bytes(message.internalMetadata);
             return writer;
@@ -12820,10 +7925,6 @@ $root.AICommon = (function() {
                 if (tag === error)
                     break;
                 switch (tag >>> 3) {
-                case 1: {
-                        message.avatarMetadata = $root.AICommon.BotAvatarMetadata.decode(reader, reader.uint32());
-                        break;
-                    }
                 case 2: {
                         message.personaId = reader.string();
                         break;
@@ -12960,6 +8061,22 @@ $root.AICommon = (function() {
                         message.botGroupMetadata = $root.AICommon.BotGroupMetadata.decode(reader, reader.uint32());
                         break;
                     }
+                case 36: {
+                        message.botRenderingConfigMetadata = $root.AICommon.BotRenderingConfigMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 37: {
+                        message.botInfrastructureDiagnostics = $root.AICommon.BotInfrastructureDiagnostics.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 38: {
+                        message.aiMediaCollectionMetadata = $root.AICommon.AIMediaCollectionMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 39: {
+                        message.commandMetadata = $root.AICommon.BotCommandMetadata.decode(reader, reader.uint32());
+                        break;
+                    }
                 case 999: {
                         message.internalMetadata = reader.bytes();
                         break;
@@ -13000,14 +8117,6 @@ $root.AICommon = (function() {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             var properties = {};
-            if (message.avatarMetadata != null && message.hasOwnProperty("avatarMetadata")) {
-                properties._avatarMetadata = 1;
-                {
-                    var error = $root.AICommon.BotAvatarMetadata.verify(message.avatarMetadata);
-                    if (error)
-                        return "avatarMetadata." + error;
-                }
-            }
             if (message.personaId != null && message.hasOwnProperty("personaId")) {
                 properties._personaId = 1;
                 if (!$util.isString(message.personaId))
@@ -13259,6 +8368,38 @@ $root.AICommon = (function() {
                         return "botGroupMetadata." + error;
                 }
             }
+            if (message.botRenderingConfigMetadata != null && message.hasOwnProperty("botRenderingConfigMetadata")) {
+                properties._botRenderingConfigMetadata = 1;
+                {
+                    var error = $root.AICommon.BotRenderingConfigMetadata.verify(message.botRenderingConfigMetadata);
+                    if (error)
+                        return "botRenderingConfigMetadata." + error;
+                }
+            }
+            if (message.botInfrastructureDiagnostics != null && message.hasOwnProperty("botInfrastructureDiagnostics")) {
+                properties._botInfrastructureDiagnostics = 1;
+                {
+                    var error = $root.AICommon.BotInfrastructureDiagnostics.verify(message.botInfrastructureDiagnostics);
+                    if (error)
+                        return "botInfrastructureDiagnostics." + error;
+                }
+            }
+            if (message.aiMediaCollectionMetadata != null && message.hasOwnProperty("aiMediaCollectionMetadata")) {
+                properties._aiMediaCollectionMetadata = 1;
+                {
+                    var error = $root.AICommon.AIMediaCollectionMetadata.verify(message.aiMediaCollectionMetadata);
+                    if (error)
+                        return "aiMediaCollectionMetadata." + error;
+                }
+            }
+            if (message.commandMetadata != null && message.hasOwnProperty("commandMetadata")) {
+                properties._commandMetadata = 1;
+                {
+                    var error = $root.AICommon.BotCommandMetadata.verify(message.commandMetadata);
+                    if (error)
+                        return "commandMetadata." + error;
+                }
+            }
             if (message.internalMetadata != null && message.hasOwnProperty("internalMetadata")) {
                 properties._internalMetadata = 1;
                 if (!(message.internalMetadata && typeof message.internalMetadata.length === "number" || $util.isString(message.internalMetadata)))
@@ -13279,11 +8420,6 @@ $root.AICommon = (function() {
             if (object instanceof $root.AICommon.BotMetadata)
                 return object;
             var message = new $root.AICommon.BotMetadata();
-            if (object.avatarMetadata != null) {
-                if (typeof object.avatarMetadata !== "object")
-                    throw TypeError(".AICommon.BotMetadata.avatarMetadata: object expected");
-                message.avatarMetadata = $root.AICommon.BotAvatarMetadata.fromObject(object.avatarMetadata);
-            }
             if (object.personaId != null)
                 message.personaId = String(object.personaId);
             if (object.pluginMetadata != null) {
@@ -13436,6 +8572,26 @@ $root.AICommon = (function() {
                     throw TypeError(".AICommon.BotMetadata.botGroupMetadata: object expected");
                 message.botGroupMetadata = $root.AICommon.BotGroupMetadata.fromObject(object.botGroupMetadata);
             }
+            if (object.botRenderingConfigMetadata != null) {
+                if (typeof object.botRenderingConfigMetadata !== "object")
+                    throw TypeError(".AICommon.BotMetadata.botRenderingConfigMetadata: object expected");
+                message.botRenderingConfigMetadata = $root.AICommon.BotRenderingConfigMetadata.fromObject(object.botRenderingConfigMetadata);
+            }
+            if (object.botInfrastructureDiagnostics != null) {
+                if (typeof object.botInfrastructureDiagnostics !== "object")
+                    throw TypeError(".AICommon.BotMetadata.botInfrastructureDiagnostics: object expected");
+                message.botInfrastructureDiagnostics = $root.AICommon.BotInfrastructureDiagnostics.fromObject(object.botInfrastructureDiagnostics);
+            }
+            if (object.aiMediaCollectionMetadata != null) {
+                if (typeof object.aiMediaCollectionMetadata !== "object")
+                    throw TypeError(".AICommon.BotMetadata.aiMediaCollectionMetadata: object expected");
+                message.aiMediaCollectionMetadata = $root.AICommon.AIMediaCollectionMetadata.fromObject(object.aiMediaCollectionMetadata);
+            }
+            if (object.commandMetadata != null) {
+                if (typeof object.commandMetadata !== "object")
+                    throw TypeError(".AICommon.BotMetadata.commandMetadata: object expected");
+                message.commandMetadata = $root.AICommon.BotCommandMetadata.fromObject(object.commandMetadata);
+            }
             if (object.internalMetadata != null)
                 if (typeof object.internalMetadata === "string")
                     $util.base64.decode(object.internalMetadata, message.internalMetadata = $util.newBuffer($util.base64.length(object.internalMetadata)), 0);
@@ -13457,11 +8613,6 @@ $root.AICommon = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (message.avatarMetadata != null && message.hasOwnProperty("avatarMetadata")) {
-                object.avatarMetadata = $root.AICommon.BotAvatarMetadata.toObject(message.avatarMetadata, options);
-                if (options.oneofs)
-                    object._avatarMetadata = "avatarMetadata";
-            }
             if (message.personaId != null && message.hasOwnProperty("personaId")) {
                 object.personaId = message.personaId;
                 if (options.oneofs)
@@ -13632,6 +8783,26 @@ $root.AICommon = (function() {
                 if (options.oneofs)
                     object._botGroupMetadata = "botGroupMetadata";
             }
+            if (message.botRenderingConfigMetadata != null && message.hasOwnProperty("botRenderingConfigMetadata")) {
+                object.botRenderingConfigMetadata = $root.AICommon.BotRenderingConfigMetadata.toObject(message.botRenderingConfigMetadata, options);
+                if (options.oneofs)
+                    object._botRenderingConfigMetadata = "botRenderingConfigMetadata";
+            }
+            if (message.botInfrastructureDiagnostics != null && message.hasOwnProperty("botInfrastructureDiagnostics")) {
+                object.botInfrastructureDiagnostics = $root.AICommon.BotInfrastructureDiagnostics.toObject(message.botInfrastructureDiagnostics, options);
+                if (options.oneofs)
+                    object._botInfrastructureDiagnostics = "botInfrastructureDiagnostics";
+            }
+            if (message.aiMediaCollectionMetadata != null && message.hasOwnProperty("aiMediaCollectionMetadata")) {
+                object.aiMediaCollectionMetadata = $root.AICommon.AIMediaCollectionMetadata.toObject(message.aiMediaCollectionMetadata, options);
+                if (options.oneofs)
+                    object._aiMediaCollectionMetadata = "aiMediaCollectionMetadata";
+            }
+            if (message.commandMetadata != null && message.hasOwnProperty("commandMetadata")) {
+                object.commandMetadata = $root.AICommon.BotCommandMetadata.toObject(message.commandMetadata, options);
+                if (options.oneofs)
+                    object._commandMetadata = "commandMetadata";
+            }
             if (message.internalMetadata != null && message.hasOwnProperty("internalMetadata")) {
                 object.internalMetadata = options.bytes === String ? $util.base64.encode(message.internalMetadata, 0, message.internalMetadata.length) : options.bytes === Array ? Array.prototype.slice.call(message.internalMetadata) : message.internalMetadata;
                 if (options.oneofs)
@@ -13667,6 +8838,825 @@ $root.AICommon = (function() {
         };
 
         return BotMetadata;
+    })();
+
+    AICommon.BotCommandMetadata = (function() {
+
+        /**
+         * Properties of a BotCommandMetadata.
+         * @memberof AICommon
+         * @interface IBotCommandMetadata
+         * @property {string|null} [commandName] BotCommandMetadata commandName
+         * @property {string|null} [commandDescription] BotCommandMetadata commandDescription
+         * @property {string|null} [commandPrompt] BotCommandMetadata commandPrompt
+         */
+
+        /**
+         * Constructs a new BotCommandMetadata.
+         * @memberof AICommon
+         * @classdesc Represents a BotCommandMetadata.
+         * @implements IBotCommandMetadata
+         * @constructor
+         * @param {AICommon.IBotCommandMetadata=} [properties] Properties to set
+         */
+        function BotCommandMetadata(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * BotCommandMetadata commandName.
+         * @member {string|null|undefined} commandName
+         * @memberof AICommon.BotCommandMetadata
+         * @instance
+         */
+        BotCommandMetadata.prototype.commandName = null;
+
+        /**
+         * BotCommandMetadata commandDescription.
+         * @member {string|null|undefined} commandDescription
+         * @memberof AICommon.BotCommandMetadata
+         * @instance
+         */
+        BotCommandMetadata.prototype.commandDescription = null;
+
+        /**
+         * BotCommandMetadata commandPrompt.
+         * @member {string|null|undefined} commandPrompt
+         * @memberof AICommon.BotCommandMetadata
+         * @instance
+         */
+        BotCommandMetadata.prototype.commandPrompt = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotCommandMetadata.prototype, "_commandName", {
+            get: $util.oneOfGetter($oneOfFields = ["commandName"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotCommandMetadata.prototype, "_commandDescription", {
+            get: $util.oneOfGetter($oneOfFields = ["commandDescription"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotCommandMetadata.prototype, "_commandPrompt", {
+            get: $util.oneOfGetter($oneOfFields = ["commandPrompt"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new BotCommandMetadata instance using the specified properties.
+         * @function create
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {AICommon.IBotCommandMetadata=} [properties] Properties to set
+         * @returns {AICommon.BotCommandMetadata} BotCommandMetadata instance
+         */
+        BotCommandMetadata.create = function create(properties) {
+            return new BotCommandMetadata(properties);
+        };
+
+        /**
+         * Encodes the specified BotCommandMetadata message. Does not implicitly {@link AICommon.BotCommandMetadata.verify|verify} messages.
+         * @function encode
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {AICommon.IBotCommandMetadata} message BotCommandMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotCommandMetadata.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.commandName != null && Object.hasOwnProperty.call(message, "commandName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.commandName);
+            if (message.commandDescription != null && Object.hasOwnProperty.call(message, "commandDescription"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.commandDescription);
+            if (message.commandPrompt != null && Object.hasOwnProperty.call(message, "commandPrompt"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.commandPrompt);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified BotCommandMetadata message, length delimited. Does not implicitly {@link AICommon.BotCommandMetadata.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {AICommon.IBotCommandMetadata} message BotCommandMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        BotCommandMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a BotCommandMetadata message from the specified reader or buffer.
+         * @function decode
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AICommon.BotCommandMetadata} BotCommandMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotCommandMetadata.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotCommandMetadata();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.commandName = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.commandDescription = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.commandPrompt = reader.string();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a BotCommandMetadata message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AICommon.BotCommandMetadata} BotCommandMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        BotCommandMetadata.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a BotCommandMetadata message.
+         * @function verify
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        BotCommandMetadata.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            var properties = {};
+            if (message.commandName != null && message.hasOwnProperty("commandName")) {
+                properties._commandName = 1;
+                if (!$util.isString(message.commandName))
+                    return "commandName: string expected";
+            }
+            if (message.commandDescription != null && message.hasOwnProperty("commandDescription")) {
+                properties._commandDescription = 1;
+                if (!$util.isString(message.commandDescription))
+                    return "commandDescription: string expected";
+            }
+            if (message.commandPrompt != null && message.hasOwnProperty("commandPrompt")) {
+                properties._commandPrompt = 1;
+                if (!$util.isString(message.commandPrompt))
+                    return "commandPrompt: string expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a BotCommandMetadata message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AICommon.BotCommandMetadata} BotCommandMetadata
+         */
+        BotCommandMetadata.fromObject = function fromObject(object) {
+            if (object instanceof $root.AICommon.BotCommandMetadata)
+                return object;
+            var message = new $root.AICommon.BotCommandMetadata();
+            if (object.commandName != null)
+                message.commandName = String(object.commandName);
+            if (object.commandDescription != null)
+                message.commandDescription = String(object.commandDescription);
+            if (object.commandPrompt != null)
+                message.commandPrompt = String(object.commandPrompt);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a BotCommandMetadata message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {AICommon.BotCommandMetadata} message BotCommandMetadata
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        BotCommandMetadata.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (message.commandName != null && message.hasOwnProperty("commandName")) {
+                object.commandName = message.commandName;
+                if (options.oneofs)
+                    object._commandName = "commandName";
+            }
+            if (message.commandDescription != null && message.hasOwnProperty("commandDescription")) {
+                object.commandDescription = message.commandDescription;
+                if (options.oneofs)
+                    object._commandDescription = "commandDescription";
+            }
+            if (message.commandPrompt != null && message.hasOwnProperty("commandPrompt")) {
+                object.commandPrompt = message.commandPrompt;
+                if (options.oneofs)
+                    object._commandPrompt = "commandPrompt";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this BotCommandMetadata to JSON.
+         * @function toJSON
+         * @memberof AICommon.BotCommandMetadata
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        BotCommandMetadata.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for BotCommandMetadata
+         * @function getTypeUrl
+         * @memberof AICommon.BotCommandMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        BotCommandMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/AICommon.BotCommandMetadata";
+        };
+
+        return BotCommandMetadata;
+    })();
+
+    AICommon.AIMediaCollectionMessage = (function() {
+
+        /**
+         * Properties of a AIMediaCollectionMessage.
+         * @memberof AICommon
+         * @interface IAIMediaCollectionMessage
+         * @property {string|null} [collectionId] AIMediaCollectionMessage collectionId
+         * @property {number|null} [expectedMediaCount] AIMediaCollectionMessage expectedMediaCount
+         * @property {boolean|null} [hasGlobalCaption] AIMediaCollectionMessage hasGlobalCaption
+         */
+
+        /**
+         * Constructs a new AIMediaCollectionMessage.
+         * @memberof AICommon
+         * @classdesc Represents a AIMediaCollectionMessage.
+         * @implements IAIMediaCollectionMessage
+         * @constructor
+         * @param {AICommon.IAIMediaCollectionMessage=} [properties] Properties to set
+         */
+        function AIMediaCollectionMessage(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * AIMediaCollectionMessage collectionId.
+         * @member {string|null|undefined} collectionId
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @instance
+         */
+        AIMediaCollectionMessage.prototype.collectionId = null;
+
+        /**
+         * AIMediaCollectionMessage expectedMediaCount.
+         * @member {number|null|undefined} expectedMediaCount
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @instance
+         */
+        AIMediaCollectionMessage.prototype.expectedMediaCount = null;
+
+        /**
+         * AIMediaCollectionMessage hasGlobalCaption.
+         * @member {boolean|null|undefined} hasGlobalCaption
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @instance
+         */
+        AIMediaCollectionMessage.prototype.hasGlobalCaption = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(AIMediaCollectionMessage.prototype, "_collectionId", {
+            get: $util.oneOfGetter($oneOfFields = ["collectionId"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(AIMediaCollectionMessage.prototype, "_expectedMediaCount", {
+            get: $util.oneOfGetter($oneOfFields = ["expectedMediaCount"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(AIMediaCollectionMessage.prototype, "_hasGlobalCaption", {
+            get: $util.oneOfGetter($oneOfFields = ["hasGlobalCaption"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new AIMediaCollectionMessage instance using the specified properties.
+         * @function create
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {AICommon.IAIMediaCollectionMessage=} [properties] Properties to set
+         * @returns {AICommon.AIMediaCollectionMessage} AIMediaCollectionMessage instance
+         */
+        AIMediaCollectionMessage.create = function create(properties) {
+            return new AIMediaCollectionMessage(properties);
+        };
+
+        /**
+         * Encodes the specified AIMediaCollectionMessage message. Does not implicitly {@link AICommon.AIMediaCollectionMessage.verify|verify} messages.
+         * @function encode
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {AICommon.IAIMediaCollectionMessage} message AIMediaCollectionMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AIMediaCollectionMessage.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.collectionId != null && Object.hasOwnProperty.call(message, "collectionId"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.collectionId);
+            if (message.expectedMediaCount != null && Object.hasOwnProperty.call(message, "expectedMediaCount"))
+                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.expectedMediaCount);
+            if (message.hasGlobalCaption != null && Object.hasOwnProperty.call(message, "hasGlobalCaption"))
+                writer.uint32(/* id 3, wireType 0 =*/24).bool(message.hasGlobalCaption);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified AIMediaCollectionMessage message, length delimited. Does not implicitly {@link AICommon.AIMediaCollectionMessage.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {AICommon.IAIMediaCollectionMessage} message AIMediaCollectionMessage message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AIMediaCollectionMessage.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a AIMediaCollectionMessage message from the specified reader or buffer.
+         * @function decode
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AICommon.AIMediaCollectionMessage} AIMediaCollectionMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AIMediaCollectionMessage.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIMediaCollectionMessage();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.collectionId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.expectedMediaCount = reader.uint32();
+                        break;
+                    }
+                case 3: {
+                        message.hasGlobalCaption = reader.bool();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a AIMediaCollectionMessage message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AICommon.AIMediaCollectionMessage} AIMediaCollectionMessage
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AIMediaCollectionMessage.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a AIMediaCollectionMessage message.
+         * @function verify
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        AIMediaCollectionMessage.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            var properties = {};
+            if (message.collectionId != null && message.hasOwnProperty("collectionId")) {
+                properties._collectionId = 1;
+                if (!$util.isString(message.collectionId))
+                    return "collectionId: string expected";
+            }
+            if (message.expectedMediaCount != null && message.hasOwnProperty("expectedMediaCount")) {
+                properties._expectedMediaCount = 1;
+                if (!$util.isInteger(message.expectedMediaCount))
+                    return "expectedMediaCount: integer expected";
+            }
+            if (message.hasGlobalCaption != null && message.hasOwnProperty("hasGlobalCaption")) {
+                properties._hasGlobalCaption = 1;
+                if (typeof message.hasGlobalCaption !== "boolean")
+                    return "hasGlobalCaption: boolean expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a AIMediaCollectionMessage message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AICommon.AIMediaCollectionMessage} AIMediaCollectionMessage
+         */
+        AIMediaCollectionMessage.fromObject = function fromObject(object) {
+            if (object instanceof $root.AICommon.AIMediaCollectionMessage)
+                return object;
+            var message = new $root.AICommon.AIMediaCollectionMessage();
+            if (object.collectionId != null)
+                message.collectionId = String(object.collectionId);
+            if (object.expectedMediaCount != null)
+                message.expectedMediaCount = object.expectedMediaCount >>> 0;
+            if (object.hasGlobalCaption != null)
+                message.hasGlobalCaption = Boolean(object.hasGlobalCaption);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a AIMediaCollectionMessage message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {AICommon.AIMediaCollectionMessage} message AIMediaCollectionMessage
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        AIMediaCollectionMessage.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (message.collectionId != null && message.hasOwnProperty("collectionId")) {
+                object.collectionId = message.collectionId;
+                if (options.oneofs)
+                    object._collectionId = "collectionId";
+            }
+            if (message.expectedMediaCount != null && message.hasOwnProperty("expectedMediaCount")) {
+                object.expectedMediaCount = message.expectedMediaCount;
+                if (options.oneofs)
+                    object._expectedMediaCount = "expectedMediaCount";
+            }
+            if (message.hasGlobalCaption != null && message.hasOwnProperty("hasGlobalCaption")) {
+                object.hasGlobalCaption = message.hasGlobalCaption;
+                if (options.oneofs)
+                    object._hasGlobalCaption = "hasGlobalCaption";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this AIMediaCollectionMessage to JSON.
+         * @function toJSON
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        AIMediaCollectionMessage.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for AIMediaCollectionMessage
+         * @function getTypeUrl
+         * @memberof AICommon.AIMediaCollectionMessage
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        AIMediaCollectionMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/AICommon.AIMediaCollectionMessage";
+        };
+
+        return AIMediaCollectionMessage;
+    })();
+
+    AICommon.AIMediaCollectionMetadata = (function() {
+
+        /**
+         * Properties of a AIMediaCollectionMetadata.
+         * @memberof AICommon
+         * @interface IAIMediaCollectionMetadata
+         * @property {string|null} [collectionId] AIMediaCollectionMetadata collectionId
+         * @property {number|null} [uploadOrderIndex] AIMediaCollectionMetadata uploadOrderIndex
+         */
+
+        /**
+         * Constructs a new AIMediaCollectionMetadata.
+         * @memberof AICommon
+         * @classdesc Represents a AIMediaCollectionMetadata.
+         * @implements IAIMediaCollectionMetadata
+         * @constructor
+         * @param {AICommon.IAIMediaCollectionMetadata=} [properties] Properties to set
+         */
+        function AIMediaCollectionMetadata(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * AIMediaCollectionMetadata collectionId.
+         * @member {string|null|undefined} collectionId
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @instance
+         */
+        AIMediaCollectionMetadata.prototype.collectionId = null;
+
+        /**
+         * AIMediaCollectionMetadata uploadOrderIndex.
+         * @member {number|null|undefined} uploadOrderIndex
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @instance
+         */
+        AIMediaCollectionMetadata.prototype.uploadOrderIndex = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(AIMediaCollectionMetadata.prototype, "_collectionId", {
+            get: $util.oneOfGetter($oneOfFields = ["collectionId"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(AIMediaCollectionMetadata.prototype, "_uploadOrderIndex", {
+            get: $util.oneOfGetter($oneOfFields = ["uploadOrderIndex"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        /**
+         * Creates a new AIMediaCollectionMetadata instance using the specified properties.
+         * @function create
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {AICommon.IAIMediaCollectionMetadata=} [properties] Properties to set
+         * @returns {AICommon.AIMediaCollectionMetadata} AIMediaCollectionMetadata instance
+         */
+        AIMediaCollectionMetadata.create = function create(properties) {
+            return new AIMediaCollectionMetadata(properties);
+        };
+
+        /**
+         * Encodes the specified AIMediaCollectionMetadata message. Does not implicitly {@link AICommon.AIMediaCollectionMetadata.verify|verify} messages.
+         * @function encode
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {AICommon.IAIMediaCollectionMetadata} message AIMediaCollectionMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AIMediaCollectionMetadata.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.collectionId != null && Object.hasOwnProperty.call(message, "collectionId"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.collectionId);
+            if (message.uploadOrderIndex != null && Object.hasOwnProperty.call(message, "uploadOrderIndex"))
+                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.uploadOrderIndex);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified AIMediaCollectionMetadata message, length delimited. Does not implicitly {@link AICommon.AIMediaCollectionMetadata.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {AICommon.IAIMediaCollectionMetadata} message AIMediaCollectionMetadata message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        AIMediaCollectionMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a AIMediaCollectionMetadata message from the specified reader or buffer.
+         * @function decode
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {AICommon.AIMediaCollectionMetadata} AIMediaCollectionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AIMediaCollectionMetadata.decode = function decode(reader, length, error) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.AIMediaCollectionMetadata();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                if (tag === error)
+                    break;
+                switch (tag >>> 3) {
+                case 1: {
+                        message.collectionId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.uploadOrderIndex = reader.uint32();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a AIMediaCollectionMetadata message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {AICommon.AIMediaCollectionMetadata} AIMediaCollectionMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        AIMediaCollectionMetadata.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a AIMediaCollectionMetadata message.
+         * @function verify
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        AIMediaCollectionMetadata.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            var properties = {};
+            if (message.collectionId != null && message.hasOwnProperty("collectionId")) {
+                properties._collectionId = 1;
+                if (!$util.isString(message.collectionId))
+                    return "collectionId: string expected";
+            }
+            if (message.uploadOrderIndex != null && message.hasOwnProperty("uploadOrderIndex")) {
+                properties._uploadOrderIndex = 1;
+                if (!$util.isInteger(message.uploadOrderIndex))
+                    return "uploadOrderIndex: integer expected";
+            }
+            return null;
+        };
+
+        /**
+         * Creates a AIMediaCollectionMetadata message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {AICommon.AIMediaCollectionMetadata} AIMediaCollectionMetadata
+         */
+        AIMediaCollectionMetadata.fromObject = function fromObject(object) {
+            if (object instanceof $root.AICommon.AIMediaCollectionMetadata)
+                return object;
+            var message = new $root.AICommon.AIMediaCollectionMetadata();
+            if (object.collectionId != null)
+                message.collectionId = String(object.collectionId);
+            if (object.uploadOrderIndex != null)
+                message.uploadOrderIndex = object.uploadOrderIndex >>> 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a AIMediaCollectionMetadata message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {AICommon.AIMediaCollectionMetadata} message AIMediaCollectionMetadata
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        AIMediaCollectionMetadata.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (message.collectionId != null && message.hasOwnProperty("collectionId")) {
+                object.collectionId = message.collectionId;
+                if (options.oneofs)
+                    object._collectionId = "collectionId";
+            }
+            if (message.uploadOrderIndex != null && message.hasOwnProperty("uploadOrderIndex")) {
+                object.uploadOrderIndex = message.uploadOrderIndex;
+                if (options.oneofs)
+                    object._uploadOrderIndex = "uploadOrderIndex";
+            }
+            return object;
+        };
+
+        /**
+         * Converts this AIMediaCollectionMetadata to JSON.
+         * @function toJSON
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        AIMediaCollectionMetadata.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for AIMediaCollectionMetadata
+         * @function getTypeUrl
+         * @memberof AICommon.AIMediaCollectionMetadata
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        AIMediaCollectionMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/AICommon.AIMediaCollectionMetadata";
+        };
+
+        return AIMediaCollectionMetadata;
     })();
 
     AICommon.AIThreadInfo = (function() {
@@ -13713,23 +9703,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * AIThreadInfo _serverInfo.
-         * @member {"serverInfo"|undefined} _serverInfo
-         * @memberof AICommon.AIThreadInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(AIThreadInfo.prototype, "_serverInfo", {
             get: $util.oneOfGetter($oneOfFields = ["serverInfo"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * AIThreadInfo _clientInfo.
-         * @member {"clientInfo"|undefined} _clientInfo
-         * @memberof AICommon.AIThreadInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(AIThreadInfo.prototype, "_clientInfo", {
             get: $util.oneOfGetter($oneOfFields = ["clientInfo"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -13946,6 +9926,7 @@ $root.AICommon = (function() {
              * @memberof AICommon.AIThreadInfo
              * @interface IAIThreadClientInfo
              * @property {AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType|null} [type] AIThreadClientInfo type
+             * @property {string|null} [sourceChatJid] AIThreadClientInfo sourceChatJid
              */
 
             /**
@@ -13971,17 +9952,26 @@ $root.AICommon = (function() {
              */
             AIThreadClientInfo.prototype.type = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * AIThreadClientInfo _type.
-             * @member {"type"|undefined} _type
+             * AIThreadClientInfo sourceChatJid.
+             * @member {string|null|undefined} sourceChatJid
              * @memberof AICommon.AIThreadInfo.AIThreadClientInfo
              * @instance
              */
+            AIThreadClientInfo.prototype.sourceChatJid = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIThreadClientInfo.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(AIThreadClientInfo.prototype, "_sourceChatJid", {
+                get: $util.oneOfGetter($oneOfFields = ["sourceChatJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -14011,6 +10001,8 @@ $root.AICommon = (function() {
                     writer = $Writer.create();
                 if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.sourceChatJid != null && Object.hasOwnProperty.call(message, "sourceChatJid"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.sourceChatJid);
                 return writer;
             };
 
@@ -14049,6 +10041,10 @@ $root.AICommon = (function() {
                     switch (tag >>> 3) {
                     case 1: {
                             message.type = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.sourceChatJid = reader.string();
                             break;
                         }
                     default:
@@ -14095,8 +10091,14 @@ $root.AICommon = (function() {
                     case 0:
                     case 1:
                     case 2:
+                    case 3:
                         break;
                     }
+                }
+                if (message.sourceChatJid != null && message.hasOwnProperty("sourceChatJid")) {
+                    properties._sourceChatJid = 1;
+                    if (!$util.isString(message.sourceChatJid))
+                        return "sourceChatJid: string expected";
                 }
                 return null;
             };
@@ -14132,7 +10134,13 @@ $root.AICommon = (function() {
                 case 2:
                     message.type = 2;
                     break;
+                case "SIDE_CHAT":
+                case 3:
+                    message.type = 3;
+                    break;
                 }
+                if (object.sourceChatJid != null)
+                    message.sourceChatJid = String(object.sourceChatJid);
                 return message;
             };
 
@@ -14153,6 +10161,11 @@ $root.AICommon = (function() {
                     object.type = options.enums === String ? $root.AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] === undefined ? message.type : $root.AICommon.AIThreadInfo.AIThreadClientInfo.AIThreadType[message.type] : message.type;
                     if (options.oneofs)
                         object._type = "type";
+                }
+                if (message.sourceChatJid != null && message.hasOwnProperty("sourceChatJid")) {
+                    object.sourceChatJid = message.sourceChatJid;
+                    if (options.oneofs)
+                        object._sourceChatJid = "sourceChatJid";
                 }
                 return object;
             };
@@ -14190,12 +10203,14 @@ $root.AICommon = (function() {
              * @property {number} UNKNOWN=0 UNKNOWN value
              * @property {number} DEFAULT=1 DEFAULT value
              * @property {number} INCOGNITO=2 INCOGNITO value
+             * @property {number} SIDE_CHAT=3 SIDE_CHAT value
              */
             AIThreadClientInfo.AIThreadType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
                 values[valuesById[0] = "UNKNOWN"] = 0;
                 values[valuesById[1] = "DEFAULT"] = 1;
                 values[valuesById[2] = "INCOGNITO"] = 2;
+                values[valuesById[3] = "SIDE_CHAT"] = 3;
                 return values;
             })();
 
@@ -14237,12 +10252,7 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AIThreadServerInfo _title.
-             * @member {"title"|undefined} _title
-             * @memberof AICommon.AIThreadInfo.AIThreadServerInfo
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AIThreadServerInfo.prototype, "_title", {
                 get: $util.oneOfGetter($oneOfFields = ["title"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14473,12 +10483,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotUnifiedResponseMutation _sbsMetadata.
-         * @member {"sbsMetadata"|undefined} _sbsMetadata
-         * @memberof AICommon.BotUnifiedResponseMutation
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotUnifiedResponseMutation.prototype, "_sbsMetadata", {
             get: $util.oneOfGetter($oneOfFields = ["sbsMetadata"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -14752,34 +10757,19 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * MediaDetailsMetadata _id.
-             * @member {"id"|undefined} _id
-             * @memberof AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MediaDetailsMetadata.prototype, "_id", {
                 get: $util.oneOfGetter($oneOfFields = ["id"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MediaDetailsMetadata _highResMedia.
-             * @member {"highResMedia"|undefined} _highResMedia
-             * @memberof AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MediaDetailsMetadata.prototype, "_highResMedia", {
                 get: $util.oneOfGetter($oneOfFields = ["highResMedia"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MediaDetailsMetadata _previewMedia.
-             * @member {"previewMedia"|undefined} _previewMedia
-             * @memberof AICommon.BotUnifiedResponseMutation.MediaDetailsMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MediaDetailsMetadata.prototype, "_previewMedia", {
                 get: $util.oneOfGetter($oneOfFields = ["previewMedia"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -15054,23 +11044,13 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SideBySideMetadata _primaryResponseId.
-             * @member {"primaryResponseId"|undefined} _primaryResponseId
-             * @memberof AICommon.BotUnifiedResponseMutation.SideBySideMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideMetadata.prototype, "_primaryResponseId", {
                 get: $util.oneOfGetter($oneOfFields = ["primaryResponseId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SideBySideMetadata _surveyCtaHasRendered.
-             * @member {"surveyCtaHasRendered"|undefined} _surveyCtaHasRendered
-             * @memberof AICommon.BotUnifiedResponseMutation.SideBySideMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SideBySideMetadata.prototype, "_surveyCtaHasRendered", {
                 get: $util.oneOfGetter($oneOfFields = ["surveyCtaHasRendered"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -15309,12 +11289,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotMessageOrigin _type.
-         * @member {"type"|undefined} _type
-         * @memberof AICommon.BotMessageOrigin
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMessageOrigin.prototype, "_type", {
             get: $util.oneOfGetter($oneOfFields = ["type"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -15939,177 +11914,97 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * InThreadSurveyMetadata _tessaSessionId.
-         * @member {"tessaSessionId"|undefined} _tessaSessionId
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_tessaSessionId", {
             get: $util.oneOfGetter($oneOfFields = ["tessaSessionId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _simonSessionId.
-         * @member {"simonSessionId"|undefined} _simonSessionId
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_simonSessionId", {
             get: $util.oneOfGetter($oneOfFields = ["simonSessionId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _simonSurveyId.
-         * @member {"simonSurveyId"|undefined} _simonSurveyId
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_simonSurveyId", {
             get: $util.oneOfGetter($oneOfFields = ["simonSurveyId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _tessaRootId.
-         * @member {"tessaRootId"|undefined} _tessaRootId
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_tessaRootId", {
             get: $util.oneOfGetter($oneOfFields = ["tessaRootId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _requestId.
-         * @member {"requestId"|undefined} _requestId
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_requestId", {
             get: $util.oneOfGetter($oneOfFields = ["requestId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _tessaEvent.
-         * @member {"tessaEvent"|undefined} _tessaEvent
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_tessaEvent", {
             get: $util.oneOfGetter($oneOfFields = ["tessaEvent"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _invitationHeaderText.
-         * @member {"invitationHeaderText"|undefined} _invitationHeaderText
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_invitationHeaderText", {
             get: $util.oneOfGetter($oneOfFields = ["invitationHeaderText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _invitationBodyText.
-         * @member {"invitationBodyText"|undefined} _invitationBodyText
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_invitationBodyText", {
             get: $util.oneOfGetter($oneOfFields = ["invitationBodyText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _invitationCtaText.
-         * @member {"invitationCtaText"|undefined} _invitationCtaText
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_invitationCtaText", {
             get: $util.oneOfGetter($oneOfFields = ["invitationCtaText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _invitationCtaUrl.
-         * @member {"invitationCtaUrl"|undefined} _invitationCtaUrl
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_invitationCtaUrl", {
             get: $util.oneOfGetter($oneOfFields = ["invitationCtaUrl"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _surveyTitle.
-         * @member {"surveyTitle"|undefined} _surveyTitle
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_surveyTitle", {
             get: $util.oneOfGetter($oneOfFields = ["surveyTitle"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _surveyContinueButtonText.
-         * @member {"surveyContinueButtonText"|undefined} _surveyContinueButtonText
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_surveyContinueButtonText", {
             get: $util.oneOfGetter($oneOfFields = ["surveyContinueButtonText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _surveySubmitButtonText.
-         * @member {"surveySubmitButtonText"|undefined} _surveySubmitButtonText
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_surveySubmitButtonText", {
             get: $util.oneOfGetter($oneOfFields = ["surveySubmitButtonText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _privacyStatementFull.
-         * @member {"privacyStatementFull"|undefined} _privacyStatementFull
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_privacyStatementFull", {
             get: $util.oneOfGetter($oneOfFields = ["privacyStatementFull"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _feedbackToastText.
-         * @member {"feedbackToastText"|undefined} _feedbackToastText
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_feedbackToastText", {
             get: $util.oneOfGetter($oneOfFields = ["feedbackToastText"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * InThreadSurveyMetadata _startQuestionIndex.
-         * @member {"startQuestionIndex"|undefined} _startQuestionIndex
-         * @memberof AICommon.InThreadSurveyMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(InThreadSurveyMetadata.prototype, "_startQuestionIndex", {
             get: $util.oneOfGetter($oneOfFields = ["startQuestionIndex"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -16682,34 +12577,19 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * InThreadSurveyOption _stringValue.
-             * @member {"stringValue"|undefined} _stringValue
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InThreadSurveyOption.prototype, "_stringValue", {
                 get: $util.oneOfGetter($oneOfFields = ["stringValue"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * InThreadSurveyOption _numericValue.
-             * @member {"numericValue"|undefined} _numericValue
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InThreadSurveyOption.prototype, "_numericValue", {
                 get: $util.oneOfGetter($oneOfFields = ["numericValue"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * InThreadSurveyOption _textTranslated.
-             * @member {"textTranslated"|undefined} _textTranslated
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyOption
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InThreadSurveyOption.prototype, "_textTranslated", {
                 get: $util.oneOfGetter($oneOfFields = ["textTranslated"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16972,23 +12852,13 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * InThreadSurveyPrivacyStatementPart _text.
-             * @member {"text"|undefined} _text
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InThreadSurveyPrivacyStatementPart.prototype, "_text", {
                 get: $util.oneOfGetter($oneOfFields = ["text"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * InThreadSurveyPrivacyStatementPart _url.
-             * @member {"url"|undefined} _url
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InThreadSurveyPrivacyStatementPart.prototype, "_url", {
                 get: $util.oneOfGetter($oneOfFields = ["url"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17243,23 +13113,13 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * InThreadSurveyQuestion _questionText.
-             * @member {"questionText"|undefined} _questionText
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyQuestion
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InThreadSurveyQuestion.prototype, "_questionText", {
                 get: $util.oneOfGetter($oneOfFields = ["questionText"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * InThreadSurveyQuestion _questionId.
-             * @member {"questionId"|undefined} _questionId
-             * @memberof AICommon.InThreadSurveyMetadata.InThreadSurveyQuestion
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InThreadSurveyQuestion.prototype, "_questionId", {
                 get: $util.oneOfGetter($oneOfFields = ["questionId"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17810,78 +13670,43 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * BotSourceItem _provider.
-             * @member {"provider"|undefined} _provider
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotSourceItem.prototype, "_provider", {
                 get: $util.oneOfGetter($oneOfFields = ["provider"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotSourceItem _thumbnailCdnUrl.
-             * @member {"thumbnailCdnUrl"|undefined} _thumbnailCdnUrl
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotSourceItem.prototype, "_thumbnailCdnUrl", {
                 get: $util.oneOfGetter($oneOfFields = ["thumbnailCdnUrl"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotSourceItem _sourceProviderUrl.
-             * @member {"sourceProviderUrl"|undefined} _sourceProviderUrl
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotSourceItem.prototype, "_sourceProviderUrl", {
                 get: $util.oneOfGetter($oneOfFields = ["sourceProviderUrl"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotSourceItem _sourceQuery.
-             * @member {"sourceQuery"|undefined} _sourceQuery
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotSourceItem.prototype, "_sourceQuery", {
                 get: $util.oneOfGetter($oneOfFields = ["sourceQuery"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotSourceItem _faviconCdnUrl.
-             * @member {"faviconCdnUrl"|undefined} _faviconCdnUrl
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotSourceItem.prototype, "_faviconCdnUrl", {
                 get: $util.oneOfGetter($oneOfFields = ["faviconCdnUrl"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotSourceItem _citationNumber.
-             * @member {"citationNumber"|undefined} _citationNumber
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotSourceItem.prototype, "_citationNumber", {
                 get: $util.oneOfGetter($oneOfFields = ["citationNumber"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotSourceItem _sourceTitle.
-             * @member {"sourceTitle"|undefined} _sourceTitle
-             * @memberof AICommon.BotSourcesMetadata.BotSourceItem
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotSourceItem.prototype, "_sourceTitle", {
                 get: $util.oneOfGetter($oneOfFields = ["sourceTitle"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18282,34 +14107,19 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotAgeCollectionMetadata _ageCollectionEligible.
-         * @member {"ageCollectionEligible"|undefined} _ageCollectionEligible
-         * @memberof AICommon.BotAgeCollectionMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotAgeCollectionMetadata.prototype, "_ageCollectionEligible", {
             get: $util.oneOfGetter($oneOfFields = ["ageCollectionEligible"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotAgeCollectionMetadata _shouldTriggerAgeCollectionOnClient.
-         * @member {"shouldTriggerAgeCollectionOnClient"|undefined} _shouldTriggerAgeCollectionOnClient
-         * @memberof AICommon.BotAgeCollectionMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotAgeCollectionMetadata.prototype, "_shouldTriggerAgeCollectionOnClient", {
             get: $util.oneOfGetter($oneOfFields = ["shouldTriggerAgeCollectionOnClient"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotAgeCollectionMetadata _ageCollectionType.
-         * @member {"ageCollectionType"|undefined} _ageCollectionType
-         * @memberof AICommon.BotAgeCollectionMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotAgeCollectionMetadata.prototype, "_ageCollectionType", {
             get: $util.oneOfGetter($oneOfFields = ["ageCollectionType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -18568,6 +14378,7 @@ $root.AICommon = (function() {
          * @memberof AICommon
          * @interface IBotImagineMetadata
          * @property {AICommon.BotImagineMetadata.ImagineType|null} [imagineType] BotImagineMetadata imagineType
+         * @property {string|null} [shortPrompt] BotImagineMetadata shortPrompt
          */
 
         /**
@@ -18593,17 +14404,26 @@ $root.AICommon = (function() {
          */
         BotImagineMetadata.prototype.imagineType = null;
 
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
         /**
-         * BotImagineMetadata _imagineType.
-         * @member {"imagineType"|undefined} _imagineType
+         * BotImagineMetadata shortPrompt.
+         * @member {string|null|undefined} shortPrompt
          * @memberof AICommon.BotImagineMetadata
          * @instance
          */
+        BotImagineMetadata.prototype.shortPrompt = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotImagineMetadata.prototype, "_imagineType", {
             get: $util.oneOfGetter($oneOfFields = ["imagineType"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotImagineMetadata.prototype, "_shortPrompt", {
+            get: $util.oneOfGetter($oneOfFields = ["shortPrompt"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -18633,6 +14453,8 @@ $root.AICommon = (function() {
                 writer = $Writer.create();
             if (message.imagineType != null && Object.hasOwnProperty.call(message, "imagineType"))
                 writer.uint32(/* id 1, wireType 0 =*/8).int32(message.imagineType);
+            if (message.shortPrompt != null && Object.hasOwnProperty.call(message, "shortPrompt"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.shortPrompt);
             return writer;
         };
 
@@ -18671,6 +14493,10 @@ $root.AICommon = (function() {
                 switch (tag >>> 3) {
                 case 1: {
                         message.imagineType = reader.int32();
+                        break;
+                    }
+                case 2: {
+                        message.shortPrompt = reader.string();
                         break;
                     }
                 default:
@@ -18722,6 +14548,11 @@ $root.AICommon = (function() {
                     break;
                 }
             }
+            if (message.shortPrompt != null && message.hasOwnProperty("shortPrompt")) {
+                properties._shortPrompt = 1;
+                if (!$util.isString(message.shortPrompt))
+                    return "shortPrompt: string expected";
+            }
             return null;
         };
 
@@ -18765,6 +14596,8 @@ $root.AICommon = (function() {
                 message.imagineType = 4;
                 break;
             }
+            if (object.shortPrompt != null)
+                message.shortPrompt = String(object.shortPrompt);
             return message;
         };
 
@@ -18785,6 +14618,11 @@ $root.AICommon = (function() {
                 object.imagineType = options.enums === String ? $root.AICommon.BotImagineMetadata.ImagineType[message.imagineType] === undefined ? message.imagineType : $root.AICommon.BotImagineMetadata.ImagineType[message.imagineType] : message.imagineType;
                 if (options.oneofs)
                     object._imagineType = "imagineType";
+            }
+            if (message.shortPrompt != null && message.hasOwnProperty("shortPrompt")) {
+                object.shortPrompt = message.shortPrompt;
+                if (options.oneofs)
+                    object._shortPrompt = "shortPrompt";
             }
             return object;
         };
@@ -19114,34 +14952,19 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * BotFeatureQuotaMetadata _featureType.
-             * @member {"featureType"|undefined} _featureType
-             * @memberof AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotFeatureQuotaMetadata.prototype, "_featureType", {
                 get: $util.oneOfGetter($oneOfFields = ["featureType"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotFeatureQuotaMetadata _remainingQuota.
-             * @member {"remainingQuota"|undefined} _remainingQuota
-             * @memberof AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotFeatureQuotaMetadata.prototype, "_remainingQuota", {
                 get: $util.oneOfGetter($oneOfFields = ["remainingQuota"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotFeatureQuotaMetadata _expirationTimestamp.
-             * @member {"expirationTimestamp"|undefined} _expirationTimestamp
-             * @memberof AICommon.BotQuotaMetadata.BotFeatureQuotaMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotFeatureQuotaMetadata.prototype, "_expirationTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["expirationTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -19413,6 +15236,7 @@ $root.AICommon = (function() {
          * @memberof AICommon
          * @interface IBotModeSelectionMetadata
          * @property {Array.<AICommon.BotModeSelectionMetadata.BotUserSelectionMode>|null} [mode] BotModeSelectionMetadata mode
+         * @property {Array.<number>|null} [overrideMode] BotModeSelectionMetadata overrideMode
          */
 
         /**
@@ -19425,6 +15249,7 @@ $root.AICommon = (function() {
          */
         function BotModeSelectionMetadata(properties) {
             this.mode = [];
+            this.overrideMode = [];
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -19438,6 +15263,14 @@ $root.AICommon = (function() {
          * @instance
          */
         BotModeSelectionMetadata.prototype.mode = $util.emptyArray;
+
+        /**
+         * BotModeSelectionMetadata overrideMode.
+         * @member {Array.<number>} overrideMode
+         * @memberof AICommon.BotModeSelectionMetadata
+         * @instance
+         */
+        BotModeSelectionMetadata.prototype.overrideMode = $util.emptyArray;
 
         /**
          * Creates a new BotModeSelectionMetadata instance using the specified properties.
@@ -19467,6 +15300,12 @@ $root.AICommon = (function() {
                 writer.uint32(/* id 1, wireType 2 =*/10).fork();
                 for (var i = 0; i < message.mode.length; ++i)
                     writer.int32(message.mode[i]);
+                writer.ldelim();
+            }
+            if (message.overrideMode != null && message.overrideMode.length) {
+                writer.uint32(/* id 2, wireType 2 =*/18).fork();
+                for (var i = 0; i < message.overrideMode.length; ++i)
+                    writer.uint32(message.overrideMode[i]);
                 writer.ldelim();
             }
             return writer;
@@ -19516,6 +15355,17 @@ $root.AICommon = (function() {
                             message.mode.push(reader.int32());
                         break;
                     }
+                case 2: {
+                        if (!(message.overrideMode && message.overrideMode.length))
+                            message.overrideMode = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.overrideMode.push(reader.uint32());
+                        } else
+                            message.overrideMode.push(reader.uint32());
+                        break;
+                    }
                 default:
                     reader.skipType(tag & 7);
                     break;
@@ -19563,6 +15413,13 @@ $root.AICommon = (function() {
                         break;
                     }
             }
+            if (message.overrideMode != null && message.hasOwnProperty("overrideMode")) {
+                if (!Array.isArray(message.overrideMode))
+                    return "overrideMode: array expected";
+                for (var i = 0; i < message.overrideMode.length; ++i)
+                    if (!$util.isInteger(message.overrideMode[i]))
+                        return "overrideMode: integer[] expected";
+            }
             return null;
         };
 
@@ -19589,15 +15446,22 @@ $root.AICommon = (function() {
                             message.mode[i] = object.mode[i];
                             break;
                         }
-                    case "UNKNOWN_MODE":
+                    case "DEFAULT_MODE":
                     case 0:
                         message.mode[i] = 0;
                         break;
-                    case "REASONING_MODE":
+                    case "THINK_HARD_MODE":
                     case 1:
                         message.mode[i] = 1;
                         break;
                     }
+            }
+            if (object.overrideMode) {
+                if (!Array.isArray(object.overrideMode))
+                    throw TypeError(".AICommon.BotModeSelectionMetadata.overrideMode: array expected");
+                message.overrideMode = [];
+                for (var i = 0; i < object.overrideMode.length; ++i)
+                    message.overrideMode[i] = object.overrideMode[i] >>> 0;
             }
             return message;
         };
@@ -19615,12 +15479,19 @@ $root.AICommon = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (options.arrays || options.defaults)
+            if (options.arrays || options.defaults) {
                 object.mode = [];
+                object.overrideMode = [];
+            }
             if (message.mode && message.mode.length) {
                 object.mode = [];
                 for (var j = 0; j < message.mode.length; ++j)
                     object.mode[j] = options.enums === String ? $root.AICommon.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] === undefined ? message.mode[j] : $root.AICommon.BotModeSelectionMetadata.BotUserSelectionMode[message.mode[j]] : message.mode[j];
+            }
+            if (message.overrideMode && message.overrideMode.length) {
+                object.overrideMode = [];
+                for (var j = 0; j < message.overrideMode.length; ++j)
+                    object.overrideMode[j] = message.overrideMode[j];
             }
             return object;
         };
@@ -19655,13 +15526,13 @@ $root.AICommon = (function() {
          * BotUserSelectionMode enum.
          * @name AICommon.BotModeSelectionMetadata.BotUserSelectionMode
          * @enum {number}
-         * @property {number} UNKNOWN_MODE=0 UNKNOWN_MODE value
-         * @property {number} REASONING_MODE=1 REASONING_MODE value
+         * @property {number} DEFAULT_MODE=0 DEFAULT_MODE value
+         * @property {number} THINK_HARD_MODE=1 THINK_HARD_MODE value
          */
         BotModeSelectionMetadata.BotUserSelectionMode = (function() {
             var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "UNKNOWN_MODE"] = 0;
-            values[valuesById[1] = "REASONING_MODE"] = 1;
+            values[valuesById[0] = "DEFAULT_MODE"] = 0;
+            values[valuesById[1] = "THINK_HARD_MODE"] = 1;
             return values;
         })();
 
@@ -19870,6 +15741,18 @@ $root.AICommon = (function() {
                     case 47:
                     case 48:
                     case 49:
+                    case 50:
+                    case 51:
+                    case 52:
+                    case 53:
+                    case 54:
+                    case 55:
+                    case 56:
+                    case 57:
+                    case 58:
+                    case 59:
+                    case 60:
+                    case 61:
                         break;
                     }
             }
@@ -20099,6 +15982,54 @@ $root.AICommon = (function() {
                     case 49:
                         message.capabilities[i] = 49;
                         break;
+                    case "RICH_RESPONSE_UR_ZEITGEIST_CITATIONS":
+                    case 50:
+                        message.capabilities[i] = 50;
+                        break;
+                    case "RICH_RESPONSE_UR_ZEITGEIST_CAROUSEL":
+                    case 51:
+                        message.capabilities[i] = 51;
+                        break;
+                    case "AI_IMAGINE_LOADING_INDICATOR":
+                    case 52:
+                        message.capabilities[i] = 52;
+                        break;
+                    case "RICH_RESPONSE_UR_IMAGINE":
+                    case 53:
+                        message.capabilities[i] = 53;
+                        break;
+                    case "AI_IMAGINE_UR_TO_NATIVE_LOADING_INDICATOR":
+                    case 54:
+                        message.capabilities[i] = 54;
+                        break;
+                    case "RICH_RESPONSE_UR_BLOKS_ENABLED":
+                    case 55:
+                        message.capabilities[i] = 55;
+                        break;
+                    case "RICH_RESPONSE_INLINE_LINKS_ENABLED":
+                    case 56:
+                        message.capabilities[i] = 56;
+                        break;
+                    case "RICH_RESPONSE_UR_IMAGINE_VIDEO":
+                    case 57:
+                        message.capabilities[i] = 57;
+                        break;
+                    case "JSON_PATCH_STREAMING":
+                    case 58:
+                        message.capabilities[i] = 58;
+                        break;
+                    case "AI_TAB_FORCE_CLIPPY":
+                    case 59:
+                        message.capabilities[i] = 59;
+                        break;
+                    case "UNIFIED_RESPONSE_EMBEDDED_SCREENS":
+                    case 60:
+                        message.capabilities[i] = 60;
+                        break;
+                    case "AI_SUBSCRIPTION_ENABLED":
+                    case 61:
+                        message.capabilities[i] = 61;
+                        break;
                     }
             }
             return message;
@@ -20207,6 +16138,18 @@ $root.AICommon = (function() {
          * @property {number} AI_RESPONSE_MODEL_BRANDING=47 AI_RESPONSE_MODEL_BRANDING value
          * @property {number} SESSION_TRANSPARENCY_SYSTEM_MESSAGE=48 SESSION_TRANSPARENCY_SYSTEM_MESSAGE value
          * @property {number} RICH_RESPONSE_UR_REASONING=49 RICH_RESPONSE_UR_REASONING value
+         * @property {number} RICH_RESPONSE_UR_ZEITGEIST_CITATIONS=50 RICH_RESPONSE_UR_ZEITGEIST_CITATIONS value
+         * @property {number} RICH_RESPONSE_UR_ZEITGEIST_CAROUSEL=51 RICH_RESPONSE_UR_ZEITGEIST_CAROUSEL value
+         * @property {number} AI_IMAGINE_LOADING_INDICATOR=52 AI_IMAGINE_LOADING_INDICATOR value
+         * @property {number} RICH_RESPONSE_UR_IMAGINE=53 RICH_RESPONSE_UR_IMAGINE value
+         * @property {number} AI_IMAGINE_UR_TO_NATIVE_LOADING_INDICATOR=54 AI_IMAGINE_UR_TO_NATIVE_LOADING_INDICATOR value
+         * @property {number} RICH_RESPONSE_UR_BLOKS_ENABLED=55 RICH_RESPONSE_UR_BLOKS_ENABLED value
+         * @property {number} RICH_RESPONSE_INLINE_LINKS_ENABLED=56 RICH_RESPONSE_INLINE_LINKS_ENABLED value
+         * @property {number} RICH_RESPONSE_UR_IMAGINE_VIDEO=57 RICH_RESPONSE_UR_IMAGINE_VIDEO value
+         * @property {number} JSON_PATCH_STREAMING=58 JSON_PATCH_STREAMING value
+         * @property {number} AI_TAB_FORCE_CLIPPY=59 AI_TAB_FORCE_CLIPPY value
+         * @property {number} UNIFIED_RESPONSE_EMBEDDED_SCREENS=60 UNIFIED_RESPONSE_EMBEDDED_SCREENS value
+         * @property {number} AI_SUBSCRIPTION_ENABLED=61 AI_SUBSCRIPTION_ENABLED value
          */
         BotCapabilityMetadata.BotCapabilityType = (function() {
             var valuesById = {}, values = Object.create(valuesById);
@@ -20260,6 +16203,18 @@ $root.AICommon = (function() {
             values[valuesById[47] = "AI_RESPONSE_MODEL_BRANDING"] = 47;
             values[valuesById[48] = "SESSION_TRANSPARENCY_SYSTEM_MESSAGE"] = 48;
             values[valuesById[49] = "RICH_RESPONSE_UR_REASONING"] = 49;
+            values[valuesById[50] = "RICH_RESPONSE_UR_ZEITGEIST_CITATIONS"] = 50;
+            values[valuesById[51] = "RICH_RESPONSE_UR_ZEITGEIST_CAROUSEL"] = 51;
+            values[valuesById[52] = "AI_IMAGINE_LOADING_INDICATOR"] = 52;
+            values[valuesById[53] = "RICH_RESPONSE_UR_IMAGINE"] = 53;
+            values[valuesById[54] = "AI_IMAGINE_UR_TO_NATIVE_LOADING_INDICATOR"] = 54;
+            values[valuesById[55] = "RICH_RESPONSE_UR_BLOKS_ENABLED"] = 55;
+            values[valuesById[56] = "RICH_RESPONSE_INLINE_LINKS_ENABLED"] = 56;
+            values[valuesById[57] = "RICH_RESPONSE_UR_IMAGINE_VIDEO"] = 57;
+            values[valuesById[58] = "JSON_PATCH_STREAMING"] = 58;
+            values[valuesById[59] = "AI_TAB_FORCE_CLIPPY"] = 59;
+            values[valuesById[60] = "UNIFIED_RESPONSE_EMBEDDED_SCREENS"] = 60;
+            values[valuesById[61] = "AI_SUBSCRIPTION_ENABLED"] = 61;
             return values;
         })();
 
@@ -20274,6 +16229,7 @@ $root.AICommon = (function() {
          * @interface IBotProgressIndicatorMetadata
          * @property {string|null} [progressDescription] BotProgressIndicatorMetadata progressDescription
          * @property {Array.<AICommon.BotProgressIndicatorMetadata.IBotPlanningStepMetadata>|null} [stepsMetadata] BotProgressIndicatorMetadata stepsMetadata
+         * @property {number|Long|null} [estimatedCompletionTime] BotProgressIndicatorMetadata estimatedCompletionTime
          */
 
         /**
@@ -20308,17 +16264,26 @@ $root.AICommon = (function() {
          */
         BotProgressIndicatorMetadata.prototype.stepsMetadata = $util.emptyArray;
 
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
         /**
-         * BotProgressIndicatorMetadata _progressDescription.
-         * @member {"progressDescription"|undefined} _progressDescription
+         * BotProgressIndicatorMetadata estimatedCompletionTime.
+         * @member {number|Long|null|undefined} estimatedCompletionTime
          * @memberof AICommon.BotProgressIndicatorMetadata
          * @instance
          */
+        BotProgressIndicatorMetadata.prototype.estimatedCompletionTime = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotProgressIndicatorMetadata.prototype, "_progressDescription", {
             get: $util.oneOfGetter($oneOfFields = ["progressDescription"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(BotProgressIndicatorMetadata.prototype, "_estimatedCompletionTime", {
+            get: $util.oneOfGetter($oneOfFields = ["estimatedCompletionTime"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -20351,6 +16316,8 @@ $root.AICommon = (function() {
             if (message.stepsMetadata != null && message.stepsMetadata.length)
                 for (var i = 0; i < message.stepsMetadata.length; ++i)
                     $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.encode(message.stepsMetadata[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.estimatedCompletionTime != null && Object.hasOwnProperty.call(message, "estimatedCompletionTime"))
+                writer.uint32(/* id 3, wireType 0 =*/24).int64(message.estimatedCompletionTime);
             return writer;
         };
 
@@ -20395,6 +16362,10 @@ $root.AICommon = (function() {
                         if (!(message.stepsMetadata && message.stepsMetadata.length))
                             message.stepsMetadata = [];
                         message.stepsMetadata.push($root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 3: {
+                        message.estimatedCompletionTime = reader.int64();
                         break;
                     }
                 default:
@@ -20447,6 +16418,11 @@ $root.AICommon = (function() {
                         return "stepsMetadata." + error;
                 }
             }
+            if (message.estimatedCompletionTime != null && message.hasOwnProperty("estimatedCompletionTime")) {
+                properties._estimatedCompletionTime = 1;
+                if (!$util.isInteger(message.estimatedCompletionTime) && !(message.estimatedCompletionTime && $util.isInteger(message.estimatedCompletionTime.low) && $util.isInteger(message.estimatedCompletionTime.high)))
+                    return "estimatedCompletionTime: integer|Long expected";
+            }
             return null;
         };
 
@@ -20474,6 +16450,15 @@ $root.AICommon = (function() {
                     message.stepsMetadata[i] = $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.fromObject(object.stepsMetadata[i]);
                 }
             }
+            if (object.estimatedCompletionTime != null)
+                if ($util.Long)
+                    (message.estimatedCompletionTime = $util.Long.fromValue(object.estimatedCompletionTime)).unsigned = false;
+                else if (typeof object.estimatedCompletionTime === "string")
+                    message.estimatedCompletionTime = parseInt(object.estimatedCompletionTime, 10);
+                else if (typeof object.estimatedCompletionTime === "number")
+                    message.estimatedCompletionTime = object.estimatedCompletionTime;
+                else if (typeof object.estimatedCompletionTime === "object")
+                    message.estimatedCompletionTime = new $util.LongBits(object.estimatedCompletionTime.low >>> 0, object.estimatedCompletionTime.high >>> 0).toNumber();
             return message;
         };
 
@@ -20501,6 +16486,14 @@ $root.AICommon = (function() {
                 object.stepsMetadata = [];
                 for (var j = 0; j < message.stepsMetadata.length; ++j)
                     object.stepsMetadata[j] = $root.AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.toObject(message.stepsMetadata[j], options);
+            }
+            if (message.estimatedCompletionTime != null && message.hasOwnProperty("estimatedCompletionTime")) {
+                if (typeof message.estimatedCompletionTime === "number")
+                    object.estimatedCompletionTime = options.longs === String ? String(message.estimatedCompletionTime) : message.estimatedCompletionTime;
+                else
+                    object.estimatedCompletionTime = options.longs === String ? $util.Long.prototype.toString.call(message.estimatedCompletionTime) : options.longs === Number ? new $util.LongBits(message.estimatedCompletionTime.low >>> 0, message.estimatedCompletionTime.high >>> 0).toNumber() : message.estimatedCompletionTime;
+                if (options.oneofs)
+                    object._estimatedCompletionTime = "estimatedCompletionTime";
             }
             return object;
         };
@@ -20622,56 +16615,31 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * BotPlanningStepMetadata _statusTitle.
-             * @member {"statusTitle"|undefined} _statusTitle
-             * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotPlanningStepMetadata.prototype, "_statusTitle", {
                 get: $util.oneOfGetter($oneOfFields = ["statusTitle"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotPlanningStepMetadata _statusBody.
-             * @member {"statusBody"|undefined} _statusBody
-             * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotPlanningStepMetadata.prototype, "_statusBody", {
                 get: $util.oneOfGetter($oneOfFields = ["statusBody"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotPlanningStepMetadata _status.
-             * @member {"status"|undefined} _status
-             * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotPlanningStepMetadata.prototype, "_status", {
                 get: $util.oneOfGetter($oneOfFields = ["status"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotPlanningStepMetadata _isReasoning.
-             * @member {"isReasoning"|undefined} _isReasoning
-             * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotPlanningStepMetadata.prototype, "_isReasoning", {
                 get: $util.oneOfGetter($oneOfFields = ["isReasoning"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BotPlanningStepMetadata _isEnhancedSearch.
-             * @member {"isEnhancedSearch"|undefined} _isEnhancedSearch
-             * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotPlanningStepMetadata.prototype, "_isEnhancedSearch", {
                 get: $util.oneOfGetter($oneOfFields = ["isEnhancedSearch"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -21084,45 +17052,25 @@ $root.AICommon = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * BotPlanningSearchSourceMetadata _title.
-                 * @member {"title"|undefined} _title
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningSearchSourceMetadata.prototype, "_title", {
                     get: $util.oneOfGetter($oneOfFields = ["title"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * BotPlanningSearchSourceMetadata _provider.
-                 * @member {"provider"|undefined} _provider
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningSearchSourceMetadata.prototype, "_provider", {
                     get: $util.oneOfGetter($oneOfFields = ["provider"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * BotPlanningSearchSourceMetadata _sourceUrl.
-                 * @member {"sourceUrl"|undefined} _sourceUrl
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningSearchSourceMetadata.prototype, "_sourceUrl", {
                     get: $util.oneOfGetter($oneOfFields = ["sourceUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * BotPlanningSearchSourceMetadata _favIconUrl.
-                 * @member {"favIconUrl"|undefined} _favIconUrl
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningSearchSourceMetadata.prototype, "_favIconUrl", {
                     get: $util.oneOfGetter($oneOfFields = ["favIconUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -21441,34 +17389,19 @@ $root.AICommon = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * BotPlanningSearchSourcesMetadata _sourceTitle.
-                 * @member {"sourceTitle"|undefined} _sourceTitle
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningSearchSourcesMetadata.prototype, "_sourceTitle", {
                     get: $util.oneOfGetter($oneOfFields = ["sourceTitle"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * BotPlanningSearchSourcesMetadata _provider.
-                 * @member {"provider"|undefined} _provider
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningSearchSourcesMetadata.prototype, "_provider", {
                     get: $util.oneOfGetter($oneOfFields = ["provider"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * BotPlanningSearchSourcesMetadata _sourceUrl.
-                 * @member {"sourceUrl"|undefined} _sourceUrl
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningSearchSourcesMetadata.prototype, "_sourceUrl", {
                     get: $util.oneOfGetter($oneOfFields = ["sourceUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -21788,23 +17721,13 @@ $root.AICommon = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * BotPlanningStepSectionMetadata _sectionTitle.
-                 * @member {"sectionTitle"|undefined} _sectionTitle
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningStepSectionMetadata.prototype, "_sectionTitle", {
                     get: $util.oneOfGetter($oneOfFields = ["sectionTitle"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * BotPlanningStepSectionMetadata _sectionBody.
-                 * @member {"sectionBody"|undefined} _sectionBody
-                 * @memberof AICommon.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(BotPlanningStepSectionMetadata.prototype, "_sectionBody", {
                     get: $util.oneOfGetter($oneOfFields = ["sectionBody"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -22135,34 +18058,19 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotModelMetadata _modelType.
-         * @member {"modelType"|undefined} _modelType
-         * @memberof AICommon.BotModelMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotModelMetadata.prototype, "_modelType", {
             get: $util.oneOfGetter($oneOfFields = ["modelType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotModelMetadata _premiumModelStatus.
-         * @member {"premiumModelStatus"|undefined} _premiumModelStatus
-         * @memberof AICommon.BotModelMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotModelMetadata.prototype, "_premiumModelStatus", {
             get: $util.oneOfGetter($oneOfFields = ["premiumModelStatus"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotModelMetadata _modelNameOverride.
-         * @member {"modelNameOverride"|undefined} _modelNameOverride
-         * @memberof AICommon.BotModelMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotModelMetadata.prototype, "_modelNameOverride", {
             get: $util.oneOfGetter($oneOfFields = ["modelNameOverride"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -22532,56 +18440,31 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotReminderMetadata _requestMessageKey.
-         * @member {"requestMessageKey"|undefined} _requestMessageKey
-         * @memberof AICommon.BotReminderMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotReminderMetadata.prototype, "_requestMessageKey", {
             get: $util.oneOfGetter($oneOfFields = ["requestMessageKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotReminderMetadata _action.
-         * @member {"action"|undefined} _action
-         * @memberof AICommon.BotReminderMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotReminderMetadata.prototype, "_action", {
             get: $util.oneOfGetter($oneOfFields = ["action"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotReminderMetadata _name.
-         * @member {"name"|undefined} _name
-         * @memberof AICommon.BotReminderMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotReminderMetadata.prototype, "_name", {
             get: $util.oneOfGetter($oneOfFields = ["name"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotReminderMetadata _nextTriggerTimestamp.
-         * @member {"nextTriggerTimestamp"|undefined} _nextTriggerTimestamp
-         * @memberof AICommon.BotReminderMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotReminderMetadata.prototype, "_nextTriggerTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["nextTriggerTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotReminderMetadata _frequency.
-         * @member {"frequency"|undefined} _frequency
-         * @memberof AICommon.BotReminderMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotReminderMetadata.prototype, "_frequency", {
             get: $util.oneOfGetter($oneOfFields = ["frequency"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -23268,78 +19151,43 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotMediaMetadata _fileSha256.
-         * @member {"fileSha256"|undefined} _fileSha256
-         * @memberof AICommon.BotMediaMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMediaMetadata.prototype, "_fileSha256", {
             get: $util.oneOfGetter($oneOfFields = ["fileSha256"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMediaMetadata _mediaKey.
-         * @member {"mediaKey"|undefined} _mediaKey
-         * @memberof AICommon.BotMediaMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMediaMetadata.prototype, "_mediaKey", {
             get: $util.oneOfGetter($oneOfFields = ["mediaKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMediaMetadata _fileEncSha256.
-         * @member {"fileEncSha256"|undefined} _fileEncSha256
-         * @memberof AICommon.BotMediaMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMediaMetadata.prototype, "_fileEncSha256", {
             get: $util.oneOfGetter($oneOfFields = ["fileEncSha256"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMediaMetadata _directPath.
-         * @member {"directPath"|undefined} _directPath
-         * @memberof AICommon.BotMediaMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMediaMetadata.prototype, "_directPath", {
             get: $util.oneOfGetter($oneOfFields = ["directPath"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMediaMetadata _mediaKeyTimestamp.
-         * @member {"mediaKeyTimestamp"|undefined} _mediaKeyTimestamp
-         * @memberof AICommon.BotMediaMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMediaMetadata.prototype, "_mediaKeyTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["mediaKeyTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMediaMetadata _mimetype.
-         * @member {"mimetype"|undefined} _mimetype
-         * @memberof AICommon.BotMediaMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMediaMetadata.prototype, "_mimetype", {
             get: $util.oneOfGetter($oneOfFields = ["mimetype"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMediaMetadata _orientationType.
-         * @member {"orientationType"|undefined} _orientationType
-         * @memberof AICommon.BotMediaMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMediaMetadata.prototype, "_orientationType", {
             get: $util.oneOfGetter($oneOfFields = ["orientationType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -23724,23 +19572,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotSessionMetadata _sessionId.
-         * @member {"sessionId"|undefined} _sessionId
-         * @memberof AICommon.BotSessionMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSessionMetadata.prototype, "_sessionId", {
             get: $util.oneOfGetter($oneOfFields = ["sessionId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotSessionMetadata _sessionSource.
-         * @member {"sessionSource"|undefined} _sessionSource
-         * @memberof AICommon.BotSessionMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSessionMetadata.prototype, "_sessionSource", {
             get: $util.oneOfGetter($oneOfFields = ["sessionSource"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -23871,6 +19709,7 @@ $root.AICommon = (function() {
                 case 4:
                 case 5:
                 case 6:
+                case 7:
                     break;
                 }
             }
@@ -23925,6 +19764,10 @@ $root.AICommon = (function() {
             case "VOICE":
             case 6:
                 message.sessionSource = 6;
+                break;
+            case "AI_HOME_SESSION":
+            case 7:
+                message.sessionSource = 7;
                 break;
             }
             return message;
@@ -24038,34 +19881,19 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotMetricsMetadata _destinationId.
-         * @member {"destinationId"|undefined} _destinationId
-         * @memberof AICommon.BotMetricsMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetricsMetadata.prototype, "_destinationId", {
             get: $util.oneOfGetter($oneOfFields = ["destinationId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetricsMetadata _destinationEntryPoint.
-         * @member {"destinationEntryPoint"|undefined} _destinationEntryPoint
-         * @memberof AICommon.BotMetricsMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetricsMetadata.prototype, "_destinationEntryPoint", {
             get: $util.oneOfGetter($oneOfFields = ["destinationEntryPoint"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMetricsMetadata _threadOrigin.
-         * @member {"threadOrigin"|undefined} _threadOrigin
-         * @memberof AICommon.BotMetricsMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMetricsMetadata.prototype, "_threadOrigin", {
             get: $util.oneOfGetter($oneOfFields = ["threadOrigin"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -24234,6 +20062,15 @@ $root.AICommon = (function() {
                 case 36:
                 case 37:
                 case 38:
+                case 39:
+                case 40:
+                case 41:
+                case 45:
+                case 46:
+                case 47:
+                case 54:
+                case 55:
+                case 56:
                     break;
                 }
             }
@@ -24429,6 +20266,42 @@ $root.AICommon = (function() {
             case "ASK_META_AI_MEDIA_VIEWER_GROUP":
             case 38:
                 message.destinationEntryPoint = 38;
+                break;
+            case "MEDIA_PICKER_1_ON_1_CHAT":
+            case 39:
+                message.destinationEntryPoint = 39;
+                break;
+            case "MEDIA_PICKER_GROUP_CHAT":
+            case 40:
+                message.destinationEntryPoint = 40;
+                break;
+            case "ASK_META_AI_NO_SEARCH_RESULTS":
+            case 41:
+                message.destinationEntryPoint = 41;
+                break;
+            case "META_AI_SETTINGS":
+            case 45:
+                message.destinationEntryPoint = 45;
+                break;
+            case "WEB_INTRO_PANEL":
+            case 46:
+                message.destinationEntryPoint = 46;
+                break;
+            case "WEB_NAVIGATION_BAR":
+            case 47:
+                message.destinationEntryPoint = 47;
+                break;
+            case "GROUP_MEMBER":
+            case 54:
+                message.destinationEntryPoint = 54;
+                break;
+            case "CHATLIST_SEARCH":
+            case 55:
+                message.destinationEntryPoint = 55;
+                break;
+            case "NEW_CHAT_LIST":
+            case 56:
+                message.destinationEntryPoint = 56;
                 break;
             }
             switch (object.threadOrigin) {
@@ -24790,12 +20663,7 @@ $root.AICommon = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * Keyword _value.
-             * @member {"value"|undefined} _value
-             * @memberof AICommon.BotRenderingMetadata.Keyword
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Keyword.prototype, "_value", {
                 get: $util.oneOfGetter($oneOfFields = ["value"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -25055,23 +20923,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotPromotionMessageMetadata _promotionType.
-         * @member {"promotionType"|undefined} _promotionType
-         * @memberof AICommon.BotPromotionMessageMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPromotionMessageMetadata.prototype, "_promotionType", {
             get: $util.oneOfGetter($oneOfFields = ["promotionType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPromotionMessageMetadata _buttonTitle.
-         * @member {"buttonTitle"|undefined} _buttonTitle
-         * @memberof AICommon.BotPromotionMessageMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPromotionMessageMetadata.prototype, "_buttonTitle", {
             get: $util.oneOfGetter($oneOfFields = ["buttonTitle"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -25375,34 +21233,19 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotSignatureVerificationUseCaseProof _version.
-         * @member {"version"|undefined} _version
-         * @memberof AICommon.BotSignatureVerificationUseCaseProof
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSignatureVerificationUseCaseProof.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotSignatureVerificationUseCaseProof _useCase.
-         * @member {"useCase"|undefined} _useCase
-         * @memberof AICommon.BotSignatureVerificationUseCaseProof
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSignatureVerificationUseCaseProof.prototype, "_useCase", {
             get: $util.oneOfGetter($oneOfFields = ["useCase"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotSignatureVerificationUseCaseProof _signature.
-         * @member {"signature"|undefined} _signature
-         * @memberof AICommon.BotSignatureVerificationUseCaseProof
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSignatureVerificationUseCaseProof.prototype, "_signature", {
             get: $util.oneOfGetter($oneOfFields = ["signature"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -25543,6 +21386,7 @@ $root.AICommon = (function() {
                     return "useCase: enum value expected";
                 case 0:
                 case 1:
+                case 2:
                     break;
                 }
             }
@@ -25589,6 +21433,10 @@ $root.AICommon = (function() {
             case "WA_BOT_MSG":
             case 1:
                 message.useCase = 1;
+                break;
+            case "WA_TEE_BOT_MSG":
+            case 2:
+                message.useCase = 2;
                 break;
             }
             if (object.signature != null)
@@ -25679,11 +21527,13 @@ $root.AICommon = (function() {
          * @enum {number}
          * @property {number} UNSPECIFIED=0 UNSPECIFIED value
          * @property {number} WA_BOT_MSG=1 WA_BOT_MSG value
+         * @property {number} WA_TEE_BOT_MSG=2 WA_TEE_BOT_MSG value
          */
         BotSignatureVerificationUseCaseProof.BotSignatureUseCase = (function() {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "UNSPECIFIED"] = 0;
             values[valuesById[1] = "WA_BOT_MSG"] = 1;
+            values[valuesById[2] = "WA_TEE_BOT_MSG"] = 2;
             return values;
         })();
 
@@ -25960,23 +21810,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotMemoryFact _fact.
-         * @member {"fact"|undefined} _fact
-         * @memberof AICommon.BotMemoryFact
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMemoryFact.prototype, "_fact", {
             get: $util.oneOfGetter($oneOfFields = ["fact"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotMemoryFact _factId.
-         * @member {"factId"|undefined} _factId
-         * @memberof AICommon.BotMemoryFact
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMemoryFact.prototype, "_factId", {
             get: $util.oneOfGetter($oneOfFields = ["factId"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -26232,12 +22072,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotMemoryMetadata _disclaimer.
-         * @member {"disclaimer"|undefined} _disclaimer
-         * @memberof AICommon.BotMemoryMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotMemoryMetadata.prototype, "_disclaimer", {
             get: $util.oneOfGetter($oneOfFields = ["disclaimer"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -26525,12 +22360,7 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotLinkedAccount _type.
-         * @member {"type"|undefined} _type
-         * @memberof AICommon.BotLinkedAccount
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotLinkedAccount.prototype, "_type", {
             get: $util.oneOfGetter($oneOfFields = ["type"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -26793,23 +22623,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotLinkedAccountsMetadata _acAuthTokens.
-         * @member {"acAuthTokens"|undefined} _acAuthTokens
-         * @memberof AICommon.BotLinkedAccountsMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotLinkedAccountsMetadata.prototype, "_acAuthTokens", {
             get: $util.oneOfGetter($oneOfFields = ["acAuthTokens"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotLinkedAccountsMetadata _acErrorCode.
-         * @member {"acErrorCode"|undefined} _acErrorCode
-         * @memberof AICommon.BotLinkedAccountsMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotLinkedAccountsMetadata.prototype, "_acErrorCode", {
             get: $util.oneOfGetter($oneOfFields = ["acErrorCode"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -27092,23 +22912,13 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotPromptSuggestion _prompt.
-         * @member {"prompt"|undefined} _prompt
-         * @memberof AICommon.BotPromptSuggestion
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPromptSuggestion.prototype, "_prompt", {
             get: $util.oneOfGetter($oneOfFields = ["prompt"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPromptSuggestion _promptId.
-         * @member {"promptId"|undefined} _promptId
-         * @memberof AICommon.BotPromptSuggestion
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPromptSuggestion.prototype, "_promptId", {
             get: $util.oneOfGetter($oneOfFields = ["promptId"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -27598,34 +23408,19 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotSuggestedPromptMetadata _selectedPromptIndex.
-         * @member {"selectedPromptIndex"|undefined} _selectedPromptIndex
-         * @memberof AICommon.BotSuggestedPromptMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSuggestedPromptMetadata.prototype, "_selectedPromptIndex", {
             get: $util.oneOfGetter($oneOfFields = ["selectedPromptIndex"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotSuggestedPromptMetadata _promptSuggestions.
-         * @member {"promptSuggestions"|undefined} _promptSuggestions
-         * @memberof AICommon.BotSuggestedPromptMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSuggestedPromptMetadata.prototype, "_promptSuggestions", {
             get: $util.oneOfGetter($oneOfFields = ["promptSuggestions"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotSuggestedPromptMetadata _selectedPromptId.
-         * @member {"selectedPromptId"|undefined} _selectedPromptId
-         * @memberof AICommon.BotSuggestedPromptMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotSuggestedPromptMetadata.prototype, "_selectedPromptId", {
             get: $util.oneOfGetter($oneOfFields = ["selectedPromptId"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -28014,133 +23809,73 @@ $root.AICommon = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BotPluginMetadata _provider.
-         * @member {"provider"|undefined} _provider
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_provider", {
             get: $util.oneOfGetter($oneOfFields = ["provider"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _pluginType.
-         * @member {"pluginType"|undefined} _pluginType
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_pluginType", {
             get: $util.oneOfGetter($oneOfFields = ["pluginType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _thumbnailCdnUrl.
-         * @member {"thumbnailCdnUrl"|undefined} _thumbnailCdnUrl
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_thumbnailCdnUrl", {
             get: $util.oneOfGetter($oneOfFields = ["thumbnailCdnUrl"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _profilePhotoCdnUrl.
-         * @member {"profilePhotoCdnUrl"|undefined} _profilePhotoCdnUrl
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_profilePhotoCdnUrl", {
             get: $util.oneOfGetter($oneOfFields = ["profilePhotoCdnUrl"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _searchProviderUrl.
-         * @member {"searchProviderUrl"|undefined} _searchProviderUrl
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_searchProviderUrl", {
             get: $util.oneOfGetter($oneOfFields = ["searchProviderUrl"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _referenceIndex.
-         * @member {"referenceIndex"|undefined} _referenceIndex
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_referenceIndex", {
             get: $util.oneOfGetter($oneOfFields = ["referenceIndex"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _expectedLinksCount.
-         * @member {"expectedLinksCount"|undefined} _expectedLinksCount
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_expectedLinksCount", {
             get: $util.oneOfGetter($oneOfFields = ["expectedLinksCount"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _searchQuery.
-         * @member {"searchQuery"|undefined} _searchQuery
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_searchQuery", {
             get: $util.oneOfGetter($oneOfFields = ["searchQuery"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _parentPluginMessageKey.
-         * @member {"parentPluginMessageKey"|undefined} _parentPluginMessageKey
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_parentPluginMessageKey", {
             get: $util.oneOfGetter($oneOfFields = ["parentPluginMessageKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _deprecatedField.
-         * @member {"deprecatedField"|undefined} _deprecatedField
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_deprecatedField", {
             get: $util.oneOfGetter($oneOfFields = ["deprecatedField"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _parentPluginType.
-         * @member {"parentPluginType"|undefined} _parentPluginType
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_parentPluginType", {
             get: $util.oneOfGetter($oneOfFields = ["parentPluginType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BotPluginMetadata _faviconCdnUrl.
-         * @member {"faviconCdnUrl"|undefined} _faviconCdnUrl
-         * @memberof AICommon.BotPluginMetadata
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BotPluginMetadata.prototype, "_faviconCdnUrl", {
             get: $util.oneOfGetter($oneOfFields = ["faviconCdnUrl"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -28662,381 +24397,6 @@ $root.AICommon = (function() {
         return BotPluginMetadata;
     })();
 
-    AICommon.BotAvatarMetadata = (function() {
-
-        /**
-         * Properties of a BotAvatarMetadata.
-         * @memberof AICommon
-         * @interface IBotAvatarMetadata
-         * @property {number|null} [sentiment] BotAvatarMetadata sentiment
-         * @property {string|null} [behaviorGraph] BotAvatarMetadata behaviorGraph
-         * @property {number|null} [action] BotAvatarMetadata action
-         * @property {number|null} [intensity] BotAvatarMetadata intensity
-         * @property {number|null} [wordCount] BotAvatarMetadata wordCount
-         */
-
-        /**
-         * Constructs a new BotAvatarMetadata.
-         * @memberof AICommon
-         * @classdesc Represents a BotAvatarMetadata.
-         * @implements IBotAvatarMetadata
-         * @constructor
-         * @param {AICommon.IBotAvatarMetadata=} [properties] Properties to set
-         */
-        function BotAvatarMetadata(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * BotAvatarMetadata sentiment.
-         * @member {number|null|undefined} sentiment
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        BotAvatarMetadata.prototype.sentiment = null;
-
-        /**
-         * BotAvatarMetadata behaviorGraph.
-         * @member {string|null|undefined} behaviorGraph
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        BotAvatarMetadata.prototype.behaviorGraph = null;
-
-        /**
-         * BotAvatarMetadata action.
-         * @member {number|null|undefined} action
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        BotAvatarMetadata.prototype.action = null;
-
-        /**
-         * BotAvatarMetadata intensity.
-         * @member {number|null|undefined} intensity
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        BotAvatarMetadata.prototype.intensity = null;
-
-        /**
-         * BotAvatarMetadata wordCount.
-         * @member {number|null|undefined} wordCount
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        BotAvatarMetadata.prototype.wordCount = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * BotAvatarMetadata _sentiment.
-         * @member {"sentiment"|undefined} _sentiment
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        Object.defineProperty(BotAvatarMetadata.prototype, "_sentiment", {
-            get: $util.oneOfGetter($oneOfFields = ["sentiment"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * BotAvatarMetadata _behaviorGraph.
-         * @member {"behaviorGraph"|undefined} _behaviorGraph
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        Object.defineProperty(BotAvatarMetadata.prototype, "_behaviorGraph", {
-            get: $util.oneOfGetter($oneOfFields = ["behaviorGraph"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * BotAvatarMetadata _action.
-         * @member {"action"|undefined} _action
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        Object.defineProperty(BotAvatarMetadata.prototype, "_action", {
-            get: $util.oneOfGetter($oneOfFields = ["action"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * BotAvatarMetadata _intensity.
-         * @member {"intensity"|undefined} _intensity
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        Object.defineProperty(BotAvatarMetadata.prototype, "_intensity", {
-            get: $util.oneOfGetter($oneOfFields = ["intensity"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * BotAvatarMetadata _wordCount.
-         * @member {"wordCount"|undefined} _wordCount
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         */
-        Object.defineProperty(BotAvatarMetadata.prototype, "_wordCount", {
-            get: $util.oneOfGetter($oneOfFields = ["wordCount"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new BotAvatarMetadata instance using the specified properties.
-         * @function create
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {AICommon.IBotAvatarMetadata=} [properties] Properties to set
-         * @returns {AICommon.BotAvatarMetadata} BotAvatarMetadata instance
-         */
-        BotAvatarMetadata.create = function create(properties) {
-            return new BotAvatarMetadata(properties);
-        };
-
-        /**
-         * Encodes the specified BotAvatarMetadata message. Does not implicitly {@link AICommon.BotAvatarMetadata.verify|verify} messages.
-         * @function encode
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {AICommon.IBotAvatarMetadata} message BotAvatarMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        BotAvatarMetadata.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.sentiment != null && Object.hasOwnProperty.call(message, "sentiment"))
-                writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.sentiment);
-            if (message.behaviorGraph != null && Object.hasOwnProperty.call(message, "behaviorGraph"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.behaviorGraph);
-            if (message.action != null && Object.hasOwnProperty.call(message, "action"))
-                writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.action);
-            if (message.intensity != null && Object.hasOwnProperty.call(message, "intensity"))
-                writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.intensity);
-            if (message.wordCount != null && Object.hasOwnProperty.call(message, "wordCount"))
-                writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.wordCount);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified BotAvatarMetadata message, length delimited. Does not implicitly {@link AICommon.BotAvatarMetadata.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {AICommon.IBotAvatarMetadata} message BotAvatarMetadata message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        BotAvatarMetadata.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a BotAvatarMetadata message from the specified reader or buffer.
-         * @function decode
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {AICommon.BotAvatarMetadata} BotAvatarMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        BotAvatarMetadata.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AICommon.BotAvatarMetadata();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.sentiment = reader.uint32();
-                        break;
-                    }
-                case 2: {
-                        message.behaviorGraph = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.action = reader.uint32();
-                        break;
-                    }
-                case 4: {
-                        message.intensity = reader.uint32();
-                        break;
-                    }
-                case 5: {
-                        message.wordCount = reader.uint32();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a BotAvatarMetadata message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {AICommon.BotAvatarMetadata} BotAvatarMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        BotAvatarMetadata.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a BotAvatarMetadata message.
-         * @function verify
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        BotAvatarMetadata.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.sentiment != null && message.hasOwnProperty("sentiment")) {
-                properties._sentiment = 1;
-                if (!$util.isInteger(message.sentiment))
-                    return "sentiment: integer expected";
-            }
-            if (message.behaviorGraph != null && message.hasOwnProperty("behaviorGraph")) {
-                properties._behaviorGraph = 1;
-                if (!$util.isString(message.behaviorGraph))
-                    return "behaviorGraph: string expected";
-            }
-            if (message.action != null && message.hasOwnProperty("action")) {
-                properties._action = 1;
-                if (!$util.isInteger(message.action))
-                    return "action: integer expected";
-            }
-            if (message.intensity != null && message.hasOwnProperty("intensity")) {
-                properties._intensity = 1;
-                if (!$util.isInteger(message.intensity))
-                    return "intensity: integer expected";
-            }
-            if (message.wordCount != null && message.hasOwnProperty("wordCount")) {
-                properties._wordCount = 1;
-                if (!$util.isInteger(message.wordCount))
-                    return "wordCount: integer expected";
-            }
-            return null;
-        };
-
-        /**
-         * Creates a BotAvatarMetadata message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {AICommon.BotAvatarMetadata} BotAvatarMetadata
-         */
-        BotAvatarMetadata.fromObject = function fromObject(object) {
-            if (object instanceof $root.AICommon.BotAvatarMetadata)
-                return object;
-            var message = new $root.AICommon.BotAvatarMetadata();
-            if (object.sentiment != null)
-                message.sentiment = object.sentiment >>> 0;
-            if (object.behaviorGraph != null)
-                message.behaviorGraph = String(object.behaviorGraph);
-            if (object.action != null)
-                message.action = object.action >>> 0;
-            if (object.intensity != null)
-                message.intensity = object.intensity >>> 0;
-            if (object.wordCount != null)
-                message.wordCount = object.wordCount >>> 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a BotAvatarMetadata message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {AICommon.BotAvatarMetadata} message BotAvatarMetadata
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        BotAvatarMetadata.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (message.sentiment != null && message.hasOwnProperty("sentiment")) {
-                object.sentiment = message.sentiment;
-                if (options.oneofs)
-                    object._sentiment = "sentiment";
-            }
-            if (message.behaviorGraph != null && message.hasOwnProperty("behaviorGraph")) {
-                object.behaviorGraph = message.behaviorGraph;
-                if (options.oneofs)
-                    object._behaviorGraph = "behaviorGraph";
-            }
-            if (message.action != null && message.hasOwnProperty("action")) {
-                object.action = message.action;
-                if (options.oneofs)
-                    object._action = "action";
-            }
-            if (message.intensity != null && message.hasOwnProperty("intensity")) {
-                object.intensity = message.intensity;
-                if (options.oneofs)
-                    object._intensity = "intensity";
-            }
-            if (message.wordCount != null && message.hasOwnProperty("wordCount")) {
-                object.wordCount = message.wordCount;
-                if (options.oneofs)
-                    object._wordCount = "wordCount";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this BotAvatarMetadata to JSON.
-         * @function toJSON
-         * @memberof AICommon.BotAvatarMetadata
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        BotAvatarMetadata.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for BotAvatarMetadata
-         * @function getTypeUrl
-         * @memberof AICommon.BotAvatarMetadata
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        BotAvatarMetadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/AICommon.BotAvatarMetadata";
-        };
-
-        return BotAvatarMetadata;
-    })();
-
     /**
      * SessionTransparencyType enum.
      * @name AICommon.SessionTransparencyType
@@ -29052,50 +24412,6 @@ $root.AICommon = (function() {
     })();
 
     /**
-     * AIRichResponseSubMessageType enum.
-     * @name AICommon.AIRichResponseSubMessageType
-     * @enum {number}
-     * @property {number} AI_RICH_RESPONSE_UNKNOWN=0 AI_RICH_RESPONSE_UNKNOWN value
-     * @property {number} AI_RICH_RESPONSE_GRID_IMAGE=1 AI_RICH_RESPONSE_GRID_IMAGE value
-     * @property {number} AI_RICH_RESPONSE_TEXT=2 AI_RICH_RESPONSE_TEXT value
-     * @property {number} AI_RICH_RESPONSE_INLINE_IMAGE=3 AI_RICH_RESPONSE_INLINE_IMAGE value
-     * @property {number} AI_RICH_RESPONSE_TABLE=4 AI_RICH_RESPONSE_TABLE value
-     * @property {number} AI_RICH_RESPONSE_CODE=5 AI_RICH_RESPONSE_CODE value
-     * @property {number} AI_RICH_RESPONSE_DYNAMIC=6 AI_RICH_RESPONSE_DYNAMIC value
-     * @property {number} AI_RICH_RESPONSE_MAP=7 AI_RICH_RESPONSE_MAP value
-     * @property {number} AI_RICH_RESPONSE_LATEX=8 AI_RICH_RESPONSE_LATEX value
-     * @property {number} AI_RICH_RESPONSE_CONTENT_ITEMS=9 AI_RICH_RESPONSE_CONTENT_ITEMS value
-     */
-    AICommon.AIRichResponseSubMessageType = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
-        values[valuesById[0] = "AI_RICH_RESPONSE_UNKNOWN"] = 0;
-        values[valuesById[1] = "AI_RICH_RESPONSE_GRID_IMAGE"] = 1;
-        values[valuesById[2] = "AI_RICH_RESPONSE_TEXT"] = 2;
-        values[valuesById[3] = "AI_RICH_RESPONSE_INLINE_IMAGE"] = 3;
-        values[valuesById[4] = "AI_RICH_RESPONSE_TABLE"] = 4;
-        values[valuesById[5] = "AI_RICH_RESPONSE_CODE"] = 5;
-        values[valuesById[6] = "AI_RICH_RESPONSE_DYNAMIC"] = 6;
-        values[valuesById[7] = "AI_RICH_RESPONSE_MAP"] = 7;
-        values[valuesById[8] = "AI_RICH_RESPONSE_LATEX"] = 8;
-        values[valuesById[9] = "AI_RICH_RESPONSE_CONTENT_ITEMS"] = 9;
-        return values;
-    })();
-
-    /**
-     * AIRichResponseMessageType enum.
-     * @name AICommon.AIRichResponseMessageType
-     * @enum {number}
-     * @property {number} AI_RICH_RESPONSE_TYPE_UNKNOWN=0 AI_RICH_RESPONSE_TYPE_UNKNOWN value
-     * @property {number} AI_RICH_RESPONSE_TYPE_STANDARD=1 AI_RICH_RESPONSE_TYPE_STANDARD value
-     */
-    AICommon.AIRichResponseMessageType = (function() {
-        var valuesById = {}, values = Object.create(valuesById);
-        values[valuesById[0] = "AI_RICH_RESPONSE_TYPE_UNKNOWN"] = 0;
-        values[valuesById[1] = "AI_RICH_RESPONSE_TYPE_STANDARD"] = 1;
-        return values;
-    })();
-
-    /**
      * BotSessionSource enum.
      * @name AICommon.BotSessionSource
      * @enum {number}
@@ -29106,6 +24422,7 @@ $root.AICommon = (function() {
      * @property {number} EMU_FLASH=4 EMU_FLASH value
      * @property {number} EMU_FLASH_FOLLOWUP=5 EMU_FLASH_FOLLOWUP value
      * @property {number} VOICE=6 VOICE value
+     * @property {number} AI_HOME_SESSION=7 AI_HOME_SESSION value
      */
     AICommon.BotSessionSource = (function() {
         var valuesById = {}, values = Object.create(valuesById);
@@ -29116,6 +24433,7 @@ $root.AICommon = (function() {
         values[valuesById[4] = "EMU_FLASH"] = 4;
         values[valuesById[5] = "EMU_FLASH_FOLLOWUP"] = 5;
         values[valuesById[6] = "VOICE"] = 6;
+        values[valuesById[7] = "AI_HOME_SESSION"] = 7;
         return values;
     })();
 
@@ -29182,6 +24500,15 @@ $root.AICommon = (function() {
      * @property {number} ATTACHMENT_TRAY_GROUP_CHAT=36 ATTACHMENT_TRAY_GROUP_CHAT value
      * @property {number} ASK_META_AI_MEDIA_VIEWER_1ON1=37 ASK_META_AI_MEDIA_VIEWER_1ON1 value
      * @property {number} ASK_META_AI_MEDIA_VIEWER_GROUP=38 ASK_META_AI_MEDIA_VIEWER_GROUP value
+     * @property {number} MEDIA_PICKER_1_ON_1_CHAT=39 MEDIA_PICKER_1_ON_1_CHAT value
+     * @property {number} MEDIA_PICKER_GROUP_CHAT=40 MEDIA_PICKER_GROUP_CHAT value
+     * @property {number} ASK_META_AI_NO_SEARCH_RESULTS=41 ASK_META_AI_NO_SEARCH_RESULTS value
+     * @property {number} META_AI_SETTINGS=45 META_AI_SETTINGS value
+     * @property {number} WEB_INTRO_PANEL=46 WEB_INTRO_PANEL value
+     * @property {number} WEB_NAVIGATION_BAR=47 WEB_NAVIGATION_BAR value
+     * @property {number} GROUP_MEMBER=54 GROUP_MEMBER value
+     * @property {number} CHATLIST_SEARCH=55 CHATLIST_SEARCH value
+     * @property {number} NEW_CHAT_LIST=56 NEW_CHAT_LIST value
      */
     AICommon.BotMetricsEntryPoint = (function() {
         var valuesById = {}, values = Object.create(valuesById);
@@ -29224,6 +24551,15 @@ $root.AICommon = (function() {
         values[valuesById[36] = "ATTACHMENT_TRAY_GROUP_CHAT"] = 36;
         values[valuesById[37] = "ASK_META_AI_MEDIA_VIEWER_1ON1"] = 37;
         values[valuesById[38] = "ASK_META_AI_MEDIA_VIEWER_GROUP"] = 38;
+        values[valuesById[39] = "MEDIA_PICKER_1_ON_1_CHAT"] = 39;
+        values[valuesById[40] = "MEDIA_PICKER_GROUP_CHAT"] = 40;
+        values[valuesById[41] = "ASK_META_AI_NO_SEARCH_RESULTS"] = 41;
+        values[valuesById[45] = "META_AI_SETTINGS"] = 45;
+        values[valuesById[46] = "WEB_INTRO_PANEL"] = 46;
+        values[valuesById[47] = "WEB_NAVIGATION_BAR"] = 47;
+        values[valuesById[54] = "GROUP_MEMBER"] = 54;
+        values[valuesById[55] = "CHATLIST_SEARCH"] = 55;
+        values[valuesById[56] = "NEW_CHAT_LIST"] = 56;
         return values;
     })();
 
@@ -29301,45 +24637,25 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * LimitSharing _sharingLimited.
-         * @member {"sharingLimited"|undefined} _sharingLimited
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_sharingLimited", {
             get: $util.oneOfGetter($oneOfFields = ["sharingLimited"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _trigger.
-         * @member {"trigger"|undefined} _trigger
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_trigger", {
             get: $util.oneOfGetter($oneOfFields = ["trigger"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _limitSharingSettingTimestamp.
-         * @member {"limitSharingSettingTimestamp"|undefined} _limitSharingSettingTimestamp
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_limitSharingSettingTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["limitSharingSettingTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _initiatedByMe.
-         * @member {"initiatedByMe"|undefined} _initiatedByMe
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_initiatedByMe", {
             get: $util.oneOfGetter($oneOfFields = ["initiatedByMe"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -29695,45 +25011,25 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * MessageKey _remoteJid.
-         * @member {"remoteJid"|undefined} _remoteJid
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_remoteJid", {
             get: $util.oneOfGetter($oneOfFields = ["remoteJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _fromMe.
-         * @member {"fromMe"|undefined} _fromMe
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_fromMe", {
             get: $util.oneOfGetter($oneOfFields = ["fromMe"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _id.
-         * @member {"id"|undefined} _id
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _participant.
-         * @member {"participant"|undefined} _participant
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_participant", {
             get: $util.oneOfGetter($oneOfFields = ["participant"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -29971,2833 +25267,6 @@ $root.Protocol = (function() {
     })();
 
     return Protocol;
-})();
-
-$root.StatusAttributions = (function() {
-
-    /**
-     * Namespace StatusAttributions.
-     * @exports StatusAttributions
-     * @namespace
-     */
-    var StatusAttributions = {};
-
-    StatusAttributions.StatusAttribution = (function() {
-
-        /**
-         * Properties of a StatusAttribution.
-         * @memberof StatusAttributions
-         * @interface IStatusAttribution
-         * @property {StatusAttributions.StatusAttribution.Type|null} [type] StatusAttribution type
-         * @property {string|null} [actionUrl] StatusAttribution actionUrl
-         * @property {StatusAttributions.StatusAttribution.IStatusReshare|null} [statusReshare] StatusAttribution statusReshare
-         * @property {StatusAttributions.StatusAttribution.IExternalShare|null} [externalShare] StatusAttribution externalShare
-         * @property {StatusAttributions.StatusAttribution.IMusic|null} [music] StatusAttribution music
-         * @property {StatusAttributions.StatusAttribution.IGroupStatus|null} [groupStatus] StatusAttribution groupStatus
-         * @property {StatusAttributions.StatusAttribution.IRLAttribution|null} [rlAttribution] StatusAttribution rlAttribution
-         * @property {StatusAttributions.StatusAttribution.IAiCreatedAttribution|null} [aiCreatedAttribution] StatusAttribution aiCreatedAttribution
-         */
-
-        /**
-         * Constructs a new StatusAttribution.
-         * @memberof StatusAttributions
-         * @classdesc Represents a StatusAttribution.
-         * @implements IStatusAttribution
-         * @constructor
-         * @param {StatusAttributions.IStatusAttribution=} [properties] Properties to set
-         */
-        function StatusAttribution(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * StatusAttribution type.
-         * @member {StatusAttributions.StatusAttribution.Type|null|undefined} type
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.type = null;
-
-        /**
-         * StatusAttribution actionUrl.
-         * @member {string|null|undefined} actionUrl
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.actionUrl = null;
-
-        /**
-         * StatusAttribution statusReshare.
-         * @member {StatusAttributions.StatusAttribution.IStatusReshare|null|undefined} statusReshare
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.statusReshare = null;
-
-        /**
-         * StatusAttribution externalShare.
-         * @member {StatusAttributions.StatusAttribution.IExternalShare|null|undefined} externalShare
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.externalShare = null;
-
-        /**
-         * StatusAttribution music.
-         * @member {StatusAttributions.StatusAttribution.IMusic|null|undefined} music
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.music = null;
-
-        /**
-         * StatusAttribution groupStatus.
-         * @member {StatusAttributions.StatusAttribution.IGroupStatus|null|undefined} groupStatus
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.groupStatus = null;
-
-        /**
-         * StatusAttribution rlAttribution.
-         * @member {StatusAttributions.StatusAttribution.IRLAttribution|null|undefined} rlAttribution
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.rlAttribution = null;
-
-        /**
-         * StatusAttribution aiCreatedAttribution.
-         * @member {StatusAttributions.StatusAttribution.IAiCreatedAttribution|null|undefined} aiCreatedAttribution
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        StatusAttribution.prototype.aiCreatedAttribution = null;
-
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
-        /**
-         * StatusAttribution _type.
-         * @member {"type"|undefined} _type
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        Object.defineProperty(StatusAttribution.prototype, "_type", {
-            get: $util.oneOfGetter($oneOfFields = ["type"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * StatusAttribution _actionUrl.
-         * @member {"actionUrl"|undefined} _actionUrl
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        Object.defineProperty(StatusAttribution.prototype, "_actionUrl", {
-            get: $util.oneOfGetter($oneOfFields = ["actionUrl"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * StatusAttribution attributionData.
-         * @member {"statusReshare"|"externalShare"|"music"|"groupStatus"|"rlAttribution"|"aiCreatedAttribution"|undefined} attributionData
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
-        Object.defineProperty(StatusAttribution.prototype, "attributionData", {
-            get: $util.oneOfGetter($oneOfFields = ["statusReshare", "externalShare", "music", "groupStatus", "rlAttribution", "aiCreatedAttribution"]),
-            set: $util.oneOfSetter($oneOfFields)
-        });
-
-        /**
-         * Creates a new StatusAttribution instance using the specified properties.
-         * @function create
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {StatusAttributions.IStatusAttribution=} [properties] Properties to set
-         * @returns {StatusAttributions.StatusAttribution} StatusAttribution instance
-         */
-        StatusAttribution.create = function create(properties) {
-            return new StatusAttribution(properties);
-        };
-
-        /**
-         * Encodes the specified StatusAttribution message. Does not implicitly {@link StatusAttributions.StatusAttribution.verify|verify} messages.
-         * @function encode
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {StatusAttributions.IStatusAttribution} message StatusAttribution message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        StatusAttribution.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-            if (message.actionUrl != null && Object.hasOwnProperty.call(message, "actionUrl"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.actionUrl);
-            if (message.statusReshare != null && Object.hasOwnProperty.call(message, "statusReshare"))
-                $root.StatusAttributions.StatusAttribution.StatusReshare.encode(message.statusReshare, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-            if (message.externalShare != null && Object.hasOwnProperty.call(message, "externalShare"))
-                $root.StatusAttributions.StatusAttribution.ExternalShare.encode(message.externalShare, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-            if (message.music != null && Object.hasOwnProperty.call(message, "music"))
-                $root.StatusAttributions.StatusAttribution.Music.encode(message.music, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-            if (message.groupStatus != null && Object.hasOwnProperty.call(message, "groupStatus"))
-                $root.StatusAttributions.StatusAttribution.GroupStatus.encode(message.groupStatus, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-            if (message.rlAttribution != null && Object.hasOwnProperty.call(message, "rlAttribution"))
-                $root.StatusAttributions.StatusAttribution.RLAttribution.encode(message.rlAttribution, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-            if (message.aiCreatedAttribution != null && Object.hasOwnProperty.call(message, "aiCreatedAttribution"))
-                $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.encode(message.aiCreatedAttribution, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-            return writer;
-        };
-
-        /**
-         * Encodes the specified StatusAttribution message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {StatusAttributions.IStatusAttribution} message StatusAttribution message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        StatusAttribution.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes a StatusAttribution message from the specified reader or buffer.
-         * @function decode
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {StatusAttributions.StatusAttribution} StatusAttribution
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        StatusAttribution.decode = function decode(reader, length, error) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                if (tag === error)
-                    break;
-                switch (tag >>> 3) {
-                case 1: {
-                        message.type = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.actionUrl = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.statusReshare = $root.StatusAttributions.StatusAttribution.StatusReshare.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 4: {
-                        message.externalShare = $root.StatusAttributions.StatusAttribution.ExternalShare.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 5: {
-                        message.music = $root.StatusAttributions.StatusAttribution.Music.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 6: {
-                        message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 7: {
-                        message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.decode(reader, reader.uint32());
-                        break;
-                    }
-                case 8: {
-                        message.aiCreatedAttribution = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.decode(reader, reader.uint32());
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes a StatusAttribution message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {StatusAttributions.StatusAttribution} StatusAttribution
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        StatusAttribution.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies a StatusAttribution message.
-         * @function verify
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        StatusAttribution.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            var properties = {};
-            if (message.type != null && message.hasOwnProperty("type")) {
-                properties._type = 1;
-                switch (message.type) {
-                default:
-                    return "type: enum value expected";
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                    break;
-                }
-            }
-            if (message.actionUrl != null && message.hasOwnProperty("actionUrl")) {
-                properties._actionUrl = 1;
-                if (!$util.isString(message.actionUrl))
-                    return "actionUrl: string expected";
-            }
-            if (message.statusReshare != null && message.hasOwnProperty("statusReshare")) {
-                properties.attributionData = 1;
-                {
-                    var error = $root.StatusAttributions.StatusAttribution.StatusReshare.verify(message.statusReshare);
-                    if (error)
-                        return "statusReshare." + error;
-                }
-            }
-            if (message.externalShare != null && message.hasOwnProperty("externalShare")) {
-                if (properties.attributionData === 1)
-                    return "attributionData: multiple values";
-                properties.attributionData = 1;
-                {
-                    var error = $root.StatusAttributions.StatusAttribution.ExternalShare.verify(message.externalShare);
-                    if (error)
-                        return "externalShare." + error;
-                }
-            }
-            if (message.music != null && message.hasOwnProperty("music")) {
-                if (properties.attributionData === 1)
-                    return "attributionData: multiple values";
-                properties.attributionData = 1;
-                {
-                    var error = $root.StatusAttributions.StatusAttribution.Music.verify(message.music);
-                    if (error)
-                        return "music." + error;
-                }
-            }
-            if (message.groupStatus != null && message.hasOwnProperty("groupStatus")) {
-                if (properties.attributionData === 1)
-                    return "attributionData: multiple values";
-                properties.attributionData = 1;
-                {
-                    var error = $root.StatusAttributions.StatusAttribution.GroupStatus.verify(message.groupStatus);
-                    if (error)
-                        return "groupStatus." + error;
-                }
-            }
-            if (message.rlAttribution != null && message.hasOwnProperty("rlAttribution")) {
-                if (properties.attributionData === 1)
-                    return "attributionData: multiple values";
-                properties.attributionData = 1;
-                {
-                    var error = $root.StatusAttributions.StatusAttribution.RLAttribution.verify(message.rlAttribution);
-                    if (error)
-                        return "rlAttribution." + error;
-                }
-            }
-            if (message.aiCreatedAttribution != null && message.hasOwnProperty("aiCreatedAttribution")) {
-                if (properties.attributionData === 1)
-                    return "attributionData: multiple values";
-                properties.attributionData = 1;
-                {
-                    var error = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.verify(message.aiCreatedAttribution);
-                    if (error)
-                        return "aiCreatedAttribution." + error;
-                }
-            }
-            return null;
-        };
-
-        /**
-         * Creates a StatusAttribution message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {StatusAttributions.StatusAttribution} StatusAttribution
-         */
-        StatusAttribution.fromObject = function fromObject(object) {
-            if (object instanceof $root.StatusAttributions.StatusAttribution)
-                return object;
-            var message = new $root.StatusAttributions.StatusAttribution();
-            switch (object.type) {
-            default:
-                if (typeof object.type === "number") {
-                    message.type = object.type;
-                    break;
-                }
-                break;
-            case "UNKNOWN":
-            case 0:
-                message.type = 0;
-                break;
-            case "RESHARE":
-            case 1:
-                message.type = 1;
-                break;
-            case "EXTERNAL_SHARE":
-            case 2:
-                message.type = 2;
-                break;
-            case "MUSIC":
-            case 3:
-                message.type = 3;
-                break;
-            case "STATUS_MENTION":
-            case 4:
-                message.type = 4;
-                break;
-            case "GROUP_STATUS":
-            case 5:
-                message.type = 5;
-                break;
-            case "RL_ATTRIBUTION":
-            case 6:
-                message.type = 6;
-                break;
-            case "AI_CREATED":
-            case 7:
-                message.type = 7;
-                break;
-            case "LAYOUTS":
-            case 8:
-                message.type = 8;
-                break;
-            }
-            if (object.actionUrl != null)
-                message.actionUrl = String(object.actionUrl);
-            if (object.statusReshare != null) {
-                if (typeof object.statusReshare !== "object")
-                    throw TypeError(".StatusAttributions.StatusAttribution.statusReshare: object expected");
-                message.statusReshare = $root.StatusAttributions.StatusAttribution.StatusReshare.fromObject(object.statusReshare);
-            }
-            if (object.externalShare != null) {
-                if (typeof object.externalShare !== "object")
-                    throw TypeError(".StatusAttributions.StatusAttribution.externalShare: object expected");
-                message.externalShare = $root.StatusAttributions.StatusAttribution.ExternalShare.fromObject(object.externalShare);
-            }
-            if (object.music != null) {
-                if (typeof object.music !== "object")
-                    throw TypeError(".StatusAttributions.StatusAttribution.music: object expected");
-                message.music = $root.StatusAttributions.StatusAttribution.Music.fromObject(object.music);
-            }
-            if (object.groupStatus != null) {
-                if (typeof object.groupStatus !== "object")
-                    throw TypeError(".StatusAttributions.StatusAttribution.groupStatus: object expected");
-                message.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.fromObject(object.groupStatus);
-            }
-            if (object.rlAttribution != null) {
-                if (typeof object.rlAttribution !== "object")
-                    throw TypeError(".StatusAttributions.StatusAttribution.rlAttribution: object expected");
-                message.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.fromObject(object.rlAttribution);
-            }
-            if (object.aiCreatedAttribution != null) {
-                if (typeof object.aiCreatedAttribution !== "object")
-                    throw TypeError(".StatusAttributions.StatusAttribution.aiCreatedAttribution: object expected");
-                message.aiCreatedAttribution = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.fromObject(object.aiCreatedAttribution);
-            }
-            return message;
-        };
-
-        /**
-         * Creates a plain object from a StatusAttribution message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {StatusAttributions.StatusAttribution} message StatusAttribution
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        StatusAttribution.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (message.type != null && message.hasOwnProperty("type")) {
-                object.type = options.enums === String ? $root.StatusAttributions.StatusAttribution.Type[message.type] === undefined ? message.type : $root.StatusAttributions.StatusAttribution.Type[message.type] : message.type;
-                if (options.oneofs)
-                    object._type = "type";
-            }
-            if (message.actionUrl != null && message.hasOwnProperty("actionUrl")) {
-                object.actionUrl = message.actionUrl;
-                if (options.oneofs)
-                    object._actionUrl = "actionUrl";
-            }
-            if (message.statusReshare != null && message.hasOwnProperty("statusReshare")) {
-                object.statusReshare = $root.StatusAttributions.StatusAttribution.StatusReshare.toObject(message.statusReshare, options);
-                if (options.oneofs)
-                    object.attributionData = "statusReshare";
-            }
-            if (message.externalShare != null && message.hasOwnProperty("externalShare")) {
-                object.externalShare = $root.StatusAttributions.StatusAttribution.ExternalShare.toObject(message.externalShare, options);
-                if (options.oneofs)
-                    object.attributionData = "externalShare";
-            }
-            if (message.music != null && message.hasOwnProperty("music")) {
-                object.music = $root.StatusAttributions.StatusAttribution.Music.toObject(message.music, options);
-                if (options.oneofs)
-                    object.attributionData = "music";
-            }
-            if (message.groupStatus != null && message.hasOwnProperty("groupStatus")) {
-                object.groupStatus = $root.StatusAttributions.StatusAttribution.GroupStatus.toObject(message.groupStatus, options);
-                if (options.oneofs)
-                    object.attributionData = "groupStatus";
-            }
-            if (message.rlAttribution != null && message.hasOwnProperty("rlAttribution")) {
-                object.rlAttribution = $root.StatusAttributions.StatusAttribution.RLAttribution.toObject(message.rlAttribution, options);
-                if (options.oneofs)
-                    object.attributionData = "rlAttribution";
-            }
-            if (message.aiCreatedAttribution != null && message.hasOwnProperty("aiCreatedAttribution")) {
-                object.aiCreatedAttribution = $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.toObject(message.aiCreatedAttribution, options);
-                if (options.oneofs)
-                    object.attributionData = "aiCreatedAttribution";
-            }
-            return object;
-        };
-
-        /**
-         * Converts this StatusAttribution to JSON.
-         * @function toJSON
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        StatusAttribution.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for StatusAttribution
-         * @function getTypeUrl
-         * @memberof StatusAttributions.StatusAttribution
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        StatusAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/StatusAttributions.StatusAttribution";
-        };
-
-        StatusAttribution.AiCreatedAttribution = (function() {
-
-            /**
-             * Properties of an AiCreatedAttribution.
-             * @memberof StatusAttributions.StatusAttribution
-             * @interface IAiCreatedAttribution
-             * @property {StatusAttributions.StatusAttribution.AiCreatedAttribution.Source|null} [source] AiCreatedAttribution source
-             */
-
-            /**
-             * Constructs a new AiCreatedAttribution.
-             * @memberof StatusAttributions.StatusAttribution
-             * @classdesc Represents an AiCreatedAttribution.
-             * @implements IAiCreatedAttribution
-             * @constructor
-             * @param {StatusAttributions.StatusAttribution.IAiCreatedAttribution=} [properties] Properties to set
-             */
-            function AiCreatedAttribution(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * AiCreatedAttribution source.
-             * @member {StatusAttributions.StatusAttribution.AiCreatedAttribution.Source|null|undefined} source
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @instance
-             */
-            AiCreatedAttribution.prototype.source = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * AiCreatedAttribution _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @instance
-             */
-            Object.defineProperty(AiCreatedAttribution.prototype, "_source", {
-                get: $util.oneOfGetter($oneOfFields = ["source"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new AiCreatedAttribution instance using the specified properties.
-             * @function create
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IAiCreatedAttribution=} [properties] Properties to set
-             * @returns {StatusAttributions.StatusAttribution.AiCreatedAttribution} AiCreatedAttribution instance
-             */
-            AiCreatedAttribution.create = function create(properties) {
-                return new AiCreatedAttribution(properties);
-            };
-
-            /**
-             * Encodes the specified AiCreatedAttribution message. Does not implicitly {@link StatusAttributions.StatusAttribution.AiCreatedAttribution.verify|verify} messages.
-             * @function encode
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IAiCreatedAttribution} message AiCreatedAttribution message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AiCreatedAttribution.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.source != null && Object.hasOwnProperty.call(message, "source"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.source);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified AiCreatedAttribution message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.AiCreatedAttribution.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IAiCreatedAttribution} message AiCreatedAttribution message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            AiCreatedAttribution.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes an AiCreatedAttribution message from the specified reader or buffer.
-             * @function decode
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {StatusAttributions.StatusAttribution.AiCreatedAttribution} AiCreatedAttribution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AiCreatedAttribution.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.AiCreatedAttribution();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.source = reader.int32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes an AiCreatedAttribution message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {StatusAttributions.StatusAttribution.AiCreatedAttribution} AiCreatedAttribution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            AiCreatedAttribution.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies an AiCreatedAttribution message.
-             * @function verify
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            AiCreatedAttribution.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    properties._source = 1;
-                    switch (message.source) {
-                    default:
-                        return "source: enum value expected";
-                    case 0:
-                    case 1:
-                        break;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Creates an AiCreatedAttribution message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {StatusAttributions.StatusAttribution.AiCreatedAttribution} AiCreatedAttribution
-             */
-            AiCreatedAttribution.fromObject = function fromObject(object) {
-                if (object instanceof $root.StatusAttributions.StatusAttribution.AiCreatedAttribution)
-                    return object;
-                var message = new $root.StatusAttributions.StatusAttribution.AiCreatedAttribution();
-                switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
-                case "UNKNOWN":
-                case 0:
-                    message.source = 0;
-                    break;
-                case "STATUS_MIMICRY":
-                case 1:
-                    message.source = 1;
-                    break;
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from an AiCreatedAttribution message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.AiCreatedAttribution} message AiCreatedAttribution
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            AiCreatedAttribution.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.AiCreatedAttribution.Source[message.source] : message.source;
-                    if (options.oneofs)
-                        object._source = "source";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this AiCreatedAttribution to JSON.
-             * @function toJSON
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            AiCreatedAttribution.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for AiCreatedAttribution
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            AiCreatedAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.AiCreatedAttribution";
-            };
-
-            /**
-             * Source enum.
-             * @name StatusAttributions.StatusAttribution.AiCreatedAttribution.Source
-             * @enum {number}
-             * @property {number} UNKNOWN=0 UNKNOWN value
-             * @property {number} STATUS_MIMICRY=1 STATUS_MIMICRY value
-             */
-            AiCreatedAttribution.Source = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNKNOWN"] = 0;
-                values[valuesById[1] = "STATUS_MIMICRY"] = 1;
-                return values;
-            })();
-
-            return AiCreatedAttribution;
-        })();
-
-        StatusAttribution.ExternalShare = (function() {
-
-            /**
-             * Properties of an ExternalShare.
-             * @memberof StatusAttributions.StatusAttribution
-             * @interface IExternalShare
-             * @property {string|null} [actionUrl] ExternalShare actionUrl
-             * @property {StatusAttributions.StatusAttribution.ExternalShare.Source|null} [source] ExternalShare source
-             * @property {number|null} [duration] ExternalShare duration
-             * @property {string|null} [actionFallbackUrl] ExternalShare actionFallbackUrl
-             */
-
-            /**
-             * Constructs a new ExternalShare.
-             * @memberof StatusAttributions.StatusAttribution
-             * @classdesc Represents an ExternalShare.
-             * @implements IExternalShare
-             * @constructor
-             * @param {StatusAttributions.StatusAttribution.IExternalShare=} [properties] Properties to set
-             */
-            function ExternalShare(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * ExternalShare actionUrl.
-             * @member {string|null|undefined} actionUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            ExternalShare.prototype.actionUrl = null;
-
-            /**
-             * ExternalShare source.
-             * @member {StatusAttributions.StatusAttribution.ExternalShare.Source|null|undefined} source
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            ExternalShare.prototype.source = null;
-
-            /**
-             * ExternalShare duration.
-             * @member {number|null|undefined} duration
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            ExternalShare.prototype.duration = null;
-
-            /**
-             * ExternalShare actionFallbackUrl.
-             * @member {string|null|undefined} actionFallbackUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            ExternalShare.prototype.actionFallbackUrl = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * ExternalShare _actionUrl.
-             * @member {"actionUrl"|undefined} _actionUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            Object.defineProperty(ExternalShare.prototype, "_actionUrl", {
-                get: $util.oneOfGetter($oneOfFields = ["actionUrl"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ExternalShare _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            Object.defineProperty(ExternalShare.prototype, "_source", {
-                get: $util.oneOfGetter($oneOfFields = ["source"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ExternalShare _duration.
-             * @member {"duration"|undefined} _duration
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            Object.defineProperty(ExternalShare.prototype, "_duration", {
-                get: $util.oneOfGetter($oneOfFields = ["duration"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * ExternalShare _actionFallbackUrl.
-             * @member {"actionFallbackUrl"|undefined} _actionFallbackUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
-            Object.defineProperty(ExternalShare.prototype, "_actionFallbackUrl", {
-                get: $util.oneOfGetter($oneOfFields = ["actionFallbackUrl"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new ExternalShare instance using the specified properties.
-             * @function create
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IExternalShare=} [properties] Properties to set
-             * @returns {StatusAttributions.StatusAttribution.ExternalShare} ExternalShare instance
-             */
-            ExternalShare.create = function create(properties) {
-                return new ExternalShare(properties);
-            };
-
-            /**
-             * Encodes the specified ExternalShare message. Does not implicitly {@link StatusAttributions.StatusAttribution.ExternalShare.verify|verify} messages.
-             * @function encode
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IExternalShare} message ExternalShare message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ExternalShare.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.actionUrl != null && Object.hasOwnProperty.call(message, "actionUrl"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.actionUrl);
-                if (message.source != null && Object.hasOwnProperty.call(message, "source"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.source);
-                if (message.duration != null && Object.hasOwnProperty.call(message, "duration"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.duration);
-                if (message.actionFallbackUrl != null && Object.hasOwnProperty.call(message, "actionFallbackUrl"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.actionFallbackUrl);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified ExternalShare message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.ExternalShare.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IExternalShare} message ExternalShare message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            ExternalShare.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes an ExternalShare message from the specified reader or buffer.
-             * @function decode
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {StatusAttributions.StatusAttribution.ExternalShare} ExternalShare
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ExternalShare.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.ExternalShare();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.actionUrl = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.source = reader.int32();
-                            break;
-                        }
-                    case 3: {
-                            message.duration = reader.int32();
-                            break;
-                        }
-                    case 4: {
-                            message.actionFallbackUrl = reader.string();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes an ExternalShare message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {StatusAttributions.StatusAttribution.ExternalShare} ExternalShare
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            ExternalShare.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies an ExternalShare message.
-             * @function verify
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            ExternalShare.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.actionUrl != null && message.hasOwnProperty("actionUrl")) {
-                    properties._actionUrl = 1;
-                    if (!$util.isString(message.actionUrl))
-                        return "actionUrl: string expected";
-                }
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    properties._source = 1;
-                    switch (message.source) {
-                    default:
-                        return "source: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                    case 10:
-                        break;
-                    }
-                }
-                if (message.duration != null && message.hasOwnProperty("duration")) {
-                    properties._duration = 1;
-                    if (!$util.isInteger(message.duration))
-                        return "duration: integer expected";
-                }
-                if (message.actionFallbackUrl != null && message.hasOwnProperty("actionFallbackUrl")) {
-                    properties._actionFallbackUrl = 1;
-                    if (!$util.isString(message.actionFallbackUrl))
-                        return "actionFallbackUrl: string expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates an ExternalShare message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {StatusAttributions.StatusAttribution.ExternalShare} ExternalShare
-             */
-            ExternalShare.fromObject = function fromObject(object) {
-                if (object instanceof $root.StatusAttributions.StatusAttribution.ExternalShare)
-                    return object;
-                var message = new $root.StatusAttributions.StatusAttribution.ExternalShare();
-                if (object.actionUrl != null)
-                    message.actionUrl = String(object.actionUrl);
-                switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
-                case "UNKNOWN":
-                case 0:
-                    message.source = 0;
-                    break;
-                case "INSTAGRAM":
-                case 1:
-                    message.source = 1;
-                    break;
-                case "FACEBOOK":
-                case 2:
-                    message.source = 2;
-                    break;
-                case "MESSENGER":
-                case 3:
-                    message.source = 3;
-                    break;
-                case "SPOTIFY":
-                case 4:
-                    message.source = 4;
-                    break;
-                case "YOUTUBE":
-                case 5:
-                    message.source = 5;
-                    break;
-                case "PINTEREST":
-                case 6:
-                    message.source = 6;
-                    break;
-                case "THREADS":
-                case 7:
-                    message.source = 7;
-                    break;
-                case "APPLE_MUSIC":
-                case 8:
-                    message.source = 8;
-                    break;
-                case "SHARECHAT":
-                case 9:
-                    message.source = 9;
-                    break;
-                case "GOOGLE_PHOTOS":
-                case 10:
-                    message.source = 10;
-                    break;
-                }
-                if (object.duration != null)
-                    message.duration = object.duration | 0;
-                if (object.actionFallbackUrl != null)
-                    message.actionFallbackUrl = String(object.actionFallbackUrl);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from an ExternalShare message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.ExternalShare} message ExternalShare
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            ExternalShare.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.actionUrl != null && message.hasOwnProperty("actionUrl")) {
-                    object.actionUrl = message.actionUrl;
-                    if (options.oneofs)
-                        object._actionUrl = "actionUrl";
-                }
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.ExternalShare.Source[message.source] : message.source;
-                    if (options.oneofs)
-                        object._source = "source";
-                }
-                if (message.duration != null && message.hasOwnProperty("duration")) {
-                    object.duration = message.duration;
-                    if (options.oneofs)
-                        object._duration = "duration";
-                }
-                if (message.actionFallbackUrl != null && message.hasOwnProperty("actionFallbackUrl")) {
-                    object.actionFallbackUrl = message.actionFallbackUrl;
-                    if (options.oneofs)
-                        object._actionFallbackUrl = "actionFallbackUrl";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this ExternalShare to JSON.
-             * @function toJSON
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            ExternalShare.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for ExternalShare
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            ExternalShare.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.ExternalShare";
-            };
-
-            /**
-             * Source enum.
-             * @name StatusAttributions.StatusAttribution.ExternalShare.Source
-             * @enum {number}
-             * @property {number} UNKNOWN=0 UNKNOWN value
-             * @property {number} INSTAGRAM=1 INSTAGRAM value
-             * @property {number} FACEBOOK=2 FACEBOOK value
-             * @property {number} MESSENGER=3 MESSENGER value
-             * @property {number} SPOTIFY=4 SPOTIFY value
-             * @property {number} YOUTUBE=5 YOUTUBE value
-             * @property {number} PINTEREST=6 PINTEREST value
-             * @property {number} THREADS=7 THREADS value
-             * @property {number} APPLE_MUSIC=8 APPLE_MUSIC value
-             * @property {number} SHARECHAT=9 SHARECHAT value
-             * @property {number} GOOGLE_PHOTOS=10 GOOGLE_PHOTOS value
-             */
-            ExternalShare.Source = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNKNOWN"] = 0;
-                values[valuesById[1] = "INSTAGRAM"] = 1;
-                values[valuesById[2] = "FACEBOOK"] = 2;
-                values[valuesById[3] = "MESSENGER"] = 3;
-                values[valuesById[4] = "SPOTIFY"] = 4;
-                values[valuesById[5] = "YOUTUBE"] = 5;
-                values[valuesById[6] = "PINTEREST"] = 6;
-                values[valuesById[7] = "THREADS"] = 7;
-                values[valuesById[8] = "APPLE_MUSIC"] = 8;
-                values[valuesById[9] = "SHARECHAT"] = 9;
-                values[valuesById[10] = "GOOGLE_PHOTOS"] = 10;
-                return values;
-            })();
-
-            return ExternalShare;
-        })();
-
-        StatusAttribution.GroupStatus = (function() {
-
-            /**
-             * Properties of a GroupStatus.
-             * @memberof StatusAttributions.StatusAttribution
-             * @interface IGroupStatus
-             * @property {string|null} [authorJid] GroupStatus authorJid
-             */
-
-            /**
-             * Constructs a new GroupStatus.
-             * @memberof StatusAttributions.StatusAttribution
-             * @classdesc Represents a GroupStatus.
-             * @implements IGroupStatus
-             * @constructor
-             * @param {StatusAttributions.StatusAttribution.IGroupStatus=} [properties] Properties to set
-             */
-            function GroupStatus(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * GroupStatus authorJid.
-             * @member {string|null|undefined} authorJid
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @instance
-             */
-            GroupStatus.prototype.authorJid = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * GroupStatus _authorJid.
-             * @member {"authorJid"|undefined} _authorJid
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @instance
-             */
-            Object.defineProperty(GroupStatus.prototype, "_authorJid", {
-                get: $util.oneOfGetter($oneOfFields = ["authorJid"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new GroupStatus instance using the specified properties.
-             * @function create
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IGroupStatus=} [properties] Properties to set
-             * @returns {StatusAttributions.StatusAttribution.GroupStatus} GroupStatus instance
-             */
-            GroupStatus.create = function create(properties) {
-                return new GroupStatus(properties);
-            };
-
-            /**
-             * Encodes the specified GroupStatus message. Does not implicitly {@link StatusAttributions.StatusAttribution.GroupStatus.verify|verify} messages.
-             * @function encode
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IGroupStatus} message GroupStatus message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            GroupStatus.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.authorJid != null && Object.hasOwnProperty.call(message, "authorJid"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.authorJid);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified GroupStatus message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.GroupStatus.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IGroupStatus} message GroupStatus message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            GroupStatus.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a GroupStatus message from the specified reader or buffer.
-             * @function decode
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {StatusAttributions.StatusAttribution.GroupStatus} GroupStatus
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            GroupStatus.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.GroupStatus();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.authorJid = reader.string();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a GroupStatus message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {StatusAttributions.StatusAttribution.GroupStatus} GroupStatus
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            GroupStatus.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a GroupStatus message.
-             * @function verify
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            GroupStatus.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.authorJid != null && message.hasOwnProperty("authorJid")) {
-                    properties._authorJid = 1;
-                    if (!$util.isString(message.authorJid))
-                        return "authorJid: string expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a GroupStatus message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {StatusAttributions.StatusAttribution.GroupStatus} GroupStatus
-             */
-            GroupStatus.fromObject = function fromObject(object) {
-                if (object instanceof $root.StatusAttributions.StatusAttribution.GroupStatus)
-                    return object;
-                var message = new $root.StatusAttributions.StatusAttribution.GroupStatus();
-                if (object.authorJid != null)
-                    message.authorJid = String(object.authorJid);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a GroupStatus message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {StatusAttributions.StatusAttribution.GroupStatus} message GroupStatus
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            GroupStatus.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.authorJid != null && message.hasOwnProperty("authorJid")) {
-                    object.authorJid = message.authorJid;
-                    if (options.oneofs)
-                        object._authorJid = "authorJid";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this GroupStatus to JSON.
-             * @function toJSON
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            GroupStatus.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for GroupStatus
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            GroupStatus.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.GroupStatus";
-            };
-
-            return GroupStatus;
-        })();
-
-        StatusAttribution.Music = (function() {
-
-            /**
-             * Properties of a Music.
-             * @memberof StatusAttributions.StatusAttribution
-             * @interface IMusic
-             * @property {string|null} [authorName] Music authorName
-             * @property {string|null} [songId] Music songId
-             * @property {string|null} [title] Music title
-             * @property {string|null} [author] Music author
-             * @property {string|null} [artistAttribution] Music artistAttribution
-             * @property {boolean|null} [isExplicit] Music isExplicit
-             */
-
-            /**
-             * Constructs a new Music.
-             * @memberof StatusAttributions.StatusAttribution
-             * @classdesc Represents a Music.
-             * @implements IMusic
-             * @constructor
-             * @param {StatusAttributions.StatusAttribution.IMusic=} [properties] Properties to set
-             */
-            function Music(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * Music authorName.
-             * @member {string|null|undefined} authorName
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Music.prototype.authorName = null;
-
-            /**
-             * Music songId.
-             * @member {string|null|undefined} songId
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Music.prototype.songId = null;
-
-            /**
-             * Music title.
-             * @member {string|null|undefined} title
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Music.prototype.title = null;
-
-            /**
-             * Music author.
-             * @member {string|null|undefined} author
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Music.prototype.author = null;
-
-            /**
-             * Music artistAttribution.
-             * @member {string|null|undefined} artistAttribution
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Music.prototype.artistAttribution = null;
-
-            /**
-             * Music isExplicit.
-             * @member {boolean|null|undefined} isExplicit
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Music.prototype.isExplicit = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * Music _authorName.
-             * @member {"authorName"|undefined} _authorName
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Object.defineProperty(Music.prototype, "_authorName", {
-                get: $util.oneOfGetter($oneOfFields = ["authorName"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Music _songId.
-             * @member {"songId"|undefined} _songId
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Object.defineProperty(Music.prototype, "_songId", {
-                get: $util.oneOfGetter($oneOfFields = ["songId"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Music _title.
-             * @member {"title"|undefined} _title
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Object.defineProperty(Music.prototype, "_title", {
-                get: $util.oneOfGetter($oneOfFields = ["title"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Music _author.
-             * @member {"author"|undefined} _author
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Object.defineProperty(Music.prototype, "_author", {
-                get: $util.oneOfGetter($oneOfFields = ["author"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Music _artistAttribution.
-             * @member {"artistAttribution"|undefined} _artistAttribution
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Object.defineProperty(Music.prototype, "_artistAttribution", {
-                get: $util.oneOfGetter($oneOfFields = ["artistAttribution"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Music _isExplicit.
-             * @member {"isExplicit"|undefined} _isExplicit
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
-            Object.defineProperty(Music.prototype, "_isExplicit", {
-                get: $util.oneOfGetter($oneOfFields = ["isExplicit"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new Music instance using the specified properties.
-             * @function create
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IMusic=} [properties] Properties to set
-             * @returns {StatusAttributions.StatusAttribution.Music} Music instance
-             */
-            Music.create = function create(properties) {
-                return new Music(properties);
-            };
-
-            /**
-             * Encodes the specified Music message. Does not implicitly {@link StatusAttributions.StatusAttribution.Music.verify|verify} messages.
-             * @function encode
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IMusic} message Music message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Music.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.authorName != null && Object.hasOwnProperty.call(message, "authorName"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.authorName);
-                if (message.songId != null && Object.hasOwnProperty.call(message, "songId"))
-                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.songId);
-                if (message.title != null && Object.hasOwnProperty.call(message, "title"))
-                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.title);
-                if (message.author != null && Object.hasOwnProperty.call(message, "author"))
-                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.author);
-                if (message.artistAttribution != null && Object.hasOwnProperty.call(message, "artistAttribution"))
-                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.artistAttribution);
-                if (message.isExplicit != null && Object.hasOwnProperty.call(message, "isExplicit"))
-                    writer.uint32(/* id 6, wireType 0 =*/48).bool(message.isExplicit);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified Music message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.Music.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IMusic} message Music message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            Music.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a Music message from the specified reader or buffer.
-             * @function decode
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {StatusAttributions.StatusAttribution.Music} Music
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Music.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.Music();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.authorName = reader.string();
-                            break;
-                        }
-                    case 2: {
-                            message.songId = reader.string();
-                            break;
-                        }
-                    case 3: {
-                            message.title = reader.string();
-                            break;
-                        }
-                    case 4: {
-                            message.author = reader.string();
-                            break;
-                        }
-                    case 5: {
-                            message.artistAttribution = reader.string();
-                            break;
-                        }
-                    case 6: {
-                            message.isExplicit = reader.bool();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a Music message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {StatusAttributions.StatusAttribution.Music} Music
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            Music.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a Music message.
-             * @function verify
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            Music.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.authorName != null && message.hasOwnProperty("authorName")) {
-                    properties._authorName = 1;
-                    if (!$util.isString(message.authorName))
-                        return "authorName: string expected";
-                }
-                if (message.songId != null && message.hasOwnProperty("songId")) {
-                    properties._songId = 1;
-                    if (!$util.isString(message.songId))
-                        return "songId: string expected";
-                }
-                if (message.title != null && message.hasOwnProperty("title")) {
-                    properties._title = 1;
-                    if (!$util.isString(message.title))
-                        return "title: string expected";
-                }
-                if (message.author != null && message.hasOwnProperty("author")) {
-                    properties._author = 1;
-                    if (!$util.isString(message.author))
-                        return "author: string expected";
-                }
-                if (message.artistAttribution != null && message.hasOwnProperty("artistAttribution")) {
-                    properties._artistAttribution = 1;
-                    if (!$util.isString(message.artistAttribution))
-                        return "artistAttribution: string expected";
-                }
-                if (message.isExplicit != null && message.hasOwnProperty("isExplicit")) {
-                    properties._isExplicit = 1;
-                    if (typeof message.isExplicit !== "boolean")
-                        return "isExplicit: boolean expected";
-                }
-                return null;
-            };
-
-            /**
-             * Creates a Music message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {StatusAttributions.StatusAttribution.Music} Music
-             */
-            Music.fromObject = function fromObject(object) {
-                if (object instanceof $root.StatusAttributions.StatusAttribution.Music)
-                    return object;
-                var message = new $root.StatusAttributions.StatusAttribution.Music();
-                if (object.authorName != null)
-                    message.authorName = String(object.authorName);
-                if (object.songId != null)
-                    message.songId = String(object.songId);
-                if (object.title != null)
-                    message.title = String(object.title);
-                if (object.author != null)
-                    message.author = String(object.author);
-                if (object.artistAttribution != null)
-                    message.artistAttribution = String(object.artistAttribution);
-                if (object.isExplicit != null)
-                    message.isExplicit = Boolean(object.isExplicit);
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a Music message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {StatusAttributions.StatusAttribution.Music} message Music
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            Music.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.authorName != null && message.hasOwnProperty("authorName")) {
-                    object.authorName = message.authorName;
-                    if (options.oneofs)
-                        object._authorName = "authorName";
-                }
-                if (message.songId != null && message.hasOwnProperty("songId")) {
-                    object.songId = message.songId;
-                    if (options.oneofs)
-                        object._songId = "songId";
-                }
-                if (message.title != null && message.hasOwnProperty("title")) {
-                    object.title = message.title;
-                    if (options.oneofs)
-                        object._title = "title";
-                }
-                if (message.author != null && message.hasOwnProperty("author")) {
-                    object.author = message.author;
-                    if (options.oneofs)
-                        object._author = "author";
-                }
-                if (message.artistAttribution != null && message.hasOwnProperty("artistAttribution")) {
-                    object.artistAttribution = message.artistAttribution;
-                    if (options.oneofs)
-                        object._artistAttribution = "artistAttribution";
-                }
-                if (message.isExplicit != null && message.hasOwnProperty("isExplicit")) {
-                    object.isExplicit = message.isExplicit;
-                    if (options.oneofs)
-                        object._isExplicit = "isExplicit";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this Music to JSON.
-             * @function toJSON
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            Music.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for Music
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            Music.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.Music";
-            };
-
-            return Music;
-        })();
-
-        StatusAttribution.RLAttribution = (function() {
-
-            /**
-             * Properties of a RLAttribution.
-             * @memberof StatusAttributions.StatusAttribution
-             * @interface IRLAttribution
-             * @property {StatusAttributions.StatusAttribution.RLAttribution.Source|null} [source] RLAttribution source
-             */
-
-            /**
-             * Constructs a new RLAttribution.
-             * @memberof StatusAttributions.StatusAttribution
-             * @classdesc Represents a RLAttribution.
-             * @implements IRLAttribution
-             * @constructor
-             * @param {StatusAttributions.StatusAttribution.IRLAttribution=} [properties] Properties to set
-             */
-            function RLAttribution(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * RLAttribution source.
-             * @member {StatusAttributions.StatusAttribution.RLAttribution.Source|null|undefined} source
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @instance
-             */
-            RLAttribution.prototype.source = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * RLAttribution _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @instance
-             */
-            Object.defineProperty(RLAttribution.prototype, "_source", {
-                get: $util.oneOfGetter($oneOfFields = ["source"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new RLAttribution instance using the specified properties.
-             * @function create
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IRLAttribution=} [properties] Properties to set
-             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution instance
-             */
-            RLAttribution.create = function create(properties) {
-                return new RLAttribution(properties);
-            };
-
-            /**
-             * Encodes the specified RLAttribution message. Does not implicitly {@link StatusAttributions.StatusAttribution.RLAttribution.verify|verify} messages.
-             * @function encode
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IRLAttribution} message RLAttribution message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            RLAttribution.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.source != null && Object.hasOwnProperty.call(message, "source"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.source);
-                return writer;
-            };
-
-            /**
-             * Encodes the specified RLAttribution message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.RLAttribution.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IRLAttribution} message RLAttribution message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            RLAttribution.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a RLAttribution message from the specified reader or buffer.
-             * @function decode
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            RLAttribution.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.source = reader.int32();
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a RLAttribution message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            RLAttribution.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a RLAttribution message.
-             * @function verify
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            RLAttribution.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    properties._source = 1;
-                    switch (message.source) {
-                    default:
-                        return "source: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                        break;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Creates a RLAttribution message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {StatusAttributions.StatusAttribution.RLAttribution} RLAttribution
-             */
-            RLAttribution.fromObject = function fromObject(object) {
-                if (object instanceof $root.StatusAttributions.StatusAttribution.RLAttribution)
-                    return object;
-                var message = new $root.StatusAttributions.StatusAttribution.RLAttribution();
-                switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
-                case "UNKNOWN":
-                case 0:
-                    message.source = 0;
-                    break;
-                case "RAY_BAN_META_GLASSES":
-                case 1:
-                    message.source = 1;
-                    break;
-                case "OAKLEY_META_GLASSES":
-                case 2:
-                    message.source = 2;
-                    break;
-                case "HYPERNOVA_GLASSES":
-                case 3:
-                    message.source = 3;
-                    break;
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a RLAttribution message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {StatusAttributions.StatusAttribution.RLAttribution} message RLAttribution
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            RLAttribution.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.RLAttribution.Source[message.source] : message.source;
-                    if (options.oneofs)
-                        object._source = "source";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this RLAttribution to JSON.
-             * @function toJSON
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            RLAttribution.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for RLAttribution
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            RLAttribution.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.RLAttribution";
-            };
-
-            /**
-             * Source enum.
-             * @name StatusAttributions.StatusAttribution.RLAttribution.Source
-             * @enum {number}
-             * @property {number} UNKNOWN=0 UNKNOWN value
-             * @property {number} RAY_BAN_META_GLASSES=1 RAY_BAN_META_GLASSES value
-             * @property {number} OAKLEY_META_GLASSES=2 OAKLEY_META_GLASSES value
-             * @property {number} HYPERNOVA_GLASSES=3 HYPERNOVA_GLASSES value
-             */
-            RLAttribution.Source = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNKNOWN"] = 0;
-                values[valuesById[1] = "RAY_BAN_META_GLASSES"] = 1;
-                values[valuesById[2] = "OAKLEY_META_GLASSES"] = 2;
-                values[valuesById[3] = "HYPERNOVA_GLASSES"] = 3;
-                return values;
-            })();
-
-            return RLAttribution;
-        })();
-
-        StatusAttribution.StatusReshare = (function() {
-
-            /**
-             * Properties of a StatusReshare.
-             * @memberof StatusAttributions.StatusAttribution
-             * @interface IStatusReshare
-             * @property {StatusAttributions.StatusAttribution.StatusReshare.Source|null} [source] StatusReshare source
-             * @property {StatusAttributions.StatusAttribution.StatusReshare.IMetadata|null} [metadata] StatusReshare metadata
-             */
-
-            /**
-             * Constructs a new StatusReshare.
-             * @memberof StatusAttributions.StatusAttribution
-             * @classdesc Represents a StatusReshare.
-             * @implements IStatusReshare
-             * @constructor
-             * @param {StatusAttributions.StatusAttribution.IStatusReshare=} [properties] Properties to set
-             */
-            function StatusReshare(properties) {
-                if (properties)
-                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                        if (properties[keys[i]] != null)
-                            this[keys[i]] = properties[keys[i]];
-            }
-
-            /**
-             * StatusReshare source.
-             * @member {StatusAttributions.StatusAttribution.StatusReshare.Source|null|undefined} source
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @instance
-             */
-            StatusReshare.prototype.source = null;
-
-            /**
-             * StatusReshare metadata.
-             * @member {StatusAttributions.StatusAttribution.StatusReshare.IMetadata|null|undefined} metadata
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @instance
-             */
-            StatusReshare.prototype.metadata = null;
-
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
-            /**
-             * StatusReshare _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @instance
-             */
-            Object.defineProperty(StatusReshare.prototype, "_source", {
-                get: $util.oneOfGetter($oneOfFields = ["source"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * StatusReshare _metadata.
-             * @member {"metadata"|undefined} _metadata
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @instance
-             */
-            Object.defineProperty(StatusReshare.prototype, "_metadata", {
-                get: $util.oneOfGetter($oneOfFields = ["metadata"]),
-                set: $util.oneOfSetter($oneOfFields)
-            });
-
-            /**
-             * Creates a new StatusReshare instance using the specified properties.
-             * @function create
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IStatusReshare=} [properties] Properties to set
-             * @returns {StatusAttributions.StatusAttribution.StatusReshare} StatusReshare instance
-             */
-            StatusReshare.create = function create(properties) {
-                return new StatusReshare(properties);
-            };
-
-            /**
-             * Encodes the specified StatusReshare message. Does not implicitly {@link StatusAttributions.StatusAttribution.StatusReshare.verify|verify} messages.
-             * @function encode
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IStatusReshare} message StatusReshare message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            StatusReshare.encode = function encode(message, writer) {
-                if (!writer)
-                    writer = $Writer.create();
-                if (message.source != null && Object.hasOwnProperty.call(message, "source"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.source);
-                if (message.metadata != null && Object.hasOwnProperty.call(message, "metadata"))
-                    $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.encode(message.metadata, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                return writer;
-            };
-
-            /**
-             * Encodes the specified StatusReshare message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.StatusReshare.verify|verify} messages.
-             * @function encodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.IStatusReshare} message StatusReshare message or plain object to encode
-             * @param {$protobuf.Writer} [writer] Writer to encode to
-             * @returns {$protobuf.Writer} Writer
-             */
-            StatusReshare.encodeDelimited = function encodeDelimited(message, writer) {
-                return this.encode(message, writer).ldelim();
-            };
-
-            /**
-             * Decodes a StatusReshare message from the specified reader or buffer.
-             * @function decode
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @param {number} [length] Message length if known beforehand
-             * @returns {StatusAttributions.StatusAttribution.StatusReshare} StatusReshare
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            StatusReshare.decode = function decode(reader, length, error) {
-                if (!(reader instanceof $Reader))
-                    reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.StatusReshare();
-                while (reader.pos < end) {
-                    var tag = reader.uint32();
-                    if (tag === error)
-                        break;
-                    switch (tag >>> 3) {
-                    case 1: {
-                            message.source = reader.int32();
-                            break;
-                        }
-                    case 2: {
-                            message.metadata = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.decode(reader, reader.uint32());
-                            break;
-                        }
-                    default:
-                        reader.skipType(tag & 7);
-                        break;
-                    }
-                }
-                return message;
-            };
-
-            /**
-             * Decodes a StatusReshare message from the specified reader or buffer, length delimited.
-             * @function decodeDelimited
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {StatusAttributions.StatusAttribution.StatusReshare} StatusReshare
-             * @throws {Error} If the payload is not a reader or valid buffer
-             * @throws {$protobuf.util.ProtocolError} If required fields are missing
-             */
-            StatusReshare.decodeDelimited = function decodeDelimited(reader) {
-                if (!(reader instanceof $Reader))
-                    reader = new $Reader(reader);
-                return this.decode(reader, reader.uint32());
-            };
-
-            /**
-             * Verifies a StatusReshare message.
-             * @function verify
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {Object.<string,*>} message Plain object to verify
-             * @returns {string|null} `null` if valid, otherwise the reason why it is not
-             */
-            StatusReshare.verify = function verify(message) {
-                if (typeof message !== "object" || message === null)
-                    return "object expected";
-                var properties = {};
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    properties._source = 1;
-                    switch (message.source) {
-                    default:
-                        return "source: enum value expected";
-                    case 0:
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                        break;
-                    }
-                }
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    properties._metadata = 1;
-                    {
-                        var error = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.verify(message.metadata);
-                        if (error)
-                            return "metadata." + error;
-                    }
-                }
-                return null;
-            };
-
-            /**
-             * Creates a StatusReshare message from a plain object. Also converts values to their respective internal types.
-             * @function fromObject
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {Object.<string,*>} object Plain object
-             * @returns {StatusAttributions.StatusAttribution.StatusReshare} StatusReshare
-             */
-            StatusReshare.fromObject = function fromObject(object) {
-                if (object instanceof $root.StatusAttributions.StatusAttribution.StatusReshare)
-                    return object;
-                var message = new $root.StatusAttributions.StatusAttribution.StatusReshare();
-                switch (object.source) {
-                default:
-                    if (typeof object.source === "number") {
-                        message.source = object.source;
-                        break;
-                    }
-                    break;
-                case "UNKNOWN":
-                case 0:
-                    message.source = 0;
-                    break;
-                case "INTERNAL_RESHARE":
-                case 1:
-                    message.source = 1;
-                    break;
-                case "MENTION_RESHARE":
-                case 2:
-                    message.source = 2;
-                    break;
-                case "CHANNEL_RESHARE":
-                case 3:
-                    message.source = 3;
-                    break;
-                case "FORWARD":
-                case 4:
-                    message.source = 4;
-                    break;
-                }
-                if (object.metadata != null) {
-                    if (typeof object.metadata !== "object")
-                        throw TypeError(".StatusAttributions.StatusAttribution.StatusReshare.metadata: object expected");
-                    message.metadata = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.fromObject(object.metadata);
-                }
-                return message;
-            };
-
-            /**
-             * Creates a plain object from a StatusReshare message. Also converts values to other types if specified.
-             * @function toObject
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {StatusAttributions.StatusAttribution.StatusReshare} message StatusReshare
-             * @param {$protobuf.IConversionOptions} [options] Conversion options
-             * @returns {Object.<string,*>} Plain object
-             */
-            StatusReshare.toObject = function toObject(message, options) {
-                if (!options)
-                    options = {};
-                var object = {};
-                if (message.source != null && message.hasOwnProperty("source")) {
-                    object.source = options.enums === String ? $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] === undefined ? message.source : $root.StatusAttributions.StatusAttribution.StatusReshare.Source[message.source] : message.source;
-                    if (options.oneofs)
-                        object._source = "source";
-                }
-                if (message.metadata != null && message.hasOwnProperty("metadata")) {
-                    object.metadata = $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata.toObject(message.metadata, options);
-                    if (options.oneofs)
-                        object._metadata = "metadata";
-                }
-                return object;
-            };
-
-            /**
-             * Converts this StatusReshare to JSON.
-             * @function toJSON
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @instance
-             * @returns {Object.<string,*>} JSON object
-             */
-            StatusReshare.prototype.toJSON = function toJSON() {
-                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-            };
-
-            /**
-             * Gets the default type url for StatusReshare
-             * @function getTypeUrl
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @static
-             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-             * @returns {string} The default type url
-             */
-            StatusReshare.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                if (typeUrlPrefix === undefined) {
-                    typeUrlPrefix = "type.googleapis.com";
-                }
-                return typeUrlPrefix + "/StatusAttributions.StatusAttribution.StatusReshare";
-            };
-
-            StatusReshare.Metadata = (function() {
-
-                /**
-                 * Properties of a Metadata.
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare
-                 * @interface IMetadata
-                 * @property {number|null} [duration] Metadata duration
-                 * @property {string|null} [channelJid] Metadata channelJid
-                 * @property {number|null} [channelMessageId] Metadata channelMessageId
-                 * @property {boolean|null} [hasMultipleReshares] Metadata hasMultipleReshares
-                 */
-
-                /**
-                 * Constructs a new Metadata.
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare
-                 * @classdesc Represents a Metadata.
-                 * @implements IMetadata
-                 * @constructor
-                 * @param {StatusAttributions.StatusAttribution.StatusReshare.IMetadata=} [properties] Properties to set
-                 */
-                function Metadata(properties) {
-                    if (properties)
-                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                            if (properties[keys[i]] != null)
-                                this[keys[i]] = properties[keys[i]];
-                }
-
-                /**
-                 * Metadata duration.
-                 * @member {number|null|undefined} duration
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Metadata.prototype.duration = null;
-
-                /**
-                 * Metadata channelJid.
-                 * @member {string|null|undefined} channelJid
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Metadata.prototype.channelJid = null;
-
-                /**
-                 * Metadata channelMessageId.
-                 * @member {number|null|undefined} channelMessageId
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Metadata.prototype.channelMessageId = null;
-
-                /**
-                 * Metadata hasMultipleReshares.
-                 * @member {boolean|null|undefined} hasMultipleReshares
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Metadata.prototype.hasMultipleReshares = null;
-
-                // OneOf field names bound to virtual getters and setters
-                var $oneOfFields;
-
-                /**
-                 * Metadata _duration.
-                 * @member {"duration"|undefined} _duration
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Object.defineProperty(Metadata.prototype, "_duration", {
-                    get: $util.oneOfGetter($oneOfFields = ["duration"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-
-                /**
-                 * Metadata _channelJid.
-                 * @member {"channelJid"|undefined} _channelJid
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Object.defineProperty(Metadata.prototype, "_channelJid", {
-                    get: $util.oneOfGetter($oneOfFields = ["channelJid"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-
-                /**
-                 * Metadata _channelMessageId.
-                 * @member {"channelMessageId"|undefined} _channelMessageId
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Object.defineProperty(Metadata.prototype, "_channelMessageId", {
-                    get: $util.oneOfGetter($oneOfFields = ["channelMessageId"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-
-                /**
-                 * Metadata _hasMultipleReshares.
-                 * @member {"hasMultipleReshares"|undefined} _hasMultipleReshares
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
-                Object.defineProperty(Metadata.prototype, "_hasMultipleReshares", {
-                    get: $util.oneOfGetter($oneOfFields = ["hasMultipleReshares"]),
-                    set: $util.oneOfSetter($oneOfFields)
-                });
-
-                /**
-                 * Creates a new Metadata instance using the specified properties.
-                 * @function create
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {StatusAttributions.StatusAttribution.StatusReshare.IMetadata=} [properties] Properties to set
-                 * @returns {StatusAttributions.StatusAttribution.StatusReshare.Metadata} Metadata instance
-                 */
-                Metadata.create = function create(properties) {
-                    return new Metadata(properties);
-                };
-
-                /**
-                 * Encodes the specified Metadata message. Does not implicitly {@link StatusAttributions.StatusAttribution.StatusReshare.Metadata.verify|verify} messages.
-                 * @function encode
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {StatusAttributions.StatusAttribution.StatusReshare.IMetadata} message Metadata message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Metadata.encode = function encode(message, writer) {
-                    if (!writer)
-                        writer = $Writer.create();
-                    if (message.duration != null && Object.hasOwnProperty.call(message, "duration"))
-                        writer.uint32(/* id 1, wireType 0 =*/8).int32(message.duration);
-                    if (message.channelJid != null && Object.hasOwnProperty.call(message, "channelJid"))
-                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.channelJid);
-                    if (message.channelMessageId != null && Object.hasOwnProperty.call(message, "channelMessageId"))
-                        writer.uint32(/* id 3, wireType 0 =*/24).int32(message.channelMessageId);
-                    if (message.hasMultipleReshares != null && Object.hasOwnProperty.call(message, "hasMultipleReshares"))
-                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.hasMultipleReshares);
-                    return writer;
-                };
-
-                /**
-                 * Encodes the specified Metadata message, length delimited. Does not implicitly {@link StatusAttributions.StatusAttribution.StatusReshare.Metadata.verify|verify} messages.
-                 * @function encodeDelimited
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {StatusAttributions.StatusAttribution.StatusReshare.IMetadata} message Metadata message or plain object to encode
-                 * @param {$protobuf.Writer} [writer] Writer to encode to
-                 * @returns {$protobuf.Writer} Writer
-                 */
-                Metadata.encodeDelimited = function encodeDelimited(message, writer) {
-                    return this.encode(message, writer).ldelim();
-                };
-
-                /**
-                 * Decodes a Metadata message from the specified reader or buffer.
-                 * @function decode
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @param {number} [length] Message length if known beforehand
-                 * @returns {StatusAttributions.StatusAttribution.StatusReshare.Metadata} Metadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Metadata.decode = function decode(reader, length, error) {
-                    if (!(reader instanceof $Reader))
-                        reader = $Reader.create(reader);
-                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata();
-                    while (reader.pos < end) {
-                        var tag = reader.uint32();
-                        if (tag === error)
-                            break;
-                        switch (tag >>> 3) {
-                        case 1: {
-                                message.duration = reader.int32();
-                                break;
-                            }
-                        case 2: {
-                                message.channelJid = reader.string();
-                                break;
-                            }
-                        case 3: {
-                                message.channelMessageId = reader.int32();
-                                break;
-                            }
-                        case 4: {
-                                message.hasMultipleReshares = reader.bool();
-                                break;
-                            }
-                        default:
-                            reader.skipType(tag & 7);
-                            break;
-                        }
-                    }
-                    return message;
-                };
-
-                /**
-                 * Decodes a Metadata message from the specified reader or buffer, length delimited.
-                 * @function decodeDelimited
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-                 * @returns {StatusAttributions.StatusAttribution.StatusReshare.Metadata} Metadata
-                 * @throws {Error} If the payload is not a reader or valid buffer
-                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
-                 */
-                Metadata.decodeDelimited = function decodeDelimited(reader) {
-                    if (!(reader instanceof $Reader))
-                        reader = new $Reader(reader);
-                    return this.decode(reader, reader.uint32());
-                };
-
-                /**
-                 * Verifies a Metadata message.
-                 * @function verify
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {Object.<string,*>} message Plain object to verify
-                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
-                 */
-                Metadata.verify = function verify(message) {
-                    if (typeof message !== "object" || message === null)
-                        return "object expected";
-                    var properties = {};
-                    if (message.duration != null && message.hasOwnProperty("duration")) {
-                        properties._duration = 1;
-                        if (!$util.isInteger(message.duration))
-                            return "duration: integer expected";
-                    }
-                    if (message.channelJid != null && message.hasOwnProperty("channelJid")) {
-                        properties._channelJid = 1;
-                        if (!$util.isString(message.channelJid))
-                            return "channelJid: string expected";
-                    }
-                    if (message.channelMessageId != null && message.hasOwnProperty("channelMessageId")) {
-                        properties._channelMessageId = 1;
-                        if (!$util.isInteger(message.channelMessageId))
-                            return "channelMessageId: integer expected";
-                    }
-                    if (message.hasMultipleReshares != null && message.hasOwnProperty("hasMultipleReshares")) {
-                        properties._hasMultipleReshares = 1;
-                        if (typeof message.hasMultipleReshares !== "boolean")
-                            return "hasMultipleReshares: boolean expected";
-                    }
-                    return null;
-                };
-
-                /**
-                 * Creates a Metadata message from a plain object. Also converts values to their respective internal types.
-                 * @function fromObject
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {Object.<string,*>} object Plain object
-                 * @returns {StatusAttributions.StatusAttribution.StatusReshare.Metadata} Metadata
-                 */
-                Metadata.fromObject = function fromObject(object) {
-                    if (object instanceof $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata)
-                        return object;
-                    var message = new $root.StatusAttributions.StatusAttribution.StatusReshare.Metadata();
-                    if (object.duration != null)
-                        message.duration = object.duration | 0;
-                    if (object.channelJid != null)
-                        message.channelJid = String(object.channelJid);
-                    if (object.channelMessageId != null)
-                        message.channelMessageId = object.channelMessageId | 0;
-                    if (object.hasMultipleReshares != null)
-                        message.hasMultipleReshares = Boolean(object.hasMultipleReshares);
-                    return message;
-                };
-
-                /**
-                 * Creates a plain object from a Metadata message. Also converts values to other types if specified.
-                 * @function toObject
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {StatusAttributions.StatusAttribution.StatusReshare.Metadata} message Metadata
-                 * @param {$protobuf.IConversionOptions} [options] Conversion options
-                 * @returns {Object.<string,*>} Plain object
-                 */
-                Metadata.toObject = function toObject(message, options) {
-                    if (!options)
-                        options = {};
-                    var object = {};
-                    if (message.duration != null && message.hasOwnProperty("duration")) {
-                        object.duration = message.duration;
-                        if (options.oneofs)
-                            object._duration = "duration";
-                    }
-                    if (message.channelJid != null && message.hasOwnProperty("channelJid")) {
-                        object.channelJid = message.channelJid;
-                        if (options.oneofs)
-                            object._channelJid = "channelJid";
-                    }
-                    if (message.channelMessageId != null && message.hasOwnProperty("channelMessageId")) {
-                        object.channelMessageId = message.channelMessageId;
-                        if (options.oneofs)
-                            object._channelMessageId = "channelMessageId";
-                    }
-                    if (message.hasMultipleReshares != null && message.hasOwnProperty("hasMultipleReshares")) {
-                        object.hasMultipleReshares = message.hasMultipleReshares;
-                        if (options.oneofs)
-                            object._hasMultipleReshares = "hasMultipleReshares";
-                    }
-                    return object;
-                };
-
-                /**
-                 * Converts this Metadata to JSON.
-                 * @function toJSON
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 * @returns {Object.<string,*>} JSON object
-                 */
-                Metadata.prototype.toJSON = function toJSON() {
-                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-                };
-
-                /**
-                 * Gets the default type url for Metadata
-                 * @function getTypeUrl
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @static
-                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-                 * @returns {string} The default type url
-                 */
-                Metadata.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-                    if (typeUrlPrefix === undefined) {
-                        typeUrlPrefix = "type.googleapis.com";
-                    }
-                    return typeUrlPrefix + "/StatusAttributions.StatusAttribution.StatusReshare.Metadata";
-                };
-
-                return Metadata;
-            })();
-
-            /**
-             * Source enum.
-             * @name StatusAttributions.StatusAttribution.StatusReshare.Source
-             * @enum {number}
-             * @property {number} UNKNOWN=0 UNKNOWN value
-             * @property {number} INTERNAL_RESHARE=1 INTERNAL_RESHARE value
-             * @property {number} MENTION_RESHARE=2 MENTION_RESHARE value
-             * @property {number} CHANNEL_RESHARE=3 CHANNEL_RESHARE value
-             * @property {number} FORWARD=4 FORWARD value
-             */
-            StatusReshare.Source = (function() {
-                var valuesById = {}, values = Object.create(valuesById);
-                values[valuesById[0] = "UNKNOWN"] = 0;
-                values[valuesById[1] = "INTERNAL_RESHARE"] = 1;
-                values[valuesById[2] = "MENTION_RESHARE"] = 2;
-                values[valuesById[3] = "CHANNEL_RESHARE"] = 3;
-                values[valuesById[4] = "FORWARD"] = 4;
-                return values;
-            })();
-
-            return StatusReshare;
-        })();
-
-        /**
-         * Type enum.
-         * @name StatusAttributions.StatusAttribution.Type
-         * @enum {number}
-         * @property {number} UNKNOWN=0 UNKNOWN value
-         * @property {number} RESHARE=1 RESHARE value
-         * @property {number} EXTERNAL_SHARE=2 EXTERNAL_SHARE value
-         * @property {number} MUSIC=3 MUSIC value
-         * @property {number} STATUS_MENTION=4 STATUS_MENTION value
-         * @property {number} GROUP_STATUS=5 GROUP_STATUS value
-         * @property {number} RL_ATTRIBUTION=6 RL_ATTRIBUTION value
-         * @property {number} AI_CREATED=7 AI_CREATED value
-         * @property {number} LAYOUTS=8 LAYOUTS value
-         */
-        StatusAttribution.Type = (function() {
-            var valuesById = {}, values = Object.create(valuesById);
-            values[valuesById[0] = "UNKNOWN"] = 0;
-            values[valuesById[1] = "RESHARE"] = 1;
-            values[valuesById[2] = "EXTERNAL_SHARE"] = 2;
-            values[valuesById[3] = "MUSIC"] = 3;
-            values[valuesById[4] = "STATUS_MENTION"] = 4;
-            values[valuesById[5] = "GROUP_STATUS"] = 5;
-            values[valuesById[6] = "RL_ATTRIBUTION"] = 6;
-            values[valuesById[7] = "AI_CREATED"] = 7;
-            values[valuesById[8] = "LAYOUTS"] = 8;
-            return values;
-        })();
-
-        return StatusAttribution;
-    })();
-
-    return StatusAttributions;
 })();
 
 module.exports = $root;

@@ -86,6 +86,7 @@ message GlobalSettings {
 message WallpaperSettings {
     optional string filename = 1;
     optional uint32 opacity = 2;
+    optional bool isGenAi = 3;
 }
 
 message GroupParticipant {
@@ -114,6 +115,14 @@ message Account {
     optional string username = 2;
     optional string countryCode = 3;
     optional bool isUsernameDeleted = 4;
+}
+
+message InlineContact {
+    optional string pnJid = 1;
+    optional string lidJid = 2;
+    optional string fullName = 3;
+    optional string firstName = 4;
+    optional string username = 5;
 }
 
 message PhoneNumberToLIDMapping {
@@ -176,10 +185,14 @@ message Conversation {
     optional Protocol.LimitSharing.TriggerType limitSharingTrigger = 52;
     optional bool limitSharingInitiatedByMe = 53;
     optional bool maibaAiThreadEnabled = 54;
+    optional bool isMarketingMessageThread = 55;
+    optional bool isSenderNewAccount = 56;
+    optional uint32 afterReadDuration = 57;
     enum EndOfHistoryTransferType {
         COMPLETE_BUT_MORE_MESSAGES_REMAIN_ON_PRIMARY = 0;
         COMPLETE_AND_NO_MORE_MESSAGE_REMAIN_ON_PRIMARY = 1;
         COMPLETE_ON_DEMAND_SYNC_BUT_MORE_MSG_REMAIN_ON_PRIMARY = 2;
+        COMPLETE_ON_DEMAND_SYNC_WITH_MORE_MSG_ON_PRIMARY_BUT_NO_ACCESS = 3;
     }
 }
 
@@ -201,6 +214,9 @@ message HistorySync {
     optional string companionMetaNonce = 16;
     optional bytes shareableChatIdentifierEncryptionKey = 17;
     repeated Account accounts = 18;
+    optional bytes nctSalt = 19;
+    repeated InlineContact inlineContacts = 20;
+    optional bool inlineContactsProvided = 21;
     enum BotAIWaitListState {
         IN_WAITLIST = 0;
         AI_AVAILABLE = 1;

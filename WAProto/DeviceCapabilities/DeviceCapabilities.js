@@ -98,67 +98,37 @@ $root.DeviceCapabilities = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * DeviceCapabilities _chatLockSupportLevel.
-         * @member {"chatLockSupportLevel"|undefined} _chatLockSupportLevel
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_chatLockSupportLevel", {
             get: $util.oneOfGetter($oneOfFields = ["chatLockSupportLevel"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _lidMigration.
-         * @member {"lidMigration"|undefined} _lidMigration
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_lidMigration", {
             get: $util.oneOfGetter($oneOfFields = ["lidMigration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _businessBroadcast.
-         * @member {"businessBroadcast"|undefined} _businessBroadcast
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_businessBroadcast", {
             get: $util.oneOfGetter($oneOfFields = ["businessBroadcast"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _userHasAvatar.
-         * @member {"userHasAvatar"|undefined} _userHasAvatar
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_userHasAvatar", {
             get: $util.oneOfGetter($oneOfFields = ["userHasAvatar"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _memberNameTagPrimarySupport.
-         * @member {"memberNameTagPrimarySupport"|undefined} _memberNameTagPrimarySupport
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_memberNameTagPrimarySupport", {
             get: $util.oneOfGetter($oneOfFields = ["memberNameTagPrimarySupport"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _aiThread.
-         * @member {"aiThread"|undefined} _aiThread
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_aiThread", {
             get: $util.oneOfGetter($oneOfFields = ["aiThread"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -535,12 +505,7 @@ $root.DeviceCapabilities = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AiThread _supportLevel.
-             * @member {"supportLevel"|undefined} _supportLevel
-             * @memberof DeviceCapabilities.DeviceCapabilities.AiThread
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AiThread.prototype, "_supportLevel", {
                 get: $util.oneOfGetter($oneOfFields = ["supportLevel"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -770,6 +735,10 @@ $root.DeviceCapabilities = (function() {
              * @memberof DeviceCapabilities.DeviceCapabilities
              * @interface IBusinessBroadcast
              * @property {boolean|null} [importListEnabled] BusinessBroadcast importListEnabled
+             * @property {boolean|null} [companionSupportEnabled] BusinessBroadcast companionSupportEnabled
+             * @property {boolean|null} [campaignSyncEnabled] BusinessBroadcast campaignSyncEnabled
+             * @property {boolean|null} [insightsSyncEnabled] BusinessBroadcast insightsSyncEnabled
+             * @property {number|null} [recipientLimit] BusinessBroadcast recipientLimit
              */
 
             /**
@@ -795,17 +764,68 @@ $root.DeviceCapabilities = (function() {
              */
             BusinessBroadcast.prototype.importListEnabled = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * BusinessBroadcast _importListEnabled.
-             * @member {"importListEnabled"|undefined} _importListEnabled
+             * BusinessBroadcast companionSupportEnabled.
+             * @member {boolean|null|undefined} companionSupportEnabled
              * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
              * @instance
              */
+            BusinessBroadcast.prototype.companionSupportEnabled = null;
+
+            /**
+             * BusinessBroadcast campaignSyncEnabled.
+             * @member {boolean|null|undefined} campaignSyncEnabled
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @instance
+             */
+            BusinessBroadcast.prototype.campaignSyncEnabled = null;
+
+            /**
+             * BusinessBroadcast insightsSyncEnabled.
+             * @member {boolean|null|undefined} insightsSyncEnabled
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @instance
+             */
+            BusinessBroadcast.prototype.insightsSyncEnabled = null;
+
+            /**
+             * BusinessBroadcast recipientLimit.
+             * @member {number|null|undefined} recipientLimit
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @instance
+             */
+            BusinessBroadcast.prototype.recipientLimit = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BusinessBroadcast.prototype, "_importListEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["importListEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_companionSupportEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["companionSupportEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_campaignSyncEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["campaignSyncEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_insightsSyncEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["insightsSyncEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_recipientLimit", {
+                get: $util.oneOfGetter($oneOfFields = ["recipientLimit"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -835,6 +855,14 @@ $root.DeviceCapabilities = (function() {
                     writer = $Writer.create();
                 if (message.importListEnabled != null && Object.hasOwnProperty.call(message, "importListEnabled"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.importListEnabled);
+                if (message.companionSupportEnabled != null && Object.hasOwnProperty.call(message, "companionSupportEnabled"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.companionSupportEnabled);
+                if (message.campaignSyncEnabled != null && Object.hasOwnProperty.call(message, "campaignSyncEnabled"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.campaignSyncEnabled);
+                if (message.insightsSyncEnabled != null && Object.hasOwnProperty.call(message, "insightsSyncEnabled"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.insightsSyncEnabled);
+                if (message.recipientLimit != null && Object.hasOwnProperty.call(message, "recipientLimit"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.recipientLimit);
                 return writer;
             };
 
@@ -873,6 +901,22 @@ $root.DeviceCapabilities = (function() {
                     switch (tag >>> 3) {
                     case 1: {
                             message.importListEnabled = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            message.companionSupportEnabled = reader.bool();
+                            break;
+                        }
+                    case 3: {
+                            message.campaignSyncEnabled = reader.bool();
+                            break;
+                        }
+                    case 4: {
+                            message.insightsSyncEnabled = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            message.recipientLimit = reader.int32();
                             break;
                         }
                     default:
@@ -916,6 +960,26 @@ $root.DeviceCapabilities = (function() {
                     if (typeof message.importListEnabled !== "boolean")
                         return "importListEnabled: boolean expected";
                 }
+                if (message.companionSupportEnabled != null && message.hasOwnProperty("companionSupportEnabled")) {
+                    properties._companionSupportEnabled = 1;
+                    if (typeof message.companionSupportEnabled !== "boolean")
+                        return "companionSupportEnabled: boolean expected";
+                }
+                if (message.campaignSyncEnabled != null && message.hasOwnProperty("campaignSyncEnabled")) {
+                    properties._campaignSyncEnabled = 1;
+                    if (typeof message.campaignSyncEnabled !== "boolean")
+                        return "campaignSyncEnabled: boolean expected";
+                }
+                if (message.insightsSyncEnabled != null && message.hasOwnProperty("insightsSyncEnabled")) {
+                    properties._insightsSyncEnabled = 1;
+                    if (typeof message.insightsSyncEnabled !== "boolean")
+                        return "insightsSyncEnabled: boolean expected";
+                }
+                if (message.recipientLimit != null && message.hasOwnProperty("recipientLimit")) {
+                    properties._recipientLimit = 1;
+                    if (!$util.isInteger(message.recipientLimit))
+                        return "recipientLimit: integer expected";
+                }
                 return null;
             };
 
@@ -933,6 +997,14 @@ $root.DeviceCapabilities = (function() {
                 var message = new $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast();
                 if (object.importListEnabled != null)
                     message.importListEnabled = Boolean(object.importListEnabled);
+                if (object.companionSupportEnabled != null)
+                    message.companionSupportEnabled = Boolean(object.companionSupportEnabled);
+                if (object.campaignSyncEnabled != null)
+                    message.campaignSyncEnabled = Boolean(object.campaignSyncEnabled);
+                if (object.insightsSyncEnabled != null)
+                    message.insightsSyncEnabled = Boolean(object.insightsSyncEnabled);
+                if (object.recipientLimit != null)
+                    message.recipientLimit = object.recipientLimit | 0;
                 return message;
             };
 
@@ -953,6 +1025,26 @@ $root.DeviceCapabilities = (function() {
                     object.importListEnabled = message.importListEnabled;
                     if (options.oneofs)
                         object._importListEnabled = "importListEnabled";
+                }
+                if (message.companionSupportEnabled != null && message.hasOwnProperty("companionSupportEnabled")) {
+                    object.companionSupportEnabled = message.companionSupportEnabled;
+                    if (options.oneofs)
+                        object._companionSupportEnabled = "companionSupportEnabled";
+                }
+                if (message.campaignSyncEnabled != null && message.hasOwnProperty("campaignSyncEnabled")) {
+                    object.campaignSyncEnabled = message.campaignSyncEnabled;
+                    if (options.oneofs)
+                        object._campaignSyncEnabled = "campaignSyncEnabled";
+                }
+                if (message.insightsSyncEnabled != null && message.hasOwnProperty("insightsSyncEnabled")) {
+                    object.insightsSyncEnabled = message.insightsSyncEnabled;
+                    if (options.oneofs)
+                        object._insightsSyncEnabled = "insightsSyncEnabled";
+                }
+                if (message.recipientLimit != null && message.hasOwnProperty("recipientLimit")) {
+                    object.recipientLimit = message.recipientLimit;
+                    if (options.oneofs)
+                        object._recipientLimit = "recipientLimit";
                 }
                 return object;
             };
@@ -1037,12 +1129,7 @@ $root.DeviceCapabilities = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * LIDMigration _chatDbMigrationTimestamp.
-             * @member {"chatDbMigrationTimestamp"|undefined} _chatDbMigrationTimestamp
-             * @memberof DeviceCapabilities.DeviceCapabilities.LIDMigration
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LIDMigration.prototype, "_chatDbMigrationTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["chatDbMigrationTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -1286,12 +1373,7 @@ $root.DeviceCapabilities = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * UserHasAvatar _userHasAvatar.
-             * @member {"userHasAvatar"|undefined} _userHasAvatar
-             * @memberof DeviceCapabilities.DeviceCapabilities.UserHasAvatar
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(UserHasAvatar.prototype, "_userHasAvatar", {
                 get: $util.oneOfGetter($oneOfFields = ["userHasAvatar"]),
                 set: $util.oneOfSetter($oneOfFields)

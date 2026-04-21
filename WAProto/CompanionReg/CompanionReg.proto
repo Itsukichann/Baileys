@@ -6,6 +6,7 @@ message ClientPairingProps {
     optional bool isSyncdPureLidSession = 2;
     optional bool isSyncdSnapshotRecoveryEnabled = 3;
     optional bool isHsThumbnailSyncEnabled = 4;
+    optional bytes subscriptionSyncPayload = 5;
 }
 
 message EncryptedPairingRequest {
@@ -72,6 +73,11 @@ message DeviceProps {
         optional bool supportGuestChat = 17;
         optional bool completeOnDemandReady = 18;
         optional uint32 thumbnailSyncDaysLimit = 19;
+        optional uint32 initialSyncMaxMessagesPerChat = 20;
+        optional bool supportManusHistory = 21;
+        optional bool supportHatchHistory = 22;
+        repeated string supportedBotChannelFbids = 23;
+        optional bool supportInlineContacts = 24;
     }
     enum PlatformType {
         UNKNOWN = 0;

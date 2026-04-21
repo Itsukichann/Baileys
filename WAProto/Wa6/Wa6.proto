@@ -36,6 +36,7 @@ message ClientPayload {
     optional bool paaLink = 44;
     optional int32 preacksCount = 45;
     optional int32 processingQueueSize = 46;
+    repeated string pairedPeripherals = 47;
     enum AccountType {
         DEFAULT = 0;
         GUEST = 1;
@@ -76,6 +77,8 @@ message ClientPayload {
             OVERRIDE = 3;
             FALLBACK = 4;
             MNS = 5;
+            MNS_SECONDARY = 6;
+            SOCKS_PROXY = 7;
         }
     }
     message DevicePairingRegistrationData {
@@ -192,6 +195,8 @@ message ClientPayload {
         optional string version = 2;
         optional WebdPayload webdPayload = 3;
         optional WebSubPlatform webSubPlatform = 4;
+        optional string browser = 5;
+        optional string browserVersion = 6;
         enum WebSubPlatform {
             WEB_BROWSER = 0;
             APP_STORE = 1;
@@ -224,6 +229,8 @@ message HandshakeMessage {
         optional bytes static = 1;
         optional bytes payload = 2;
         optional bytes extendedCiphertext = 3;
+        optional bytes paddedBytes = 4;
+        optional bool simulateXxkemFs = 5;
     }
     message ClientHello {
         optional bytes ephemeral = 1;
@@ -231,11 +238,29 @@ message HandshakeMessage {
         optional bytes payload = 3;
         optional bool useExtended = 4;
         optional bytes extendedCiphertext = 5;
+        optional bytes paddedBytes = 6;
+        optional bool sendServerHelloPaddedBytes = 7;
+        optional bool simulateXxkemFs = 8;
+        optional HandshakeMessage.HandshakePqMode pqMode = 9;
+        optional bytes extendedEphemeral = 10;
+    }
+    enum HandshakePqMode {
+        HANDSHAKE_PQ_MODE_UNKNOWN = 0;
+        XXKEM = 1;
+        XXKEM_FS = 2;
+        WA_CLASSICAL = 3;
+        WA_PQ = 4;
+        IKKEM = 5;
+        IKKEM_FS = 6;
+        XXKEM_2 = 7;
+        IKKEM_2 = 8;
     }
     message ServerHello {
         optional bytes ephemeral = 1;
         optional bytes static = 2;
         optional bytes payload = 3;
         optional bytes extendedStatic = 4;
+        optional bytes paddingBytes = 5;
+        optional bytes extendedCiphertext = 6;
     }
 }

@@ -63,12 +63,7 @@ $root.LidMigrationSyncPayload = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * LIDMigrationMappingSyncPayload _chatDbMigrationTimestamp.
-         * @member {"chatDbMigrationTimestamp"|undefined} _chatDbMigrationTimestamp
-         * @memberof LidMigrationSyncPayload.LIDMigrationMappingSyncPayload
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LIDMigrationMappingSyncPayload.prototype, "_chatDbMigrationTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["chatDbMigrationTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -349,34 +344,19 @@ $root.LidMigrationSyncPayload = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * LIDMigrationMapping _pn.
-         * @member {"pn"|undefined} _pn
-         * @memberof LidMigrationSyncPayload.LIDMigrationMapping
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LIDMigrationMapping.prototype, "_pn", {
             get: $util.oneOfGetter($oneOfFields = ["pn"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LIDMigrationMapping _assignedLid.
-         * @member {"assignedLid"|undefined} _assignedLid
-         * @memberof LidMigrationSyncPayload.LIDMigrationMapping
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LIDMigrationMapping.prototype, "_assignedLid", {
             get: $util.oneOfGetter($oneOfFields = ["assignedLid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LIDMigrationMapping _latestLid.
-         * @member {"latestLid"|undefined} _latestLid
-         * @memberof LidMigrationSyncPayload.LIDMigrationMapping
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LIDMigrationMapping.prototype, "_latestLid", {
             get: $util.oneOfGetter($oneOfFields = ["latestLid"]),
             set: $util.oneOfSetter($oneOfFields)

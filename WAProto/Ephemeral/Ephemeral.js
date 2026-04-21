@@ -62,23 +62,13 @@ $root.Ephemeral = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * EphemeralSetting _duration.
-         * @member {"duration"|undefined} _duration
-         * @memberof Ephemeral.EphemeralSetting
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(EphemeralSetting.prototype, "_duration", {
             get: $util.oneOfGetter($oneOfFields = ["duration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * EphemeralSetting _timestamp.
-         * @member {"timestamp"|undefined} _timestamp
-         * @memberof Ephemeral.EphemeralSetting
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(EphemeralSetting.prototype, "_timestamp", {
             get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
             set: $util.oneOfSetter($oneOfFields)

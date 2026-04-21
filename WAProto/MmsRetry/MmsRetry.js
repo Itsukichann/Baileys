@@ -53,12 +53,7 @@ $root.MmsRetry = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ServerErrorReceipt _stanzaId.
-         * @member {"stanzaId"|undefined} _stanzaId
-         * @memberof MmsRetry.ServerErrorReceipt
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ServerErrorReceipt.prototype, "_stanzaId", {
             get: $util.oneOfGetter($oneOfFields = ["stanzaId"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -303,45 +298,25 @@ $root.MmsRetry = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * MediaRetryNotification _stanzaId.
-         * @member {"stanzaId"|undefined} _stanzaId
-         * @memberof MmsRetry.MediaRetryNotification
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MediaRetryNotification.prototype, "_stanzaId", {
             get: $util.oneOfGetter($oneOfFields = ["stanzaId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MediaRetryNotification _directPath.
-         * @member {"directPath"|undefined} _directPath
-         * @memberof MmsRetry.MediaRetryNotification
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MediaRetryNotification.prototype, "_directPath", {
             get: $util.oneOfGetter($oneOfFields = ["directPath"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MediaRetryNotification _result.
-         * @member {"result"|undefined} _result
-         * @memberof MmsRetry.MediaRetryNotification
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MediaRetryNotification.prototype, "_result", {
             get: $util.oneOfGetter($oneOfFields = ["result"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MediaRetryNotification _messageSecret.
-         * @member {"messageSecret"|undefined} _messageSecret
-         * @memberof MmsRetry.MediaRetryNotification
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MediaRetryNotification.prototype, "_messageSecret", {
             get: $util.oneOfGetter($oneOfFields = ["messageSecret"]),
             set: $util.oneOfSetter($oneOfFields)

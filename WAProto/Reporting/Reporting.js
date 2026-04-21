@@ -90,45 +90,25 @@ $root.Reporting = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * Field _minVersion.
-         * @member {"minVersion"|undefined} _minVersion
-         * @memberof Reporting.Field
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Field.prototype, "_minVersion", {
             get: $util.oneOfGetter($oneOfFields = ["minVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * Field _maxVersion.
-         * @member {"maxVersion"|undefined} _maxVersion
-         * @memberof Reporting.Field
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Field.prototype, "_maxVersion", {
             get: $util.oneOfGetter($oneOfFields = ["maxVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * Field _notReportableMinVersion.
-         * @member {"notReportableMinVersion"|undefined} _notReportableMinVersion
-         * @memberof Reporting.Field
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Field.prototype, "_notReportableMinVersion", {
             get: $util.oneOfGetter($oneOfFields = ["notReportableMinVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * Field _isMessage.
-         * @member {"isMessage"|undefined} _isMessage
-         * @memberof Reporting.Field
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Field.prototype, "_isMessage", {
             get: $util.oneOfGetter($oneOfFields = ["isMessage"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -470,12 +450,7 @@ $root.Reporting = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * Config _version.
-         * @member {"version"|undefined} _version
-         * @memberof Reporting.Config
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Config.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -780,45 +755,25 @@ $root.Reporting = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * Reportable _minVersion.
-         * @member {"minVersion"|undefined} _minVersion
-         * @memberof Reporting.Reportable
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Reportable.prototype, "_minVersion", {
             get: $util.oneOfGetter($oneOfFields = ["minVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * Reportable _maxVersion.
-         * @member {"maxVersion"|undefined} _maxVersion
-         * @memberof Reporting.Reportable
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Reportable.prototype, "_maxVersion", {
             get: $util.oneOfGetter($oneOfFields = ["maxVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * Reportable _notReportableMinVersion.
-         * @member {"notReportableMinVersion"|undefined} _notReportableMinVersion
-         * @memberof Reporting.Reportable
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Reportable.prototype, "_notReportableMinVersion", {
             get: $util.oneOfGetter($oneOfFields = ["notReportableMinVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * Reportable _never.
-         * @member {"never"|undefined} _never
-         * @memberof Reporting.Reportable
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(Reportable.prototype, "_never", {
             get: $util.oneOfGetter($oneOfFields = ["never"]),
             set: $util.oneOfSetter($oneOfFields)

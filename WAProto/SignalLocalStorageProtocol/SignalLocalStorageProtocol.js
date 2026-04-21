@@ -307,34 +307,19 @@ $root.SignalLocalStorageProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SenderKeyStateStructure _senderKeyId.
-         * @member {"senderKeyId"|undefined} _senderKeyId
-         * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyStateStructure.prototype, "_senderKeyId", {
             get: $util.oneOfGetter($oneOfFields = ["senderKeyId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SenderKeyStateStructure _senderChainKey.
-         * @member {"senderChainKey"|undefined} _senderChainKey
-         * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyStateStructure.prototype, "_senderChainKey", {
             get: $util.oneOfGetter($oneOfFields = ["senderChainKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SenderKeyStateStructure _senderSigningKey.
-         * @member {"senderSigningKey"|undefined} _senderSigningKey
-         * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyStateStructure.prototype, "_senderSigningKey", {
             get: $util.oneOfGetter($oneOfFields = ["senderSigningKey"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -641,23 +626,13 @@ $root.SignalLocalStorageProtocol = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SenderChainKey _iteration.
-             * @member {"iteration"|undefined} _iteration
-             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderChainKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SenderChainKey.prototype, "_iteration", {
                 get: $util.oneOfGetter($oneOfFields = ["iteration"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SenderChainKey _seed.
-             * @member {"seed"|undefined} _seed
-             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderChainKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SenderChainKey.prototype, "_seed", {
                 get: $util.oneOfGetter($oneOfFields = ["seed"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -905,23 +880,13 @@ $root.SignalLocalStorageProtocol = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SenderMessageKey _iteration.
-             * @member {"iteration"|undefined} _iteration
-             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderMessageKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SenderMessageKey.prototype, "_iteration", {
                 get: $util.oneOfGetter($oneOfFields = ["iteration"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SenderMessageKey _seed.
-             * @member {"seed"|undefined} _seed
-             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderMessageKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SenderMessageKey.prototype, "_seed", {
                 get: $util.oneOfGetter($oneOfFields = ["seed"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -1169,23 +1134,13 @@ $root.SignalLocalStorageProtocol = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SenderSigningKey _public.
-             * @member {"public"|undefined} _public
-             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderSigningKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SenderSigningKey.prototype, "_public", {
                 get: $util.oneOfGetter($oneOfFields = ["public"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SenderSigningKey _private.
-             * @member {"private"|undefined} _private
-             * @memberof SignalLocalStorageProtocol.SenderKeyStateStructure.SenderSigningKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SenderSigningKey.prototype, "_private", {
                 get: $util.oneOfGetter($oneOfFields = ["private"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -1439,23 +1394,13 @@ $root.SignalLocalStorageProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * IdentityKeyPairStructure _publicKey.
-         * @member {"publicKey"|undefined} _publicKey
-         * @memberof SignalLocalStorageProtocol.IdentityKeyPairStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(IdentityKeyPairStructure.prototype, "_publicKey", {
             get: $util.oneOfGetter($oneOfFields = ["publicKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * IdentityKeyPairStructure _privateKey.
-         * @member {"privateKey"|undefined} _privateKey
-         * @memberof SignalLocalStorageProtocol.IdentityKeyPairStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(IdentityKeyPairStructure.prototype, "_privateKey", {
             get: $util.oneOfGetter($oneOfFields = ["privateKey"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1733,56 +1678,31 @@ $root.SignalLocalStorageProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SignedPreKeyRecordStructure _id.
-         * @member {"id"|undefined} _id
-         * @memberof SignalLocalStorageProtocol.SignedPreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignedPreKeyRecordStructure.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SignedPreKeyRecordStructure _publicKey.
-         * @member {"publicKey"|undefined} _publicKey
-         * @memberof SignalLocalStorageProtocol.SignedPreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignedPreKeyRecordStructure.prototype, "_publicKey", {
             get: $util.oneOfGetter($oneOfFields = ["publicKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SignedPreKeyRecordStructure _privateKey.
-         * @member {"privateKey"|undefined} _privateKey
-         * @memberof SignalLocalStorageProtocol.SignedPreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignedPreKeyRecordStructure.prototype, "_privateKey", {
             get: $util.oneOfGetter($oneOfFields = ["privateKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SignedPreKeyRecordStructure _signature.
-         * @member {"signature"|undefined} _signature
-         * @memberof SignalLocalStorageProtocol.SignedPreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignedPreKeyRecordStructure.prototype, "_signature", {
             get: $util.oneOfGetter($oneOfFields = ["signature"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SignedPreKeyRecordStructure _timestamp.
-         * @member {"timestamp"|undefined} _timestamp
-         * @memberof SignalLocalStorageProtocol.SignedPreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignedPreKeyRecordStructure.prototype, "_timestamp", {
             get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -2109,34 +2029,19 @@ $root.SignalLocalStorageProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * PreKeyRecordStructure _id.
-         * @member {"id"|undefined} _id
-         * @memberof SignalLocalStorageProtocol.PreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeyRecordStructure.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PreKeyRecordStructure _publicKey.
-         * @member {"publicKey"|undefined} _publicKey
-         * @memberof SignalLocalStorageProtocol.PreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeyRecordStructure.prototype, "_publicKey", {
             get: $util.oneOfGetter($oneOfFields = ["publicKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PreKeyRecordStructure _privateKey.
-         * @member {"privateKey"|undefined} _privateKey
-         * @memberof SignalLocalStorageProtocol.PreKeyRecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeyRecordStructure.prototype, "_privateKey", {
             get: $util.oneOfGetter($oneOfFields = ["privateKey"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -2406,12 +2311,7 @@ $root.SignalLocalStorageProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * RecordStructure _currentSession.
-         * @member {"currentSession"|undefined} _currentSession
-         * @memberof SignalLocalStorageProtocol.RecordStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(RecordStructure.prototype, "_currentSession", {
             get: $util.oneOfGetter($oneOfFields = ["currentSession"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -2779,133 +2679,73 @@ $root.SignalLocalStorageProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SessionStructure _sessionVersion.
-         * @member {"sessionVersion"|undefined} _sessionVersion
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_sessionVersion", {
             get: $util.oneOfGetter($oneOfFields = ["sessionVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _localIdentityPublic.
-         * @member {"localIdentityPublic"|undefined} _localIdentityPublic
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_localIdentityPublic", {
             get: $util.oneOfGetter($oneOfFields = ["localIdentityPublic"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _remoteIdentityPublic.
-         * @member {"remoteIdentityPublic"|undefined} _remoteIdentityPublic
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_remoteIdentityPublic", {
             get: $util.oneOfGetter($oneOfFields = ["remoteIdentityPublic"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _rootKey.
-         * @member {"rootKey"|undefined} _rootKey
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_rootKey", {
             get: $util.oneOfGetter($oneOfFields = ["rootKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _previousCounter.
-         * @member {"previousCounter"|undefined} _previousCounter
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_previousCounter", {
             get: $util.oneOfGetter($oneOfFields = ["previousCounter"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _senderChain.
-         * @member {"senderChain"|undefined} _senderChain
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_senderChain", {
             get: $util.oneOfGetter($oneOfFields = ["senderChain"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _pendingKeyExchange.
-         * @member {"pendingKeyExchange"|undefined} _pendingKeyExchange
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_pendingKeyExchange", {
             get: $util.oneOfGetter($oneOfFields = ["pendingKeyExchange"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _pendingPreKey.
-         * @member {"pendingPreKey"|undefined} _pendingPreKey
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_pendingPreKey", {
             get: $util.oneOfGetter($oneOfFields = ["pendingPreKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _remoteRegistrationId.
-         * @member {"remoteRegistrationId"|undefined} _remoteRegistrationId
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_remoteRegistrationId", {
             get: $util.oneOfGetter($oneOfFields = ["remoteRegistrationId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _localRegistrationId.
-         * @member {"localRegistrationId"|undefined} _localRegistrationId
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_localRegistrationId", {
             get: $util.oneOfGetter($oneOfFields = ["localRegistrationId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _needsRefresh.
-         * @member {"needsRefresh"|undefined} _needsRefresh
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_needsRefresh", {
             get: $util.oneOfGetter($oneOfFields = ["needsRefresh"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SessionStructure _aliceBaseKey.
-         * @member {"aliceBaseKey"|undefined} _aliceBaseKey
-         * @memberof SignalLocalStorageProtocol.SessionStructure
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SessionStructure.prototype, "_aliceBaseKey", {
             get: $util.oneOfGetter($oneOfFields = ["aliceBaseKey"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -3411,34 +3251,19 @@ $root.SignalLocalStorageProtocol = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * Chain _senderRatchetKey.
-             * @member {"senderRatchetKey"|undefined} _senderRatchetKey
-             * @memberof SignalLocalStorageProtocol.SessionStructure.Chain
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Chain.prototype, "_senderRatchetKey", {
                 get: $util.oneOfGetter($oneOfFields = ["senderRatchetKey"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Chain _senderRatchetKeyPrivate.
-             * @member {"senderRatchetKeyPrivate"|undefined} _senderRatchetKeyPrivate
-             * @memberof SignalLocalStorageProtocol.SessionStructure.Chain
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Chain.prototype, "_senderRatchetKeyPrivate", {
                 get: $util.oneOfGetter($oneOfFields = ["senderRatchetKeyPrivate"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Chain _chainKey.
-             * @member {"chainKey"|undefined} _chainKey
-             * @memberof SignalLocalStorageProtocol.SessionStructure.Chain
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Chain.prototype, "_chainKey", {
                 get: $util.oneOfGetter($oneOfFields = ["chainKey"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -3745,23 +3570,13 @@ $root.SignalLocalStorageProtocol = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * ChainKey _index.
-                 * @member {"index"|undefined} _index
-                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.ChainKey
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(ChainKey.prototype, "_index", {
                     get: $util.oneOfGetter($oneOfFields = ["index"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * ChainKey _key.
-                 * @member {"key"|undefined} _key
-                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.ChainKey
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(ChainKey.prototype, "_key", {
                     get: $util.oneOfGetter($oneOfFields = ["key"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -4027,45 +3842,25 @@ $root.SignalLocalStorageProtocol = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * MessageKey _index.
-                 * @member {"index"|undefined} _index
-                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(MessageKey.prototype, "_index", {
                     get: $util.oneOfGetter($oneOfFields = ["index"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * MessageKey _cipherKey.
-                 * @member {"cipherKey"|undefined} _cipherKey
-                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(MessageKey.prototype, "_cipherKey", {
                     get: $util.oneOfGetter($oneOfFields = ["cipherKey"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * MessageKey _macKey.
-                 * @member {"macKey"|undefined} _macKey
-                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(MessageKey.prototype, "_macKey", {
                     get: $util.oneOfGetter($oneOfFields = ["macKey"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * MessageKey _iv.
-                 * @member {"iv"|undefined} _iv
-                 * @memberof SignalLocalStorageProtocol.SessionStructure.Chain.MessageKey
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(MessageKey.prototype, "_iv", {
                     get: $util.oneOfGetter($oneOfFields = ["iv"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -4403,78 +4198,43 @@ $root.SignalLocalStorageProtocol = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PendingKeyExchange _sequence.
-             * @member {"sequence"|undefined} _sequence
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingKeyExchange.prototype, "_sequence", {
                 get: $util.oneOfGetter($oneOfFields = ["sequence"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingKeyExchange _localBaseKey.
-             * @member {"localBaseKey"|undefined} _localBaseKey
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingKeyExchange.prototype, "_localBaseKey", {
                 get: $util.oneOfGetter($oneOfFields = ["localBaseKey"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingKeyExchange _localBaseKeyPrivate.
-             * @member {"localBaseKeyPrivate"|undefined} _localBaseKeyPrivate
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingKeyExchange.prototype, "_localBaseKeyPrivate", {
                 get: $util.oneOfGetter($oneOfFields = ["localBaseKeyPrivate"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingKeyExchange _localRatchetKey.
-             * @member {"localRatchetKey"|undefined} _localRatchetKey
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingKeyExchange.prototype, "_localRatchetKey", {
                 get: $util.oneOfGetter($oneOfFields = ["localRatchetKey"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingKeyExchange _localRatchetKeyPrivate.
-             * @member {"localRatchetKeyPrivate"|undefined} _localRatchetKeyPrivate
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingKeyExchange.prototype, "_localRatchetKeyPrivate", {
                 get: $util.oneOfGetter($oneOfFields = ["localRatchetKeyPrivate"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingKeyExchange _localIdentityKey.
-             * @member {"localIdentityKey"|undefined} _localIdentityKey
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingKeyExchange.prototype, "_localIdentityKey", {
                 get: $util.oneOfGetter($oneOfFields = ["localIdentityKey"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingKeyExchange _localIdentityKeyPrivate.
-             * @member {"localIdentityKeyPrivate"|undefined} _localIdentityKeyPrivate
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingKeyExchange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingKeyExchange.prototype, "_localIdentityKeyPrivate", {
                 get: $util.oneOfGetter($oneOfFields = ["localIdentityKeyPrivate"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4836,34 +4596,19 @@ $root.SignalLocalStorageProtocol = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PendingPreKey _preKeyId.
-             * @member {"preKeyId"|undefined} _preKeyId
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingPreKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingPreKey.prototype, "_preKeyId", {
                 get: $util.oneOfGetter($oneOfFields = ["preKeyId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingPreKey _signedPreKeyId.
-             * @member {"signedPreKeyId"|undefined} _signedPreKeyId
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingPreKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingPreKey.prototype, "_signedPreKeyId", {
                 get: $util.oneOfGetter($oneOfFields = ["signedPreKeyId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PendingPreKey _baseKey.
-             * @member {"baseKey"|undefined} _baseKey
-             * @memberof SignalLocalStorageProtocol.SessionStructure.PendingPreKey
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PendingPreKey.prototype, "_baseKey", {
                 get: $util.oneOfGetter($oneOfFields = ["baseKey"]),
                 set: $util.oneOfSetter($oneOfFields)

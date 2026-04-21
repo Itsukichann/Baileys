@@ -116,89 +116,49 @@ $root.VnameCert = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BizIdentityInfo _vlevel.
-         * @member {"vlevel"|undefined} _vlevel
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_vlevel", {
             get: $util.oneOfGetter($oneOfFields = ["vlevel"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizIdentityInfo _vnameCert.
-         * @member {"vnameCert"|undefined} _vnameCert
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_vnameCert", {
             get: $util.oneOfGetter($oneOfFields = ["vnameCert"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizIdentityInfo _signed.
-         * @member {"signed"|undefined} _signed
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_signed", {
             get: $util.oneOfGetter($oneOfFields = ["signed"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizIdentityInfo _revoked.
-         * @member {"revoked"|undefined} _revoked
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_revoked", {
             get: $util.oneOfGetter($oneOfFields = ["revoked"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizIdentityInfo _hostStorage.
-         * @member {"hostStorage"|undefined} _hostStorage
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_hostStorage", {
             get: $util.oneOfGetter($oneOfFields = ["hostStorage"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizIdentityInfo _actualActors.
-         * @member {"actualActors"|undefined} _actualActors
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_actualActors", {
             get: $util.oneOfGetter($oneOfFields = ["actualActors"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizIdentityInfo _privacyModeTs.
-         * @member {"privacyModeTs"|undefined} _privacyModeTs
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_privacyModeTs", {
             get: $util.oneOfGetter($oneOfFields = ["privacyModeTs"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizIdentityInfo _featureControls.
-         * @member {"featureControls"|undefined} _featureControls
-         * @memberof VnameCert.BizIdentityInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizIdentityInfo.prototype, "_featureControls", {
             get: $util.oneOfGetter($oneOfFields = ["featureControls"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -710,56 +670,31 @@ $root.VnameCert = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BizAccountLinkInfo _whatsappBizAcctFbid.
-         * @member {"whatsappBizAcctFbid"|undefined} _whatsappBizAcctFbid
-         * @memberof VnameCert.BizAccountLinkInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizAccountLinkInfo.prototype, "_whatsappBizAcctFbid", {
             get: $util.oneOfGetter($oneOfFields = ["whatsappBizAcctFbid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizAccountLinkInfo _whatsappAcctNumber.
-         * @member {"whatsappAcctNumber"|undefined} _whatsappAcctNumber
-         * @memberof VnameCert.BizAccountLinkInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizAccountLinkInfo.prototype, "_whatsappAcctNumber", {
             get: $util.oneOfGetter($oneOfFields = ["whatsappAcctNumber"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizAccountLinkInfo _issueTime.
-         * @member {"issueTime"|undefined} _issueTime
-         * @memberof VnameCert.BizAccountLinkInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizAccountLinkInfo.prototype, "_issueTime", {
             get: $util.oneOfGetter($oneOfFields = ["issueTime"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizAccountLinkInfo _hostStorage.
-         * @member {"hostStorage"|undefined} _hostStorage
-         * @memberof VnameCert.BizAccountLinkInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizAccountLinkInfo.prototype, "_hostStorage", {
             get: $util.oneOfGetter($oneOfFields = ["hostStorage"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizAccountLinkInfo _accountType.
-         * @member {"accountType"|undefined} _accountType
-         * @memberof VnameCert.BizAccountLinkInfo
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizAccountLinkInfo.prototype, "_accountType", {
             get: $util.oneOfGetter($oneOfFields = ["accountType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1137,23 +1072,13 @@ $root.VnameCert = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * BizAccountPayload _vnameCert.
-         * @member {"vnameCert"|undefined} _vnameCert
-         * @memberof VnameCert.BizAccountPayload
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizAccountPayload.prototype, "_vnameCert", {
             get: $util.oneOfGetter($oneOfFields = ["vnameCert"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * BizAccountPayload _bizAcctLinkInfo.
-         * @member {"bizAcctLinkInfo"|undefined} _bizAcctLinkInfo
-         * @memberof VnameCert.BizAccountPayload
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(BizAccountPayload.prototype, "_bizAcctLinkInfo", {
             get: $util.oneOfGetter($oneOfFields = ["bizAcctLinkInfo"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1416,34 +1341,19 @@ $root.VnameCert = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * VerifiedNameCertificate _details.
-         * @member {"details"|undefined} _details
-         * @memberof VnameCert.VerifiedNameCertificate
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(VerifiedNameCertificate.prototype, "_details", {
             get: $util.oneOfGetter($oneOfFields = ["details"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * VerifiedNameCertificate _signature.
-         * @member {"signature"|undefined} _signature
-         * @memberof VnameCert.VerifiedNameCertificate
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(VerifiedNameCertificate.prototype, "_signature", {
             get: $util.oneOfGetter($oneOfFields = ["signature"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * VerifiedNameCertificate _serverSignature.
-         * @member {"serverSignature"|undefined} _serverSignature
-         * @memberof VnameCert.VerifiedNameCertificate
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(VerifiedNameCertificate.prototype, "_serverSignature", {
             get: $util.oneOfGetter($oneOfFields = ["serverSignature"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1740,45 +1650,25 @@ $root.VnameCert = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * Details _serial.
-             * @member {"serial"|undefined} _serial
-             * @memberof VnameCert.VerifiedNameCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_serial", {
                 get: $util.oneOfGetter($oneOfFields = ["serial"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Details _issuer.
-             * @member {"issuer"|undefined} _issuer
-             * @memberof VnameCert.VerifiedNameCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_issuer", {
                 get: $util.oneOfGetter($oneOfFields = ["issuer"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Details _verifiedName.
-             * @member {"verifiedName"|undefined} _verifiedName
-             * @memberof VnameCert.VerifiedNameCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_verifiedName", {
                 get: $util.oneOfGetter($oneOfFields = ["verifiedName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Details _issueTime.
-             * @member {"issueTime"|undefined} _issueTime
-             * @memberof VnameCert.VerifiedNameCertificate.Details
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Details.prototype, "_issueTime", {
                 get: $util.oneOfGetter($oneOfFields = ["issueTime"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -2126,34 +2016,19 @@ $root.VnameCert = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * LocalizedName _lg.
-         * @member {"lg"|undefined} _lg
-         * @memberof VnameCert.LocalizedName
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LocalizedName.prototype, "_lg", {
             get: $util.oneOfGetter($oneOfFields = ["lg"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LocalizedName _lc.
-         * @member {"lc"|undefined} _lc
-         * @memberof VnameCert.LocalizedName
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LocalizedName.prototype, "_lc", {
             get: $util.oneOfGetter($oneOfFields = ["lc"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LocalizedName _verifiedName.
-         * @member {"verifiedName"|undefined} _verifiedName
-         * @memberof VnameCert.LocalizedName
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LocalizedName.prototype, "_verifiedName", {
             get: $util.oneOfGetter($oneOfFields = ["verifiedName"]),
             set: $util.oneOfSetter($oneOfFields)

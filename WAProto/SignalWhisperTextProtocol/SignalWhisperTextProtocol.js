@@ -62,23 +62,13 @@ $root.SignalWhisperTextProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * DeviceConsistencyCodeMessage _generation.
-         * @member {"generation"|undefined} _generation
-         * @memberof SignalWhisperTextProtocol.DeviceConsistencyCodeMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceConsistencyCodeMessage.prototype, "_generation", {
             get: $util.oneOfGetter($oneOfFields = ["generation"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceConsistencyCodeMessage _signature.
-         * @member {"signature"|undefined} _signature
-         * @memberof SignalWhisperTextProtocol.DeviceConsistencyCodeMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceConsistencyCodeMessage.prototype, "_signature", {
             get: $util.oneOfGetter($oneOfFields = ["signature"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -344,45 +334,25 @@ $root.SignalWhisperTextProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SenderKeyDistributionMessage _id.
-         * @member {"id"|undefined} _id
-         * @memberof SignalWhisperTextProtocol.SenderKeyDistributionMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyDistributionMessage.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SenderKeyDistributionMessage _iteration.
-         * @member {"iteration"|undefined} _iteration
-         * @memberof SignalWhisperTextProtocol.SenderKeyDistributionMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyDistributionMessage.prototype, "_iteration", {
             get: $util.oneOfGetter($oneOfFields = ["iteration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SenderKeyDistributionMessage _chainKey.
-         * @member {"chainKey"|undefined} _chainKey
-         * @memberof SignalWhisperTextProtocol.SenderKeyDistributionMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyDistributionMessage.prototype, "_chainKey", {
             get: $util.oneOfGetter($oneOfFields = ["chainKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SenderKeyDistributionMessage _signingKey.
-         * @member {"signingKey"|undefined} _signingKey
-         * @memberof SignalWhisperTextProtocol.SenderKeyDistributionMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyDistributionMessage.prototype, "_signingKey", {
             get: $util.oneOfGetter($oneOfFields = ["signingKey"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -678,34 +648,19 @@ $root.SignalWhisperTextProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SenderKeyMessage _id.
-         * @member {"id"|undefined} _id
-         * @memberof SignalWhisperTextProtocol.SenderKeyMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyMessage.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SenderKeyMessage _iteration.
-         * @member {"iteration"|undefined} _iteration
-         * @memberof SignalWhisperTextProtocol.SenderKeyMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyMessage.prototype, "_iteration", {
             get: $util.oneOfGetter($oneOfFields = ["iteration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SenderKeyMessage _ciphertext.
-         * @member {"ciphertext"|undefined} _ciphertext
-         * @memberof SignalWhisperTextProtocol.SenderKeyMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SenderKeyMessage.prototype, "_ciphertext", {
             get: $util.oneOfGetter($oneOfFields = ["ciphertext"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -998,56 +953,31 @@ $root.SignalWhisperTextProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * KeyExchangeMessage _id.
-         * @member {"id"|undefined} _id
-         * @memberof SignalWhisperTextProtocol.KeyExchangeMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(KeyExchangeMessage.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * KeyExchangeMessage _baseKey.
-         * @member {"baseKey"|undefined} _baseKey
-         * @memberof SignalWhisperTextProtocol.KeyExchangeMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(KeyExchangeMessage.prototype, "_baseKey", {
             get: $util.oneOfGetter($oneOfFields = ["baseKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * KeyExchangeMessage _ratchetKey.
-         * @member {"ratchetKey"|undefined} _ratchetKey
-         * @memberof SignalWhisperTextProtocol.KeyExchangeMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(KeyExchangeMessage.prototype, "_ratchetKey", {
             get: $util.oneOfGetter($oneOfFields = ["ratchetKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * KeyExchangeMessage _identityKey.
-         * @member {"identityKey"|undefined} _identityKey
-         * @memberof SignalWhisperTextProtocol.KeyExchangeMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(KeyExchangeMessage.prototype, "_identityKey", {
             get: $util.oneOfGetter($oneOfFields = ["identityKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * KeyExchangeMessage _baseKeySignature.
-         * @member {"baseKeySignature"|undefined} _baseKeySignature
-         * @memberof SignalWhisperTextProtocol.KeyExchangeMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(KeyExchangeMessage.prototype, "_baseKeySignature", {
             get: $util.oneOfGetter($oneOfFields = ["baseKeySignature"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1394,67 +1324,37 @@ $root.SignalWhisperTextProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * PreKeySignalMessage _registrationId.
-         * @member {"registrationId"|undefined} _registrationId
-         * @memberof SignalWhisperTextProtocol.PreKeySignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeySignalMessage.prototype, "_registrationId", {
             get: $util.oneOfGetter($oneOfFields = ["registrationId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PreKeySignalMessage _preKeyId.
-         * @member {"preKeyId"|undefined} _preKeyId
-         * @memberof SignalWhisperTextProtocol.PreKeySignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeySignalMessage.prototype, "_preKeyId", {
             get: $util.oneOfGetter($oneOfFields = ["preKeyId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PreKeySignalMessage _signedPreKeyId.
-         * @member {"signedPreKeyId"|undefined} _signedPreKeyId
-         * @memberof SignalWhisperTextProtocol.PreKeySignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeySignalMessage.prototype, "_signedPreKeyId", {
             get: $util.oneOfGetter($oneOfFields = ["signedPreKeyId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PreKeySignalMessage _baseKey.
-         * @member {"baseKey"|undefined} _baseKey
-         * @memberof SignalWhisperTextProtocol.PreKeySignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeySignalMessage.prototype, "_baseKey", {
             get: $util.oneOfGetter($oneOfFields = ["baseKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PreKeySignalMessage _identityKey.
-         * @member {"identityKey"|undefined} _identityKey
-         * @memberof SignalWhisperTextProtocol.PreKeySignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeySignalMessage.prototype, "_identityKey", {
             get: $util.oneOfGetter($oneOfFields = ["identityKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PreKeySignalMessage _message.
-         * @member {"message"|undefined} _message
-         * @memberof SignalWhisperTextProtocol.PreKeySignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PreKeySignalMessage.prototype, "_message", {
             get: $util.oneOfGetter($oneOfFields = ["message"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1798,45 +1698,25 @@ $root.SignalWhisperTextProtocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SignalMessage _ratchetKey.
-         * @member {"ratchetKey"|undefined} _ratchetKey
-         * @memberof SignalWhisperTextProtocol.SignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignalMessage.prototype, "_ratchetKey", {
             get: $util.oneOfGetter($oneOfFields = ["ratchetKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SignalMessage _counter.
-         * @member {"counter"|undefined} _counter
-         * @memberof SignalWhisperTextProtocol.SignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignalMessage.prototype, "_counter", {
             get: $util.oneOfGetter($oneOfFields = ["counter"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SignalMessage _previousCounter.
-         * @member {"previousCounter"|undefined} _previousCounter
-         * @memberof SignalWhisperTextProtocol.SignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignalMessage.prototype, "_previousCounter", {
             get: $util.oneOfGetter($oneOfFields = ["previousCounter"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SignalMessage _ciphertext.
-         * @member {"ciphertext"|undefined} _ciphertext
-         * @memberof SignalWhisperTextProtocol.SignalMessage
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SignalMessage.prototype, "_ciphertext", {
             get: $util.oneOfGetter($oneOfFields = ["ciphertext"]),
             set: $util.oneOfSetter($oneOfFields)

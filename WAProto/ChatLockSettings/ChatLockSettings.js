@@ -62,23 +62,13 @@ $root.ChatLockSettings = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ChatLockSettings _hideLockedChats.
-         * @member {"hideLockedChats"|undefined} _hideLockedChats
-         * @memberof ChatLockSettings.ChatLockSettings
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ChatLockSettings.prototype, "_hideLockedChats", {
             get: $util.oneOfGetter($oneOfFields = ["hideLockedChats"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ChatLockSettings _secretCode.
-         * @member {"secretCode"|undefined} _secretCode
-         * @memberof ChatLockSettings.ChatLockSettings
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ChatLockSettings.prototype, "_secretCode", {
             get: $util.oneOfGetter($oneOfFields = ["secretCode"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -360,34 +350,19 @@ $root.UserPassword = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * UserPassword _encoding.
-         * @member {"encoding"|undefined} _encoding
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(UserPassword.prototype, "_encoding", {
             get: $util.oneOfGetter($oneOfFields = ["encoding"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * UserPassword _transformer.
-         * @member {"transformer"|undefined} _transformer
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(UserPassword.prototype, "_transformer", {
             get: $util.oneOfGetter($oneOfFields = ["transformer"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * UserPassword _transformedData.
-         * @member {"transformedData"|undefined} _transformedData
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(UserPassword.prototype, "_transformedData", {
             get: $util.oneOfGetter($oneOfFields = ["transformedData"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -758,23 +733,13 @@ $root.UserPassword = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * TransformerArg _key.
-             * @member {"key"|undefined} _key
-             * @memberof UserPassword.UserPassword.TransformerArg
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(TransformerArg.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * TransformerArg _value.
-             * @member {"value"|undefined} _value
-             * @memberof UserPassword.UserPassword.TransformerArg
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(TransformerArg.prototype, "_value", {
                 get: $util.oneOfGetter($oneOfFields = ["value"]),
                 set: $util.oneOfSetter($oneOfFields)

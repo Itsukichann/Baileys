@@ -64,7 +64,7 @@ yarn add github:Itsukichann/Baileys
 ```
 
 Then import your code using:
-```ts 
+```js 
 import makeWASocket from '@itsukichan/baileys'
 ```
 
@@ -87,8 +87,6 @@ import makeWASocket from '@itsukichan/baileys'
 - [Save Auth Info](#saving--restoring-sessions)
 - [Handling Events](#handling-events)
     - [Example to Start](#example-to-start)
-    - [Decrypt Poll Votes](#decrypt-poll-votes)
-    - [Decrypt Event Response](#decrypt-event-response) 
     - [Summary of Events on First Connection](#summary-of-events-on-first-connection)
 - [Implementing a Data Store](#implementing-a-data-store)
 - [Whatsapp IDs Explain](#whatsapp-ids-explain)
@@ -204,6 +202,20 @@ import makeWASocket from '@itsukichan/baileys'
 - [Broadcast Lists & Stories](#broadcast-lists--stories)
     - [Send Broadcast & Stories](#send-broadcast--stories)
     - [Query a Broadcast List's Recipients & Name](#query-a-broadcast-lists-recipients--name)
+- [Message Secret](#message-secret)
+    - [Encrypt Poll Vote](#encrypt-poll-vote)
+    - [Encrypt Comment](#encrypt-comment)
+    - [Encrypt Reaction](#encrypt-reaction)
+    - [Encrypt Event Edit](#encrypt-event-edit)
+    - [Encrypt Event Response](#encrypt-event-response)
+    - [Decrypt Poll Vote](#decrypt-poll-vote)
+    - [Decrypt Comment](#decrypt-comment)
+    - [Decrypt Reaction](#decrypt-reaction)
+    - [Decrypt Event Edit](#decrypt-event-edit)
+    - [Decrypt Event Response](#decrypt-event-response)
+    - [Decrypt Bot Message](#decrypt-bot-message)
+    - [Aggregate Poll Votes](#aggregate-poll-votes)
+    - [Aggregate Event Responses](#aggregate-event-responses)
 - [Writing Custom Functionality](#writing-custom-functionality)
     - [Enabling Debug Level in Baileys Logs](#enabling-debug-level-in-baileys-logs)
     - [How Whatsapp Communicate With Us](#how-whatsapp-communicate-with-us)
@@ -224,7 +236,7 @@ WhatsApp provides a multi-device API that allows Baileys to be authenticated as 
 > [!TIP]
 > You can customize browser name if you connect with **QR-CODE**, with `Browser` constant, we have some browsers config, **see [here](https://baileys.whiskeysockets.io/types/BrowsersMap.html)**
 
-```ts
+```js
 import makeWASocket from '@itsukichan/baileys'
 
 const suki = makeWASocket({
@@ -244,7 +256,7 @@ If the connection is successful, you will see a QR code printed on your terminal
 
 The phone number can't have `+` or `()` or `-`, only numbers, you must provide country code
 
-```ts
+```js
 import makeWASocket from '@itsukichan/baileys'
 
 const suki = makeWASocket({
@@ -265,7 +277,7 @@ if (!suki.authState.creds.registered) {
 2. Baileys, by default, use chrome browser config
     - If you'd like to emulate a desktop connection (and receive more message history), this browser setting to your Socket config:
 
-```ts
+```js
 const suki = makeWASocket({
     ...otherOpts,
     // can use Windows, Ubuntu here too
@@ -279,7 +291,7 @@ const suki = makeWASocket({
 ### Caching Group Metadata (Recommended)
 - If you use baileys for groups, we recommend you to set `cachedGroupMetadata` in socket config, you need to implement a cache like this:
 
-    ```ts
+    ```js
     const groupCache = new NodeCache({stdTTL: 5 * 60, useClones: false})
 
     const suki = makeWASocket({
@@ -299,7 +311,7 @@ const suki = makeWASocket({
 
 ### Improve Retry System & Decrypt Poll Votes
 - If you want to improve sending message, retrying when error occurs and decrypt poll votes, you need to have a store and set `getMessage` config in socket like this:
-    ```ts
+    ```js
     const suki = makeWASocket({
         getMessage: async (key) => await getMessageFromStore(key)
     })
@@ -307,7 +319,7 @@ const suki = makeWASocket({
 
 ### Receive Notifications in Whatsapp App
 - If you want to receive notifications in whatsapp app, set `markOnlineOnConnect` to `false`
-    ```ts
+    ```js
     const suki = makeWASocket({
         markOnlineOnConnect: false
     })
@@ -317,7 +329,7 @@ const suki = makeWASocket({
 You obviously don't want to keep scanning the QR code every time you want to connect. 
 
 So, you can load the credentials to log back in:
-```ts
+```js
 import makeWASocket, { useMultiFileAuthState } from '@itsukichan/baileys'
 
 const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys')
@@ -345,7 +357,7 @@ They're all nicely typed up, so you shouldn't have any issues with an Intellisen
 > **The events are [these](https://baileys.whiskeysockets.io/types/BaileysEventMap.html)**, it's important you see all events
 
 You can listen to these events like this:
-```ts
+```js
 const suki = makeWASocket()
 suki.ev.on('messages.upsert', ({ messages }) => {
     console.log('got messages', messages)
@@ -357,7 +369,7 @@ suki.ev.on('messages.upsert', ({ messages }) => {
 > [!NOTE]
 > This example includes basic auth storage too
 
-```ts
+```js
 import makeWASocket, { DisconnectReason, useMultiFileAuthState } from '@itsukichan/baileys'
 import { Boom } from '@hapi/boom'
 
@@ -400,58 +412,6 @@ connectToWhatsApp()
 > [!IMPORTANT]
 > In `messages.upsert` it's recommended to use a loop like `for (const message of event.messages)` to handle all messages in array
 
-### Decrypt Poll Votes
-
-- By default poll votes are encrypted and handled in `messages.update`
-```ts
-import pino from "pino"
-import { makeInMemoryStore, getAggregateVotesInPollMessage } from '@itsukichan/baileys'
-
-const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@Itsukichann" })
-logger.level = "fatal"
-const store = makeInMemoryStore({ logger })
-
-async function getMessage(key){
-    if (store) {
-        const msg = await store.loadMessage(key.remoteJid, key.id)
-        return msg?.message
-    }
-    return {
-        conversation: "Itsukii Kawaiii"
-    }
-} 
-
-suki.ev.on("messages.update", async (chatUpdate) => {
-    for(const { key, update } of chatUpdate) {
-         if(update.pollUpdates && key.fromMe) {
-           const pollCreation = await getMessage(key)
-             if(pollCreation) {
-               const pollUpdate = await getAggregateVotesInPollMessage({
-                    message: pollCreation,
-                    pollUpdates: update.pollUpdates,
-                })
-               const toCmd = pollUpdate.filter(v => v.voters.length !== 0)[0]?.name
-               if (toCmd == undefined) return
-               console.log(toCmd)
-	        }
-        }
-    } 
-})
-```
-
-### Decrypt Event Response
-
-- By default event response are encrypted and handled in `messages.update`
-```ts
-import { jidNormalizedUser, getAggregateResponsesInEventMessage } from '@itsukichan/baileys'
-
-suki.ev.on("messages.update", async ([chatUpdate]) => {
-    const eventResponses = chatUpdate.update?.eventResponses
-    const agregate = getAggregateResponsesInEventMessage({ eventResponses }, jidNormalizedUser(suki.user.lid)) 
-    console.log(agregate) 
-})
-```
-
 ### Summary of Events on First Connection
 
 1. When you connect first time, `connection.update` will be fired requesting you to restart sock
@@ -466,7 +426,7 @@ suki.ev.on("messages.update", async ([chatUpdate]) => {
 
 It can be used as follows:
 
-```ts
+```js
 import makeWASocket, { makeInMemoryStore } from '@itsukichan/baileys'
 // the store maintains the data of the WA connection in memory
 // can be written out to a file & read from it
@@ -519,7 +479,7 @@ The store also provides some simple functions such as `loadMessages` that utiliz
     - **[Here](https://baileys.whiskeysockets.io/types/AnyMessageContent.html) you can see all message contents supported, like text message**
     - **[Here](https://baileys.whiskeysockets.io/types/MiscMessageGenerationOptions.html) you can see all options supported, like quote message**
 
-    ```ts
+    ```js
     const jid: string
     const content: AnyMessageContent
     const options: MiscMessageGenerationOptions
@@ -530,18 +490,18 @@ The store also provides some simple functions such as `loadMessages` that utiliz
 ### Non-Media Messages
 
 #### Text Message
-```ts
+```js
 await suki.sendMessage(jid, { text: 'hello word' })
 ```
 
 #### Quote Message (works with all types)
-```ts
+```js
 await suki.sendMessage(jid, { text: 'hello word' }, { quoted: message })
 ```
 
 #### Mention User (works with most types)
 - @number is to mention in text, it's optional
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -553,13 +513,13 @@ await suki.sendMessage(
 
 #### Forward Messages
 - You need to have message object, can be retrieved from [store](#implementing-a-data-store) or use a [message](https://baileys.whiskeysockets.io/types/WAMessage.html) object
-```ts
+```js
 const msg = getMessageFromStore() // implement this on your end
 await suki.sendMessage(jid, { forward: msg, force: true or number }) // WA forward the message!
 ```
 
 #### Location Message
-```ts
+```js
 await suki.sendMessage(
     jid, 
     {
@@ -572,7 +532,7 @@ await suki.sendMessage(
 ```
 
 #### Live Location Message
-```ts
+```js
 await suki.sendMessage(
     jid, 
     {
@@ -585,7 +545,7 @@ await suki.sendMessage(
 )
 ```
 #### Contact Message
-```ts
+```js
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
             + 'FN:Jeff Singh\n' // full name
@@ -606,7 +566,7 @@ await suki.sendMessage(
 
 #### Reaction Message
 - You need to pass the key of message, you can retrieve from [store](#implementing-a-data-store) or use a [key](https://baileys.whiskeysockets.io/types/WAMessageKey.html) object
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -629,7 +589,7 @@ await suki.sendMessage(
 | 7d     | 604.800       |
 | 30d    | 2.592.000     |
 
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -643,7 +603,7 @@ await suki.sendMessage(
 ```
 
 ### Keep Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -656,7 +616,7 @@ await suki.sendMessage(
 ```
 
 #### Poll Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -671,7 +631,7 @@ await suki.sendMessage(
 ```
 
 #### Poll Result Message
-```ts
+```js
 await suki.sendMessage(
     jid, 
     {
@@ -693,7 +653,7 @@ await suki.sendMessage(
 ```
 
 ### Call Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -706,7 +666,7 @@ await suki.sendMessage(
 ```
 
 ### Event Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -729,7 +689,7 @@ await suki.sendMessage(
 ```
 
 ### Order Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -751,7 +711,7 @@ await suki.sendMessage(
 ```
 
 ### Product Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -777,7 +737,7 @@ await suki.sendMessage(
 ```
 
 ### Payment Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -799,7 +759,7 @@ await suki.sendMessage(
 ```
 
 #### Payment Invite Message
-```ts
+```js
 await suki.sendMessage(
     id, 
     { 
@@ -812,7 +772,7 @@ await suki.sendMessage(
 ```
 
 ### Admin Invite Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -828,7 +788,7 @@ await suki.sendMessage(
 ```
 
 ### Group Invite Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -845,8 +805,7 @@ await suki.sendMessage(
 ```
 
 ### Sticker Pack Message
-```ts 
-// I don't know why the sticker doesn't appear
+```js 
 await suki.sendMessage(
     jid,
     {
@@ -854,20 +813,16 @@ await suki.sendMessage(
             name: 'Hiii', 
             publisher: 'By Itsukichann', 
             description: 'Hello', 
-            cover: Buffer, // Image buffer
+            cover: Buffer | String, // Image buffer or url
             stickers: [{
                 sticker: { url: 'https://example.com/1234kjd.webp' }, 
                 emojis: ['❤'], // optional
-                accessibilityLabel: '', // optional
-                isLottie: Boolean, // optional
-                isAnimated: Boolean // optional
+                accessibilityLabel: 'Party celebration sticker' // optional
             }, 
             {
                 sticker: Buffer, 
                 emojis: ['❤'], // optional
-                accessibilityLabel: '', // optional
-                isLottie: Boolean, // optional
-                isAnimated: Boolean // optional
+                accessibilityLabel: 'Party celebration sticker' // optional
             }]
         }
     }
@@ -875,7 +830,7 @@ await suki.sendMessage(
 ```
 
 ### Share Phone Number Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -886,7 +841,7 @@ await suki.sendMessage(
 ```
 
 ### Request Phone Number Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -897,7 +852,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons Reply Message
-```ts
+```js
 // List
 await suki.sendMessage(
     jid,
@@ -953,7 +908,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -983,7 +938,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons List Message
-```ts
+```js
 // Just working in a private chat
 await suki.sendMessage(
     jid,
@@ -1022,7 +977,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons Product List Message
-```ts
+```js
 // Just working in a private chat
 await suki.sendMessage(
     jid,
@@ -1049,7 +1004,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons Cards Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -1108,7 +1063,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons Template Message
-```ts
+```js
 // This no longer works
 await suki.sendMessage(
     jid,
@@ -1141,7 +1096,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons Interactive Message
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -1430,7 +1385,7 @@ await suki.sendMessage(
 ```
 
 ### Buttons Interactive Message PIX
-```ts
+```js
 await suki.sendMessage( 
     jid, 
     { 
@@ -1455,7 +1410,7 @@ await suki.sendMessage(
  ```
 
 ### Buttons Interactive Message PAY
-```ts
+```js
 await suki.sendMessage( 
     jid, 
     { 
@@ -1505,8 +1460,8 @@ await suki.sendMessage(
  ```
 
 ### Status Mentions Message
-```ts
-const jidat = [
+```js
+const jids = [
     '123451679@g.us', 
     '124848899@g.us', 
     '111384848@g.us', 
@@ -1514,48 +1469,52 @@ const jidat = [
     '62xxxxxxx@s.whatsapp.net'
 ]
 // Text
-await suki.sendStatusMentions(
-    {
-      text: 'Hello Everyone :3', 
-      font: 2, // optional
-      textColor: 'FF0000', // optional
-      backgroundColor: '#000000' // optional
-    }, 
-    jids // Limit to 5 mentions per status
+await suki.sendMessage( 
+    'status@broadcast', 
+    { 
+       text: 'Hello Everyone :3', 
+       font: 2, // optional
+       textColor: 'FF0000', // optional
+       backgroundColor: '#000000' // optional
+       statusMentions: jids
+   } 
 )
 
 // Image
-await suki.sendStatusMentions(
-    {
-      Image: { url: 'https://example.com/ruriooe.jpg' }, or image buffer
-      caption: 'Hello Everyone :3' // optional
-    }, 
-    jids // Limit to 5 mentions per status
+await suki.sendMessage( 
+    'status@broadcast', 
+    { 
+   	Image: { url: 'https://example.com/ruriooe.jpg' }, or image: buffer
+       caption: 'Hello Everyone :3', 
+       statusMentions: jids
+   } 
 )
 
 // Video
-await suki.sendStatusMentions(
-    {
-      video: { url: 'https://example.com/ruriooe.mp4' }, or video buffer
-      caption: 'Hello Everyone :3' // optional
-    }, 
-    jids // Limit to 5 mentions per status
+await suki.sendMessage( 
+    'status@broadcast', 
+    { 
+   	video: { url: 'https://example.com/ruriooe.mp4' }, or video: buffer
+       caption: 'Hello Everyone :3', 
+       statusMentions: jids
+   } 
 )
 
 // Audio
-await suki.sendStatusMentions(
-    {
-      audio: { url: 'https://example.com/ruriooe.mp3' }, or audio buffer
-      backgroundColor: '#000000', // optional 
-      mimetype: 'audio/mp4', 
-      ppt: true
-    }, 
-    jids // Limit to 5 mentions per status
+await suki.sendMessage( 
+    'status@broadcast', 
+    { 
+   	audio: { url: 'https://example.com/ruriooe.mp3' }, or audio: buffer
+       backgroundColor: '#000000', // optional 
+       mimetype: 'audio/mp4', 
+       ptt: true,
+       statusMentions: jids
+   } 
 )
 ```
 
 ### Shop Message
-```ts
+```js
 await suki.sendMessage(
     jid, 
     {      
@@ -1687,7 +1646,7 @@ await suki.sendMessage(
 )
 ```
 ### Collection Message
-```ts
+```js
 await suki.sendMessage(
     jid, 
     {      
@@ -1826,13 +1785,12 @@ await suki.sendMessage(
 ```
 
 ### AI Icon Feature 
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
-        text: 'Hi'
-    }, {
-    ai: true // Add ai usage and change it to true
+        text: 'Hi',
+        ai: true // Add ai usage and change it to true
     }
 )
 
@@ -1844,7 +1802,7 @@ await suki.relayMessage(
             text: 'Hi'
         }
     }, {
-    AI: true // Use capital letters
+    ai: true // Add ai usage and change it to true
     }
 )
 ```
@@ -1855,7 +1813,7 @@ await suki.relayMessage(
 2. Baileys has a function to generate the content for these link previews
 3. To enable this function's usage, add `unfurl.js` as a dependency to your project with `yarn add unfurl.js`
 4. Send a link:
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -1878,7 +1836,7 @@ Sending media (video, stickers, images) is easier & more efficient than ever.
 
 #### Gif Message
 - Whatsapp doesn't support `.gif` files, that's why we send gifs as common `.mp4` video with `gifPlayback` flag
-```ts
+```js
 await suki.sendMessage(
     jid, 
     { 
@@ -1890,7 +1848,7 @@ await suki.sendMessage(
 ```
 
 #### Video Message
-```ts
+```js
 await suki.sendMessage(
     id, 
     { 
@@ -1903,7 +1861,7 @@ await suki.sendMessage(
 ```
 
 #### Video Ptv Message
-```ts
+```js
 await suki.sendMessage(
     id, 
     { 
@@ -1927,7 +1885,7 @@ await suki.sendMessage(
     ```bash
     ffmpeg -i input.mp4 -avoid_negative_ts make_zero -ac 1 output.ogg
     ```
-```ts
+```js
 await suki.sendMessage(
     jid, 
     {
@@ -1940,7 +1898,7 @@ await suki.sendMessage(
 ```
 
 #### Image Message
-```ts
+```js
 await suki.sendMessage(
     id, 
     { 
@@ -1953,7 +1911,7 @@ await suki.sendMessage(
 ```
 
 ### Album Message
-```ts
+```js
 await suki.sendMessage(
     id, 
     { 
@@ -1982,7 +1940,7 @@ await suki.sendMessage(
 
 - You can send all messages above as `viewOnce`, you only need to pass `viewOnce: true` in content object
 
-```ts
+```js
 await suki.sendMessage(
     id, 
     { 
@@ -1999,7 +1957,7 @@ await suki.sendMessage(
 
 ### Deleting Messages (for everyone)
 
-```ts
+```js
 const msg = await suki.sendMessage(jid, { text: 'hello word' })
 await suki.sendMessage(jid, { delete: msg.key })
 ```
@@ -2009,7 +1967,7 @@ await suki.sendMessage(jid, { delete: msg.key })
 ### Editing Messages
 
 - You can pass all editable contents here
-```ts
+```js
 await suki.sendMessage(jid, {
       text: 'updated text goes here',
       edit: response.key,
@@ -2025,7 +1983,7 @@ await suki.sendMessage(jid, {
 ### Downloading Media Messages
 
 If you want to save the media you received
-```ts
+```js
 import { createWriteStream } from 'fs'
 import { downloadMediaMessage, getContentType } from '@itsukichan/baileys'
 
@@ -2057,7 +2015,7 @@ suki.ev.on('messages.upsert', async ({ [m] }) => {
 ### Re-upload Media Message to Whatsapp
 
 - WhatsApp automatically removes old media from their servers. For the device to access said media -- a re-upload is required by another device that has it. This can be accomplished using: 
-```ts
+```js
 await suki.updateMediaMessage(msg)
 ```
 
@@ -2065,7 +2023,7 @@ await suki.updateMediaMessage(msg)
 
 - You can obtain `callId` and `callFrom` from `call` event
 
-```ts
+```js
 await suki.rejectCall(callId, callFrom)
 ```
 
@@ -2076,7 +2034,7 @@ await suki.rejectCall(callId, callFrom)
 - You cannot mark an entire 'chat' read as it were with Baileys Web.
 This means you have to keep track of unread messages.
 
-```ts
+```js
 const key: WAMessageKey
 // can pass multiple keys to read multiple messages as well
 await suki.readMessages([key])
@@ -2091,7 +2049,7 @@ On a `WAMessage`, the `messageID` can be accessed using ```messageID = message.k
 - The presence expires after about 10 seconds.
 - This lets the person/group with `jid` know whether you're online, offline, typing etc. 
 
-```ts
+```js
 await suki.sendPresenceUpdate('available', jid) 
 ```
 
@@ -2106,7 +2064,7 @@ WA uses an encrypted form of communication to send chat/app updates. This has be
 > If you mess up one of your updates, WA can log you out of all your devices and you'll have to log in again.
 
 ### Archive a Chat
-```ts
+```js
 const lastMsgInChat = await getLastMessageInChat(jid) // implement this on your end
 await suki.chatModify({ archive: true, lastMessages: [lastMsgInChat] }, jid)
 ```
@@ -2120,21 +2078,21 @@ await suki.chatModify({ archive: true, lastMessages: [lastMsgInChat] }, jid)
 | 8h     | 86.400.000     |
 | 7d     | 604.800.000    |
 
-```ts
+```js
 // mute for 8 hours
 await suki.chatModify({ mute: 8 * 60 * 60 * 1000 }, jid)
 // unmute
 await suki.chatModify({ mute: null }, jid)
 ```
 ### Mark a Chat Read/Unread
-```ts
+```js
 const lastMsgInChat = await getLastMessageInChat(jid) // implement this on your end
 // mark it unread
 await suki.chatModify({ markRead: false, lastMessages: [lastMsgInChat] }, jid)
 ```
 
 ### Delete a Message for Me
-```ts
+```js
 await suki.chatModify(
     {
         clear: {
@@ -2152,7 +2110,7 @@ await suki.chatModify(
 
 ```
 ### Delete a Chat
-```ts
+```js
 const lastMsgInChat = await getLastMessageInChat(jid) // implement this on your end
 await suki.chatModify({
         delete: true,
@@ -2167,7 +2125,7 @@ await suki.chatModify({
 )
 ```
 ### Pin/Unpin a Chat
-```ts
+```js
 await suki.chatModify({
         pin: true // or `false` to unpin
     },
@@ -2175,7 +2133,7 @@ await suki.chatModify({
 )
 ```
 ### Star/Unstar a Message
-```ts
+```js
 await suki.chatModify({
         star: {
             messages: [
@@ -2204,7 +2162,7 @@ await suki.chatModify({
 
 - You need to pass in **Seconds**, default is 7 days
 
-```ts
+```js
 // turn on disappearing messages
 await suki.sendMessage(
     jid, 
@@ -2223,14 +2181,14 @@ await suki.sendMessage(
 ```
 
 ### Clear Messages
-```ts
+```js
 await suki.clearMessage(jid, key, timestamps) 
 ```
 
 ## User Querys
 
 ### Check If ID Exists in Whatsapp
-```ts
+```js
 const [result] = await suki.onWhatsApp(jid)
 if (result.exists) console.log (`${jid} exists on WhatsApp, as jid: ${result.jid}`)
 ```
@@ -2238,7 +2196,7 @@ if (result.exists) console.log (`${jid} exists on WhatsApp, as jid: ${result.jid
 ### Query Chat History (groups too)
 
 - You need to have oldest message in chat
-```ts
+```js
 const msg = await getOldestMessageInChat(jid)
 await suki.fetchMessageHistory(
     50, //quantity (max: 50 per query)
@@ -2249,27 +2207,27 @@ await suki.fetchMessageHistory(
 - Messages will be received in `messaging.history-set` event
 
 ### Fetch Status
-```ts
+```js
 const status = await suki.fetchStatus(jid)
 console.log('status: ' + status)
 ```
 
 ### Fetch Profile Picture
 - To get the display picture of some person, group and channel
-```ts
+```js
 // for low res picture
 const ppUrl = await suki.profilePictureUrl(jid)
 console.log(ppUrl)
 ```
 
 ### Fetch Bussines Profile (such as description or category)
-```ts
+```js
 const profile = await suki.getBusinessProfile(jid)
 console.log('business description: ' + profile.description + ', category: ' + profile.category)
 ```
 
 ### Fetch Someone's Presence (if they're typing or online)
-```ts
+```js
 // the presence update is fetched and called here
 suki.ev.on('presence.update', console.log)
 
@@ -2280,11 +2238,11 @@ await suki.presenceSubscribe(jid)
 ## Change Profile
 
 ### Change Profile Status
-```ts
+```js
 await suki.updateProfileStatus('Hello World!')
 ```
 ### Change Profile Name
-```ts
+```js
 await suki.updateProfileName('My name')
 ```
 ### Change Display Picture (groups too)
@@ -2293,11 +2251,11 @@ await suki.updateProfileName('My name')
 > [!NOTE]
 > Like media messages, you can pass `{ stream: Stream }` or `{ url: Url }` or `Buffer` directly, you can see more [here](https://baileys.whiskeysockets.io/types/WAMediaUpload.html)
 
-```ts
+```js
 await suki.updateProfilePicture(jid, { url: './new-profile-picture.jpeg' })
 ```
 ### Remove display picture (groups too)
-```ts
+```js
 await suki.removeProfilePicture(jid)
 ```
 
@@ -2306,14 +2264,14 @@ await suki.removeProfilePicture(jid)
 - To change group properties you need to be admin
 
 ### Create a Group
-```ts
+```js
 // title & participants
 const group = await suki.groupCreate('My Fab Group', ['1234@s.whatsapp.net', '4564@s.whatsapp.net'])
 console.log('created group with id: ' + group.gid)
 await suki.sendMessage(group.id, { text: 'hello there' }) // say hello to everyone on the group
 ```
 ### Add/Remove or Demote/Promote
-```ts
+```js
 // id & people to add to the group (will throw error if it fails)
 await suki.groupParticipantsUpdate(
     jid, 
@@ -2322,15 +2280,15 @@ await suki.groupParticipantsUpdate(
 )
 ```
 ### Change Subject (name)
-```ts
+```js
 await suki.groupUpdateSubject(jid, 'New Subject!')
 ```
 ### Change Description
-```ts
+```js
 await suki.groupUpdateDescription(jid, 'New Description!')
 ```
 ### Change Settings
-```ts
+```js
 // only allow admins to send messages
 await suki.groupSettingUpdate(jid, 'announcement')
 // allow everyone to send messages
@@ -2341,49 +2299,49 @@ await suki.groupSettingUpdate(jid, 'unlocked')
 await suki.groupSettingUpdate(jid, 'locked')
 ```
 ### Leave a Group
-```ts
+```js
 // will throw error if it fails
 await suki.groupLeave(jid)
 ```
 ### Get Invite Code
 - To create link with code use `'https://chat.whatsapp.com/' + code`
-```ts
+```js
 const code = await suki.groupInviteCode(jid)
 console.log('group code: ' + code)
 ```
 ### Revoke Invite Code
-```ts
+```js
 const code = await suki.groupRevokeInvite(jid)
 console.log('New group code: ' + code)
 ```
 ### Join Using Invitation Code
 - Code can't have `https://chat.whatsapp.com/`, only code
-```ts
+```js
 const response = await suki.groupAcceptInvite(code)
 console.log('joined to: ' + response)
 ```
 ### Get Group Info by Invite Code
-```ts
+```js
 const response = await suki.groupGetInviteInfo(code)
 console.log('group information: ' + response)
 ```
 ### Query Metadata (participants, name, description...)
-```ts
+```js
 const metadata = await suki.groupMetadata(jid) 
 console.log(metadata.id + ', title: ' + metadata.subject + ', description: ' + metadata.desc)
 ```
 ### Join using `groupInviteMessage`
-```ts
+```js
 const response = await suki.groupAcceptInviteV4(jid, groupInviteMessage)
 console.log('joined to: ' + response)
 ```
 ### Get Request Join List
-```ts
+```js
 const response = await suki.groupRequestParticipantsList(jid)
 console.log(response)
 ```
 ### Approve/Reject Request Join
-```ts
+```js
 const response = await suki.groupRequestParticipantsUpdate(
     jid, // group id
     ['abcd@s.whatsapp.net', 'efgh@s.whatsapp.net'],
@@ -2392,7 +2350,7 @@ const response = await suki.groupRequestParticipantsUpdate(
 console.log(response)
 ```
 ### Get All Participating Groups Metadata
-```ts
+```js
 const response = await suki.groupFetchAllParticipating()
 console.log(response)
 ```
@@ -2407,12 +2365,12 @@ console.log(response)
 | 7d     | 604.800    |
 | 90d    | 7.776.000  |
 
-```ts
+```js
 await suki.groupToggleEphemeral(jid, 86400)
 ```
 
 ### Change Add Mode
-```ts
+```js
 await suki.groupMemberAddMode(
     jid,
     'all_member_add' // or 'admin_add'
@@ -2422,47 +2380,47 @@ await suki.groupMemberAddMode(
 ## Privacy
 
 ### Block/Unblock User
-```ts
+```js
 await suki.updateBlockStatus(jid, 'block') // Block user
 await suki.updateBlockStatus(jid, 'unblock') // Unblock user
 ```
 ### Get Privacy Settings
-```ts
+```js
 const privacySettings = await suki.fetchPrivacySettings(true)
 console.log('privacy settings: ' + privacySettings)
 ```
 ### Get BlockList
-```ts
+```js
 const response = await suki.fetchBlocklist()
 console.log(response)
 ```
 ### Update LastSeen Privacy
-```ts
+```js
 const value = 'all' // 'contacts' | 'contact_blacklist' | 'none'
 await suki.updateLastSeenPrivacy(value)
 ```
 ### Update Online Privacy
-```ts
+```js
 const value = 'all' // 'match_last_seen'
 await suki.updateOnlinePrivacy(value)
 ```
 ### Update Profile Picture Privacy
-```ts
+```js
 const value = 'all' // 'contacts' | 'contact_blacklist' | 'none'
 await suki.updateProfilePicturePrivacy(value)
 ```
 ### Update Status Privacy
-```ts
+```js
 const value = 'all' // 'contacts' | 'contact_blacklist' | 'none'
 await suki.updateStatusPrivacy(value)
 ```
 ### Update Read Receipts Privacy
-```ts
+```js
 const value = 'all' // 'none'
 await suki.updateReadReceiptsPrivacy(value)
 ```
 ### Update Groups Add Privacy
-```ts
+```js
 const value = 'all' // 'contacts' | 'contact_blacklist'
 await suki.updateGroupsAddPrivacy(value)
 ```
@@ -2477,7 +2435,7 @@ await suki.updateGroupsAddPrivacy(value)
 | 7d     | 604.800    |
 | 90d    | 7.776.000  |
 
-```ts
+```js
 const ephemeral = 86400 
 await suki.updateDefaultDisappearingMode(ephemeral)
 ```
@@ -2486,7 +2444,7 @@ await suki.updateDefaultDisappearingMode(ephemeral)
 
 ### Send Broadcast & Stories
 - Messages can be sent to broadcasts & stories. You need to add the following message options in sendMessage, like this:
-```ts
+```js
 await suki.sendMessage(
     jid,
     {
@@ -2512,17 +2470,443 @@ await suki.sendMessage(
 - Right now, WA Web does not support creating broadcast lists, but you can still delete them.
 - Broadcast IDs are in the format `12345678@broadcast`
 ### Query a Broadcast List's Recipients & Name
-```ts
+```js
 const bList = await suki.getBroadcastListInfo('1234@broadcast')
 console.log (`list name: ${bList.name}, recps: ${bList.recipients}`)
 ```
+
+## Message Secret
+
+- These helpers let you manually encrypt and decrypt WhatsApp interactive messages — poll votes, comments, reactions, event edits, event responses, and bot messages
+- All functions require `messageSecret` from `message?.messageContextInfo?.messageSecret` of the **original** message. Make sure the message is stored via `makeInMemoryStore` before calling these
+- Internally all functions use **HKDF-SHA256 + AES-256-GCM** — not HMAC-SHA256
+
+> [!IMPORTANT]
+> All `encrypt*` functions and all `decrypt*` context fields use **LID JID** (e.g. `suki.user.lid`), **not** the phone JID. Passing a phone JID here will silently produce wrong keys and fail decryption.
+
+### Encrypt Poll Vote
+
+- Sends a vote to an existing poll
+- `selectedOptions` must be an **array** of option names, exactly matching the poll text (case-sensitive)
+
+```js
+import { encryptPollVote, generateWAMessageFromContent, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        const pollContent = msg.message?.pollCreationMessageV3
+                         || msg.message?.pollCreationMessageV2
+                         || msg.message?.pollCreationMessage
+        if (!pollContent || msg.key.fromMe) return
+
+        const pollMessage = await store.loadMessage(msg.key.remoteJid, msg.key.id)
+        const pollEncKey = pollMessage?.message?.messageContextInfo?.messageSecret
+        if (!pollEncKey) return
+
+        const allOptions = pollContent.options?.map(o => o.optionName) ?? []
+        const selectedOptions = [allOptions[0]] // must be an array, even for single option
+
+        const encryptedPayload = await encryptPollVote(
+            pollMessage.key,                    // key of the poll message
+            selectedOptions,                    // array of selected option names
+            jidNormalizedUser(suki.user.lid),   // LID JID, not phone JID
+            pollEncKey
+        )
+
+        const fullMsg = await generateWAMessageFromContent(
+            msg.key.remoteJid,
+            encryptedPayload,
+            { userJid: suki.user.id }
+        )
+
+        await suki.relayMessage(msg.key.remoteJid, fullMsg.message, {
+            messageId: fullMsg.key.id
+        })
+    }
+})
+```
+
+### Encrypt Comment
+
+- Sends an encrypted comment to a message in a **Community Announcement Group**
+
+```js
+import { encryptComment, generateWAMessageFromContent, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        if (msg.key.fromMe) return
+
+        const rootMessage = await store.loadMessage(msg.key.remoteJid, msg.key.id)
+        const commentEncKey = rootMessage?.message?.messageContextInfo?.messageSecret
+        if (!commentEncKey) return
+
+        const encryptedPayload = await encryptComment(
+            rootMessage.key,                    // key of the message being commented on
+            { conversation: 'Nice! 🔥' },       // any proto.Message content
+            jidNormalizedUser(suki.user.lid),   // LID JID, not phone JID
+            commentEncKey
+        )
+
+        const fullMsg = await generateWAMessageFromContent(
+            msg.key.remoteJid,
+            encryptedPayload,
+            { userJid: suki.user.id }
+        )
+
+        await suki.relayMessage(msg.key.remoteJid, fullMsg.message, {
+            messageId: fullMsg.key.id
+        })
+    }
+})
+```
+
+### Encrypt Reaction
+
+- Sends an encrypted reaction to a message in a **Community Announcement Group**
+
+```js
+import { encryptReaction, generateWAMessageFromContent, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        if (msg.key.fromMe) return
+
+        const rootMessage = await store.loadMessage(msg.key.remoteJid, msg.key.id)
+        const reactionEncKey = rootMessage?.message?.messageContextInfo?.messageSecret
+        if (!reactionEncKey) return
+
+        const encryptedPayload = await encryptReaction(
+            rootMessage.key,                    // key of the message being reacted to
+            { text: '❤️', groupingKey: '❤️', senderTimestampMs: Date.now() },
+            jidNormalizedUser(suki.user.lid),   // LID JID, not phone JID
+            reactionEncKey
+        )
+
+        const fullMsg = await generateWAMessageFromContent(
+            msg.key.remoteJid,
+            encryptedPayload,
+            { userJid: suki.user.id }
+        )
+
+        await suki.relayMessage(msg.key.remoteJid, fullMsg.message, {
+            messageId: fullMsg.key.id
+        })
+    }
+})
+```
+
+### Encrypt Event Edit
+
+- Edits an existing event message created by yourself
+- The encrypted payload wraps the full updated `proto.Message` content
+
+```js
+import { encryptEventEdit, generateWAMessageFromContent, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        if (msg.key.fromMe) return
+
+        const eventMessage = await store.loadMessage(msg.key.remoteJid, msg.key.id)
+        const eventEncKey = eventMessage?.message?.messageContextInfo?.messageSecret
+        if (!eventEncKey) return
+
+        const encryptedPayload = await encryptEventEdit(
+            eventMessage.key,                   // key of the original event message
+            { eventMessage: { name: 'Updated Event Name' } }, // updated proto.Message content
+            jidNormalizedUser(suki.user.lid),   // LID JID of the editor, not phone JID
+            eventEncKey
+        )
+
+        const fullMsg = await generateWAMessageFromContent(
+            msg.key.remoteJid,
+            encryptedPayload,
+            { userJid: suki.user.id }
+        )
+
+        await suki.relayMessage(msg.key.remoteJid, fullMsg.message, {
+            messageId: fullMsg.key.id
+        })
+    }
+})
+```
+
+### Encrypt Event Response
+
+- Sends an encrypted RSVP response to an event message (e.g. attending / not attending)
+
+```js
+import { encryptEventResponse, generateWAMessageFromContent, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        if (msg.key.fromMe) return
+
+        const eventMessage = await store.loadMessage(msg.key.remoteJid, msg.key.id)
+        const eventEncKey = eventMessage?.message?.messageContextInfo?.messageSecret
+        if (!eventEncKey) return
+
+        const encryptedPayload = await encryptEventResponse(
+            eventMessage.key,                   // key of the original event message
+            { response: 1 },                    // proto.Message.EventResponseMessage content
+            jidNormalizedUser(suki.user.lid),   // LID JID of the responder, not phone JID
+            eventEncKey
+        )
+
+        const fullMsg = await generateWAMessageFromContent(
+            msg.key.remoteJid,
+            encryptedPayload,
+            { userJid: suki.user.id }
+        )
+
+        await suki.relayMessage(msg.key.remoteJid, fullMsg.message, {
+            messageId: fullMsg.key.id
+        })
+    }
+})
+```
+
+### Decrypt Poll Vote
+
+- Decrypts a received poll vote using HKDF-SHA256 + AES-256-GCM
+- For most cases prefer `getAggregateVotesInPollMessage` — use this only when you need the raw decoded vote
+- Context fields must be **LID JIDs** (`pollCreatorLid`, `voterLid`), not phone JIDs
+
+```js
+import { decryptPollVote, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.update', async (chatUpdate) => {
+    for (const { key, update } of chatUpdate) {
+        if (!update.pollUpdates) continue
+
+        const pollMsg = await store.loadMessage(key.remoteJid, key.id)
+        const pollEncKey = pollMsg?.message?.messageContextInfo?.messageSecret
+        if (!pollEncKey) continue
+
+        const meLid = jidNormalizedUser(suki.user.lid)
+
+        for (const pollUpdate of update.pollUpdates) {
+            const voterLid = jidNormalizedUser(
+                pollUpdate.pollUpdateMessageKey?.participant ?? key.remoteJid
+            )
+            const voteMsg = await decryptPollVote(pollUpdate.vote, {
+                pollEncKey,
+                pollCreatorLid: jidNormalizedUser(key.participant ?? meLid), // LID, not phone JID
+                pollMsgId: key.id,
+                voterLid                                                      // LID, not phone JID
+            })
+            console.log('selected options hashes:', voteMsg.selectedOptions)
+        }
+    }
+})
+```
+
+### Decrypt Comment
+
+- Decrypts a received encrypted comment from a Community Announcement Group
+- Context fields must be **LID JIDs** (`commentCreatorLid`, `commentLid`), not phone JIDs
+
+```js
+import { decryptComment, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        const encComment = msg.message?.encCommentMessage
+        if (!encComment) continue
+
+        const rootMsg = await store.loadMessage(encComment.targetMessageKey.remoteJid, encComment.targetMessageKey.id)
+        const commentEncKey = rootMsg?.message?.messageContextInfo?.messageSecret
+        if (!commentEncKey) continue
+
+        const meLid = jidNormalizedUser(suki.user.lid)
+        const commentCreatorLid = jidNormalizedUser(encComment.targetMessageKey.participant ?? meLid)
+        const commentLid = jidNormalizedUser(msg.key.participant ?? meLid)
+
+        const decrypted = await decryptComment(encComment, {
+            commentEncKey,
+            commentCreatorLid, // LID, not phone JID
+            commentMsgId: encComment.targetMessageKey.id,
+            commentLid         // LID, not phone JID
+        })
+        console.log('decrypted comment:', decrypted)
+    }
+})
+```
+
+### Decrypt Reaction
+
+- Decrypts a received encrypted reaction from a Community Announcement Group
+- Context fields must be **LID JIDs** (`reactionCreatorLid`, `reactionLid`), not phone JIDs
+
+```js
+import { decryptReaction, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        const encReaction = msg.message?.encReactionMessage
+        if (!encReaction) continue
+
+        const rootMsg = await store.loadMessage(encReaction.targetMessageKey.remoteJid, encReaction.targetMessageKey.id)
+        const reactionEncKey = rootMsg?.message?.messageContextInfo?.messageSecret
+        if (!reactionEncKey) continue
+
+        const meLid = jidNormalizedUser(suki.user.lid)
+        const reactionCreatorLid = jidNormalizedUser(encReaction.targetMessageKey.participant ?? meLid)
+        const reactionLid = jidNormalizedUser(msg.key.participant ?? meLid)
+
+        const decrypted = await decryptReaction(encReaction, {
+            reactionEncKey,
+            reactionCreatorLid, // LID, not phone JID
+            reactionMsgId: encReaction.targetMessageKey.id,
+            reactionLid         // LID, not phone JID
+        })
+        console.log('decrypted reaction:', decrypted.text)
+    }
+})
+```
+
+### Decrypt Event Edit
+
+- Decrypts an encrypted edit to an existing event message
+- Context fields must be **LID JIDs** (`eventCreatorLid`, `responderLid`), not phone JIDs
+
+```js
+import { decryptEventEdit, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        const encEdit = msg.message?.secretEncryptedMessage
+        if (!encEdit) continue
+
+        const eventMsg = await store.loadMessage(encEdit.targetMessageKey.remoteJid, encEdit.targetMessageKey.id)
+        const eventEncKey = eventMsg?.message?.messageContextInfo?.messageSecret
+        if (!eventEncKey) continue
+
+        const decrypted = await decryptEventEdit(encEdit, {
+            eventEncKey,
+            eventCreatorLid: jidNormalizedUser(encEdit.targetMessageKey.participant ?? encEdit.targetMessageKey.remoteJid), // LID, not phone JID
+            eventMsgId: encEdit.targetMessageKey.id,
+            responderLid: jidNormalizedUser(msg.key.participant ?? msg.key.remoteJid) // LID, not phone JID
+        })
+        console.log('edited event:', decrypted)
+    }
+})
+```
+
+### Decrypt Event Response
+
+- Decrypts a received encrypted event RSVP response
+- Context fields must be **LID JIDs** (`eventCreatorLid`, `responderLid`), not phone JIDs
+
+```js
+import { decryptEventResponse, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        const encResponse = msg.message?.encEventResponseMessage
+        if (!encResponse) continue
+
+        const eventMsg = await store.loadMessage(encResponse.eventCreationMessageKey.remoteJid, encResponse.eventCreationMessageKey.id)
+        const eventEncKey = eventMsg?.message?.messageContextInfo?.messageSecret
+        if (!eventEncKey) continue
+
+        const decrypted = await decryptEventResponse(encResponse, {
+            eventEncKey,
+            eventCreatorLid: jidNormalizedUser(encResponse.eventCreationMessageKey.participant ?? encResponse.eventCreationMessageKey.remoteJid), // LID, not phone JID
+            eventMsgId: encResponse.eventCreationMessageKey.id,
+            responderLid: jidNormalizedUser(msg.key.participant ?? msg.key.remoteJid) // LID, not phone JID
+        })
+        console.log('event response:', decrypted)
+    }
+})
+```
+
+### Decrypt Bot Message
+
+- Decrypts an encrypted bot-generated message (`msmsg`) received from a WhatsApp bot
+- Applies an extra `HKDF("Bot Message")` derivation on top of the standard key derivation before decrypting
+
+```js
+import { decryptBotMessage, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.upsert', async ({ messages }) => {
+    for (const msg of messages) {
+        const msMsg = msg.message?.messageSecretMessage
+        if (!msMsg) continue
+
+        const ctx = msg.message?.messageContextInfo
+        if (!ctx?.messageSecret) continue
+
+        const decrypted = await decryptBotMessage(
+            ctx.messageSecret,                                          // messageSecret from messageContextInfo
+            msMsg,                                                      // encrypted bot message payload (encPayload + encIv)
+            msg.key.id,                                                 // message ID
+            jidNormalizedUser(ctx.senderKeyDistributionMessage?.groupId ?? msg.key.remoteJid), // target sender JID
+            jidNormalizedUser(msg.key.participant ?? msg.key.remoteJid) // bot sender JID
+        )
+        console.log('decrypted bot message buffer:', decrypted)
+    }
+})
+```
+
+### Aggregate Poll Votes
+
+- Convenience helper — resolves hashes back to option names and builds a per-option voter list
+- Uses `meId` (phone JID) as fallback author when participant field is missing
+- Requires the store to have accumulated the `pollUpdates` on the poll creation message
+
+```js
+import { getAggregateVotesInPollMessage, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.update', async (chatUpdate) => {
+    for (const { key, update } of chatUpdate) {
+        if (!update.pollUpdates) continue
+
+        const pollMsg = await store.loadMessage(key.remoteJid, key.id)
+        if (!pollMsg) continue
+
+        // Returns: [{ name: string, voters: string[] }, ...]
+        const votes = getAggregateVotesInPollMessage(pollMsg, suki.user.id)
+        console.log('poll results:', votes)
+        // e.g. [{ name: 'Option A', voters: ['628xxx@s.whatsapp.net'] }, ...]
+    }
+})
+```
+
+### Aggregate Event Responses
+
+- Convenience helper — groups RSVP responders by response type (GOING / NOT_GOING / MAYBE)
+- Uses `meLid` (LID JID, **not** phone JID) as fallback author
+- Event responses are automatically decrypted by the library and stored as `eventResponses` on the event creation message via `messages.update`
+
+```js
+import { getAggregateResponsesInEventMessage, jidNormalizedUser } from '@itsukichan/baileys'
+
+suki.ev.on('messages.update', async (chatUpdate) => {
+    for (const { key, update } of chatUpdate) {
+        if (!update.eventResponses) continue
+
+        const eventMsg = await store.loadMessage(key.remoteJid, key.id)
+        if (!eventMsg) continue
+
+        // Returns: [{ response: 'GOING'|'NOT_GOING'|'MAYBE', responders: string[] }, ...]
+        const responses = getAggregateResponsesInEventMessage(eventMsg, jidNormalizedUser(suki.user.lid))
+        console.log('event responses:', responses)
+        // e.g. [{ response: 'GOING', responders: ['628xxx@lid'] }, ...]
+    }
+})
+```
+
+> [!NOTE]
+> **Event edits and event responses are decrypted automatically by the library.** You do not need to call `decryptEventEdit` or `decryptEventResponse` manually in most cases — the library handles it internally via `processMessage` and emits the results through `messages.update`. Use the manual decrypt functions only when you need low-level access outside the normal message pipeline.
 
 ## Writing Custom Functionality
 Baileys is written with custom functionality in mind. Instead of forking the project & re-writing the internals, you can simply write your own extensions.
 
 ### Enabling Debug Level in Baileys Logs
 First, enable the logging of unhandled messages from WhatsApp by setting:
-```ts
+```js
 const suki = makeWASocket({
     logger: P({ level: 'debug' }),
 })
@@ -2576,7 +2960,7 @@ The `'frame'` is what the message received is, it has three components:
 > [!TIP]
 > Recommended to see `onMessageReceived` function in `socket.ts` file to understand how websockets events are fired
 
-```ts
+```js
 // for any message with tag 'edge_routing'
 suki.ws.on('CB:edge_routing', (node: BinaryNode) => { })
 

@@ -1,6 +1,6 @@
 {
   "name": "@itsukichan/baileys",
-  "version": "7.3.2",
+  "version": "7.3.3",
   "description": "WhatsApp API Modification By Itsukichann",
   "keywords": [
     "whatsapp",
@@ -80,11 +80,14 @@
 
   "peerDependencies": {
     "jimp": "^0.22.12", 
-    "sharp": "*"
+    "sharp": "0.34.3"
   },
 
   "peerDependenciesMeta": {
     "jimp": {
+      "optional": true
+    },
+    "sharp": {
       "optional": true
     }
   },

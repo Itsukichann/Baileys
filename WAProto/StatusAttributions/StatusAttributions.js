@@ -116,23 +116,13 @@ $root.StatusAttributions = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * StatusAttribution _type.
-         * @member {"type"|undefined} _type
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(StatusAttribution.prototype, "_type", {
             get: $util.oneOfGetter($oneOfFields = ["type"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * StatusAttribution _actionUrl.
-         * @member {"actionUrl"|undefined} _actionUrl
-         * @memberof StatusAttributions.StatusAttribution
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(StatusAttribution.prototype, "_actionUrl", {
             get: $util.oneOfGetter($oneOfFields = ["actionUrl"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -307,6 +297,8 @@ $root.StatusAttributions = (function() {
                 case 6:
                 case 7:
                 case 8:
+                case 9:
+                case 10:
                     break;
                 }
             }
@@ -430,6 +422,14 @@ $root.StatusAttributions = (function() {
             case "LAYOUTS":
             case 8:
                 message.type = 8;
+                break;
+            case "NEWSLETTER_STATUS":
+            case 9:
+                message.type = 9;
+                break;
+            case "STATUS_CLOSE_SHARING":
+            case 10:
+                message.type = 10;
                 break;
             }
             if (object.actionUrl != null)
@@ -584,12 +584,7 @@ $root.StatusAttributions = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AiCreatedAttribution _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.AiCreatedAttribution
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AiCreatedAttribution.prototype, "_source", {
                 get: $util.oneOfGetter($oneOfFields = ["source"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -867,45 +862,25 @@ $root.StatusAttributions = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ExternalShare _actionUrl.
-             * @member {"actionUrl"|undefined} _actionUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ExternalShare.prototype, "_actionUrl", {
                 get: $util.oneOfGetter($oneOfFields = ["actionUrl"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ExternalShare _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ExternalShare.prototype, "_source", {
                 get: $util.oneOfGetter($oneOfFields = ["source"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ExternalShare _duration.
-             * @member {"duration"|undefined} _duration
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ExternalShare.prototype, "_duration", {
                 get: $util.oneOfGetter($oneOfFields = ["duration"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ExternalShare _actionFallbackUrl.
-             * @member {"actionFallbackUrl"|undefined} _actionFallbackUrl
-             * @memberof StatusAttributions.StatusAttribution.ExternalShare
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ExternalShare.prototype, "_actionFallbackUrl", {
                 get: $util.oneOfGetter($oneOfFields = ["actionFallbackUrl"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -1052,6 +1027,7 @@ $root.StatusAttributions = (function() {
                     case 8:
                     case 9:
                     case 10:
+                    case 11:
                         break;
                     }
                 }
@@ -1132,6 +1108,10 @@ $root.StatusAttributions = (function() {
                 case "GOOGLE_PHOTOS":
                 case 10:
                     message.source = 10;
+                    break;
+                case "SOUNDCLOUD":
+                case 11:
+                    message.source = 11;
                     break;
                 }
                 if (object.duration != null)
@@ -1218,6 +1198,7 @@ $root.StatusAttributions = (function() {
              * @property {number} APPLE_MUSIC=8 APPLE_MUSIC value
              * @property {number} SHARECHAT=9 SHARECHAT value
              * @property {number} GOOGLE_PHOTOS=10 GOOGLE_PHOTOS value
+             * @property {number} SOUNDCLOUD=11 SOUNDCLOUD value
              */
             ExternalShare.Source = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -1232,6 +1213,7 @@ $root.StatusAttributions = (function() {
                 values[valuesById[8] = "APPLE_MUSIC"] = 8;
                 values[valuesById[9] = "SHARECHAT"] = 9;
                 values[valuesById[10] = "GOOGLE_PHOTOS"] = 10;
+                values[valuesById[11] = "SOUNDCLOUD"] = 11;
                 return values;
             })();
 
@@ -1273,12 +1255,7 @@ $root.StatusAttributions = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * GroupStatus _authorJid.
-             * @member {"authorJid"|undefined} _authorJid
-             * @memberof StatusAttributions.StatusAttribution.GroupStatus
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(GroupStatus.prototype, "_authorJid", {
                 get: $util.oneOfGetter($oneOfFields = ["authorJid"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -1541,67 +1518,37 @@ $root.StatusAttributions = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * Music _authorName.
-             * @member {"authorName"|undefined} _authorName
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Music.prototype, "_authorName", {
                 get: $util.oneOfGetter($oneOfFields = ["authorName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Music _songId.
-             * @member {"songId"|undefined} _songId
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Music.prototype, "_songId", {
                 get: $util.oneOfGetter($oneOfFields = ["songId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Music _title.
-             * @member {"title"|undefined} _title
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Music.prototype, "_title", {
                 get: $util.oneOfGetter($oneOfFields = ["title"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Music _author.
-             * @member {"author"|undefined} _author
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Music.prototype, "_author", {
                 get: $util.oneOfGetter($oneOfFields = ["author"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Music _artistAttribution.
-             * @member {"artistAttribution"|undefined} _artistAttribution
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Music.prototype, "_artistAttribution", {
                 get: $util.oneOfGetter($oneOfFields = ["artistAttribution"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * Music _isExplicit.
-             * @member {"isExplicit"|undefined} _isExplicit
-             * @memberof StatusAttributions.StatusAttribution.Music
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(Music.prototype, "_isExplicit", {
                 get: $util.oneOfGetter($oneOfFields = ["isExplicit"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -1909,12 +1856,7 @@ $root.StatusAttributions = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * RLAttribution _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.RLAttribution
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(RLAttribution.prototype, "_source", {
                 get: $util.oneOfGetter($oneOfFields = ["source"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -2188,23 +2130,13 @@ $root.StatusAttributions = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * StatusReshare _source.
-             * @member {"source"|undefined} _source
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StatusReshare.prototype, "_source", {
                 get: $util.oneOfGetter($oneOfFields = ["source"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StatusReshare _metadata.
-             * @member {"metadata"|undefined} _metadata
-             * @memberof StatusAttributions.StatusAttribution.StatusReshare
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StatusReshare.prototype, "_metadata", {
                 get: $util.oneOfGetter($oneOfFields = ["metadata"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -2504,45 +2436,25 @@ $root.StatusAttributions = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * Metadata _duration.
-                 * @member {"duration"|undefined} _duration
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Metadata.prototype, "_duration", {
                     get: $util.oneOfGetter($oneOfFields = ["duration"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * Metadata _channelJid.
-                 * @member {"channelJid"|undefined} _channelJid
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Metadata.prototype, "_channelJid", {
                     get: $util.oneOfGetter($oneOfFields = ["channelJid"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * Metadata _channelMessageId.
-                 * @member {"channelMessageId"|undefined} _channelMessageId
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Metadata.prototype, "_channelMessageId", {
                     get: $util.oneOfGetter($oneOfFields = ["channelMessageId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * Metadata _hasMultipleReshares.
-                 * @member {"hasMultipleReshares"|undefined} _hasMultipleReshares
-                 * @memberof StatusAttributions.StatusAttribution.StatusReshare.Metadata
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Metadata.prototype, "_hasMultipleReshares", {
                     get: $util.oneOfGetter($oneOfFields = ["hasMultipleReshares"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -2815,6 +2727,8 @@ $root.StatusAttributions = (function() {
          * @property {number} RL_ATTRIBUTION=6 RL_ATTRIBUTION value
          * @property {number} AI_CREATED=7 AI_CREATED value
          * @property {number} LAYOUTS=8 LAYOUTS value
+         * @property {number} NEWSLETTER_STATUS=9 NEWSLETTER_STATUS value
+         * @property {number} STATUS_CLOSE_SHARING=10 STATUS_CLOSE_SHARING value
          */
         StatusAttribution.Type = (function() {
             var valuesById = {}, values = Object.create(valuesById);
@@ -2827,6 +2741,8 @@ $root.StatusAttributions = (function() {
             values[valuesById[6] = "RL_ATTRIBUTION"] = 6;
             values[valuesById[7] = "AI_CREATED"] = 7;
             values[valuesById[8] = "LAYOUTS"] = 8;
+            values[valuesById[9] = "NEWSLETTER_STATUS"] = 9;
+            values[valuesById[10] = "STATUS_CLOSE_SHARING"] = 10;
             return values;
         })();
 

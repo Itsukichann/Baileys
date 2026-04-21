@@ -1,0 +1,148 @@
+syntax = "proto3";
+package AICommonDeprecated;
+
+import "../StatusAttributions/StatusAttributions.proto";
+
+message AIRichResponseSubMessage {
+    optional AIRichResponseSubMessageType messageType = 1;
+    optional AIRichResponseGridImageMetadata gridImageMetadata = 2;
+    optional string messageText = 3;
+    optional AIRichResponseInlineImageMetadata imageMetadata = 4;
+    optional AIRichResponseCodeMetadata codeMetadata = 5;
+    optional AIRichResponseTableMetadata tableMetadata = 6;
+    optional AIRichResponseDynamicMetadata dynamicMetadata = 7;
+    optional AIRichResponseLatexMetadata latexMetadata = 8;
+    optional AIRichResponseMapMetadata mapMetadata = 9;
+    optional AIRichResponseContentItemsMetadata contentItemsMetadata = 10;
+}
+
+message AIRichResponseContentItemsMetadata {
+    repeated AIRichResponseContentItemMetadata itemsMetadata = 1;
+    optional ContentType contentType = 2;
+    message AIRichResponseContentItemMetadata {
+        oneof aIRichResponseContentItem {
+            AIRichResponseContentItemsMetadata.AIRichResponseReelItem reelItem = 1;
+        }
+    }
+    message AIRichResponseReelItem {
+        optional string title = 1;
+        optional string profileIconUrl = 2;
+        optional string thumbnailUrl = 3;
+        optional string videoUrl = 4;
+    }
+    enum ContentType {
+        DEFAULT = 0;
+        CAROUSEL = 1;
+    }
+}
+
+message AIRichResponseMapMetadata {
+    optional double centerLatitude = 1;
+    optional double centerLongitude = 2;
+    optional double latitudeDelta = 3;
+    optional double longitudeDelta = 4;
+    repeated AIRichResponseMapAnnotation annotations = 5;
+    optional bool showInfoList = 6;
+    message AIRichResponseMapAnnotation {
+        optional uint32 annotationNumber = 1;
+        optional double latitude = 2;
+        optional double longitude = 3;
+        optional string title = 4;
+        optional string body = 5;
+    }
+}
+
+message AIRichResponseLatexMetadata {
+    optional string text = 1;
+    repeated AIRichResponseLatexExpression expressions = 2;
+    message AIRichResponseLatexExpression {
+        optional string latexExpression = 1;
+        optional string url = 2;
+        optional double width = 3;
+        optional double height = 4;
+        optional double fontHeight = 5;
+        optional double imageTopPadding = 6;
+        optional double imageLeadingPadding = 7;
+        optional double imageBottomPadding = 8;
+        optional double imageTrailingPadding = 9;
+    }
+}
+
+message AIRichResponseDynamicMetadata {
+    optional AIRichResponseDynamicMetadataType type = 1;
+    optional uint64 version = 2;
+    optional string url = 3;
+    optional uint32 loopCount = 4;
+    enum AIRichResponseDynamicMetadataType {
+        AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_UNKNOWN = 0;
+        AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_IMAGE = 1;
+        AI_RICH_RESPONSE_DYNAMIC_METADATA_TYPE_GIF = 2;
+    }
+}
+
+message AIRichResponseTableMetadata {
+    repeated AIRichResponseTableRow rows = 1;
+    optional string title = 2;
+    message AIRichResponseTableRow {
+        repeated string items = 1;
+        optional bool isHeading = 2;
+    }
+}
+
+message AIRichResponseCodeMetadata {
+    optional string codeLanguage = 1;
+    repeated AIRichResponseCodeBlock codeBlocks = 2;
+    message AIRichResponseCodeBlock {
+        optional AIRichResponseCodeMetadata.AIRichResponseCodeHighlightType highlightType = 1;
+        optional string codeContent = 2;
+    }
+    enum AIRichResponseCodeHighlightType {
+        AI_RICH_RESPONSE_CODE_HIGHLIGHT_DEFAULT = 0;
+        AI_RICH_RESPONSE_CODE_HIGHLIGHT_KEYWORD = 1;
+        AI_RICH_RESPONSE_CODE_HIGHLIGHT_METHOD = 2;
+        AI_RICH_RESPONSE_CODE_HIGHLIGHT_STRING = 3;
+        AI_RICH_RESPONSE_CODE_HIGHLIGHT_NUMBER = 4;
+        AI_RICH_RESPONSE_CODE_HIGHLIGHT_COMMENT = 5;
+    }
+}
+
+message AIRichResponseInlineImageMetadata {
+    optional AIRichResponseImageURL imageUrl = 1;
+    optional string imageText = 2;
+    optional AIRichResponseImageAlignment alignment = 3;
+    optional string tapLinkUrl = 4;
+    enum AIRichResponseImageAlignment {
+        AI_RICH_RESPONSE_IMAGE_LAYOUT_LEADING_ALIGNED = 0;
+        AI_RICH_RESPONSE_IMAGE_LAYOUT_TRAILING_ALIGNED = 1;
+        AI_RICH_RESPONSE_IMAGE_LAYOUT_CENTER_ALIGNED = 2;
+    }
+}
+
+message AIRichResponseGridImageMetadata {
+    optional AIRichResponseImageURL gridImageUrl = 1;
+    repeated AIRichResponseImageURL imageUrls = 2;
+}
+
+message AIRichResponseImageURL {
+    optional string imagePreviewUrl = 1;
+    optional string imageHighResUrl = 2;
+    optional string sourceUrl = 3;
+}
+
+enum AIRichResponseSubMessageType {
+    AI_RICH_RESPONSE_UNKNOWN = 0;
+    AI_RICH_RESPONSE_GRID_IMAGE = 1;
+    AI_RICH_RESPONSE_TEXT = 2;
+    AI_RICH_RESPONSE_INLINE_IMAGE = 3;
+    AI_RICH_RESPONSE_TABLE = 4;
+    AI_RICH_RESPONSE_CODE = 5;
+    AI_RICH_RESPONSE_DYNAMIC = 6;
+    AI_RICH_RESPONSE_MAP = 7;
+    AI_RICH_RESPONSE_LATEX = 8;
+    AI_RICH_RESPONSE_CONTENT_ITEMS = 9;
+}
+
+enum AIRichResponseMessageType {
+    AI_RICH_RESPONSE_TYPE_UNKNOWN = 0;
+    AI_RICH_RESPONSE_TYPE_STANDARD = 1;
+}

@@ -80,45 +80,25 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * LimitSharing _sharingLimited.
-         * @member {"sharingLimited"|undefined} _sharingLimited
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_sharingLimited", {
             get: $util.oneOfGetter($oneOfFields = ["sharingLimited"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _trigger.
-         * @member {"trigger"|undefined} _trigger
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_trigger", {
             get: $util.oneOfGetter($oneOfFields = ["trigger"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _limitSharingSettingTimestamp.
-         * @member {"limitSharingSettingTimestamp"|undefined} _limitSharingSettingTimestamp
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_limitSharingSettingTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["limitSharingSettingTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _initiatedByMe.
-         * @member {"initiatedByMe"|undefined} _initiatedByMe
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_initiatedByMe", {
             get: $util.oneOfGetter($oneOfFields = ["initiatedByMe"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -474,45 +454,25 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * MessageKey _remoteJid.
-         * @member {"remoteJid"|undefined} _remoteJid
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_remoteJid", {
             get: $util.oneOfGetter($oneOfFields = ["remoteJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _fromMe.
-         * @member {"fromMe"|undefined} _fromMe
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_fromMe", {
             get: $util.oneOfGetter($oneOfFields = ["fromMe"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _id.
-         * @member {"id"|undefined} _id
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _participant.
-         * @member {"participant"|undefined} _participant
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_participant", {
             get: $util.oneOfGetter($oneOfFields = ["participant"]),
             set: $util.oneOfSetter($oneOfFields)

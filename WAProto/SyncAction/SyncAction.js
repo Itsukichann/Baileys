@@ -143,122 +143,67 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * PatchDebugData _currentLthash.
-         * @member {"currentLthash"|undefined} _currentLthash
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_currentLthash", {
             get: $util.oneOfGetter($oneOfFields = ["currentLthash"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _newLthash.
-         * @member {"newLthash"|undefined} _newLthash
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_newLthash", {
             get: $util.oneOfGetter($oneOfFields = ["newLthash"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _patchVersion.
-         * @member {"patchVersion"|undefined} _patchVersion
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_patchVersion", {
             get: $util.oneOfGetter($oneOfFields = ["patchVersion"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _collectionName.
-         * @member {"collectionName"|undefined} _collectionName
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_collectionName", {
             get: $util.oneOfGetter($oneOfFields = ["collectionName"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _firstFourBytesFromAHashOfSnapshotMacKey.
-         * @member {"firstFourBytesFromAHashOfSnapshotMacKey"|undefined} _firstFourBytesFromAHashOfSnapshotMacKey
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_firstFourBytesFromAHashOfSnapshotMacKey", {
             get: $util.oneOfGetter($oneOfFields = ["firstFourBytesFromAHashOfSnapshotMacKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _newLthashSubtract.
-         * @member {"newLthashSubtract"|undefined} _newLthashSubtract
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_newLthashSubtract", {
             get: $util.oneOfGetter($oneOfFields = ["newLthashSubtract"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _numberAdd.
-         * @member {"numberAdd"|undefined} _numberAdd
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_numberAdd", {
             get: $util.oneOfGetter($oneOfFields = ["numberAdd"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _numberRemove.
-         * @member {"numberRemove"|undefined} _numberRemove
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_numberRemove", {
             get: $util.oneOfGetter($oneOfFields = ["numberRemove"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _numberOverride.
-         * @member {"numberOverride"|undefined} _numberOverride
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_numberOverride", {
             get: $util.oneOfGetter($oneOfFields = ["numberOverride"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _senderPlatform.
-         * @member {"senderPlatform"|undefined} _senderPlatform
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_senderPlatform", {
             get: $util.oneOfGetter($oneOfFields = ["senderPlatform"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * PatchDebugData _isSenderPrimary.
-         * @member {"isSenderPrimary"|undefined} _isSenderPrimary
-         * @memberof SyncAction.PatchDebugData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(PatchDebugData.prototype, "_isSenderPrimary", {
             get: $util.oneOfGetter($oneOfFields = ["isSenderPrimary"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -804,45 +749,25 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * SyncActionData _index.
-         * @member {"index"|undefined} _index
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionData.prototype, "_index", {
             get: $util.oneOfGetter($oneOfFields = ["index"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionData _value.
-         * @member {"value"|undefined} _value
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionData.prototype, "_value", {
             get: $util.oneOfGetter($oneOfFields = ["value"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionData _padding.
-         * @member {"padding"|undefined} _padding
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionData.prototype, "_padding", {
             get: $util.oneOfGetter($oneOfFields = ["padding"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionData _version.
-         * @member {"version"|undefined} _version
-         * @memberof SyncAction.SyncActionData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionData.prototype, "_version", {
             get: $util.oneOfGetter($oneOfFields = ["version"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1166,6 +1091,13 @@ $root.SyncAction = (function() {
          * @property {SyncAction.SyncActionValue.IAiThreadRenameAction|null} [aiThreadRenameAction] SyncActionValue aiThreadRenameAction
          * @property {SyncAction.SyncActionValue.IInteractiveMessageAction|null} [interactiveMessageAction] SyncActionValue interactiveMessageAction
          * @property {SyncAction.SyncActionValue.ISettingsSyncAction|null} [settingsSyncAction] SyncActionValue settingsSyncAction
+         * @property {SyncAction.SyncActionValue.IOutContactAction|null} [outContactAction] SyncActionValue outContactAction
+         * @property {SyncAction.SyncActionValue.INctSaltSyncAction|null} [nctSaltSyncAction] SyncActionValue nctSaltSyncAction
+         * @property {SyncAction.SyncActionValue.IBusinessBroadcastCampaignAction|null} [businessBroadcastCampaignAction] SyncActionValue businessBroadcastCampaignAction
+         * @property {SyncAction.SyncActionValue.IBusinessBroadcastInsightsAction|null} [businessBroadcastInsightsAction] SyncActionValue businessBroadcastInsightsAction
+         * @property {SyncAction.SyncActionValue.ICustomerDataAction|null} [customerDataAction] SyncActionValue customerDataAction
+         * @property {SyncAction.SyncActionValue.ISubscriptionsSyncV2Action|null} [subscriptionsSyncV2Action] SyncActionValue subscriptionsSyncV2Action
+         * @property {SyncAction.SyncActionValue.IThreadPinAction|null} [threadPinAction] SyncActionValue threadPinAction
          */
 
         /**
@@ -1735,765 +1667,518 @@ $root.SyncAction = (function() {
          */
         SyncActionValue.prototype.settingsSyncAction = null;
 
-        // OneOf field names bound to virtual getters and setters
-        var $oneOfFields;
-
         /**
-         * SyncActionValue _timestamp.
-         * @member {"timestamp"|undefined} _timestamp
+         * SyncActionValue outContactAction.
+         * @member {SyncAction.SyncActionValue.IOutContactAction|null|undefined} outContactAction
          * @memberof SyncAction.SyncActionValue
          * @instance
          */
+        SyncActionValue.prototype.outContactAction = null;
+
+        /**
+         * SyncActionValue nctSaltSyncAction.
+         * @member {SyncAction.SyncActionValue.INctSaltSyncAction|null|undefined} nctSaltSyncAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
+        SyncActionValue.prototype.nctSaltSyncAction = null;
+
+        /**
+         * SyncActionValue businessBroadcastCampaignAction.
+         * @member {SyncAction.SyncActionValue.IBusinessBroadcastCampaignAction|null|undefined} businessBroadcastCampaignAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
+        SyncActionValue.prototype.businessBroadcastCampaignAction = null;
+
+        /**
+         * SyncActionValue businessBroadcastInsightsAction.
+         * @member {SyncAction.SyncActionValue.IBusinessBroadcastInsightsAction|null|undefined} businessBroadcastInsightsAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
+        SyncActionValue.prototype.businessBroadcastInsightsAction = null;
+
+        /**
+         * SyncActionValue customerDataAction.
+         * @member {SyncAction.SyncActionValue.ICustomerDataAction|null|undefined} customerDataAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
+        SyncActionValue.prototype.customerDataAction = null;
+
+        /**
+         * SyncActionValue subscriptionsSyncV2Action.
+         * @member {SyncAction.SyncActionValue.ISubscriptionsSyncV2Action|null|undefined} subscriptionsSyncV2Action
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
+        SyncActionValue.prototype.subscriptionsSyncV2Action = null;
+
+        /**
+         * SyncActionValue threadPinAction.
+         * @member {SyncAction.SyncActionValue.IThreadPinAction|null|undefined} threadPinAction
+         * @memberof SyncAction.SyncActionValue
+         * @instance
+         */
+        SyncActionValue.prototype.threadPinAction = null;
+
+        // OneOf field names bound to virtual getters and setters
+        var $oneOfFields;
+
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_timestamp", {
             get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _starAction.
-         * @member {"starAction"|undefined} _starAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_starAction", {
             get: $util.oneOfGetter($oneOfFields = ["starAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _contactAction.
-         * @member {"contactAction"|undefined} _contactAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_contactAction", {
             get: $util.oneOfGetter($oneOfFields = ["contactAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _muteAction.
-         * @member {"muteAction"|undefined} _muteAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_muteAction", {
             get: $util.oneOfGetter($oneOfFields = ["muteAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _pinAction.
-         * @member {"pinAction"|undefined} _pinAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_pinAction", {
             get: $util.oneOfGetter($oneOfFields = ["pinAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _pushNameSetting.
-         * @member {"pushNameSetting"|undefined} _pushNameSetting
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_pushNameSetting", {
             get: $util.oneOfGetter($oneOfFields = ["pushNameSetting"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _quickReplyAction.
-         * @member {"quickReplyAction"|undefined} _quickReplyAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_quickReplyAction", {
             get: $util.oneOfGetter($oneOfFields = ["quickReplyAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _recentEmojiWeightsAction.
-         * @member {"recentEmojiWeightsAction"|undefined} _recentEmojiWeightsAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_recentEmojiWeightsAction", {
             get: $util.oneOfGetter($oneOfFields = ["recentEmojiWeightsAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _labelEditAction.
-         * @member {"labelEditAction"|undefined} _labelEditAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_labelEditAction", {
             get: $util.oneOfGetter($oneOfFields = ["labelEditAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _labelAssociationAction.
-         * @member {"labelAssociationAction"|undefined} _labelAssociationAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_labelAssociationAction", {
             get: $util.oneOfGetter($oneOfFields = ["labelAssociationAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _localeSetting.
-         * @member {"localeSetting"|undefined} _localeSetting
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_localeSetting", {
             get: $util.oneOfGetter($oneOfFields = ["localeSetting"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _archiveChatAction.
-         * @member {"archiveChatAction"|undefined} _archiveChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_archiveChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["archiveChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _deleteMessageForMeAction.
-         * @member {"deleteMessageForMeAction"|undefined} _deleteMessageForMeAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_deleteMessageForMeAction", {
             get: $util.oneOfGetter($oneOfFields = ["deleteMessageForMeAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _keyExpiration.
-         * @member {"keyExpiration"|undefined} _keyExpiration
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_keyExpiration", {
             get: $util.oneOfGetter($oneOfFields = ["keyExpiration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _markChatAsReadAction.
-         * @member {"markChatAsReadAction"|undefined} _markChatAsReadAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_markChatAsReadAction", {
             get: $util.oneOfGetter($oneOfFields = ["markChatAsReadAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _clearChatAction.
-         * @member {"clearChatAction"|undefined} _clearChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_clearChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["clearChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _deleteChatAction.
-         * @member {"deleteChatAction"|undefined} _deleteChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_deleteChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["deleteChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _unarchiveChatsSetting.
-         * @member {"unarchiveChatsSetting"|undefined} _unarchiveChatsSetting
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_unarchiveChatsSetting", {
             get: $util.oneOfGetter($oneOfFields = ["unarchiveChatsSetting"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _primaryFeature.
-         * @member {"primaryFeature"|undefined} _primaryFeature
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_primaryFeature", {
             get: $util.oneOfGetter($oneOfFields = ["primaryFeature"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _androidUnsupportedActions.
-         * @member {"androidUnsupportedActions"|undefined} _androidUnsupportedActions
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_androidUnsupportedActions", {
             get: $util.oneOfGetter($oneOfFields = ["androidUnsupportedActions"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _agentAction.
-         * @member {"agentAction"|undefined} _agentAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_agentAction", {
             get: $util.oneOfGetter($oneOfFields = ["agentAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _subscriptionAction.
-         * @member {"subscriptionAction"|undefined} _subscriptionAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_subscriptionAction", {
             get: $util.oneOfGetter($oneOfFields = ["subscriptionAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _userStatusMuteAction.
-         * @member {"userStatusMuteAction"|undefined} _userStatusMuteAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_userStatusMuteAction", {
             get: $util.oneOfGetter($oneOfFields = ["userStatusMuteAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _timeFormatAction.
-         * @member {"timeFormatAction"|undefined} _timeFormatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_timeFormatAction", {
             get: $util.oneOfGetter($oneOfFields = ["timeFormatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _nuxAction.
-         * @member {"nuxAction"|undefined} _nuxAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_nuxAction", {
             get: $util.oneOfGetter($oneOfFields = ["nuxAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _primaryVersionAction.
-         * @member {"primaryVersionAction"|undefined} _primaryVersionAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_primaryVersionAction", {
             get: $util.oneOfGetter($oneOfFields = ["primaryVersionAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _stickerAction.
-         * @member {"stickerAction"|undefined} _stickerAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_stickerAction", {
             get: $util.oneOfGetter($oneOfFields = ["stickerAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _removeRecentStickerAction.
-         * @member {"removeRecentStickerAction"|undefined} _removeRecentStickerAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_removeRecentStickerAction", {
             get: $util.oneOfGetter($oneOfFields = ["removeRecentStickerAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _chatAssignment.
-         * @member {"chatAssignment"|undefined} _chatAssignment
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_chatAssignment", {
             get: $util.oneOfGetter($oneOfFields = ["chatAssignment"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _chatAssignmentOpenedStatus.
-         * @member {"chatAssignmentOpenedStatus"|undefined} _chatAssignmentOpenedStatus
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_chatAssignmentOpenedStatus", {
             get: $util.oneOfGetter($oneOfFields = ["chatAssignmentOpenedStatus"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _pnForLidChatAction.
-         * @member {"pnForLidChatAction"|undefined} _pnForLidChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_pnForLidChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["pnForLidChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _marketingMessageAction.
-         * @member {"marketingMessageAction"|undefined} _marketingMessageAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_marketingMessageAction", {
             get: $util.oneOfGetter($oneOfFields = ["marketingMessageAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _marketingMessageBroadcastAction.
-         * @member {"marketingMessageBroadcastAction"|undefined} _marketingMessageBroadcastAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_marketingMessageBroadcastAction", {
             get: $util.oneOfGetter($oneOfFields = ["marketingMessageBroadcastAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _externalWebBetaAction.
-         * @member {"externalWebBetaAction"|undefined} _externalWebBetaAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_externalWebBetaAction", {
             get: $util.oneOfGetter($oneOfFields = ["externalWebBetaAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _privacySettingRelayAllCalls.
-         * @member {"privacySettingRelayAllCalls"|undefined} _privacySettingRelayAllCalls
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_privacySettingRelayAllCalls", {
             get: $util.oneOfGetter($oneOfFields = ["privacySettingRelayAllCalls"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _callLogAction.
-         * @member {"callLogAction"|undefined} _callLogAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_callLogAction", {
             get: $util.oneOfGetter($oneOfFields = ["callLogAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _ugcBot.
-         * @member {"ugcBot"|undefined} _ugcBot
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_ugcBot", {
             get: $util.oneOfGetter($oneOfFields = ["ugcBot"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _statusPrivacy.
-         * @member {"statusPrivacy"|undefined} _statusPrivacy
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_statusPrivacy", {
             get: $util.oneOfGetter($oneOfFields = ["statusPrivacy"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _botWelcomeRequestAction.
-         * @member {"botWelcomeRequestAction"|undefined} _botWelcomeRequestAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_botWelcomeRequestAction", {
             get: $util.oneOfGetter($oneOfFields = ["botWelcomeRequestAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _deleteIndividualCallLog.
-         * @member {"deleteIndividualCallLog"|undefined} _deleteIndividualCallLog
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_deleteIndividualCallLog", {
             get: $util.oneOfGetter($oneOfFields = ["deleteIndividualCallLog"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _labelReorderingAction.
-         * @member {"labelReorderingAction"|undefined} _labelReorderingAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_labelReorderingAction", {
             get: $util.oneOfGetter($oneOfFields = ["labelReorderingAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _paymentInfoAction.
-         * @member {"paymentInfoAction"|undefined} _paymentInfoAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_paymentInfoAction", {
             get: $util.oneOfGetter($oneOfFields = ["paymentInfoAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _customPaymentMethodsAction.
-         * @member {"customPaymentMethodsAction"|undefined} _customPaymentMethodsAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_customPaymentMethodsAction", {
             get: $util.oneOfGetter($oneOfFields = ["customPaymentMethodsAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _lockChatAction.
-         * @member {"lockChatAction"|undefined} _lockChatAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_lockChatAction", {
             get: $util.oneOfGetter($oneOfFields = ["lockChatAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _chatLockSettings.
-         * @member {"chatLockSettings"|undefined} _chatLockSettings
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_chatLockSettings", {
             get: $util.oneOfGetter($oneOfFields = ["chatLockSettings"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _wamoUserIdentifierAction.
-         * @member {"wamoUserIdentifierAction"|undefined} _wamoUserIdentifierAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_wamoUserIdentifierAction", {
             get: $util.oneOfGetter($oneOfFields = ["wamoUserIdentifierAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _privacySettingDisableLinkPreviewsAction.
-         * @member {"privacySettingDisableLinkPreviewsAction"|undefined} _privacySettingDisableLinkPreviewsAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_privacySettingDisableLinkPreviewsAction", {
             get: $util.oneOfGetter($oneOfFields = ["privacySettingDisableLinkPreviewsAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _deviceCapabilities.
-         * @member {"deviceCapabilities"|undefined} _deviceCapabilities
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_deviceCapabilities", {
             get: $util.oneOfGetter($oneOfFields = ["deviceCapabilities"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _noteEditAction.
-         * @member {"noteEditAction"|undefined} _noteEditAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_noteEditAction", {
             get: $util.oneOfGetter($oneOfFields = ["noteEditAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _favoritesAction.
-         * @member {"favoritesAction"|undefined} _favoritesAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_favoritesAction", {
             get: $util.oneOfGetter($oneOfFields = ["favoritesAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _merchantPaymentPartnerAction.
-         * @member {"merchantPaymentPartnerAction"|undefined} _merchantPaymentPartnerAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_merchantPaymentPartnerAction", {
             get: $util.oneOfGetter($oneOfFields = ["merchantPaymentPartnerAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _waffleAccountLinkStateAction.
-         * @member {"waffleAccountLinkStateAction"|undefined} _waffleAccountLinkStateAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_waffleAccountLinkStateAction", {
             get: $util.oneOfGetter($oneOfFields = ["waffleAccountLinkStateAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _usernameChatStartMode.
-         * @member {"usernameChatStartMode"|undefined} _usernameChatStartMode
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_usernameChatStartMode", {
             get: $util.oneOfGetter($oneOfFields = ["usernameChatStartMode"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _notificationActivitySettingAction.
-         * @member {"notificationActivitySettingAction"|undefined} _notificationActivitySettingAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_notificationActivitySettingAction", {
             get: $util.oneOfGetter($oneOfFields = ["notificationActivitySettingAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _lidContactAction.
-         * @member {"lidContactAction"|undefined} _lidContactAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_lidContactAction", {
             get: $util.oneOfGetter($oneOfFields = ["lidContactAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _ctwaPerCustomerDataSharingAction.
-         * @member {"ctwaPerCustomerDataSharingAction"|undefined} _ctwaPerCustomerDataSharingAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_ctwaPerCustomerDataSharingAction", {
             get: $util.oneOfGetter($oneOfFields = ["ctwaPerCustomerDataSharingAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _paymentTosAction.
-         * @member {"paymentTosAction"|undefined} _paymentTosAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_paymentTosAction", {
             get: $util.oneOfGetter($oneOfFields = ["paymentTosAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _privacySettingChannelsPersonalisedRecommendationAction.
-         * @member {"privacySettingChannelsPersonalisedRecommendationAction"|undefined} _privacySettingChannelsPersonalisedRecommendationAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_privacySettingChannelsPersonalisedRecommendationAction", {
             get: $util.oneOfGetter($oneOfFields = ["privacySettingChannelsPersonalisedRecommendationAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _detectedOutcomesStatusAction.
-         * @member {"detectedOutcomesStatusAction"|undefined} _detectedOutcomesStatusAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_detectedOutcomesStatusAction", {
             get: $util.oneOfGetter($oneOfFields = ["detectedOutcomesStatusAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _maibaAiFeaturesControlAction.
-         * @member {"maibaAiFeaturesControlAction"|undefined} _maibaAiFeaturesControlAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_maibaAiFeaturesControlAction", {
             get: $util.oneOfGetter($oneOfFields = ["maibaAiFeaturesControlAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _businessBroadcastListAction.
-         * @member {"businessBroadcastListAction"|undefined} _businessBroadcastListAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_businessBroadcastListAction", {
             get: $util.oneOfGetter($oneOfFields = ["businessBroadcastListAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _musicUserIdAction.
-         * @member {"musicUserIdAction"|undefined} _musicUserIdAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_musicUserIdAction", {
             get: $util.oneOfGetter($oneOfFields = ["musicUserIdAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _statusPostOptInNotificationPreferencesAction.
-         * @member {"statusPostOptInNotificationPreferencesAction"|undefined} _statusPostOptInNotificationPreferencesAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_statusPostOptInNotificationPreferencesAction", {
             get: $util.oneOfGetter($oneOfFields = ["statusPostOptInNotificationPreferencesAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _avatarUpdatedAction.
-         * @member {"avatarUpdatedAction"|undefined} _avatarUpdatedAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_avatarUpdatedAction", {
             get: $util.oneOfGetter($oneOfFields = ["avatarUpdatedAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _privateProcessingSettingAction.
-         * @member {"privateProcessingSettingAction"|undefined} _privateProcessingSettingAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_privateProcessingSettingAction", {
             get: $util.oneOfGetter($oneOfFields = ["privateProcessingSettingAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _newsletterSavedInterestsAction.
-         * @member {"newsletterSavedInterestsAction"|undefined} _newsletterSavedInterestsAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_newsletterSavedInterestsAction", {
             get: $util.oneOfGetter($oneOfFields = ["newsletterSavedInterestsAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _aiThreadRenameAction.
-         * @member {"aiThreadRenameAction"|undefined} _aiThreadRenameAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_aiThreadRenameAction", {
             get: $util.oneOfGetter($oneOfFields = ["aiThreadRenameAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _interactiveMessageAction.
-         * @member {"interactiveMessageAction"|undefined} _interactiveMessageAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_interactiveMessageAction", {
             get: $util.oneOfGetter($oneOfFields = ["interactiveMessageAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * SyncActionValue _settingsSyncAction.
-         * @member {"settingsSyncAction"|undefined} _settingsSyncAction
-         * @memberof SyncAction.SyncActionValue
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(SyncActionValue.prototype, "_settingsSyncAction", {
             get: $util.oneOfGetter($oneOfFields = ["settingsSyncAction"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(SyncActionValue.prototype, "_outContactAction", {
+            get: $util.oneOfGetter($oneOfFields = ["outContactAction"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(SyncActionValue.prototype, "_nctSaltSyncAction", {
+            get: $util.oneOfGetter($oneOfFields = ["nctSaltSyncAction"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(SyncActionValue.prototype, "_businessBroadcastCampaignAction", {
+            get: $util.oneOfGetter($oneOfFields = ["businessBroadcastCampaignAction"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(SyncActionValue.prototype, "_businessBroadcastInsightsAction", {
+            get: $util.oneOfGetter($oneOfFields = ["businessBroadcastInsightsAction"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(SyncActionValue.prototype, "_customerDataAction", {
+            get: $util.oneOfGetter($oneOfFields = ["customerDataAction"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(SyncActionValue.prototype, "_subscriptionsSyncV2Action", {
+            get: $util.oneOfGetter($oneOfFields = ["subscriptionsSyncV2Action"]),
+            set: $util.oneOfSetter($oneOfFields)
+        });
+
+        // Virtual OneOf for proto3 optional field
+        Object.defineProperty(SyncActionValue.prototype, "_threadPinAction", {
+            get: $util.oneOfGetter($oneOfFields = ["threadPinAction"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
@@ -2659,6 +2344,20 @@ $root.SyncAction = (function() {
                 $root.SyncAction.SyncActionValue.InteractiveMessageAction.encode(message.interactiveMessageAction, writer.uint32(/* id 77, wireType 2 =*/618).fork()).ldelim();
             if (message.settingsSyncAction != null && Object.hasOwnProperty.call(message, "settingsSyncAction"))
                 $root.SyncAction.SyncActionValue.SettingsSyncAction.encode(message.settingsSyncAction, writer.uint32(/* id 78, wireType 2 =*/626).fork()).ldelim();
+            if (message.outContactAction != null && Object.hasOwnProperty.call(message, "outContactAction"))
+                $root.SyncAction.SyncActionValue.OutContactAction.encode(message.outContactAction, writer.uint32(/* id 79, wireType 2 =*/634).fork()).ldelim();
+            if (message.nctSaltSyncAction != null && Object.hasOwnProperty.call(message, "nctSaltSyncAction"))
+                $root.SyncAction.SyncActionValue.NctSaltSyncAction.encode(message.nctSaltSyncAction, writer.uint32(/* id 80, wireType 2 =*/642).fork()).ldelim();
+            if (message.businessBroadcastCampaignAction != null && Object.hasOwnProperty.call(message, "businessBroadcastCampaignAction"))
+                $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction.encode(message.businessBroadcastCampaignAction, writer.uint32(/* id 81, wireType 2 =*/650).fork()).ldelim();
+            if (message.businessBroadcastInsightsAction != null && Object.hasOwnProperty.call(message, "businessBroadcastInsightsAction"))
+                $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction.encode(message.businessBroadcastInsightsAction, writer.uint32(/* id 82, wireType 2 =*/658).fork()).ldelim();
+            if (message.customerDataAction != null && Object.hasOwnProperty.call(message, "customerDataAction"))
+                $root.SyncAction.SyncActionValue.CustomerDataAction.encode(message.customerDataAction, writer.uint32(/* id 83, wireType 2 =*/666).fork()).ldelim();
+            if (message.subscriptionsSyncV2Action != null && Object.hasOwnProperty.call(message, "subscriptionsSyncV2Action"))
+                $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.encode(message.subscriptionsSyncV2Action, writer.uint32(/* id 84, wireType 2 =*/674).fork()).ldelim();
+            if (message.threadPinAction != null && Object.hasOwnProperty.call(message, "threadPinAction"))
+                $root.SyncAction.SyncActionValue.ThreadPinAction.encode(message.threadPinAction, writer.uint32(/* id 85, wireType 2 =*/682).fork()).ldelim();
             return writer;
         };
 
@@ -2969,6 +2668,34 @@ $root.SyncAction = (function() {
                     }
                 case 78: {
                         message.settingsSyncAction = $root.SyncAction.SyncActionValue.SettingsSyncAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 79: {
+                        message.outContactAction = $root.SyncAction.SyncActionValue.OutContactAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 80: {
+                        message.nctSaltSyncAction = $root.SyncAction.SyncActionValue.NctSaltSyncAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 81: {
+                        message.businessBroadcastCampaignAction = $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 82: {
+                        message.businessBroadcastInsightsAction = $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 83: {
+                        message.customerDataAction = $root.SyncAction.SyncActionValue.CustomerDataAction.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 84: {
+                        message.subscriptionsSyncV2Action = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.decode(reader, reader.uint32());
+                        break;
+                    }
+                case 85: {
+                        message.threadPinAction = $root.SyncAction.SyncActionValue.ThreadPinAction.decode(reader, reader.uint32());
                         break;
                     }
                 default:
@@ -3556,6 +3283,62 @@ $root.SyncAction = (function() {
                         return "settingsSyncAction." + error;
                 }
             }
+            if (message.outContactAction != null && message.hasOwnProperty("outContactAction")) {
+                properties._outContactAction = 1;
+                {
+                    var error = $root.SyncAction.SyncActionValue.OutContactAction.verify(message.outContactAction);
+                    if (error)
+                        return "outContactAction." + error;
+                }
+            }
+            if (message.nctSaltSyncAction != null && message.hasOwnProperty("nctSaltSyncAction")) {
+                properties._nctSaltSyncAction = 1;
+                {
+                    var error = $root.SyncAction.SyncActionValue.NctSaltSyncAction.verify(message.nctSaltSyncAction);
+                    if (error)
+                        return "nctSaltSyncAction." + error;
+                }
+            }
+            if (message.businessBroadcastCampaignAction != null && message.hasOwnProperty("businessBroadcastCampaignAction")) {
+                properties._businessBroadcastCampaignAction = 1;
+                {
+                    var error = $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction.verify(message.businessBroadcastCampaignAction);
+                    if (error)
+                        return "businessBroadcastCampaignAction." + error;
+                }
+            }
+            if (message.businessBroadcastInsightsAction != null && message.hasOwnProperty("businessBroadcastInsightsAction")) {
+                properties._businessBroadcastInsightsAction = 1;
+                {
+                    var error = $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction.verify(message.businessBroadcastInsightsAction);
+                    if (error)
+                        return "businessBroadcastInsightsAction." + error;
+                }
+            }
+            if (message.customerDataAction != null && message.hasOwnProperty("customerDataAction")) {
+                properties._customerDataAction = 1;
+                {
+                    var error = $root.SyncAction.SyncActionValue.CustomerDataAction.verify(message.customerDataAction);
+                    if (error)
+                        return "customerDataAction." + error;
+                }
+            }
+            if (message.subscriptionsSyncV2Action != null && message.hasOwnProperty("subscriptionsSyncV2Action")) {
+                properties._subscriptionsSyncV2Action = 1;
+                {
+                    var error = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.verify(message.subscriptionsSyncV2Action);
+                    if (error)
+                        return "subscriptionsSyncV2Action." + error;
+                }
+            }
+            if (message.threadPinAction != null && message.hasOwnProperty("threadPinAction")) {
+                properties._threadPinAction = 1;
+                {
+                    var error = $root.SyncAction.SyncActionValue.ThreadPinAction.verify(message.threadPinAction);
+                    if (error)
+                        return "threadPinAction." + error;
+                }
+            }
             return null;
         };
 
@@ -3919,6 +3702,41 @@ $root.SyncAction = (function() {
                 if (typeof object.settingsSyncAction !== "object")
                     throw TypeError(".SyncAction.SyncActionValue.settingsSyncAction: object expected");
                 message.settingsSyncAction = $root.SyncAction.SyncActionValue.SettingsSyncAction.fromObject(object.settingsSyncAction);
+            }
+            if (object.outContactAction != null) {
+                if (typeof object.outContactAction !== "object")
+                    throw TypeError(".SyncAction.SyncActionValue.outContactAction: object expected");
+                message.outContactAction = $root.SyncAction.SyncActionValue.OutContactAction.fromObject(object.outContactAction);
+            }
+            if (object.nctSaltSyncAction != null) {
+                if (typeof object.nctSaltSyncAction !== "object")
+                    throw TypeError(".SyncAction.SyncActionValue.nctSaltSyncAction: object expected");
+                message.nctSaltSyncAction = $root.SyncAction.SyncActionValue.NctSaltSyncAction.fromObject(object.nctSaltSyncAction);
+            }
+            if (object.businessBroadcastCampaignAction != null) {
+                if (typeof object.businessBroadcastCampaignAction !== "object")
+                    throw TypeError(".SyncAction.SyncActionValue.businessBroadcastCampaignAction: object expected");
+                message.businessBroadcastCampaignAction = $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction.fromObject(object.businessBroadcastCampaignAction);
+            }
+            if (object.businessBroadcastInsightsAction != null) {
+                if (typeof object.businessBroadcastInsightsAction !== "object")
+                    throw TypeError(".SyncAction.SyncActionValue.businessBroadcastInsightsAction: object expected");
+                message.businessBroadcastInsightsAction = $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction.fromObject(object.businessBroadcastInsightsAction);
+            }
+            if (object.customerDataAction != null) {
+                if (typeof object.customerDataAction !== "object")
+                    throw TypeError(".SyncAction.SyncActionValue.customerDataAction: object expected");
+                message.customerDataAction = $root.SyncAction.SyncActionValue.CustomerDataAction.fromObject(object.customerDataAction);
+            }
+            if (object.subscriptionsSyncV2Action != null) {
+                if (typeof object.subscriptionsSyncV2Action !== "object")
+                    throw TypeError(".SyncAction.SyncActionValue.subscriptionsSyncV2Action: object expected");
+                message.subscriptionsSyncV2Action = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.fromObject(object.subscriptionsSyncV2Action);
+            }
+            if (object.threadPinAction != null) {
+                if (typeof object.threadPinAction !== "object")
+                    throw TypeError(".SyncAction.SyncActionValue.threadPinAction: object expected");
+                message.threadPinAction = $root.SyncAction.SyncActionValue.ThreadPinAction.fromObject(object.threadPinAction);
             }
             return message;
         };
@@ -4284,6 +4102,41 @@ $root.SyncAction = (function() {
                 if (options.oneofs)
                     object._settingsSyncAction = "settingsSyncAction";
             }
+            if (message.outContactAction != null && message.hasOwnProperty("outContactAction")) {
+                object.outContactAction = $root.SyncAction.SyncActionValue.OutContactAction.toObject(message.outContactAction, options);
+                if (options.oneofs)
+                    object._outContactAction = "outContactAction";
+            }
+            if (message.nctSaltSyncAction != null && message.hasOwnProperty("nctSaltSyncAction")) {
+                object.nctSaltSyncAction = $root.SyncAction.SyncActionValue.NctSaltSyncAction.toObject(message.nctSaltSyncAction, options);
+                if (options.oneofs)
+                    object._nctSaltSyncAction = "nctSaltSyncAction";
+            }
+            if (message.businessBroadcastCampaignAction != null && message.hasOwnProperty("businessBroadcastCampaignAction")) {
+                object.businessBroadcastCampaignAction = $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction.toObject(message.businessBroadcastCampaignAction, options);
+                if (options.oneofs)
+                    object._businessBroadcastCampaignAction = "businessBroadcastCampaignAction";
+            }
+            if (message.businessBroadcastInsightsAction != null && message.hasOwnProperty("businessBroadcastInsightsAction")) {
+                object.businessBroadcastInsightsAction = $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction.toObject(message.businessBroadcastInsightsAction, options);
+                if (options.oneofs)
+                    object._businessBroadcastInsightsAction = "businessBroadcastInsightsAction";
+            }
+            if (message.customerDataAction != null && message.hasOwnProperty("customerDataAction")) {
+                object.customerDataAction = $root.SyncAction.SyncActionValue.CustomerDataAction.toObject(message.customerDataAction, options);
+                if (options.oneofs)
+                    object._customerDataAction = "customerDataAction";
+            }
+            if (message.subscriptionsSyncV2Action != null && message.hasOwnProperty("subscriptionsSyncV2Action")) {
+                object.subscriptionsSyncV2Action = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.toObject(message.subscriptionsSyncV2Action, options);
+                if (options.oneofs)
+                    object._subscriptionsSyncV2Action = "subscriptionsSyncV2Action";
+            }
+            if (message.threadPinAction != null && message.hasOwnProperty("threadPinAction")) {
+                object.threadPinAction = $root.SyncAction.SyncActionValue.ThreadPinAction.toObject(message.threadPinAction, options);
+                if (options.oneofs)
+                    object._threadPinAction = "threadPinAction";
+            }
             return object;
         };
 
@@ -4366,34 +4219,19 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AgentAction _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.AgentAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AgentAction.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AgentAction _deviceID.
-             * @member {"deviceID"|undefined} _deviceID
-             * @memberof SyncAction.SyncActionValue.AgentAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AgentAction.prototype, "_deviceID", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceID"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * AgentAction _isDeleted.
-             * @member {"isDeleted"|undefined} _isDeleted
-             * @memberof SyncAction.SyncActionValue.AgentAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AgentAction.prototype, "_isDeleted", {
                 get: $util.oneOfGetter($oneOfFields = ["isDeleted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4647,12 +4485,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AiThreadRenameAction _newTitle.
-             * @member {"newTitle"|undefined} _newTitle
-             * @memberof SyncAction.SyncActionValue.AiThreadRenameAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AiThreadRenameAction.prototype, "_newTitle", {
                 get: $util.oneOfGetter($oneOfFields = ["newTitle"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -4870,12 +4703,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AndroidUnsupportedActions _allowed.
-             * @member {"allowed"|undefined} _allowed
-             * @memberof SyncAction.SyncActionValue.AndroidUnsupportedActions
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AndroidUnsupportedActions.prototype, "_allowed", {
                 get: $util.oneOfGetter($oneOfFields = ["allowed"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -5102,23 +4930,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ArchiveChatAction _archived.
-             * @member {"archived"|undefined} _archived
-             * @memberof SyncAction.SyncActionValue.ArchiveChatAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ArchiveChatAction.prototype, "_archived", {
                 get: $util.oneOfGetter($oneOfFields = ["archived"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ArchiveChatAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.ArchiveChatAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ArchiveChatAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -5370,12 +5188,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AvatarUpdatedAction _eventType.
-             * @member {"eventType"|undefined} _eventType
-             * @memberof SyncAction.SyncActionValue.AvatarUpdatedAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AvatarUpdatedAction.prototype, "_eventType", {
                 get: $util.oneOfGetter($oneOfFields = ["eventType"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -5668,12 +5481,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * BotWelcomeRequestAction _isSent.
-             * @member {"isSent"|undefined} _isSent
-             * @memberof SyncAction.SyncActionValue.BotWelcomeRequestAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BotWelcomeRequestAction.prototype, "_isSent", {
                 get: $util.oneOfGetter($oneOfFields = ["isSent"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -5900,23 +5708,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * BroadcastListParticipant _lidJid.
-             * @member {"lidJid"|undefined} _lidJid
-             * @memberof SyncAction.SyncActionValue.BroadcastListParticipant
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BroadcastListParticipant.prototype, "_lidJid", {
                 get: $util.oneOfGetter($oneOfFields = ["lidJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BroadcastListParticipant _pnJid.
-             * @member {"pnJid"|undefined} _pnJid
-             * @memberof SyncAction.SyncActionValue.BroadcastListParticipant
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BroadcastListParticipant.prototype, "_pnJid", {
                 get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -6152,12 +5950,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * BusinessBroadcastAssociationAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.BusinessBroadcastAssociationAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BusinessBroadcastAssociationAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -6340,6 +6133,912 @@ $root.SyncAction = (function() {
             return BusinessBroadcastAssociationAction;
         })();
 
+        SyncActionValue.BusinessBroadcastCampaignAction = (function() {
+
+            /**
+             * Properties of a BusinessBroadcastCampaignAction.
+             * @memberof SyncAction.SyncActionValue
+             * @interface IBusinessBroadcastCampaignAction
+             * @property {number|null} [deviceId] BusinessBroadcastCampaignAction deviceId
+             * @property {string|null} [adId] BusinessBroadcastCampaignAction adId
+             * @property {string|null} [name] BusinessBroadcastCampaignAction name
+             * @property {string|null} [msgId] BusinessBroadcastCampaignAction msgId
+             * @property {string|null} [broadcastJid] BusinessBroadcastCampaignAction broadcastJid
+             * @property {number|null} [reservedQuota] BusinessBroadcastCampaignAction reservedQuota
+             * @property {number|Long|null} [scheduledTimestamp] BusinessBroadcastCampaignAction scheduledTimestamp
+             * @property {number|Long|null} [createTimestamp] BusinessBroadcastCampaignAction createTimestamp
+             * @property {SyncAction.SyncActionValue.BusinessBroadcastCampaignStatus|null} [status] BusinessBroadcastCampaignAction status
+             */
+
+            /**
+             * Constructs a new BusinessBroadcastCampaignAction.
+             * @memberof SyncAction.SyncActionValue
+             * @classdesc Represents a BusinessBroadcastCampaignAction.
+             * @implements IBusinessBroadcastCampaignAction
+             * @constructor
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastCampaignAction=} [properties] Properties to set
+             */
+            function BusinessBroadcastCampaignAction(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BusinessBroadcastCampaignAction deviceId.
+             * @member {number|null|undefined} deviceId
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.deviceId = null;
+
+            /**
+             * BusinessBroadcastCampaignAction adId.
+             * @member {string|null|undefined} adId
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.adId = null;
+
+            /**
+             * BusinessBroadcastCampaignAction name.
+             * @member {string|null|undefined} name
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.name = null;
+
+            /**
+             * BusinessBroadcastCampaignAction msgId.
+             * @member {string|null|undefined} msgId
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.msgId = null;
+
+            /**
+             * BusinessBroadcastCampaignAction broadcastJid.
+             * @member {string|null|undefined} broadcastJid
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.broadcastJid = null;
+
+            /**
+             * BusinessBroadcastCampaignAction reservedQuota.
+             * @member {number|null|undefined} reservedQuota
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.reservedQuota = null;
+
+            /**
+             * BusinessBroadcastCampaignAction scheduledTimestamp.
+             * @member {number|Long|null|undefined} scheduledTimestamp
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.scheduledTimestamp = null;
+
+            /**
+             * BusinessBroadcastCampaignAction createTimestamp.
+             * @member {number|Long|null|undefined} createTimestamp
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.createTimestamp = null;
+
+            /**
+             * BusinessBroadcastCampaignAction status.
+             * @member {SyncAction.SyncActionValue.BusinessBroadcastCampaignStatus|null|undefined} status
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             */
+            BusinessBroadcastCampaignAction.prototype.status = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_deviceId", {
+                get: $util.oneOfGetter($oneOfFields = ["deviceId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_adId", {
+                get: $util.oneOfGetter($oneOfFields = ["adId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_name", {
+                get: $util.oneOfGetter($oneOfFields = ["name"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_msgId", {
+                get: $util.oneOfGetter($oneOfFields = ["msgId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_broadcastJid", {
+                get: $util.oneOfGetter($oneOfFields = ["broadcastJid"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_reservedQuota", {
+                get: $util.oneOfGetter($oneOfFields = ["reservedQuota"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_scheduledTimestamp", {
+                get: $util.oneOfGetter($oneOfFields = ["scheduledTimestamp"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_createTimestamp", {
+                get: $util.oneOfGetter($oneOfFields = ["createTimestamp"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastCampaignAction.prototype, "_status", {
+                get: $util.oneOfGetter($oneOfFields = ["status"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new BusinessBroadcastCampaignAction instance using the specified properties.
+             * @function create
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastCampaignAction=} [properties] Properties to set
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastCampaignAction} BusinessBroadcastCampaignAction instance
+             */
+            BusinessBroadcastCampaignAction.create = function create(properties) {
+                return new BusinessBroadcastCampaignAction(properties);
+            };
+
+            /**
+             * Encodes the specified BusinessBroadcastCampaignAction message. Does not implicitly {@link SyncAction.SyncActionValue.BusinessBroadcastCampaignAction.verify|verify} messages.
+             * @function encode
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastCampaignAction} message BusinessBroadcastCampaignAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BusinessBroadcastCampaignAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.deviceId != null && Object.hasOwnProperty.call(message, "deviceId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.deviceId);
+                if (message.adId != null && Object.hasOwnProperty.call(message, "adId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.adId);
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.name);
+                if (message.msgId != null && Object.hasOwnProperty.call(message, "msgId"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.msgId);
+                if (message.broadcastJid != null && Object.hasOwnProperty.call(message, "broadcastJid"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.broadcastJid);
+                if (message.reservedQuota != null && Object.hasOwnProperty.call(message, "reservedQuota"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.reservedQuota);
+                if (message.scheduledTimestamp != null && Object.hasOwnProperty.call(message, "scheduledTimestamp"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).int64(message.scheduledTimestamp);
+                if (message.createTimestamp != null && Object.hasOwnProperty.call(message, "createTimestamp"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int64(message.createTimestamp);
+                if (message.status != null && Object.hasOwnProperty.call(message, "status"))
+                    writer.uint32(/* id 9, wireType 0 =*/72).int32(message.status);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified BusinessBroadcastCampaignAction message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.BusinessBroadcastCampaignAction.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastCampaignAction} message BusinessBroadcastCampaignAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BusinessBroadcastCampaignAction.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a BusinessBroadcastCampaignAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastCampaignAction} BusinessBroadcastCampaignAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BusinessBroadcastCampaignAction.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.deviceId = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.adId = reader.string();
+                            break;
+                        }
+                    case 3: {
+                            message.name = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.msgId = reader.string();
+                            break;
+                        }
+                    case 5: {
+                            message.broadcastJid = reader.string();
+                            break;
+                        }
+                    case 6: {
+                            message.reservedQuota = reader.int32();
+                            break;
+                        }
+                    case 7: {
+                            message.scheduledTimestamp = reader.int64();
+                            break;
+                        }
+                    case 8: {
+                            message.createTimestamp = reader.int64();
+                            break;
+                        }
+                    case 9: {
+                            message.status = reader.int32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a BusinessBroadcastCampaignAction message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastCampaignAction} BusinessBroadcastCampaignAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BusinessBroadcastCampaignAction.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a BusinessBroadcastCampaignAction message.
+             * @function verify
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BusinessBroadcastCampaignAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.deviceId != null && message.hasOwnProperty("deviceId")) {
+                    properties._deviceId = 1;
+                    if (!$util.isInteger(message.deviceId))
+                        return "deviceId: integer expected";
+                }
+                if (message.adId != null && message.hasOwnProperty("adId")) {
+                    properties._adId = 1;
+                    if (!$util.isString(message.adId))
+                        return "adId: string expected";
+                }
+                if (message.name != null && message.hasOwnProperty("name")) {
+                    properties._name = 1;
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                }
+                if (message.msgId != null && message.hasOwnProperty("msgId")) {
+                    properties._msgId = 1;
+                    if (!$util.isString(message.msgId))
+                        return "msgId: string expected";
+                }
+                if (message.broadcastJid != null && message.hasOwnProperty("broadcastJid")) {
+                    properties._broadcastJid = 1;
+                    if (!$util.isString(message.broadcastJid))
+                        return "broadcastJid: string expected";
+                }
+                if (message.reservedQuota != null && message.hasOwnProperty("reservedQuota")) {
+                    properties._reservedQuota = 1;
+                    if (!$util.isInteger(message.reservedQuota))
+                        return "reservedQuota: integer expected";
+                }
+                if (message.scheduledTimestamp != null && message.hasOwnProperty("scheduledTimestamp")) {
+                    properties._scheduledTimestamp = 1;
+                    if (!$util.isInteger(message.scheduledTimestamp) && !(message.scheduledTimestamp && $util.isInteger(message.scheduledTimestamp.low) && $util.isInteger(message.scheduledTimestamp.high)))
+                        return "scheduledTimestamp: integer|Long expected";
+                }
+                if (message.createTimestamp != null && message.hasOwnProperty("createTimestamp")) {
+                    properties._createTimestamp = 1;
+                    if (!$util.isInteger(message.createTimestamp) && !(message.createTimestamp && $util.isInteger(message.createTimestamp.low) && $util.isInteger(message.createTimestamp.high)))
+                        return "createTimestamp: integer|Long expected";
+                }
+                if (message.status != null && message.hasOwnProperty("status")) {
+                    properties._status = 1;
+                    switch (message.status) {
+                    default:
+                        return "status: enum value expected";
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        break;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a BusinessBroadcastCampaignAction message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastCampaignAction} BusinessBroadcastCampaignAction
+             */
+            BusinessBroadcastCampaignAction.fromObject = function fromObject(object) {
+                if (object instanceof $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction)
+                    return object;
+                var message = new $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignAction();
+                if (object.deviceId != null)
+                    message.deviceId = object.deviceId | 0;
+                if (object.adId != null)
+                    message.adId = String(object.adId);
+                if (object.name != null)
+                    message.name = String(object.name);
+                if (object.msgId != null)
+                    message.msgId = String(object.msgId);
+                if (object.broadcastJid != null)
+                    message.broadcastJid = String(object.broadcastJid);
+                if (object.reservedQuota != null)
+                    message.reservedQuota = object.reservedQuota | 0;
+                if (object.scheduledTimestamp != null)
+                    if ($util.Long)
+                        (message.scheduledTimestamp = $util.Long.fromValue(object.scheduledTimestamp)).unsigned = false;
+                    else if (typeof object.scheduledTimestamp === "string")
+                        message.scheduledTimestamp = parseInt(object.scheduledTimestamp, 10);
+                    else if (typeof object.scheduledTimestamp === "number")
+                        message.scheduledTimestamp = object.scheduledTimestamp;
+                    else if (typeof object.scheduledTimestamp === "object")
+                        message.scheduledTimestamp = new $util.LongBits(object.scheduledTimestamp.low >>> 0, object.scheduledTimestamp.high >>> 0).toNumber();
+                if (object.createTimestamp != null)
+                    if ($util.Long)
+                        (message.createTimestamp = $util.Long.fromValue(object.createTimestamp)).unsigned = false;
+                    else if (typeof object.createTimestamp === "string")
+                        message.createTimestamp = parseInt(object.createTimestamp, 10);
+                    else if (typeof object.createTimestamp === "number")
+                        message.createTimestamp = object.createTimestamp;
+                    else if (typeof object.createTimestamp === "object")
+                        message.createTimestamp = new $util.LongBits(object.createTimestamp.low >>> 0, object.createTimestamp.high >>> 0).toNumber();
+                switch (object.status) {
+                default:
+                    if (typeof object.status === "number") {
+                        message.status = object.status;
+                        break;
+                    }
+                    break;
+                case "DRAFT":
+                case 1:
+                    message.status = 1;
+                    break;
+                case "SCHEDULED":
+                case 2:
+                    message.status = 2;
+                    break;
+                case "PROCESSING":
+                case 3:
+                    message.status = 3;
+                    break;
+                case "FAILED":
+                case 4:
+                    message.status = 4;
+                    break;
+                case "SENT":
+                case 5:
+                    message.status = 5;
+                    break;
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a BusinessBroadcastCampaignAction message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {SyncAction.SyncActionValue.BusinessBroadcastCampaignAction} message BusinessBroadcastCampaignAction
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            BusinessBroadcastCampaignAction.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.deviceId != null && message.hasOwnProperty("deviceId")) {
+                    object.deviceId = message.deviceId;
+                    if (options.oneofs)
+                        object._deviceId = "deviceId";
+                }
+                if (message.adId != null && message.hasOwnProperty("adId")) {
+                    object.adId = message.adId;
+                    if (options.oneofs)
+                        object._adId = "adId";
+                }
+                if (message.name != null && message.hasOwnProperty("name")) {
+                    object.name = message.name;
+                    if (options.oneofs)
+                        object._name = "name";
+                }
+                if (message.msgId != null && message.hasOwnProperty("msgId")) {
+                    object.msgId = message.msgId;
+                    if (options.oneofs)
+                        object._msgId = "msgId";
+                }
+                if (message.broadcastJid != null && message.hasOwnProperty("broadcastJid")) {
+                    object.broadcastJid = message.broadcastJid;
+                    if (options.oneofs)
+                        object._broadcastJid = "broadcastJid";
+                }
+                if (message.reservedQuota != null && message.hasOwnProperty("reservedQuota")) {
+                    object.reservedQuota = message.reservedQuota;
+                    if (options.oneofs)
+                        object._reservedQuota = "reservedQuota";
+                }
+                if (message.scheduledTimestamp != null && message.hasOwnProperty("scheduledTimestamp")) {
+                    if (typeof message.scheduledTimestamp === "number")
+                        object.scheduledTimestamp = options.longs === String ? String(message.scheduledTimestamp) : message.scheduledTimestamp;
+                    else
+                        object.scheduledTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.scheduledTimestamp) : options.longs === Number ? new $util.LongBits(message.scheduledTimestamp.low >>> 0, message.scheduledTimestamp.high >>> 0).toNumber() : message.scheduledTimestamp;
+                    if (options.oneofs)
+                        object._scheduledTimestamp = "scheduledTimestamp";
+                }
+                if (message.createTimestamp != null && message.hasOwnProperty("createTimestamp")) {
+                    if (typeof message.createTimestamp === "number")
+                        object.createTimestamp = options.longs === String ? String(message.createTimestamp) : message.createTimestamp;
+                    else
+                        object.createTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.createTimestamp) : options.longs === Number ? new $util.LongBits(message.createTimestamp.low >>> 0, message.createTimestamp.high >>> 0).toNumber() : message.createTimestamp;
+                    if (options.oneofs)
+                        object._createTimestamp = "createTimestamp";
+                }
+                if (message.status != null && message.hasOwnProperty("status")) {
+                    object.status = options.enums === String ? $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignStatus[message.status] === undefined ? message.status : $root.SyncAction.SyncActionValue.BusinessBroadcastCampaignStatus[message.status] : message.status;
+                    if (options.oneofs)
+                        object._status = "status";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this BusinessBroadcastCampaignAction to JSON.
+             * @function toJSON
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            BusinessBroadcastCampaignAction.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BusinessBroadcastCampaignAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastCampaignAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BusinessBroadcastCampaignAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.BusinessBroadcastCampaignAction";
+            };
+
+            return BusinessBroadcastCampaignAction;
+        })();
+
+        /**
+         * BusinessBroadcastCampaignStatus enum.
+         * @name SyncAction.SyncActionValue.BusinessBroadcastCampaignStatus
+         * @enum {number}
+         * @property {number} DRAFT=1 DRAFT value
+         * @property {number} SCHEDULED=2 SCHEDULED value
+         * @property {number} PROCESSING=3 PROCESSING value
+         * @property {number} FAILED=4 FAILED value
+         * @property {number} SENT=5 SENT value
+         */
+        SyncActionValue.BusinessBroadcastCampaignStatus = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[1] = "DRAFT"] = 1;
+            values[valuesById[2] = "SCHEDULED"] = 2;
+            values[valuesById[3] = "PROCESSING"] = 3;
+            values[valuesById[4] = "FAILED"] = 4;
+            values[valuesById[5] = "SENT"] = 5;
+            return values;
+        })();
+
+        SyncActionValue.BusinessBroadcastInsightsAction = (function() {
+
+            /**
+             * Properties of a BusinessBroadcastInsightsAction.
+             * @memberof SyncAction.SyncActionValue
+             * @interface IBusinessBroadcastInsightsAction
+             * @property {number|null} [recipientCount] BusinessBroadcastInsightsAction recipientCount
+             * @property {number|null} [deliveredCount] BusinessBroadcastInsightsAction deliveredCount
+             * @property {number|null} [readCount] BusinessBroadcastInsightsAction readCount
+             * @property {number|null} [repliedCount] BusinessBroadcastInsightsAction repliedCount
+             * @property {number|null} [quickReplyCount] BusinessBroadcastInsightsAction quickReplyCount
+             */
+
+            /**
+             * Constructs a new BusinessBroadcastInsightsAction.
+             * @memberof SyncAction.SyncActionValue
+             * @classdesc Represents a BusinessBroadcastInsightsAction.
+             * @implements IBusinessBroadcastInsightsAction
+             * @constructor
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastInsightsAction=} [properties] Properties to set
+             */
+            function BusinessBroadcastInsightsAction(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BusinessBroadcastInsightsAction recipientCount.
+             * @member {number|null|undefined} recipientCount
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @instance
+             */
+            BusinessBroadcastInsightsAction.prototype.recipientCount = null;
+
+            /**
+             * BusinessBroadcastInsightsAction deliveredCount.
+             * @member {number|null|undefined} deliveredCount
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @instance
+             */
+            BusinessBroadcastInsightsAction.prototype.deliveredCount = null;
+
+            /**
+             * BusinessBroadcastInsightsAction readCount.
+             * @member {number|null|undefined} readCount
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @instance
+             */
+            BusinessBroadcastInsightsAction.prototype.readCount = null;
+
+            /**
+             * BusinessBroadcastInsightsAction repliedCount.
+             * @member {number|null|undefined} repliedCount
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @instance
+             */
+            BusinessBroadcastInsightsAction.prototype.repliedCount = null;
+
+            /**
+             * BusinessBroadcastInsightsAction quickReplyCount.
+             * @member {number|null|undefined} quickReplyCount
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @instance
+             */
+            BusinessBroadcastInsightsAction.prototype.quickReplyCount = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastInsightsAction.prototype, "_recipientCount", {
+                get: $util.oneOfGetter($oneOfFields = ["recipientCount"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastInsightsAction.prototype, "_deliveredCount", {
+                get: $util.oneOfGetter($oneOfFields = ["deliveredCount"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastInsightsAction.prototype, "_readCount", {
+                get: $util.oneOfGetter($oneOfFields = ["readCount"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastInsightsAction.prototype, "_repliedCount", {
+                get: $util.oneOfGetter($oneOfFields = ["repliedCount"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastInsightsAction.prototype, "_quickReplyCount", {
+                get: $util.oneOfGetter($oneOfFields = ["quickReplyCount"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new BusinessBroadcastInsightsAction instance using the specified properties.
+             * @function create
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastInsightsAction=} [properties] Properties to set
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastInsightsAction} BusinessBroadcastInsightsAction instance
+             */
+            BusinessBroadcastInsightsAction.create = function create(properties) {
+                return new BusinessBroadcastInsightsAction(properties);
+            };
+
+            /**
+             * Encodes the specified BusinessBroadcastInsightsAction message. Does not implicitly {@link SyncAction.SyncActionValue.BusinessBroadcastInsightsAction.verify|verify} messages.
+             * @function encode
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastInsightsAction} message BusinessBroadcastInsightsAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BusinessBroadcastInsightsAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.recipientCount != null && Object.hasOwnProperty.call(message, "recipientCount"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.recipientCount);
+                if (message.deliveredCount != null && Object.hasOwnProperty.call(message, "deliveredCount"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.deliveredCount);
+                if (message.readCount != null && Object.hasOwnProperty.call(message, "readCount"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.readCount);
+                if (message.repliedCount != null && Object.hasOwnProperty.call(message, "repliedCount"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.repliedCount);
+                if (message.quickReplyCount != null && Object.hasOwnProperty.call(message, "quickReplyCount"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.quickReplyCount);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified BusinessBroadcastInsightsAction message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.BusinessBroadcastInsightsAction.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IBusinessBroadcastInsightsAction} message BusinessBroadcastInsightsAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BusinessBroadcastInsightsAction.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a BusinessBroadcastInsightsAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastInsightsAction} BusinessBroadcastInsightsAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BusinessBroadcastInsightsAction.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.recipientCount = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.deliveredCount = reader.int32();
+                            break;
+                        }
+                    case 3: {
+                            message.readCount = reader.int32();
+                            break;
+                        }
+                    case 4: {
+                            message.repliedCount = reader.int32();
+                            break;
+                        }
+                    case 5: {
+                            message.quickReplyCount = reader.int32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a BusinessBroadcastInsightsAction message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastInsightsAction} BusinessBroadcastInsightsAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BusinessBroadcastInsightsAction.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a BusinessBroadcastInsightsAction message.
+             * @function verify
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BusinessBroadcastInsightsAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.recipientCount != null && message.hasOwnProperty("recipientCount")) {
+                    properties._recipientCount = 1;
+                    if (!$util.isInteger(message.recipientCount))
+                        return "recipientCount: integer expected";
+                }
+                if (message.deliveredCount != null && message.hasOwnProperty("deliveredCount")) {
+                    properties._deliveredCount = 1;
+                    if (!$util.isInteger(message.deliveredCount))
+                        return "deliveredCount: integer expected";
+                }
+                if (message.readCount != null && message.hasOwnProperty("readCount")) {
+                    properties._readCount = 1;
+                    if (!$util.isInteger(message.readCount))
+                        return "readCount: integer expected";
+                }
+                if (message.repliedCount != null && message.hasOwnProperty("repliedCount")) {
+                    properties._repliedCount = 1;
+                    if (!$util.isInteger(message.repliedCount))
+                        return "repliedCount: integer expected";
+                }
+                if (message.quickReplyCount != null && message.hasOwnProperty("quickReplyCount")) {
+                    properties._quickReplyCount = 1;
+                    if (!$util.isInteger(message.quickReplyCount))
+                        return "quickReplyCount: integer expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a BusinessBroadcastInsightsAction message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {SyncAction.SyncActionValue.BusinessBroadcastInsightsAction} BusinessBroadcastInsightsAction
+             */
+            BusinessBroadcastInsightsAction.fromObject = function fromObject(object) {
+                if (object instanceof $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction)
+                    return object;
+                var message = new $root.SyncAction.SyncActionValue.BusinessBroadcastInsightsAction();
+                if (object.recipientCount != null)
+                    message.recipientCount = object.recipientCount | 0;
+                if (object.deliveredCount != null)
+                    message.deliveredCount = object.deliveredCount | 0;
+                if (object.readCount != null)
+                    message.readCount = object.readCount | 0;
+                if (object.repliedCount != null)
+                    message.repliedCount = object.repliedCount | 0;
+                if (object.quickReplyCount != null)
+                    message.quickReplyCount = object.quickReplyCount | 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a BusinessBroadcastInsightsAction message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {SyncAction.SyncActionValue.BusinessBroadcastInsightsAction} message BusinessBroadcastInsightsAction
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            BusinessBroadcastInsightsAction.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.recipientCount != null && message.hasOwnProperty("recipientCount")) {
+                    object.recipientCount = message.recipientCount;
+                    if (options.oneofs)
+                        object._recipientCount = "recipientCount";
+                }
+                if (message.deliveredCount != null && message.hasOwnProperty("deliveredCount")) {
+                    object.deliveredCount = message.deliveredCount;
+                    if (options.oneofs)
+                        object._deliveredCount = "deliveredCount";
+                }
+                if (message.readCount != null && message.hasOwnProperty("readCount")) {
+                    object.readCount = message.readCount;
+                    if (options.oneofs)
+                        object._readCount = "readCount";
+                }
+                if (message.repliedCount != null && message.hasOwnProperty("repliedCount")) {
+                    object.repliedCount = message.repliedCount;
+                    if (options.oneofs)
+                        object._repliedCount = "repliedCount";
+                }
+                if (message.quickReplyCount != null && message.hasOwnProperty("quickReplyCount")) {
+                    object.quickReplyCount = message.quickReplyCount;
+                    if (options.oneofs)
+                        object._quickReplyCount = "quickReplyCount";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this BusinessBroadcastInsightsAction to JSON.
+             * @function toJSON
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            BusinessBroadcastInsightsAction.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for BusinessBroadcastInsightsAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastInsightsAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            BusinessBroadcastInsightsAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.BusinessBroadcastInsightsAction";
+            };
+
+            return BusinessBroadcastInsightsAction;
+        })();
+
         SyncActionValue.BusinessBroadcastListAction = (function() {
 
             /**
@@ -6349,6 +7048,8 @@ $root.SyncAction = (function() {
              * @property {boolean|null} [deleted] BusinessBroadcastListAction deleted
              * @property {Array.<SyncAction.SyncActionValue.IBroadcastListParticipant>|null} [participants] BusinessBroadcastListAction participants
              * @property {string|null} [listName] BusinessBroadcastListAction listName
+             * @property {Array.<string>|null} [labelIds] BusinessBroadcastListAction labelIds
+             * @property {string|null} [audienceExpression] BusinessBroadcastListAction audienceExpression
              */
 
             /**
@@ -6361,6 +7062,7 @@ $root.SyncAction = (function() {
              */
             function BusinessBroadcastListAction(properties) {
                 this.participants = [];
+                this.labelIds = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -6391,28 +7093,40 @@ $root.SyncAction = (function() {
              */
             BusinessBroadcastListAction.prototype.listName = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * BusinessBroadcastListAction _deleted.
-             * @member {"deleted"|undefined} _deleted
+             * BusinessBroadcastListAction labelIds.
+             * @member {Array.<string>} labelIds
              * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
              * @instance
              */
+            BusinessBroadcastListAction.prototype.labelIds = $util.emptyArray;
+
+            /**
+             * BusinessBroadcastListAction audienceExpression.
+             * @member {string|null|undefined} audienceExpression
+             * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
+             * @instance
+             */
+            BusinessBroadcastListAction.prototype.audienceExpression = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BusinessBroadcastListAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * BusinessBroadcastListAction _listName.
-             * @member {"listName"|undefined} _listName
-             * @memberof SyncAction.SyncActionValue.BusinessBroadcastListAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BusinessBroadcastListAction.prototype, "_listName", {
                 get: $util.oneOfGetter($oneOfFields = ["listName"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcastListAction.prototype, "_audienceExpression", {
+                get: $util.oneOfGetter($oneOfFields = ["audienceExpression"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -6447,6 +7161,11 @@ $root.SyncAction = (function() {
                         $root.SyncAction.SyncActionValue.BroadcastListParticipant.encode(message.participants[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.listName != null && Object.hasOwnProperty.call(message, "listName"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.listName);
+                if (message.labelIds != null && message.labelIds.length)
+                    for (var i = 0; i < message.labelIds.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.labelIds[i]);
+                if (message.audienceExpression != null && Object.hasOwnProperty.call(message, "audienceExpression"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.audienceExpression);
                 return writer;
             };
 
@@ -6495,6 +7214,16 @@ $root.SyncAction = (function() {
                         }
                     case 3: {
                             message.listName = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            if (!(message.labelIds && message.labelIds.length))
+                                message.labelIds = [];
+                            message.labelIds.push(reader.string());
+                            break;
+                        }
+                    case 5: {
+                            message.audienceExpression = reader.string();
                             break;
                         }
                     default:
@@ -6552,6 +7281,18 @@ $root.SyncAction = (function() {
                     if (!$util.isString(message.listName))
                         return "listName: string expected";
                 }
+                if (message.labelIds != null && message.hasOwnProperty("labelIds")) {
+                    if (!Array.isArray(message.labelIds))
+                        return "labelIds: array expected";
+                    for (var i = 0; i < message.labelIds.length; ++i)
+                        if (!$util.isString(message.labelIds[i]))
+                            return "labelIds: string[] expected";
+                }
+                if (message.audienceExpression != null && message.hasOwnProperty("audienceExpression")) {
+                    properties._audienceExpression = 1;
+                    if (!$util.isString(message.audienceExpression))
+                        return "audienceExpression: string expected";
+                }
                 return null;
             };
 
@@ -6581,6 +7322,15 @@ $root.SyncAction = (function() {
                 }
                 if (object.listName != null)
                     message.listName = String(object.listName);
+                if (object.labelIds) {
+                    if (!Array.isArray(object.labelIds))
+                        throw TypeError(".SyncAction.SyncActionValue.BusinessBroadcastListAction.labelIds: array expected");
+                    message.labelIds = [];
+                    for (var i = 0; i < object.labelIds.length; ++i)
+                        message.labelIds[i] = String(object.labelIds[i]);
+                }
+                if (object.audienceExpression != null)
+                    message.audienceExpression = String(object.audienceExpression);
                 return message;
             };
 
@@ -6597,8 +7347,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
                     object.participants = [];
+                    object.labelIds = [];
+                }
                 if (message.deleted != null && message.hasOwnProperty("deleted")) {
                     object.deleted = message.deleted;
                     if (options.oneofs)
@@ -6613,6 +7365,16 @@ $root.SyncAction = (function() {
                     object.listName = message.listName;
                     if (options.oneofs)
                         object._listName = "listName";
+                }
+                if (message.labelIds && message.labelIds.length) {
+                    object.labelIds = [];
+                    for (var j = 0; j < message.labelIds.length; ++j)
+                        object.labelIds[j] = message.labelIds[j];
+                }
+                if (message.audienceExpression != null && message.hasOwnProperty("audienceExpression")) {
+                    object.audienceExpression = message.audienceExpression;
+                    if (options.oneofs)
+                        object._audienceExpression = "audienceExpression";
                 }
                 return object;
             };
@@ -6681,12 +7443,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * CallLogAction _callLogRecord.
-             * @member {"callLogRecord"|undefined} _callLogRecord
-             * @memberof SyncAction.SyncActionValue.CallLogAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(CallLogAction.prototype, "_callLogRecord", {
                 get: $util.oneOfGetter($oneOfFields = ["callLogRecord"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -6910,12 +7667,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ChatAssignmentAction _deviceAgentID.
-             * @member {"deviceAgentID"|undefined} _deviceAgentID
-             * @memberof SyncAction.SyncActionValue.ChatAssignmentAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ChatAssignmentAction.prototype, "_deviceAgentID", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceAgentID"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -7133,12 +7885,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ChatAssignmentOpenedStatusAction _chatOpened.
-             * @member {"chatOpened"|undefined} _chatOpened
-             * @memberof SyncAction.SyncActionValue.ChatAssignmentOpenedStatusAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ChatAssignmentOpenedStatusAction.prototype, "_chatOpened", {
                 get: $util.oneOfGetter($oneOfFields = ["chatOpened"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -7356,12 +8103,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ClearChatAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.ClearChatAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ClearChatAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -7630,67 +8372,37 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ContactAction _fullName.
-             * @member {"fullName"|undefined} _fullName
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ContactAction.prototype, "_fullName", {
                 get: $util.oneOfGetter($oneOfFields = ["fullName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ContactAction _firstName.
-             * @member {"firstName"|undefined} _firstName
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ContactAction.prototype, "_firstName", {
                 get: $util.oneOfGetter($oneOfFields = ["firstName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ContactAction _lidJid.
-             * @member {"lidJid"|undefined} _lidJid
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ContactAction.prototype, "_lidJid", {
                 get: $util.oneOfGetter($oneOfFields = ["lidJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ContactAction _saveOnPrimaryAddressbook.
-             * @member {"saveOnPrimaryAddressbook"|undefined} _saveOnPrimaryAddressbook
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ContactAction.prototype, "_saveOnPrimaryAddressbook", {
                 get: $util.oneOfGetter($oneOfFields = ["saveOnPrimaryAddressbook"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ContactAction _pnJid.
-             * @member {"pnJid"|undefined} _pnJid
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ContactAction.prototype, "_pnJid", {
                 get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ContactAction _username.
-             * @member {"username"|undefined} _username
-             * @memberof SyncAction.SyncActionValue.ContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ContactAction.prototype, "_username", {
                 get: $util.oneOfGetter($oneOfFields = ["username"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -7998,12 +8710,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * CtwaPerCustomerDataSharingAction _isCtwaPerCustomerDataSharingEnabled.
-             * @member {"isCtwaPerCustomerDataSharingEnabled"|undefined} _isCtwaPerCustomerDataSharingEnabled
-             * @memberof SyncAction.SyncActionValue.CtwaPerCustomerDataSharingAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(CtwaPerCustomerDataSharingAction.prototype, "_isCtwaPerCustomerDataSharingEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isCtwaPerCustomerDataSharingEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -8249,34 +8956,19 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * CustomPaymentMethod _credentialId.
-             * @member {"credentialId"|undefined} _credentialId
-             * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(CustomPaymentMethod.prototype, "_credentialId", {
                 get: $util.oneOfGetter($oneOfFields = ["credentialId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * CustomPaymentMethod _country.
-             * @member {"country"|undefined} _country
-             * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(CustomPaymentMethod.prototype, "_country", {
                 get: $util.oneOfGetter($oneOfFields = ["country"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * CustomPaymentMethod _type.
-             * @member {"type"|undefined} _type
-             * @memberof SyncAction.SyncActionValue.CustomPaymentMethod
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(CustomPaymentMethod.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -8574,23 +9266,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * CustomPaymentMethodMetadata _key.
-             * @member {"key"|undefined} _key
-             * @memberof SyncAction.SyncActionValue.CustomPaymentMethodMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(CustomPaymentMethodMetadata.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * CustomPaymentMethodMetadata _value.
-             * @member {"value"|undefined} _value
-             * @memberof SyncAction.SyncActionValue.CustomPaymentMethodMetadata
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(CustomPaymentMethodMetadata.prototype, "_value", {
                 get: $util.oneOfGetter($oneOfFields = ["value"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9017,6 +9699,594 @@ $root.SyncAction = (function() {
             return CustomPaymentMethodsAction;
         })();
 
+        SyncActionValue.CustomerDataAction = (function() {
+
+            /**
+             * Properties of a CustomerDataAction.
+             * @memberof SyncAction.SyncActionValue
+             * @interface ICustomerDataAction
+             * @property {string|null} [chatJid] CustomerDataAction chatJid
+             * @property {number|null} [contactType] CustomerDataAction contactType
+             * @property {string|null} [email] CustomerDataAction email
+             * @property {string|null} [altPhoneNumbers] CustomerDataAction altPhoneNumbers
+             * @property {number|Long|null} [birthday] CustomerDataAction birthday
+             * @property {string|null} [address] CustomerDataAction address
+             * @property {number|null} [acquisitionSource] CustomerDataAction acquisitionSource
+             * @property {number|null} [leadStage] CustomerDataAction leadStage
+             * @property {number|Long|null} [lastOrder] CustomerDataAction lastOrder
+             * @property {number|Long|null} [createdAt] CustomerDataAction createdAt
+             * @property {number|Long|null} [modifiedAt] CustomerDataAction modifiedAt
+             */
+
+            /**
+             * Constructs a new CustomerDataAction.
+             * @memberof SyncAction.SyncActionValue
+             * @classdesc Represents a CustomerDataAction.
+             * @implements ICustomerDataAction
+             * @constructor
+             * @param {SyncAction.SyncActionValue.ICustomerDataAction=} [properties] Properties to set
+             */
+            function CustomerDataAction(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * CustomerDataAction chatJid.
+             * @member {string|null|undefined} chatJid
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.chatJid = null;
+
+            /**
+             * CustomerDataAction contactType.
+             * @member {number|null|undefined} contactType
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.contactType = null;
+
+            /**
+             * CustomerDataAction email.
+             * @member {string|null|undefined} email
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.email = null;
+
+            /**
+             * CustomerDataAction altPhoneNumbers.
+             * @member {string|null|undefined} altPhoneNumbers
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.altPhoneNumbers = null;
+
+            /**
+             * CustomerDataAction birthday.
+             * @member {number|Long|null|undefined} birthday
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.birthday = null;
+
+            /**
+             * CustomerDataAction address.
+             * @member {string|null|undefined} address
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.address = null;
+
+            /**
+             * CustomerDataAction acquisitionSource.
+             * @member {number|null|undefined} acquisitionSource
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.acquisitionSource = null;
+
+            /**
+             * CustomerDataAction leadStage.
+             * @member {number|null|undefined} leadStage
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.leadStage = null;
+
+            /**
+             * CustomerDataAction lastOrder.
+             * @member {number|Long|null|undefined} lastOrder
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.lastOrder = null;
+
+            /**
+             * CustomerDataAction createdAt.
+             * @member {number|Long|null|undefined} createdAt
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.createdAt = null;
+
+            /**
+             * CustomerDataAction modifiedAt.
+             * @member {number|Long|null|undefined} modifiedAt
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             */
+            CustomerDataAction.prototype.modifiedAt = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_chatJid", {
+                get: $util.oneOfGetter($oneOfFields = ["chatJid"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_contactType", {
+                get: $util.oneOfGetter($oneOfFields = ["contactType"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_email", {
+                get: $util.oneOfGetter($oneOfFields = ["email"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_altPhoneNumbers", {
+                get: $util.oneOfGetter($oneOfFields = ["altPhoneNumbers"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_birthday", {
+                get: $util.oneOfGetter($oneOfFields = ["birthday"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_address", {
+                get: $util.oneOfGetter($oneOfFields = ["address"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_acquisitionSource", {
+                get: $util.oneOfGetter($oneOfFields = ["acquisitionSource"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_leadStage", {
+                get: $util.oneOfGetter($oneOfFields = ["leadStage"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_lastOrder", {
+                get: $util.oneOfGetter($oneOfFields = ["lastOrder"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_createdAt", {
+                get: $util.oneOfGetter($oneOfFields = ["createdAt"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(CustomerDataAction.prototype, "_modifiedAt", {
+                get: $util.oneOfGetter($oneOfFields = ["modifiedAt"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new CustomerDataAction instance using the specified properties.
+             * @function create
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {SyncAction.SyncActionValue.ICustomerDataAction=} [properties] Properties to set
+             * @returns {SyncAction.SyncActionValue.CustomerDataAction} CustomerDataAction instance
+             */
+            CustomerDataAction.create = function create(properties) {
+                return new CustomerDataAction(properties);
+            };
+
+            /**
+             * Encodes the specified CustomerDataAction message. Does not implicitly {@link SyncAction.SyncActionValue.CustomerDataAction.verify|verify} messages.
+             * @function encode
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {SyncAction.SyncActionValue.ICustomerDataAction} message CustomerDataAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CustomerDataAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.chatJid != null && Object.hasOwnProperty.call(message, "chatJid"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.chatJid);
+                if (message.contactType != null && Object.hasOwnProperty.call(message, "contactType"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.contactType);
+                if (message.email != null && Object.hasOwnProperty.call(message, "email"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.email);
+                if (message.altPhoneNumbers != null && Object.hasOwnProperty.call(message, "altPhoneNumbers"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.altPhoneNumbers);
+                if (message.birthday != null && Object.hasOwnProperty.call(message, "birthday"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int64(message.birthday);
+                if (message.address != null && Object.hasOwnProperty.call(message, "address"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.address);
+                if (message.acquisitionSource != null && Object.hasOwnProperty.call(message, "acquisitionSource"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.acquisitionSource);
+                if (message.leadStage != null && Object.hasOwnProperty.call(message, "leadStage"))
+                    writer.uint32(/* id 8, wireType 0 =*/64).int32(message.leadStage);
+                if (message.lastOrder != null && Object.hasOwnProperty.call(message, "lastOrder"))
+                    writer.uint32(/* id 9, wireType 0 =*/72).int64(message.lastOrder);
+                if (message.createdAt != null && Object.hasOwnProperty.call(message, "createdAt"))
+                    writer.uint32(/* id 10, wireType 0 =*/80).int64(message.createdAt);
+                if (message.modifiedAt != null && Object.hasOwnProperty.call(message, "modifiedAt"))
+                    writer.uint32(/* id 11, wireType 0 =*/88).int64(message.modifiedAt);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified CustomerDataAction message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.CustomerDataAction.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {SyncAction.SyncActionValue.ICustomerDataAction} message CustomerDataAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            CustomerDataAction.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a CustomerDataAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {SyncAction.SyncActionValue.CustomerDataAction} CustomerDataAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CustomerDataAction.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.CustomerDataAction();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.chatJid = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.contactType = reader.int32();
+                            break;
+                        }
+                    case 3: {
+                            message.email = reader.string();
+                            break;
+                        }
+                    case 4: {
+                            message.altPhoneNumbers = reader.string();
+                            break;
+                        }
+                    case 5: {
+                            message.birthday = reader.int64();
+                            break;
+                        }
+                    case 6: {
+                            message.address = reader.string();
+                            break;
+                        }
+                    case 7: {
+                            message.acquisitionSource = reader.int32();
+                            break;
+                        }
+                    case 8: {
+                            message.leadStage = reader.int32();
+                            break;
+                        }
+                    case 9: {
+                            message.lastOrder = reader.int64();
+                            break;
+                        }
+                    case 10: {
+                            message.createdAt = reader.int64();
+                            break;
+                        }
+                    case 11: {
+                            message.modifiedAt = reader.int64();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a CustomerDataAction message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {SyncAction.SyncActionValue.CustomerDataAction} CustomerDataAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            CustomerDataAction.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a CustomerDataAction message.
+             * @function verify
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            CustomerDataAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.chatJid != null && message.hasOwnProperty("chatJid")) {
+                    properties._chatJid = 1;
+                    if (!$util.isString(message.chatJid))
+                        return "chatJid: string expected";
+                }
+                if (message.contactType != null && message.hasOwnProperty("contactType")) {
+                    properties._contactType = 1;
+                    if (!$util.isInteger(message.contactType))
+                        return "contactType: integer expected";
+                }
+                if (message.email != null && message.hasOwnProperty("email")) {
+                    properties._email = 1;
+                    if (!$util.isString(message.email))
+                        return "email: string expected";
+                }
+                if (message.altPhoneNumbers != null && message.hasOwnProperty("altPhoneNumbers")) {
+                    properties._altPhoneNumbers = 1;
+                    if (!$util.isString(message.altPhoneNumbers))
+                        return "altPhoneNumbers: string expected";
+                }
+                if (message.birthday != null && message.hasOwnProperty("birthday")) {
+                    properties._birthday = 1;
+                    if (!$util.isInteger(message.birthday) && !(message.birthday && $util.isInteger(message.birthday.low) && $util.isInteger(message.birthday.high)))
+                        return "birthday: integer|Long expected";
+                }
+                if (message.address != null && message.hasOwnProperty("address")) {
+                    properties._address = 1;
+                    if (!$util.isString(message.address))
+                        return "address: string expected";
+                }
+                if (message.acquisitionSource != null && message.hasOwnProperty("acquisitionSource")) {
+                    properties._acquisitionSource = 1;
+                    if (!$util.isInteger(message.acquisitionSource))
+                        return "acquisitionSource: integer expected";
+                }
+                if (message.leadStage != null && message.hasOwnProperty("leadStage")) {
+                    properties._leadStage = 1;
+                    if (!$util.isInteger(message.leadStage))
+                        return "leadStage: integer expected";
+                }
+                if (message.lastOrder != null && message.hasOwnProperty("lastOrder")) {
+                    properties._lastOrder = 1;
+                    if (!$util.isInteger(message.lastOrder) && !(message.lastOrder && $util.isInteger(message.lastOrder.low) && $util.isInteger(message.lastOrder.high)))
+                        return "lastOrder: integer|Long expected";
+                }
+                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
+                    properties._createdAt = 1;
+                    if (!$util.isInteger(message.createdAt) && !(message.createdAt && $util.isInteger(message.createdAt.low) && $util.isInteger(message.createdAt.high)))
+                        return "createdAt: integer|Long expected";
+                }
+                if (message.modifiedAt != null && message.hasOwnProperty("modifiedAt")) {
+                    properties._modifiedAt = 1;
+                    if (!$util.isInteger(message.modifiedAt) && !(message.modifiedAt && $util.isInteger(message.modifiedAt.low) && $util.isInteger(message.modifiedAt.high)))
+                        return "modifiedAt: integer|Long expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a CustomerDataAction message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {SyncAction.SyncActionValue.CustomerDataAction} CustomerDataAction
+             */
+            CustomerDataAction.fromObject = function fromObject(object) {
+                if (object instanceof $root.SyncAction.SyncActionValue.CustomerDataAction)
+                    return object;
+                var message = new $root.SyncAction.SyncActionValue.CustomerDataAction();
+                if (object.chatJid != null)
+                    message.chatJid = String(object.chatJid);
+                if (object.contactType != null)
+                    message.contactType = object.contactType | 0;
+                if (object.email != null)
+                    message.email = String(object.email);
+                if (object.altPhoneNumbers != null)
+                    message.altPhoneNumbers = String(object.altPhoneNumbers);
+                if (object.birthday != null)
+                    if ($util.Long)
+                        (message.birthday = $util.Long.fromValue(object.birthday)).unsigned = false;
+                    else if (typeof object.birthday === "string")
+                        message.birthday = parseInt(object.birthday, 10);
+                    else if (typeof object.birthday === "number")
+                        message.birthday = object.birthday;
+                    else if (typeof object.birthday === "object")
+                        message.birthday = new $util.LongBits(object.birthday.low >>> 0, object.birthday.high >>> 0).toNumber();
+                if (object.address != null)
+                    message.address = String(object.address);
+                if (object.acquisitionSource != null)
+                    message.acquisitionSource = object.acquisitionSource | 0;
+                if (object.leadStage != null)
+                    message.leadStage = object.leadStage | 0;
+                if (object.lastOrder != null)
+                    if ($util.Long)
+                        (message.lastOrder = $util.Long.fromValue(object.lastOrder)).unsigned = false;
+                    else if (typeof object.lastOrder === "string")
+                        message.lastOrder = parseInt(object.lastOrder, 10);
+                    else if (typeof object.lastOrder === "number")
+                        message.lastOrder = object.lastOrder;
+                    else if (typeof object.lastOrder === "object")
+                        message.lastOrder = new $util.LongBits(object.lastOrder.low >>> 0, object.lastOrder.high >>> 0).toNumber();
+                if (object.createdAt != null)
+                    if ($util.Long)
+                        (message.createdAt = $util.Long.fromValue(object.createdAt)).unsigned = false;
+                    else if (typeof object.createdAt === "string")
+                        message.createdAt = parseInt(object.createdAt, 10);
+                    else if (typeof object.createdAt === "number")
+                        message.createdAt = object.createdAt;
+                    else if (typeof object.createdAt === "object")
+                        message.createdAt = new $util.LongBits(object.createdAt.low >>> 0, object.createdAt.high >>> 0).toNumber();
+                if (object.modifiedAt != null)
+                    if ($util.Long)
+                        (message.modifiedAt = $util.Long.fromValue(object.modifiedAt)).unsigned = false;
+                    else if (typeof object.modifiedAt === "string")
+                        message.modifiedAt = parseInt(object.modifiedAt, 10);
+                    else if (typeof object.modifiedAt === "number")
+                        message.modifiedAt = object.modifiedAt;
+                    else if (typeof object.modifiedAt === "object")
+                        message.modifiedAt = new $util.LongBits(object.modifiedAt.low >>> 0, object.modifiedAt.high >>> 0).toNumber();
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a CustomerDataAction message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {SyncAction.SyncActionValue.CustomerDataAction} message CustomerDataAction
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            CustomerDataAction.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.chatJid != null && message.hasOwnProperty("chatJid")) {
+                    object.chatJid = message.chatJid;
+                    if (options.oneofs)
+                        object._chatJid = "chatJid";
+                }
+                if (message.contactType != null && message.hasOwnProperty("contactType")) {
+                    object.contactType = message.contactType;
+                    if (options.oneofs)
+                        object._contactType = "contactType";
+                }
+                if (message.email != null && message.hasOwnProperty("email")) {
+                    object.email = message.email;
+                    if (options.oneofs)
+                        object._email = "email";
+                }
+                if (message.altPhoneNumbers != null && message.hasOwnProperty("altPhoneNumbers")) {
+                    object.altPhoneNumbers = message.altPhoneNumbers;
+                    if (options.oneofs)
+                        object._altPhoneNumbers = "altPhoneNumbers";
+                }
+                if (message.birthday != null && message.hasOwnProperty("birthday")) {
+                    if (typeof message.birthday === "number")
+                        object.birthday = options.longs === String ? String(message.birthday) : message.birthday;
+                    else
+                        object.birthday = options.longs === String ? $util.Long.prototype.toString.call(message.birthday) : options.longs === Number ? new $util.LongBits(message.birthday.low >>> 0, message.birthday.high >>> 0).toNumber() : message.birthday;
+                    if (options.oneofs)
+                        object._birthday = "birthday";
+                }
+                if (message.address != null && message.hasOwnProperty("address")) {
+                    object.address = message.address;
+                    if (options.oneofs)
+                        object._address = "address";
+                }
+                if (message.acquisitionSource != null && message.hasOwnProperty("acquisitionSource")) {
+                    object.acquisitionSource = message.acquisitionSource;
+                    if (options.oneofs)
+                        object._acquisitionSource = "acquisitionSource";
+                }
+                if (message.leadStage != null && message.hasOwnProperty("leadStage")) {
+                    object.leadStage = message.leadStage;
+                    if (options.oneofs)
+                        object._leadStage = "leadStage";
+                }
+                if (message.lastOrder != null && message.hasOwnProperty("lastOrder")) {
+                    if (typeof message.lastOrder === "number")
+                        object.lastOrder = options.longs === String ? String(message.lastOrder) : message.lastOrder;
+                    else
+                        object.lastOrder = options.longs === String ? $util.Long.prototype.toString.call(message.lastOrder) : options.longs === Number ? new $util.LongBits(message.lastOrder.low >>> 0, message.lastOrder.high >>> 0).toNumber() : message.lastOrder;
+                    if (options.oneofs)
+                        object._lastOrder = "lastOrder";
+                }
+                if (message.createdAt != null && message.hasOwnProperty("createdAt")) {
+                    if (typeof message.createdAt === "number")
+                        object.createdAt = options.longs === String ? String(message.createdAt) : message.createdAt;
+                    else
+                        object.createdAt = options.longs === String ? $util.Long.prototype.toString.call(message.createdAt) : options.longs === Number ? new $util.LongBits(message.createdAt.low >>> 0, message.createdAt.high >>> 0).toNumber() : message.createdAt;
+                    if (options.oneofs)
+                        object._createdAt = "createdAt";
+                }
+                if (message.modifiedAt != null && message.hasOwnProperty("modifiedAt")) {
+                    if (typeof message.modifiedAt === "number")
+                        object.modifiedAt = options.longs === String ? String(message.modifiedAt) : message.modifiedAt;
+                    else
+                        object.modifiedAt = options.longs === String ? $util.Long.prototype.toString.call(message.modifiedAt) : options.longs === Number ? new $util.LongBits(message.modifiedAt.low >>> 0, message.modifiedAt.high >>> 0).toNumber() : message.modifiedAt;
+                    if (options.oneofs)
+                        object._modifiedAt = "modifiedAt";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this CustomerDataAction to JSON.
+             * @function toJSON
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            CustomerDataAction.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for CustomerDataAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.CustomerDataAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            CustomerDataAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.CustomerDataAction";
+            };
+
+            return CustomerDataAction;
+        })();
+
         SyncActionValue.DeleteChatAction = (function() {
 
             /**
@@ -9052,12 +10322,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * DeleteChatAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.DeleteChatAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DeleteChatAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9290,23 +10555,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * DeleteIndividualCallLogAction _peerJid.
-             * @member {"peerJid"|undefined} _peerJid
-             * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DeleteIndividualCallLogAction.prototype, "_peerJid", {
                 get: $util.oneOfGetter($oneOfFields = ["peerJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * DeleteIndividualCallLogAction _isIncoming.
-             * @member {"isIncoming"|undefined} _isIncoming
-             * @memberof SyncAction.SyncActionValue.DeleteIndividualCallLogAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DeleteIndividualCallLogAction.prototype, "_isIncoming", {
                 get: $util.oneOfGetter($oneOfFields = ["isIncoming"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9551,23 +10806,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * DeleteMessageForMeAction _deleteMedia.
-             * @member {"deleteMedia"|undefined} _deleteMedia
-             * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DeleteMessageForMeAction.prototype, "_deleteMedia", {
                 get: $util.oneOfGetter($oneOfFields = ["deleteMedia"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * DeleteMessageForMeAction _messageTimestamp.
-             * @member {"messageTimestamp"|undefined} _messageTimestamp
-             * @memberof SyncAction.SyncActionValue.DeleteMessageForMeAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DeleteMessageForMeAction.prototype, "_messageTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["messageTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -9813,12 +11058,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * DetectedOutcomesStatusAction _isEnabled.
-             * @member {"isEnabled"|undefined} _isEnabled
-             * @memberof SyncAction.SyncActionValue.DetectedOutcomesStatusAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DetectedOutcomesStatusAction.prototype, "_isEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -10036,12 +11276,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ExternalWebBetaAction _isOptIn.
-             * @member {"isOptIn"|undefined} _isOptIn
-             * @memberof SyncAction.SyncActionValue.ExternalWebBetaAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ExternalWebBetaAction.prototype, "_isOptIn", {
                 get: $util.oneOfGetter($oneOfFields = ["isOptIn"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -10482,12 +11717,7 @@ $root.SyncAction = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * Favorite _id.
-                 * @member {"id"|undefined} _id
-                 * @memberof SyncAction.SyncActionValue.FavoritesAction.Favorite
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(Favorite.prototype, "_id", {
                     get: $util.oneOfGetter($oneOfFields = ["id"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -10680,6 +11910,7 @@ $root.SyncAction = (function() {
              * @memberof SyncAction.SyncActionValue
              * @interface IInteractiveMessageAction
              * @property {SyncAction.SyncActionValue.InteractiveMessageAction.InteractiveMessageActionMode|null} [type] InteractiveMessageAction type
+             * @property {string|null} [agmId] InteractiveMessageAction agmId
              */
 
             /**
@@ -10705,17 +11936,26 @@ $root.SyncAction = (function() {
              */
             InteractiveMessageAction.prototype.type = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * InteractiveMessageAction _type.
-             * @member {"type"|undefined} _type
+             * InteractiveMessageAction agmId.
+             * @member {string|null|undefined} agmId
              * @memberof SyncAction.SyncActionValue.InteractiveMessageAction
              * @instance
              */
+            InteractiveMessageAction.prototype.agmId = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(InteractiveMessageAction.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(InteractiveMessageAction.prototype, "_agmId", {
+                get: $util.oneOfGetter($oneOfFields = ["agmId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -10745,6 +11985,8 @@ $root.SyncAction = (function() {
                     writer = $Writer.create();
                 if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.agmId != null && Object.hasOwnProperty.call(message, "agmId"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.agmId);
                 return writer;
             };
 
@@ -10783,6 +12025,10 @@ $root.SyncAction = (function() {
                     switch (tag >>> 3) {
                     case 1: {
                             message.type = reader.int32();
+                            break;
+                        }
+                    case 2: {
+                            message.agmId = reader.string();
                             break;
                         }
                     default:
@@ -10830,6 +12076,11 @@ $root.SyncAction = (function() {
                         break;
                     }
                 }
+                if (message.agmId != null && message.hasOwnProperty("agmId")) {
+                    properties._agmId = 1;
+                    if (!$util.isString(message.agmId))
+                        return "agmId: string expected";
+                }
                 return null;
             };
 
@@ -10857,6 +12108,8 @@ $root.SyncAction = (function() {
                     message.type = 1;
                     break;
                 }
+                if (object.agmId != null)
+                    message.agmId = String(object.agmId);
                 return message;
             };
 
@@ -10877,6 +12130,11 @@ $root.SyncAction = (function() {
                     object.type = options.enums === String ? $root.SyncAction.SyncActionValue.InteractiveMessageAction.InteractiveMessageActionMode[message.type] === undefined ? message.type : $root.SyncAction.SyncActionValue.InteractiveMessageAction.InteractiveMessageActionMode[message.type] : message.type;
                     if (options.oneofs)
                         object._type = "type";
+                }
+                if (message.agmId != null && message.hasOwnProperty("agmId")) {
+                    object.agmId = message.agmId;
+                    if (options.oneofs)
+                        object._agmId = "agmId";
                 }
                 return object;
             };
@@ -10957,12 +12215,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * KeyExpiration _expiredKeyEpoch.
-             * @member {"expiredKeyEpoch"|undefined} _expiredKeyEpoch
-             * @memberof SyncAction.SyncActionValue.KeyExpiration
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(KeyExpiration.prototype, "_expiredKeyEpoch", {
                 get: $util.oneOfGetter($oneOfFields = ["expiredKeyEpoch"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -11180,12 +12433,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * LabelAssociationAction _labeled.
-             * @member {"labeled"|undefined} _labeled
-             * @memberof SyncAction.SyncActionValue.LabelAssociationAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelAssociationAction.prototype, "_labeled", {
                 get: $util.oneOfGetter($oneOfFields = ["labeled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -11475,100 +12723,55 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * LabelEditAction _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _color.
-             * @member {"color"|undefined} _color
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_color", {
                 get: $util.oneOfGetter($oneOfFields = ["color"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _predefinedId.
-             * @member {"predefinedId"|undefined} _predefinedId
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_predefinedId", {
                 get: $util.oneOfGetter($oneOfFields = ["predefinedId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _orderIndex.
-             * @member {"orderIndex"|undefined} _orderIndex
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_orderIndex", {
                 get: $util.oneOfGetter($oneOfFields = ["orderIndex"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _isActive.
-             * @member {"isActive"|undefined} _isActive
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_isActive", {
                 get: $util.oneOfGetter($oneOfFields = ["isActive"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _type.
-             * @member {"type"|undefined} _type
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _isImmutable.
-             * @member {"isImmutable"|undefined} _isImmutable
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_isImmutable", {
                 get: $util.oneOfGetter($oneOfFields = ["isImmutable"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LabelEditAction _muteEndTimeMs.
-             * @member {"muteEndTimeMs"|undefined} _muteEndTimeMs
-             * @memberof SyncAction.SyncActionValue.LabelEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LabelEditAction.prototype, "_muteEndTimeMs", {
                 get: $util.oneOfGetter($oneOfFields = ["muteEndTimeMs"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -11769,6 +12972,8 @@ $root.SyncAction = (function() {
                     case 7:
                     case 8:
                     case 9:
+                    case 10:
+                    case 11:
                         break;
                     }
                 }
@@ -11855,6 +13060,14 @@ $root.SyncAction = (function() {
                 case "AI_HANDOFF":
                 case 9:
                     message.type = 9;
+                    break;
+                case "CHANNELS":
+                case 10:
+                    message.type = 10;
+                    break;
+                case "AI_RESPONDING":
+                case 11:
+                    message.type = 11;
                     break;
                 }
                 if (object.isImmutable != null)
@@ -11975,6 +13188,8 @@ $root.SyncAction = (function() {
              * @property {number} SERVER_ASSIGNED=7 SERVER_ASSIGNED value
              * @property {number} DRAFTED=8 DRAFTED value
              * @property {number} AI_HANDOFF=9 AI_HANDOFF value
+             * @property {number} CHANNELS=10 CHANNELS value
+             * @property {number} AI_RESPONDING=11 AI_RESPONDING value
              */
             LabelEditAction.ListType = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -11988,6 +13203,8 @@ $root.SyncAction = (function() {
                 values[valuesById[7] = "SERVER_ASSIGNED"] = 7;
                 values[valuesById[8] = "DRAFTED"] = 8;
                 values[valuesById[9] = "AI_HANDOFF"] = 9;
+                values[valuesById[10] = "CHANNELS"] = 10;
+                values[valuesById[11] = "AI_RESPONDING"] = 11;
                 return values;
             })();
 
@@ -12276,34 +13493,19 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * LidContactAction _fullName.
-             * @member {"fullName"|undefined} _fullName
-             * @memberof SyncAction.SyncActionValue.LidContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LidContactAction.prototype, "_fullName", {
                 get: $util.oneOfGetter($oneOfFields = ["fullName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LidContactAction _firstName.
-             * @member {"firstName"|undefined} _firstName
-             * @memberof SyncAction.SyncActionValue.LidContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LidContactAction.prototype, "_firstName", {
                 get: $util.oneOfGetter($oneOfFields = ["firstName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * LidContactAction _username.
-             * @member {"username"|undefined} _username
-             * @memberof SyncAction.SyncActionValue.LidContactAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LidContactAction.prototype, "_username", {
                 get: $util.oneOfGetter($oneOfFields = ["username"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -12557,12 +13759,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * LocaleSetting _locale.
-             * @member {"locale"|undefined} _locale
-             * @memberof SyncAction.SyncActionValue.LocaleSetting
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LocaleSetting.prototype, "_locale", {
                 get: $util.oneOfGetter($oneOfFields = ["locale"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -12780,12 +13977,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * LockChatAction _locked.
-             * @member {"locked"|undefined} _locked
-             * @memberof SyncAction.SyncActionValue.LockChatAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LockChatAction.prototype, "_locked", {
                 get: $util.oneOfGetter($oneOfFields = ["locked"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -13003,12 +14195,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * MaibaAIFeaturesControlAction _aiFeatureStatus.
-             * @member {"aiFeatureStatus"|undefined} _aiFeatureStatus
-             * @memberof SyncAction.SyncActionValue.MaibaAIFeaturesControlAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MaibaAIFeaturesControlAction.prototype, "_aiFeatureStatus", {
                 get: $util.oneOfGetter($oneOfFields = ["aiFeatureStatus"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -13275,23 +14462,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * MarkChatAsReadAction _read.
-             * @member {"read"|undefined} _read
-             * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarkChatAsReadAction.prototype, "_read", {
                 get: $util.oneOfGetter($oneOfFields = ["read"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MarkChatAsReadAction _messageRange.
-             * @member {"messageRange"|undefined} _messageRange
-             * @memberof SyncAction.SyncActionValue.MarkChatAsReadAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarkChatAsReadAction.prototype, "_messageRange", {
                 get: $util.oneOfGetter($oneOfFields = ["messageRange"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -13587,78 +14764,43 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * MarketingMessageAction _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageAction.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MarketingMessageAction _message.
-             * @member {"message"|undefined} _message
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageAction.prototype, "_message", {
                 get: $util.oneOfGetter($oneOfFields = ["message"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MarketingMessageAction _type.
-             * @member {"type"|undefined} _type
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageAction.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MarketingMessageAction _createdAt.
-             * @member {"createdAt"|undefined} _createdAt
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageAction.prototype, "_createdAt", {
                 get: $util.oneOfGetter($oneOfFields = ["createdAt"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MarketingMessageAction _lastSentAt.
-             * @member {"lastSentAt"|undefined} _lastSentAt
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageAction.prototype, "_lastSentAt", {
                 get: $util.oneOfGetter($oneOfFields = ["lastSentAt"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MarketingMessageAction _isDeleted.
-             * @member {"isDeleted"|undefined} _isDeleted
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageAction.prototype, "_isDeleted", {
                 get: $util.oneOfGetter($oneOfFields = ["isDeleted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MarketingMessageAction _mediaId.
-             * @member {"mediaId"|undefined} _mediaId
-             * @memberof SyncAction.SyncActionValue.MarketingMessageAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageAction.prototype, "_mediaId", {
                 get: $util.oneOfGetter($oneOfFields = ["mediaId"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14030,12 +15172,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * MarketingMessageBroadcastAction _repliedCount.
-             * @member {"repliedCount"|undefined} _repliedCount
-             * @memberof SyncAction.SyncActionValue.MarketingMessageBroadcastAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MarketingMessageBroadcastAction.prototype, "_repliedCount", {
                 get: $util.oneOfGetter($oneOfFields = ["repliedCount"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14280,45 +15417,25 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * MerchantPaymentPartnerAction _status.
-             * @member {"status"|undefined} _status
-             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_status", {
                 get: $util.oneOfGetter($oneOfFields = ["status"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MerchantPaymentPartnerAction _country.
-             * @member {"country"|undefined} _country
-             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_country", {
                 get: $util.oneOfGetter($oneOfFields = ["country"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MerchantPaymentPartnerAction _gatewayName.
-             * @member {"gatewayName"|undefined} _gatewayName
-             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_gatewayName", {
                 get: $util.oneOfGetter($oneOfFields = ["gatewayName"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MerchantPaymentPartnerAction _credentialId.
-             * @member {"credentialId"|undefined} _credentialId
-             * @memberof SyncAction.SyncActionValue.MerchantPaymentPartnerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MerchantPaymentPartnerAction.prototype, "_credentialId", {
                 get: $util.oneOfGetter($oneOfFields = ["credentialId"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14633,12 +15750,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * MusicUserIdAction _musicUserId.
-             * @member {"musicUserId"|undefined} _musicUserId
-             * @memberof SyncAction.SyncActionValue.MusicUserIdAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MusicUserIdAction.prototype, "_musicUserId", {
                 get: $util.oneOfGetter($oneOfFields = ["musicUserId"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -14879,6 +15991,7 @@ $root.SyncAction = (function() {
              * @property {boolean|null} [muted] MuteAction muted
              * @property {number|Long|null} [muteEndTimestamp] MuteAction muteEndTimestamp
              * @property {boolean|null} [autoMuted] MuteAction autoMuted
+             * @property {number|Long|null} [muteEveryoneMentionEndTimestamp] MuteAction muteEveryoneMentionEndTimestamp
              */
 
             /**
@@ -14920,39 +16033,38 @@ $root.SyncAction = (function() {
              */
             MuteAction.prototype.autoMuted = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * MuteAction _muted.
-             * @member {"muted"|undefined} _muted
+             * MuteAction muteEveryoneMentionEndTimestamp.
+             * @member {number|Long|null|undefined} muteEveryoneMentionEndTimestamp
              * @memberof SyncAction.SyncActionValue.MuteAction
              * @instance
              */
+            MuteAction.prototype.muteEveryoneMentionEndTimestamp = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MuteAction.prototype, "_muted", {
                 get: $util.oneOfGetter($oneOfFields = ["muted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MuteAction _muteEndTimestamp.
-             * @member {"muteEndTimestamp"|undefined} _muteEndTimestamp
-             * @memberof SyncAction.SyncActionValue.MuteAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MuteAction.prototype, "_muteEndTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["muteEndTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * MuteAction _autoMuted.
-             * @member {"autoMuted"|undefined} _autoMuted
-             * @memberof SyncAction.SyncActionValue.MuteAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(MuteAction.prototype, "_autoMuted", {
                 get: $util.oneOfGetter($oneOfFields = ["autoMuted"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(MuteAction.prototype, "_muteEveryoneMentionEndTimestamp", {
+                get: $util.oneOfGetter($oneOfFields = ["muteEveryoneMentionEndTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -14986,6 +16098,8 @@ $root.SyncAction = (function() {
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.muteEndTimestamp);
                 if (message.autoMuted != null && Object.hasOwnProperty.call(message, "autoMuted"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.autoMuted);
+                if (message.muteEveryoneMentionEndTimestamp != null && Object.hasOwnProperty.call(message, "muteEveryoneMentionEndTimestamp"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.muteEveryoneMentionEndTimestamp);
                 return writer;
             };
 
@@ -15032,6 +16146,10 @@ $root.SyncAction = (function() {
                         }
                     case 3: {
                             message.autoMuted = reader.bool();
+                            break;
+                        }
+                    case 4: {
+                            message.muteEveryoneMentionEndTimestamp = reader.int64();
                             break;
                         }
                     default:
@@ -15085,6 +16203,11 @@ $root.SyncAction = (function() {
                     if (typeof message.autoMuted !== "boolean")
                         return "autoMuted: boolean expected";
                 }
+                if (message.muteEveryoneMentionEndTimestamp != null && message.hasOwnProperty("muteEveryoneMentionEndTimestamp")) {
+                    properties._muteEveryoneMentionEndTimestamp = 1;
+                    if (!$util.isInteger(message.muteEveryoneMentionEndTimestamp) && !(message.muteEveryoneMentionEndTimestamp && $util.isInteger(message.muteEveryoneMentionEndTimestamp.low) && $util.isInteger(message.muteEveryoneMentionEndTimestamp.high)))
+                        return "muteEveryoneMentionEndTimestamp: integer|Long expected";
+                }
                 return null;
             };
 
@@ -15113,6 +16236,15 @@ $root.SyncAction = (function() {
                         message.muteEndTimestamp = new $util.LongBits(object.muteEndTimestamp.low >>> 0, object.muteEndTimestamp.high >>> 0).toNumber();
                 if (object.autoMuted != null)
                     message.autoMuted = Boolean(object.autoMuted);
+                if (object.muteEveryoneMentionEndTimestamp != null)
+                    if ($util.Long)
+                        (message.muteEveryoneMentionEndTimestamp = $util.Long.fromValue(object.muteEveryoneMentionEndTimestamp)).unsigned = false;
+                    else if (typeof object.muteEveryoneMentionEndTimestamp === "string")
+                        message.muteEveryoneMentionEndTimestamp = parseInt(object.muteEveryoneMentionEndTimestamp, 10);
+                    else if (typeof object.muteEveryoneMentionEndTimestamp === "number")
+                        message.muteEveryoneMentionEndTimestamp = object.muteEveryoneMentionEndTimestamp;
+                    else if (typeof object.muteEveryoneMentionEndTimestamp === "object")
+                        message.muteEveryoneMentionEndTimestamp = new $util.LongBits(object.muteEveryoneMentionEndTimestamp.low >>> 0, object.muteEveryoneMentionEndTimestamp.high >>> 0).toNumber();
                 return message;
             };
 
@@ -15147,6 +16279,14 @@ $root.SyncAction = (function() {
                     if (options.oneofs)
                         object._autoMuted = "autoMuted";
                 }
+                if (message.muteEveryoneMentionEndTimestamp != null && message.hasOwnProperty("muteEveryoneMentionEndTimestamp")) {
+                    if (typeof message.muteEveryoneMentionEndTimestamp === "number")
+                        object.muteEveryoneMentionEndTimestamp = options.longs === String ? String(message.muteEveryoneMentionEndTimestamp) : message.muteEveryoneMentionEndTimestamp;
+                    else
+                        object.muteEveryoneMentionEndTimestamp = options.longs === String ? $util.Long.prototype.toString.call(message.muteEveryoneMentionEndTimestamp) : options.longs === Number ? new $util.LongBits(message.muteEveryoneMentionEndTimestamp.low >>> 0, message.muteEveryoneMentionEndTimestamp.high >>> 0).toNumber() : message.muteEveryoneMentionEndTimestamp;
+                    if (options.oneofs)
+                        object._muteEveryoneMentionEndTimestamp = "muteEveryoneMentionEndTimestamp";
+                }
                 return object;
             };
 
@@ -15177,6 +16317,227 @@ $root.SyncAction = (function() {
             };
 
             return MuteAction;
+        })();
+
+        SyncActionValue.NctSaltSyncAction = (function() {
+
+            /**
+             * Properties of a NctSaltSyncAction.
+             * @memberof SyncAction.SyncActionValue
+             * @interface INctSaltSyncAction
+             * @property {Uint8Array|null} [salt] NctSaltSyncAction salt
+             */
+
+            /**
+             * Constructs a new NctSaltSyncAction.
+             * @memberof SyncAction.SyncActionValue
+             * @classdesc Represents a NctSaltSyncAction.
+             * @implements INctSaltSyncAction
+             * @constructor
+             * @param {SyncAction.SyncActionValue.INctSaltSyncAction=} [properties] Properties to set
+             */
+            function NctSaltSyncAction(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * NctSaltSyncAction salt.
+             * @member {Uint8Array|null|undefined} salt
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @instance
+             */
+            NctSaltSyncAction.prototype.salt = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(NctSaltSyncAction.prototype, "_salt", {
+                get: $util.oneOfGetter($oneOfFields = ["salt"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new NctSaltSyncAction instance using the specified properties.
+             * @function create
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {SyncAction.SyncActionValue.INctSaltSyncAction=} [properties] Properties to set
+             * @returns {SyncAction.SyncActionValue.NctSaltSyncAction} NctSaltSyncAction instance
+             */
+            NctSaltSyncAction.create = function create(properties) {
+                return new NctSaltSyncAction(properties);
+            };
+
+            /**
+             * Encodes the specified NctSaltSyncAction message. Does not implicitly {@link SyncAction.SyncActionValue.NctSaltSyncAction.verify|verify} messages.
+             * @function encode
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {SyncAction.SyncActionValue.INctSaltSyncAction} message NctSaltSyncAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NctSaltSyncAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.salt != null && Object.hasOwnProperty.call(message, "salt"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.salt);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified NctSaltSyncAction message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.NctSaltSyncAction.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {SyncAction.SyncActionValue.INctSaltSyncAction} message NctSaltSyncAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            NctSaltSyncAction.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a NctSaltSyncAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {SyncAction.SyncActionValue.NctSaltSyncAction} NctSaltSyncAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NctSaltSyncAction.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.NctSaltSyncAction();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.salt = reader.bytes();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a NctSaltSyncAction message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {SyncAction.SyncActionValue.NctSaltSyncAction} NctSaltSyncAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            NctSaltSyncAction.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a NctSaltSyncAction message.
+             * @function verify
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            NctSaltSyncAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.salt != null && message.hasOwnProperty("salt")) {
+                    properties._salt = 1;
+                    if (!(message.salt && typeof message.salt.length === "number" || $util.isString(message.salt)))
+                        return "salt: buffer expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a NctSaltSyncAction message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {SyncAction.SyncActionValue.NctSaltSyncAction} NctSaltSyncAction
+             */
+            NctSaltSyncAction.fromObject = function fromObject(object) {
+                if (object instanceof $root.SyncAction.SyncActionValue.NctSaltSyncAction)
+                    return object;
+                var message = new $root.SyncAction.SyncActionValue.NctSaltSyncAction();
+                if (object.salt != null)
+                    if (typeof object.salt === "string")
+                        $util.base64.decode(object.salt, message.salt = $util.newBuffer($util.base64.length(object.salt)), 0);
+                    else if (object.salt.length >= 0)
+                        message.salt = object.salt;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a NctSaltSyncAction message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {SyncAction.SyncActionValue.NctSaltSyncAction} message NctSaltSyncAction
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            NctSaltSyncAction.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.salt != null && message.hasOwnProperty("salt")) {
+                    object.salt = options.bytes === String ? $util.base64.encode(message.salt, 0, message.salt.length) : options.bytes === Array ? Array.prototype.slice.call(message.salt) : message.salt;
+                    if (options.oneofs)
+                        object._salt = "salt";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this NctSaltSyncAction to JSON.
+             * @function toJSON
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            NctSaltSyncAction.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for NctSaltSyncAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.NctSaltSyncAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            NctSaltSyncAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.NctSaltSyncAction";
+            };
+
+            return NctSaltSyncAction;
         })();
 
         SyncActionValue.NewsletterSavedInterestsAction = (function() {
@@ -15214,12 +16575,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * NewsletterSavedInterestsAction _newsletterSavedInterests.
-             * @member {"newsletterSavedInterests"|undefined} _newsletterSavedInterests
-             * @memberof SyncAction.SyncActionValue.NewsletterSavedInterestsAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NewsletterSavedInterestsAction.prototype, "_newsletterSavedInterests", {
                 get: $util.oneOfGetter($oneOfFields = ["newsletterSavedInterests"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -15473,56 +16829,31 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * NoteEditAction _type.
-             * @member {"type"|undefined} _type
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NoteEditAction.prototype, "_type", {
                 get: $util.oneOfGetter($oneOfFields = ["type"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * NoteEditAction _chatJid.
-             * @member {"chatJid"|undefined} _chatJid
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NoteEditAction.prototype, "_chatJid", {
                 get: $util.oneOfGetter($oneOfFields = ["chatJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * NoteEditAction _createdAt.
-             * @member {"createdAt"|undefined} _createdAt
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NoteEditAction.prototype, "_createdAt", {
                 get: $util.oneOfGetter($oneOfFields = ["createdAt"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * NoteEditAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NoteEditAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * NoteEditAction _unstructuredContent.
-             * @member {"unstructuredContent"|undefined} _unstructuredContent
-             * @memberof SyncAction.SyncActionValue.NoteEditAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NoteEditAction.prototype, "_unstructuredContent", {
                 get: $util.oneOfGetter($oneOfFields = ["unstructuredContent"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -15855,12 +17186,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * NotificationActivitySettingAction _notificationActivitySetting.
-             * @member {"notificationActivitySetting"|undefined} _notificationActivitySetting
-             * @memberof SyncAction.SyncActionValue.NotificationActivitySettingAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NotificationActivitySettingAction.prototype, "_notificationActivitySetting", {
                 get: $util.oneOfGetter($oneOfFields = ["notificationActivitySetting"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16125,12 +17451,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * NuxAction _acknowledged.
-             * @member {"acknowledged"|undefined} _acknowledged
-             * @memberof SyncAction.SyncActionValue.NuxAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(NuxAction.prototype, "_acknowledged", {
                 get: $util.oneOfGetter($oneOfFields = ["acknowledged"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16313,6 +17634,257 @@ $root.SyncAction = (function() {
             return NuxAction;
         })();
 
+        SyncActionValue.OutContactAction = (function() {
+
+            /**
+             * Properties of an OutContactAction.
+             * @memberof SyncAction.SyncActionValue
+             * @interface IOutContactAction
+             * @property {string|null} [fullName] OutContactAction fullName
+             * @property {string|null} [firstName] OutContactAction firstName
+             */
+
+            /**
+             * Constructs a new OutContactAction.
+             * @memberof SyncAction.SyncActionValue
+             * @classdesc Represents an OutContactAction.
+             * @implements IOutContactAction
+             * @constructor
+             * @param {SyncAction.SyncActionValue.IOutContactAction=} [properties] Properties to set
+             */
+            function OutContactAction(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * OutContactAction fullName.
+             * @member {string|null|undefined} fullName
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @instance
+             */
+            OutContactAction.prototype.fullName = null;
+
+            /**
+             * OutContactAction firstName.
+             * @member {string|null|undefined} firstName
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @instance
+             */
+            OutContactAction.prototype.firstName = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(OutContactAction.prototype, "_fullName", {
+                get: $util.oneOfGetter($oneOfFields = ["fullName"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(OutContactAction.prototype, "_firstName", {
+                get: $util.oneOfGetter($oneOfFields = ["firstName"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new OutContactAction instance using the specified properties.
+             * @function create
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IOutContactAction=} [properties] Properties to set
+             * @returns {SyncAction.SyncActionValue.OutContactAction} OutContactAction instance
+             */
+            OutContactAction.create = function create(properties) {
+                return new OutContactAction(properties);
+            };
+
+            /**
+             * Encodes the specified OutContactAction message. Does not implicitly {@link SyncAction.SyncActionValue.OutContactAction.verify|verify} messages.
+             * @function encode
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IOutContactAction} message OutContactAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OutContactAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.fullName != null && Object.hasOwnProperty.call(message, "fullName"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.fullName);
+                if (message.firstName != null && Object.hasOwnProperty.call(message, "firstName"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.firstName);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified OutContactAction message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.OutContactAction.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IOutContactAction} message OutContactAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OutContactAction.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes an OutContactAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {SyncAction.SyncActionValue.OutContactAction} OutContactAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OutContactAction.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.OutContactAction();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.fullName = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.firstName = reader.string();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes an OutContactAction message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {SyncAction.SyncActionValue.OutContactAction} OutContactAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OutContactAction.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies an OutContactAction message.
+             * @function verify
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OutContactAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.fullName != null && message.hasOwnProperty("fullName")) {
+                    properties._fullName = 1;
+                    if (!$util.isString(message.fullName))
+                        return "fullName: string expected";
+                }
+                if (message.firstName != null && message.hasOwnProperty("firstName")) {
+                    properties._firstName = 1;
+                    if (!$util.isString(message.firstName))
+                        return "firstName: string expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates an OutContactAction message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {SyncAction.SyncActionValue.OutContactAction} OutContactAction
+             */
+            OutContactAction.fromObject = function fromObject(object) {
+                if (object instanceof $root.SyncAction.SyncActionValue.OutContactAction)
+                    return object;
+                var message = new $root.SyncAction.SyncActionValue.OutContactAction();
+                if (object.fullName != null)
+                    message.fullName = String(object.fullName);
+                if (object.firstName != null)
+                    message.firstName = String(object.firstName);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from an OutContactAction message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {SyncAction.SyncActionValue.OutContactAction} message OutContactAction
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            OutContactAction.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.fullName != null && message.hasOwnProperty("fullName")) {
+                    object.fullName = message.fullName;
+                    if (options.oneofs)
+                        object._fullName = "fullName";
+                }
+                if (message.firstName != null && message.hasOwnProperty("firstName")) {
+                    object.firstName = message.firstName;
+                    if (options.oneofs)
+                        object._firstName = "firstName";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this OutContactAction to JSON.
+             * @function toJSON
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            OutContactAction.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for OutContactAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.OutContactAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            OutContactAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.OutContactAction";
+            };
+
+            return OutContactAction;
+        })();
+
         SyncActionValue.PaymentInfoAction = (function() {
 
             /**
@@ -16348,12 +17920,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PaymentInfoAction _cpi.
-             * @member {"cpi"|undefined} _cpi
-             * @memberof SyncAction.SyncActionValue.PaymentInfoAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PaymentInfoAction.prototype, "_cpi", {
                 get: $util.oneOfGetter($oneOfFields = ["cpi"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16580,23 +18147,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PaymentTosAction _paymentNotice.
-             * @member {"paymentNotice"|undefined} _paymentNotice
-             * @memberof SyncAction.SyncActionValue.PaymentTosAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PaymentTosAction.prototype, "_paymentNotice", {
                 get: $util.oneOfGetter($oneOfFields = ["paymentNotice"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * PaymentTosAction _accepted.
-             * @member {"accepted"|undefined} _accepted
-             * @memberof SyncAction.SyncActionValue.PaymentTosAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PaymentTosAction.prototype, "_accepted", {
                 get: $util.oneOfGetter($oneOfFields = ["accepted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -16858,12 +18415,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PinAction _pinned.
-             * @member {"pinned"|undefined} _pinned
-             * @memberof SyncAction.SyncActionValue.PinAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PinAction.prototype, "_pinned", {
                 get: $util.oneOfGetter($oneOfFields = ["pinned"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17081,12 +18633,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PnForLidChatAction _pnJid.
-             * @member {"pnJid"|undefined} _pnJid
-             * @memberof SyncAction.SyncActionValue.PnForLidChatAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PnForLidChatAction.prototype, "_pnJid", {
                 get: $util.oneOfGetter($oneOfFields = ["pnJid"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17525,12 +19072,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PrimaryVersionAction _version.
-             * @member {"version"|undefined} _version
-             * @memberof SyncAction.SyncActionValue.PrimaryVersionAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PrimaryVersionAction.prototype, "_version", {
                 get: $util.oneOfGetter($oneOfFields = ["version"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17748,12 +19290,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PrivacySettingChannelsPersonalisedRecommendationAction _isUserOptedOut.
-             * @member {"isUserOptedOut"|undefined} _isUserOptedOut
-             * @memberof SyncAction.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PrivacySettingChannelsPersonalisedRecommendationAction.prototype, "_isUserOptedOut", {
                 get: $util.oneOfGetter($oneOfFields = ["isUserOptedOut"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -17971,12 +19508,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PrivacySettingDisableLinkPreviewsAction _isPreviewsDisabled.
-             * @member {"isPreviewsDisabled"|undefined} _isPreviewsDisabled
-             * @memberof SyncAction.SyncActionValue.PrivacySettingDisableLinkPreviewsAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PrivacySettingDisableLinkPreviewsAction.prototype, "_isPreviewsDisabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isPreviewsDisabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18194,12 +19726,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PrivacySettingRelayAllCalls _isEnabled.
-             * @member {"isEnabled"|undefined} _isEnabled
-             * @memberof SyncAction.SyncActionValue.PrivacySettingRelayAllCalls
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PrivacySettingRelayAllCalls.prototype, "_isEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18417,12 +19944,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PrivateProcessingSettingAction _privateProcessingStatus.
-             * @member {"privateProcessingStatus"|undefined} _privateProcessingStatus
-             * @memberof SyncAction.SyncActionValue.PrivateProcessingSettingAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PrivateProcessingSettingAction.prototype, "_privateProcessingStatus", {
                 get: $util.oneOfGetter($oneOfFields = ["privateProcessingStatus"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18680,12 +20202,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * PushNameSetting _name.
-             * @member {"name"|undefined} _name
-             * @memberof SyncAction.SyncActionValue.PushNameSetting
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(PushNameSetting.prototype, "_name", {
                 get: $util.oneOfGetter($oneOfFields = ["name"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -18940,45 +20457,25 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * QuickReplyAction _shortcut.
-             * @member {"shortcut"|undefined} _shortcut
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(QuickReplyAction.prototype, "_shortcut", {
                 get: $util.oneOfGetter($oneOfFields = ["shortcut"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * QuickReplyAction _message.
-             * @member {"message"|undefined} _message
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(QuickReplyAction.prototype, "_message", {
                 get: $util.oneOfGetter($oneOfFields = ["message"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * QuickReplyAction _count.
-             * @member {"count"|undefined} _count
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(QuickReplyAction.prototype, "_count", {
                 get: $util.oneOfGetter($oneOfFields = ["count"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * QuickReplyAction _deleted.
-             * @member {"deleted"|undefined} _deleted
-             * @memberof SyncAction.SyncActionValue.QuickReplyAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(QuickReplyAction.prototype, "_deleted", {
                 get: $util.oneOfGetter($oneOfFields = ["deleted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -19506,12 +21003,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * RemoveRecentStickerAction _lastStickerSentTs.
-             * @member {"lastStickerSentTs"|undefined} _lastStickerSentTs
-             * @memberof SyncAction.SyncActionValue.RemoveRecentStickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(RemoveRecentStickerAction.prototype, "_lastStickerSentTs", {
                 get: $util.oneOfGetter($oneOfFields = ["lastStickerSentTs"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -19733,6 +21225,16 @@ $root.SyncAction = (function() {
              * @property {boolean|null} [isDocumentsAutodownloadEnabled] SettingsSyncAction isDocumentsAutodownloadEnabled
              * @property {boolean|null} [disableLinkPreviews] SettingsSyncAction disableLinkPreviews
              * @property {number|null} [notificationToneId] SettingsSyncAction notificationToneId
+             * @property {SyncAction.SyncActionValue.SettingsSyncAction.MediaQualitySetting|null} [mediaUploadQuality] SettingsSyncAction mediaUploadQuality
+             * @property {boolean|null} [isSpellCheckEnabled] SettingsSyncAction isSpellCheckEnabled
+             * @property {boolean|null} [isEnterToSendEnabled] SettingsSyncAction isEnterToSendEnabled
+             * @property {boolean|null} [isGroupMessageNotificationEnabled] SettingsSyncAction isGroupMessageNotificationEnabled
+             * @property {boolean|null} [isGroupReactionsNotificationEnabled] SettingsSyncAction isGroupReactionsNotificationEnabled
+             * @property {boolean|null} [isStatusNotificationEnabled] SettingsSyncAction isStatusNotificationEnabled
+             * @property {number|null} [statusNotificationToneId] SettingsSyncAction statusNotificationToneId
+             * @property {boolean|null} [shouldPlaySoundForCallNotification] SettingsSyncAction shouldPlaySoundForCallNotification
+             * @property {string|null} [chatThemeId] SettingsSyncAction chatThemeId
+             * @property {string|null} [colorSchemeId] SettingsSyncAction colorSchemeId
              */
 
             /**
@@ -19934,259 +21436,284 @@ $root.SyncAction = (function() {
              */
             SettingsSyncAction.prototype.notificationToneId = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * SettingsSyncAction _startAtLogin.
-             * @member {"startAtLogin"|undefined} _startAtLogin
+             * SettingsSyncAction mediaUploadQuality.
+             * @member {SyncAction.SyncActionValue.SettingsSyncAction.MediaQualitySetting|null|undefined} mediaUploadQuality
              * @memberof SyncAction.SyncActionValue.SettingsSyncAction
              * @instance
              */
+            SettingsSyncAction.prototype.mediaUploadQuality = null;
+
+            /**
+             * SettingsSyncAction isSpellCheckEnabled.
+             * @member {boolean|null|undefined} isSpellCheckEnabled
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.isSpellCheckEnabled = null;
+
+            /**
+             * SettingsSyncAction isEnterToSendEnabled.
+             * @member {boolean|null|undefined} isEnterToSendEnabled
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.isEnterToSendEnabled = null;
+
+            /**
+             * SettingsSyncAction isGroupMessageNotificationEnabled.
+             * @member {boolean|null|undefined} isGroupMessageNotificationEnabled
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.isGroupMessageNotificationEnabled = null;
+
+            /**
+             * SettingsSyncAction isGroupReactionsNotificationEnabled.
+             * @member {boolean|null|undefined} isGroupReactionsNotificationEnabled
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.isGroupReactionsNotificationEnabled = null;
+
+            /**
+             * SettingsSyncAction isStatusNotificationEnabled.
+             * @member {boolean|null|undefined} isStatusNotificationEnabled
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.isStatusNotificationEnabled = null;
+
+            /**
+             * SettingsSyncAction statusNotificationToneId.
+             * @member {number|null|undefined} statusNotificationToneId
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.statusNotificationToneId = null;
+
+            /**
+             * SettingsSyncAction shouldPlaySoundForCallNotification.
+             * @member {boolean|null|undefined} shouldPlaySoundForCallNotification
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.shouldPlaySoundForCallNotification = null;
+
+            /**
+             * SettingsSyncAction chatThemeId.
+             * @member {string|null|undefined} chatThemeId
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.chatThemeId = null;
+
+            /**
+             * SettingsSyncAction colorSchemeId.
+             * @member {string|null|undefined} colorSchemeId
+             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
+             * @instance
+             */
+            SettingsSyncAction.prototype.colorSchemeId = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_startAtLogin", {
                 get: $util.oneOfGetter($oneOfFields = ["startAtLogin"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _minimizeToTray.
-             * @member {"minimizeToTray"|undefined} _minimizeToTray
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_minimizeToTray", {
                 get: $util.oneOfGetter($oneOfFields = ["minimizeToTray"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _language.
-             * @member {"language"|undefined} _language
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_language", {
                 get: $util.oneOfGetter($oneOfFields = ["language"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _replaceTextWithEmoji.
-             * @member {"replaceTextWithEmoji"|undefined} _replaceTextWithEmoji
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_replaceTextWithEmoji", {
                 get: $util.oneOfGetter($oneOfFields = ["replaceTextWithEmoji"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _bannerNotificationDisplayMode.
-             * @member {"bannerNotificationDisplayMode"|undefined} _bannerNotificationDisplayMode
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_bannerNotificationDisplayMode", {
                 get: $util.oneOfGetter($oneOfFields = ["bannerNotificationDisplayMode"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _unreadCounterBadgeDisplayMode.
-             * @member {"unreadCounterBadgeDisplayMode"|undefined} _unreadCounterBadgeDisplayMode
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_unreadCounterBadgeDisplayMode", {
                 get: $util.oneOfGetter($oneOfFields = ["unreadCounterBadgeDisplayMode"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isMessagesNotificationEnabled.
-             * @member {"isMessagesNotificationEnabled"|undefined} _isMessagesNotificationEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isMessagesNotificationEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isMessagesNotificationEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isCallsNotificationEnabled.
-             * @member {"isCallsNotificationEnabled"|undefined} _isCallsNotificationEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isCallsNotificationEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isCallsNotificationEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isReactionsNotificationEnabled.
-             * @member {"isReactionsNotificationEnabled"|undefined} _isReactionsNotificationEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isReactionsNotificationEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isReactionsNotificationEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isStatusReactionsNotificationEnabled.
-             * @member {"isStatusReactionsNotificationEnabled"|undefined} _isStatusReactionsNotificationEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isStatusReactionsNotificationEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isStatusReactionsNotificationEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isTextPreviewForNotificationEnabled.
-             * @member {"isTextPreviewForNotificationEnabled"|undefined} _isTextPreviewForNotificationEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isTextPreviewForNotificationEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isTextPreviewForNotificationEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _defaultNotificationToneId.
-             * @member {"defaultNotificationToneId"|undefined} _defaultNotificationToneId
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_defaultNotificationToneId", {
                 get: $util.oneOfGetter($oneOfFields = ["defaultNotificationToneId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _groupDefaultNotificationToneId.
-             * @member {"groupDefaultNotificationToneId"|undefined} _groupDefaultNotificationToneId
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_groupDefaultNotificationToneId", {
                 get: $util.oneOfGetter($oneOfFields = ["groupDefaultNotificationToneId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _appTheme.
-             * @member {"appTheme"|undefined} _appTheme
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_appTheme", {
                 get: $util.oneOfGetter($oneOfFields = ["appTheme"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _wallpaperId.
-             * @member {"wallpaperId"|undefined} _wallpaperId
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_wallpaperId", {
                 get: $util.oneOfGetter($oneOfFields = ["wallpaperId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isDoodleWallpaperEnabled.
-             * @member {"isDoodleWallpaperEnabled"|undefined} _isDoodleWallpaperEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isDoodleWallpaperEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isDoodleWallpaperEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _fontSize.
-             * @member {"fontSize"|undefined} _fontSize
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_fontSize", {
                 get: $util.oneOfGetter($oneOfFields = ["fontSize"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isPhotosAutodownloadEnabled.
-             * @member {"isPhotosAutodownloadEnabled"|undefined} _isPhotosAutodownloadEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isPhotosAutodownloadEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isPhotosAutodownloadEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isAudiosAutodownloadEnabled.
-             * @member {"isAudiosAutodownloadEnabled"|undefined} _isAudiosAutodownloadEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isAudiosAutodownloadEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isAudiosAutodownloadEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isVideosAutodownloadEnabled.
-             * @member {"isVideosAutodownloadEnabled"|undefined} _isVideosAutodownloadEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isVideosAutodownloadEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isVideosAutodownloadEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _isDocumentsAutodownloadEnabled.
-             * @member {"isDocumentsAutodownloadEnabled"|undefined} _isDocumentsAutodownloadEnabled
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_isDocumentsAutodownloadEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isDocumentsAutodownloadEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _disableLinkPreviews.
-             * @member {"disableLinkPreviews"|undefined} _disableLinkPreviews
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_disableLinkPreviews", {
                 get: $util.oneOfGetter($oneOfFields = ["disableLinkPreviews"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SettingsSyncAction _notificationToneId.
-             * @member {"notificationToneId"|undefined} _notificationToneId
-             * @memberof SyncAction.SyncActionValue.SettingsSyncAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SettingsSyncAction.prototype, "_notificationToneId", {
                 get: $util.oneOfGetter($oneOfFields = ["notificationToneId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_mediaUploadQuality", {
+                get: $util.oneOfGetter($oneOfFields = ["mediaUploadQuality"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_isSpellCheckEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["isSpellCheckEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_isEnterToSendEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["isEnterToSendEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_isGroupMessageNotificationEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["isGroupMessageNotificationEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_isGroupReactionsNotificationEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["isGroupReactionsNotificationEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_isStatusNotificationEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["isStatusNotificationEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_statusNotificationToneId", {
+                get: $util.oneOfGetter($oneOfFields = ["statusNotificationToneId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_shouldPlaySoundForCallNotification", {
+                get: $util.oneOfGetter($oneOfFields = ["shouldPlaySoundForCallNotification"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_chatThemeId", {
+                get: $util.oneOfGetter($oneOfFields = ["chatThemeId"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(SettingsSyncAction.prototype, "_colorSchemeId", {
+                get: $util.oneOfGetter($oneOfFields = ["colorSchemeId"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -20260,6 +21787,26 @@ $root.SyncAction = (function() {
                     writer.uint32(/* id 22, wireType 0 =*/176).bool(message.disableLinkPreviews);
                 if (message.notificationToneId != null && Object.hasOwnProperty.call(message, "notificationToneId"))
                     writer.uint32(/* id 23, wireType 0 =*/184).int32(message.notificationToneId);
+                if (message.mediaUploadQuality != null && Object.hasOwnProperty.call(message, "mediaUploadQuality"))
+                    writer.uint32(/* id 24, wireType 0 =*/192).int32(message.mediaUploadQuality);
+                if (message.isSpellCheckEnabled != null && Object.hasOwnProperty.call(message, "isSpellCheckEnabled"))
+                    writer.uint32(/* id 25, wireType 0 =*/200).bool(message.isSpellCheckEnabled);
+                if (message.isEnterToSendEnabled != null && Object.hasOwnProperty.call(message, "isEnterToSendEnabled"))
+                    writer.uint32(/* id 26, wireType 0 =*/208).bool(message.isEnterToSendEnabled);
+                if (message.isGroupMessageNotificationEnabled != null && Object.hasOwnProperty.call(message, "isGroupMessageNotificationEnabled"))
+                    writer.uint32(/* id 27, wireType 0 =*/216).bool(message.isGroupMessageNotificationEnabled);
+                if (message.isGroupReactionsNotificationEnabled != null && Object.hasOwnProperty.call(message, "isGroupReactionsNotificationEnabled"))
+                    writer.uint32(/* id 28, wireType 0 =*/224).bool(message.isGroupReactionsNotificationEnabled);
+                if (message.isStatusNotificationEnabled != null && Object.hasOwnProperty.call(message, "isStatusNotificationEnabled"))
+                    writer.uint32(/* id 29, wireType 0 =*/232).bool(message.isStatusNotificationEnabled);
+                if (message.statusNotificationToneId != null && Object.hasOwnProperty.call(message, "statusNotificationToneId"))
+                    writer.uint32(/* id 30, wireType 0 =*/240).int32(message.statusNotificationToneId);
+                if (message.shouldPlaySoundForCallNotification != null && Object.hasOwnProperty.call(message, "shouldPlaySoundForCallNotification"))
+                    writer.uint32(/* id 31, wireType 0 =*/248).bool(message.shouldPlaySoundForCallNotification);
+                if (message.chatThemeId != null && Object.hasOwnProperty.call(message, "chatThemeId"))
+                    writer.uint32(/* id 32, wireType 2 =*/258).string(message.chatThemeId);
+                if (message.colorSchemeId != null && Object.hasOwnProperty.call(message, "colorSchemeId"))
+                    writer.uint32(/* id 33, wireType 2 =*/266).string(message.colorSchemeId);
                 return writer;
             };
 
@@ -20386,6 +21933,46 @@ $root.SyncAction = (function() {
                         }
                     case 23: {
                             message.notificationToneId = reader.int32();
+                            break;
+                        }
+                    case 24: {
+                            message.mediaUploadQuality = reader.int32();
+                            break;
+                        }
+                    case 25: {
+                            message.isSpellCheckEnabled = reader.bool();
+                            break;
+                        }
+                    case 26: {
+                            message.isEnterToSendEnabled = reader.bool();
+                            break;
+                        }
+                    case 27: {
+                            message.isGroupMessageNotificationEnabled = reader.bool();
+                            break;
+                        }
+                    case 28: {
+                            message.isGroupReactionsNotificationEnabled = reader.bool();
+                            break;
+                        }
+                    case 29: {
+                            message.isStatusNotificationEnabled = reader.bool();
+                            break;
+                        }
+                    case 30: {
+                            message.statusNotificationToneId = reader.int32();
+                            break;
+                        }
+                    case 31: {
+                            message.shouldPlaySoundForCallNotification = reader.bool();
+                            break;
+                        }
+                    case 32: {
+                            message.chatThemeId = reader.string();
+                            break;
+                        }
+                    case 33: {
+                            message.colorSchemeId = reader.string();
                             break;
                         }
                     default:
@@ -20553,6 +22140,62 @@ $root.SyncAction = (function() {
                     if (!$util.isInteger(message.notificationToneId))
                         return "notificationToneId: integer expected";
                 }
+                if (message.mediaUploadQuality != null && message.hasOwnProperty("mediaUploadQuality")) {
+                    properties._mediaUploadQuality = 1;
+                    switch (message.mediaUploadQuality) {
+                    default:
+                        return "mediaUploadQuality: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
+                }
+                if (message.isSpellCheckEnabled != null && message.hasOwnProperty("isSpellCheckEnabled")) {
+                    properties._isSpellCheckEnabled = 1;
+                    if (typeof message.isSpellCheckEnabled !== "boolean")
+                        return "isSpellCheckEnabled: boolean expected";
+                }
+                if (message.isEnterToSendEnabled != null && message.hasOwnProperty("isEnterToSendEnabled")) {
+                    properties._isEnterToSendEnabled = 1;
+                    if (typeof message.isEnterToSendEnabled !== "boolean")
+                        return "isEnterToSendEnabled: boolean expected";
+                }
+                if (message.isGroupMessageNotificationEnabled != null && message.hasOwnProperty("isGroupMessageNotificationEnabled")) {
+                    properties._isGroupMessageNotificationEnabled = 1;
+                    if (typeof message.isGroupMessageNotificationEnabled !== "boolean")
+                        return "isGroupMessageNotificationEnabled: boolean expected";
+                }
+                if (message.isGroupReactionsNotificationEnabled != null && message.hasOwnProperty("isGroupReactionsNotificationEnabled")) {
+                    properties._isGroupReactionsNotificationEnabled = 1;
+                    if (typeof message.isGroupReactionsNotificationEnabled !== "boolean")
+                        return "isGroupReactionsNotificationEnabled: boolean expected";
+                }
+                if (message.isStatusNotificationEnabled != null && message.hasOwnProperty("isStatusNotificationEnabled")) {
+                    properties._isStatusNotificationEnabled = 1;
+                    if (typeof message.isStatusNotificationEnabled !== "boolean")
+                        return "isStatusNotificationEnabled: boolean expected";
+                }
+                if (message.statusNotificationToneId != null && message.hasOwnProperty("statusNotificationToneId")) {
+                    properties._statusNotificationToneId = 1;
+                    if (!$util.isInteger(message.statusNotificationToneId))
+                        return "statusNotificationToneId: integer expected";
+                }
+                if (message.shouldPlaySoundForCallNotification != null && message.hasOwnProperty("shouldPlaySoundForCallNotification")) {
+                    properties._shouldPlaySoundForCallNotification = 1;
+                    if (typeof message.shouldPlaySoundForCallNotification !== "boolean")
+                        return "shouldPlaySoundForCallNotification: boolean expected";
+                }
+                if (message.chatThemeId != null && message.hasOwnProperty("chatThemeId")) {
+                    properties._chatThemeId = 1;
+                    if (!$util.isString(message.chatThemeId))
+                        return "chatThemeId: string expected";
+                }
+                if (message.colorSchemeId != null && message.hasOwnProperty("colorSchemeId")) {
+                    properties._colorSchemeId = 1;
+                    if (!$util.isString(message.colorSchemeId))
+                        return "colorSchemeId: string expected";
+                }
                 return null;
             };
 
@@ -20658,6 +22301,44 @@ $root.SyncAction = (function() {
                     message.disableLinkPreviews = Boolean(object.disableLinkPreviews);
                 if (object.notificationToneId != null)
                     message.notificationToneId = object.notificationToneId | 0;
+                switch (object.mediaUploadQuality) {
+                default:
+                    if (typeof object.mediaUploadQuality === "number") {
+                        message.mediaUploadQuality = object.mediaUploadQuality;
+                        break;
+                    }
+                    break;
+                case "MEDIA_QUALITY_UNKNOWN":
+                case 0:
+                    message.mediaUploadQuality = 0;
+                    break;
+                case "STANDARD":
+                case 1:
+                    message.mediaUploadQuality = 1;
+                    break;
+                case "HD":
+                case 2:
+                    message.mediaUploadQuality = 2;
+                    break;
+                }
+                if (object.isSpellCheckEnabled != null)
+                    message.isSpellCheckEnabled = Boolean(object.isSpellCheckEnabled);
+                if (object.isEnterToSendEnabled != null)
+                    message.isEnterToSendEnabled = Boolean(object.isEnterToSendEnabled);
+                if (object.isGroupMessageNotificationEnabled != null)
+                    message.isGroupMessageNotificationEnabled = Boolean(object.isGroupMessageNotificationEnabled);
+                if (object.isGroupReactionsNotificationEnabled != null)
+                    message.isGroupReactionsNotificationEnabled = Boolean(object.isGroupReactionsNotificationEnabled);
+                if (object.isStatusNotificationEnabled != null)
+                    message.isStatusNotificationEnabled = Boolean(object.isStatusNotificationEnabled);
+                if (object.statusNotificationToneId != null)
+                    message.statusNotificationToneId = object.statusNotificationToneId | 0;
+                if (object.shouldPlaySoundForCallNotification != null)
+                    message.shouldPlaySoundForCallNotification = Boolean(object.shouldPlaySoundForCallNotification);
+                if (object.chatThemeId != null)
+                    message.chatThemeId = String(object.chatThemeId);
+                if (object.colorSchemeId != null)
+                    message.colorSchemeId = String(object.colorSchemeId);
                 return message;
             };
 
@@ -20789,6 +22470,56 @@ $root.SyncAction = (function() {
                     if (options.oneofs)
                         object._notificationToneId = "notificationToneId";
                 }
+                if (message.mediaUploadQuality != null && message.hasOwnProperty("mediaUploadQuality")) {
+                    object.mediaUploadQuality = options.enums === String ? $root.SyncAction.SyncActionValue.SettingsSyncAction.MediaQualitySetting[message.mediaUploadQuality] === undefined ? message.mediaUploadQuality : $root.SyncAction.SyncActionValue.SettingsSyncAction.MediaQualitySetting[message.mediaUploadQuality] : message.mediaUploadQuality;
+                    if (options.oneofs)
+                        object._mediaUploadQuality = "mediaUploadQuality";
+                }
+                if (message.isSpellCheckEnabled != null && message.hasOwnProperty("isSpellCheckEnabled")) {
+                    object.isSpellCheckEnabled = message.isSpellCheckEnabled;
+                    if (options.oneofs)
+                        object._isSpellCheckEnabled = "isSpellCheckEnabled";
+                }
+                if (message.isEnterToSendEnabled != null && message.hasOwnProperty("isEnterToSendEnabled")) {
+                    object.isEnterToSendEnabled = message.isEnterToSendEnabled;
+                    if (options.oneofs)
+                        object._isEnterToSendEnabled = "isEnterToSendEnabled";
+                }
+                if (message.isGroupMessageNotificationEnabled != null && message.hasOwnProperty("isGroupMessageNotificationEnabled")) {
+                    object.isGroupMessageNotificationEnabled = message.isGroupMessageNotificationEnabled;
+                    if (options.oneofs)
+                        object._isGroupMessageNotificationEnabled = "isGroupMessageNotificationEnabled";
+                }
+                if (message.isGroupReactionsNotificationEnabled != null && message.hasOwnProperty("isGroupReactionsNotificationEnabled")) {
+                    object.isGroupReactionsNotificationEnabled = message.isGroupReactionsNotificationEnabled;
+                    if (options.oneofs)
+                        object._isGroupReactionsNotificationEnabled = "isGroupReactionsNotificationEnabled";
+                }
+                if (message.isStatusNotificationEnabled != null && message.hasOwnProperty("isStatusNotificationEnabled")) {
+                    object.isStatusNotificationEnabled = message.isStatusNotificationEnabled;
+                    if (options.oneofs)
+                        object._isStatusNotificationEnabled = "isStatusNotificationEnabled";
+                }
+                if (message.statusNotificationToneId != null && message.hasOwnProperty("statusNotificationToneId")) {
+                    object.statusNotificationToneId = message.statusNotificationToneId;
+                    if (options.oneofs)
+                        object._statusNotificationToneId = "statusNotificationToneId";
+                }
+                if (message.shouldPlaySoundForCallNotification != null && message.hasOwnProperty("shouldPlaySoundForCallNotification")) {
+                    object.shouldPlaySoundForCallNotification = message.shouldPlaySoundForCallNotification;
+                    if (options.oneofs)
+                        object._shouldPlaySoundForCallNotification = "shouldPlaySoundForCallNotification";
+                }
+                if (message.chatThemeId != null && message.hasOwnProperty("chatThemeId")) {
+                    object.chatThemeId = message.chatThemeId;
+                    if (options.oneofs)
+                        object._chatThemeId = "chatThemeId";
+                }
+                if (message.colorSchemeId != null && message.hasOwnProperty("colorSchemeId")) {
+                    object.colorSchemeId = message.colorSchemeId;
+                    if (options.oneofs)
+                        object._colorSchemeId = "colorSchemeId";
+                }
                 return object;
             };
 
@@ -20837,6 +22568,22 @@ $root.SyncAction = (function() {
             })();
 
             /**
+             * MediaQualitySetting enum.
+             * @name SyncAction.SyncActionValue.SettingsSyncAction.MediaQualitySetting
+             * @enum {number}
+             * @property {number} MEDIA_QUALITY_UNKNOWN=0 MEDIA_QUALITY_UNKNOWN value
+             * @property {number} STANDARD=1 STANDARD value
+             * @property {number} HD=2 HD value
+             */
+            SettingsSyncAction.MediaQualitySetting = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "MEDIA_QUALITY_UNKNOWN"] = 0;
+                values[valuesById[1] = "STANDARD"] = 1;
+                values[valuesById[2] = "HD"] = 2;
+                return values;
+            })();
+
+            /**
              * SettingKey enum.
              * @name SyncAction.SyncActionValue.SettingsSyncAction.SettingKey
              * @enum {number}
@@ -20864,6 +22611,16 @@ $root.SyncAction = (function() {
              * @property {number} IS_DOCUMENTS_AUTODOWNLOAD_ENABLED=21 IS_DOCUMENTS_AUTODOWNLOAD_ENABLED value
              * @property {number} DISABLE_LINK_PREVIEWS=22 DISABLE_LINK_PREVIEWS value
              * @property {number} NOTIFICATION_TONE_ID=23 NOTIFICATION_TONE_ID value
+             * @property {number} MEDIA_UPLOAD_QUALITY=24 MEDIA_UPLOAD_QUALITY value
+             * @property {number} IS_SPELL_CHECK_ENABLED=25 IS_SPELL_CHECK_ENABLED value
+             * @property {number} IS_ENTER_TO_SEND_ENABLED=26 IS_ENTER_TO_SEND_ENABLED value
+             * @property {number} IS_GROUP_MESSAGE_NOTIFICATION_ENABLED=27 IS_GROUP_MESSAGE_NOTIFICATION_ENABLED value
+             * @property {number} IS_GROUP_REACTIONS_NOTIFICATION_ENABLED=28 IS_GROUP_REACTIONS_NOTIFICATION_ENABLED value
+             * @property {number} IS_STATUS_NOTIFICATION_ENABLED=29 IS_STATUS_NOTIFICATION_ENABLED value
+             * @property {number} STATUS_NOTIFICATION_TONE_ID=30 STATUS_NOTIFICATION_TONE_ID value
+             * @property {number} SHOULD_PLAY_SOUND_FOR_CALL_NOTIFICATION=31 SHOULD_PLAY_SOUND_FOR_CALL_NOTIFICATION value
+             * @property {number} CHAT_THEME_ID=32 CHAT_THEME_ID value
+             * @property {number} COLOR_SCHEME_ID=33 COLOR_SCHEME_ID value
              */
             SettingsSyncAction.SettingKey = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -20891,6 +22648,16 @@ $root.SyncAction = (function() {
                 values[valuesById[21] = "IS_DOCUMENTS_AUTODOWNLOAD_ENABLED"] = 21;
                 values[valuesById[22] = "DISABLE_LINK_PREVIEWS"] = 22;
                 values[valuesById[23] = "NOTIFICATION_TONE_ID"] = 23;
+                values[valuesById[24] = "MEDIA_UPLOAD_QUALITY"] = 24;
+                values[valuesById[25] = "IS_SPELL_CHECK_ENABLED"] = 25;
+                values[valuesById[26] = "IS_ENTER_TO_SEND_ENABLED"] = 26;
+                values[valuesById[27] = "IS_GROUP_MESSAGE_NOTIFICATION_ENABLED"] = 27;
+                values[valuesById[28] = "IS_GROUP_REACTIONS_NOTIFICATION_ENABLED"] = 28;
+                values[valuesById[29] = "IS_STATUS_NOTIFICATION_ENABLED"] = 29;
+                values[valuesById[30] = "STATUS_NOTIFICATION_TONE_ID"] = 30;
+                values[valuesById[31] = "SHOULD_PLAY_SOUND_FOR_CALL_NOTIFICATION"] = 31;
+                values[valuesById[32] = "CHAT_THEME_ID"] = 32;
+                values[valuesById[33] = "COLOR_SCHEME_ID"] = 33;
                 return values;
             })();
 
@@ -20952,12 +22719,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * StarAction _starred.
-             * @member {"starred"|undefined} _starred
-             * @memberof SyncAction.SyncActionValue.StarAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StarAction.prototype, "_starred", {
                 get: $util.oneOfGetter($oneOfFields = ["starred"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -21175,12 +22937,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * StatusPostOptInNotificationPreferencesAction _enabled.
-             * @member {"enabled"|undefined} _enabled
-             * @memberof SyncAction.SyncActionValue.StatusPostOptInNotificationPreferencesAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StatusPostOptInNotificationPreferencesAction.prototype, "_enabled", {
                 get: $util.oneOfGetter($oneOfFields = ["enabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -21371,6 +23128,9 @@ $root.SyncAction = (function() {
              * @interface IStatusPrivacyAction
              * @property {SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode|null} [mode] StatusPrivacyAction mode
              * @property {Array.<string>|null} [userJid] StatusPrivacyAction userJid
+             * @property {boolean|null} [shareToFB] StatusPrivacyAction shareToFB
+             * @property {boolean|null} [shareToIG] StatusPrivacyAction shareToIG
+             * @property {Array.<SyncAction.SyncActionValue.StatusPrivacyAction.ICustomList>|null} [customLists] StatusPrivacyAction customLists
              */
 
             /**
@@ -21383,6 +23143,7 @@ $root.SyncAction = (function() {
              */
             function StatusPrivacyAction(properties) {
                 this.userJid = [];
+                this.customLists = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -21405,17 +23166,48 @@ $root.SyncAction = (function() {
              */
             StatusPrivacyAction.prototype.userJid = $util.emptyArray;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * StatusPrivacyAction _mode.
-             * @member {"mode"|undefined} _mode
+             * StatusPrivacyAction shareToFB.
+             * @member {boolean|null|undefined} shareToFB
              * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
              * @instance
              */
+            StatusPrivacyAction.prototype.shareToFB = null;
+
+            /**
+             * StatusPrivacyAction shareToIG.
+             * @member {boolean|null|undefined} shareToIG
+             * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
+             * @instance
+             */
+            StatusPrivacyAction.prototype.shareToIG = null;
+
+            /**
+             * StatusPrivacyAction customLists.
+             * @member {Array.<SyncAction.SyncActionValue.StatusPrivacyAction.ICustomList>} customLists
+             * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
+             * @instance
+             */
+            StatusPrivacyAction.prototype.customLists = $util.emptyArray;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StatusPrivacyAction.prototype, "_mode", {
                 get: $util.oneOfGetter($oneOfFields = ["mode"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(StatusPrivacyAction.prototype, "_shareToFB", {
+                get: $util.oneOfGetter($oneOfFields = ["shareToFB"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(StatusPrivacyAction.prototype, "_shareToIG", {
+                get: $util.oneOfGetter($oneOfFields = ["shareToIG"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -21448,6 +23240,13 @@ $root.SyncAction = (function() {
                 if (message.userJid != null && message.userJid.length)
                     for (var i = 0; i < message.userJid.length; ++i)
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.userJid[i]);
+                if (message.shareToFB != null && Object.hasOwnProperty.call(message, "shareToFB"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.shareToFB);
+                if (message.shareToIG != null && Object.hasOwnProperty.call(message, "shareToIG"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.shareToIG);
+                if (message.customLists != null && message.customLists.length)
+                    for (var i = 0; i < message.customLists.length; ++i)
+                        $root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.encode(message.customLists[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 return writer;
             };
 
@@ -21492,6 +23291,20 @@ $root.SyncAction = (function() {
                             if (!(message.userJid && message.userJid.length))
                                 message.userJid = [];
                             message.userJid.push(reader.string());
+                            break;
+                        }
+                    case 3: {
+                            message.shareToFB = reader.bool();
+                            break;
+                        }
+                    case 4: {
+                            message.shareToIG = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            if (!(message.customLists && message.customLists.length))
+                                message.customLists = [];
+                            message.customLists.push($root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.decode(reader, reader.uint32()));
                             break;
                         }
                     default:
@@ -21539,6 +23352,7 @@ $root.SyncAction = (function() {
                     case 1:
                     case 2:
                     case 3:
+                    case 4:
                         break;
                     }
                 }
@@ -21548,6 +23362,25 @@ $root.SyncAction = (function() {
                     for (var i = 0; i < message.userJid.length; ++i)
                         if (!$util.isString(message.userJid[i]))
                             return "userJid: string[] expected";
+                }
+                if (message.shareToFB != null && message.hasOwnProperty("shareToFB")) {
+                    properties._shareToFB = 1;
+                    if (typeof message.shareToFB !== "boolean")
+                        return "shareToFB: boolean expected";
+                }
+                if (message.shareToIG != null && message.hasOwnProperty("shareToIG")) {
+                    properties._shareToIG = 1;
+                    if (typeof message.shareToIG !== "boolean")
+                        return "shareToIG: boolean expected";
+                }
+                if (message.customLists != null && message.hasOwnProperty("customLists")) {
+                    if (!Array.isArray(message.customLists))
+                        return "customLists: array expected";
+                    for (var i = 0; i < message.customLists.length; ++i) {
+                        var error = $root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.verify(message.customLists[i]);
+                        if (error)
+                            return "customLists." + error;
+                    }
                 }
                 return null;
             };
@@ -21587,6 +23420,10 @@ $root.SyncAction = (function() {
                 case 3:
                     message.mode = 3;
                     break;
+                case "CUSTOM_LIST":
+                case 4:
+                    message.mode = 4;
+                    break;
                 }
                 if (object.userJid) {
                     if (!Array.isArray(object.userJid))
@@ -21594,6 +23431,20 @@ $root.SyncAction = (function() {
                     message.userJid = [];
                     for (var i = 0; i < object.userJid.length; ++i)
                         message.userJid[i] = String(object.userJid[i]);
+                }
+                if (object.shareToFB != null)
+                    message.shareToFB = Boolean(object.shareToFB);
+                if (object.shareToIG != null)
+                    message.shareToIG = Boolean(object.shareToIG);
+                if (object.customLists) {
+                    if (!Array.isArray(object.customLists))
+                        throw TypeError(".SyncAction.SyncActionValue.StatusPrivacyAction.customLists: array expected");
+                    message.customLists = [];
+                    for (var i = 0; i < object.customLists.length; ++i) {
+                        if (typeof object.customLists[i] !== "object")
+                            throw TypeError(".SyncAction.SyncActionValue.StatusPrivacyAction.customLists: object expected");
+                        message.customLists[i] = $root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.fromObject(object.customLists[i]);
+                    }
                 }
                 return message;
             };
@@ -21611,8 +23462,10 @@ $root.SyncAction = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
                     object.userJid = [];
+                    object.customLists = [];
+                }
                 if (message.mode != null && message.hasOwnProperty("mode")) {
                     object.mode = options.enums === String ? $root.SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode[message.mode] === undefined ? message.mode : $root.SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode[message.mode] : message.mode;
                     if (options.oneofs)
@@ -21622,6 +23475,21 @@ $root.SyncAction = (function() {
                     object.userJid = [];
                     for (var j = 0; j < message.userJid.length; ++j)
                         object.userJid[j] = message.userJid[j];
+                }
+                if (message.shareToFB != null && message.hasOwnProperty("shareToFB")) {
+                    object.shareToFB = message.shareToFB;
+                    if (options.oneofs)
+                        object._shareToFB = "shareToFB";
+                }
+                if (message.shareToIG != null && message.hasOwnProperty("shareToIG")) {
+                    object.shareToIG = message.shareToIG;
+                    if (options.oneofs)
+                        object._shareToIG = "shareToIG";
+                }
+                if (message.customLists && message.customLists.length) {
+                    object.customLists = [];
+                    for (var j = 0; j < message.customLists.length; ++j)
+                        object.customLists[j] = $root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.toObject(message.customLists[j], options);
                 }
                 return object;
             };
@@ -21652,6 +23520,363 @@ $root.SyncAction = (function() {
                 return typeUrlPrefix + "/SyncAction.SyncActionValue.StatusPrivacyAction";
             };
 
+            StatusPrivacyAction.CustomList = (function() {
+
+                /**
+                 * Properties of a CustomList.
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
+                 * @interface ICustomList
+                 * @property {string|null} [listId] CustomList listId
+                 * @property {string|null} [name] CustomList name
+                 * @property {string|null} [emoji] CustomList emoji
+                 * @property {boolean|null} [isSelected] CustomList isSelected
+                 * @property {Array.<string>|null} [userJid] CustomList userJid
+                 */
+
+                /**
+                 * Constructs a new CustomList.
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction
+                 * @classdesc Represents a CustomList.
+                 * @implements ICustomList
+                 * @constructor
+                 * @param {SyncAction.SyncActionValue.StatusPrivacyAction.ICustomList=} [properties] Properties to set
+                 */
+                function CustomList(properties) {
+                    this.userJid = [];
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * CustomList listId.
+                 * @member {string|null|undefined} listId
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @instance
+                 */
+                CustomList.prototype.listId = null;
+
+                /**
+                 * CustomList name.
+                 * @member {string|null|undefined} name
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @instance
+                 */
+                CustomList.prototype.name = null;
+
+                /**
+                 * CustomList emoji.
+                 * @member {string|null|undefined} emoji
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @instance
+                 */
+                CustomList.prototype.emoji = null;
+
+                /**
+                 * CustomList isSelected.
+                 * @member {boolean|null|undefined} isSelected
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @instance
+                 */
+                CustomList.prototype.isSelected = null;
+
+                /**
+                 * CustomList userJid.
+                 * @member {Array.<string>} userJid
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @instance
+                 */
+                CustomList.prototype.userJid = $util.emptyArray;
+
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(CustomList.prototype, "_listId", {
+                    get: $util.oneOfGetter($oneOfFields = ["listId"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(CustomList.prototype, "_name", {
+                    get: $util.oneOfGetter($oneOfFields = ["name"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(CustomList.prototype, "_emoji", {
+                    get: $util.oneOfGetter($oneOfFields = ["emoji"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(CustomList.prototype, "_isSelected", {
+                    get: $util.oneOfGetter($oneOfFields = ["isSelected"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                /**
+                 * Creates a new CustomList instance using the specified properties.
+                 * @function create
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {SyncAction.SyncActionValue.StatusPrivacyAction.ICustomList=} [properties] Properties to set
+                 * @returns {SyncAction.SyncActionValue.StatusPrivacyAction.CustomList} CustomList instance
+                 */
+                CustomList.create = function create(properties) {
+                    return new CustomList(properties);
+                };
+
+                /**
+                 * Encodes the specified CustomList message. Does not implicitly {@link SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.verify|verify} messages.
+                 * @function encode
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {SyncAction.SyncActionValue.StatusPrivacyAction.ICustomList} message CustomList message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CustomList.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.listId != null && Object.hasOwnProperty.call(message, "listId"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.listId);
+                    if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
+                    if (message.emoji != null && Object.hasOwnProperty.call(message, "emoji"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.emoji);
+                    if (message.isSelected != null && Object.hasOwnProperty.call(message, "isSelected"))
+                        writer.uint32(/* id 4, wireType 0 =*/32).bool(message.isSelected);
+                    if (message.userJid != null && message.userJid.length)
+                        for (var i = 0; i < message.userJid.length; ++i)
+                            writer.uint32(/* id 5, wireType 2 =*/42).string(message.userJid[i]);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified CustomList message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {SyncAction.SyncActionValue.StatusPrivacyAction.ICustomList} message CustomList message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                CustomList.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a CustomList message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {SyncAction.SyncActionValue.StatusPrivacyAction.CustomList} CustomList
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CustomList.decode = function decode(reader, length, error) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        if (tag === error)
+                            break;
+                        switch (tag >>> 3) {
+                        case 1: {
+                                message.listId = reader.string();
+                                break;
+                            }
+                        case 2: {
+                                message.name = reader.string();
+                                break;
+                            }
+                        case 3: {
+                                message.emoji = reader.string();
+                                break;
+                            }
+                        case 4: {
+                                message.isSelected = reader.bool();
+                                break;
+                            }
+                        case 5: {
+                                if (!(message.userJid && message.userJid.length))
+                                    message.userJid = [];
+                                message.userJid.push(reader.string());
+                                break;
+                            }
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a CustomList message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {SyncAction.SyncActionValue.StatusPrivacyAction.CustomList} CustomList
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                CustomList.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a CustomList message.
+                 * @function verify
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                CustomList.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.listId != null && message.hasOwnProperty("listId")) {
+                        properties._listId = 1;
+                        if (!$util.isString(message.listId))
+                            return "listId: string expected";
+                    }
+                    if (message.name != null && message.hasOwnProperty("name")) {
+                        properties._name = 1;
+                        if (!$util.isString(message.name))
+                            return "name: string expected";
+                    }
+                    if (message.emoji != null && message.hasOwnProperty("emoji")) {
+                        properties._emoji = 1;
+                        if (!$util.isString(message.emoji))
+                            return "emoji: string expected";
+                    }
+                    if (message.isSelected != null && message.hasOwnProperty("isSelected")) {
+                        properties._isSelected = 1;
+                        if (typeof message.isSelected !== "boolean")
+                            return "isSelected: boolean expected";
+                    }
+                    if (message.userJid != null && message.hasOwnProperty("userJid")) {
+                        if (!Array.isArray(message.userJid))
+                            return "userJid: array expected";
+                        for (var i = 0; i < message.userJid.length; ++i)
+                            if (!$util.isString(message.userJid[i]))
+                                return "userJid: string[] expected";
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a CustomList message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {SyncAction.SyncActionValue.StatusPrivacyAction.CustomList} CustomList
+                 */
+                CustomList.fromObject = function fromObject(object) {
+                    if (object instanceof $root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList)
+                        return object;
+                    var message = new $root.SyncAction.SyncActionValue.StatusPrivacyAction.CustomList();
+                    if (object.listId != null)
+                        message.listId = String(object.listId);
+                    if (object.name != null)
+                        message.name = String(object.name);
+                    if (object.emoji != null)
+                        message.emoji = String(object.emoji);
+                    if (object.isSelected != null)
+                        message.isSelected = Boolean(object.isSelected);
+                    if (object.userJid) {
+                        if (!Array.isArray(object.userJid))
+                            throw TypeError(".SyncAction.SyncActionValue.StatusPrivacyAction.CustomList.userJid: array expected");
+                        message.userJid = [];
+                        for (var i = 0; i < object.userJid.length; ++i)
+                            message.userJid[i] = String(object.userJid[i]);
+                    }
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a CustomList message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {SyncAction.SyncActionValue.StatusPrivacyAction.CustomList} message CustomList
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                CustomList.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.arrays || options.defaults)
+                        object.userJid = [];
+                    if (message.listId != null && message.hasOwnProperty("listId")) {
+                        object.listId = message.listId;
+                        if (options.oneofs)
+                            object._listId = "listId";
+                    }
+                    if (message.name != null && message.hasOwnProperty("name")) {
+                        object.name = message.name;
+                        if (options.oneofs)
+                            object._name = "name";
+                    }
+                    if (message.emoji != null && message.hasOwnProperty("emoji")) {
+                        object.emoji = message.emoji;
+                        if (options.oneofs)
+                            object._emoji = "emoji";
+                    }
+                    if (message.isSelected != null && message.hasOwnProperty("isSelected")) {
+                        object.isSelected = message.isSelected;
+                        if (options.oneofs)
+                            object._isSelected = "isSelected";
+                    }
+                    if (message.userJid && message.userJid.length) {
+                        object.userJid = [];
+                        for (var j = 0; j < message.userJid.length; ++j)
+                            object.userJid[j] = message.userJid[j];
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this CustomList to JSON.
+                 * @function toJSON
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                CustomList.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for CustomList
+                 * @function getTypeUrl
+                 * @memberof SyncAction.SyncActionValue.StatusPrivacyAction.CustomList
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                CustomList.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/SyncAction.SyncActionValue.StatusPrivacyAction.CustomList";
+                };
+
+                return CustomList;
+            })();
+
             /**
              * StatusDistributionMode enum.
              * @name SyncAction.SyncActionValue.StatusPrivacyAction.StatusDistributionMode
@@ -21660,6 +23885,7 @@ $root.SyncAction = (function() {
              * @property {number} DENY_LIST=1 DENY_LIST value
              * @property {number} CONTACTS=2 CONTACTS value
              * @property {number} CLOSE_FRIENDS=3 CLOSE_FRIENDS value
+             * @property {number} CUSTOM_LIST=4 CUSTOM_LIST value
              */
             StatusPrivacyAction.StatusDistributionMode = (function() {
                 var valuesById = {}, values = Object.create(valuesById);
@@ -21667,6 +23893,7 @@ $root.SyncAction = (function() {
                 values[valuesById[1] = "DENY_LIST"] = 1;
                 values[valuesById[2] = "CONTACTS"] = 2;
                 values[valuesById[3] = "CLOSE_FRIENDS"] = 3;
+                values[valuesById[4] = "CUSTOM_LIST"] = 4;
                 return values;
             })();
 
@@ -21816,144 +24043,79 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * StickerAction _url.
-             * @member {"url"|undefined} _url
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_url", {
                 get: $util.oneOfGetter($oneOfFields = ["url"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _fileEncSha256.
-             * @member {"fileEncSha256"|undefined} _fileEncSha256
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_fileEncSha256", {
                 get: $util.oneOfGetter($oneOfFields = ["fileEncSha256"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _mediaKey.
-             * @member {"mediaKey"|undefined} _mediaKey
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_mediaKey", {
                 get: $util.oneOfGetter($oneOfFields = ["mediaKey"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _mimetype.
-             * @member {"mimetype"|undefined} _mimetype
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_mimetype", {
                 get: $util.oneOfGetter($oneOfFields = ["mimetype"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _height.
-             * @member {"height"|undefined} _height
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_height", {
                 get: $util.oneOfGetter($oneOfFields = ["height"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _width.
-             * @member {"width"|undefined} _width
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_width", {
                 get: $util.oneOfGetter($oneOfFields = ["width"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _directPath.
-             * @member {"directPath"|undefined} _directPath
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_directPath", {
                 get: $util.oneOfGetter($oneOfFields = ["directPath"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _fileLength.
-             * @member {"fileLength"|undefined} _fileLength
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_fileLength", {
                 get: $util.oneOfGetter($oneOfFields = ["fileLength"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _isFavorite.
-             * @member {"isFavorite"|undefined} _isFavorite
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_isFavorite", {
                 get: $util.oneOfGetter($oneOfFields = ["isFavorite"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _deviceIdHint.
-             * @member {"deviceIdHint"|undefined} _deviceIdHint
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_deviceIdHint", {
                 get: $util.oneOfGetter($oneOfFields = ["deviceIdHint"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _isLottie.
-             * @member {"isLottie"|undefined} _isLottie
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_isLottie", {
                 get: $util.oneOfGetter($oneOfFields = ["isLottie"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _imageHash.
-             * @member {"imageHash"|undefined} _imageHash
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_imageHash", {
                 get: $util.oneOfGetter($oneOfFields = ["imageHash"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * StickerAction _isAvatarSticker.
-             * @member {"isAvatarSticker"|undefined} _isAvatarSticker
-             * @memberof SyncAction.SyncActionValue.StickerAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(StickerAction.prototype, "_isAvatarSticker", {
                 get: $util.oneOfGetter($oneOfFields = ["isAvatarSticker"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -22421,34 +24583,19 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SubscriptionAction _isDeactivated.
-             * @member {"isDeactivated"|undefined} _isDeactivated
-             * @memberof SyncAction.SyncActionValue.SubscriptionAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SubscriptionAction.prototype, "_isDeactivated", {
                 get: $util.oneOfGetter($oneOfFields = ["isDeactivated"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SubscriptionAction _isAutoRenewing.
-             * @member {"isAutoRenewing"|undefined} _isAutoRenewing
-             * @memberof SyncAction.SyncActionValue.SubscriptionAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SubscriptionAction.prototype, "_isAutoRenewing", {
                 get: $util.oneOfGetter($oneOfFields = ["isAutoRenewing"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SubscriptionAction _expirationDate.
-             * @member {"expirationDate"|undefined} _expirationDate
-             * @memberof SyncAction.SyncActionValue.SubscriptionAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SubscriptionAction.prototype, "_expirationDate", {
                 get: $util.oneOfGetter($oneOfFields = ["expirationDate"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -22677,6 +24824,1083 @@ $root.SyncAction = (function() {
             return SubscriptionAction;
         })();
 
+        SyncActionValue.SubscriptionsSyncV2Action = (function() {
+
+            /**
+             * Properties of a SubscriptionsSyncV2Action.
+             * @memberof SyncAction.SyncActionValue
+             * @interface ISubscriptionsSyncV2Action
+             * @property {Array.<SyncAction.SyncActionValue.SubscriptionsSyncV2Action.ISubscriptionInfo>|null} [subscriptions] SubscriptionsSyncV2Action subscriptions
+             * @property {Array.<SyncAction.SyncActionValue.SubscriptionsSyncV2Action.IPaidFeature>|null} [paidFeature] SubscriptionsSyncV2Action paidFeature
+             */
+
+            /**
+             * Constructs a new SubscriptionsSyncV2Action.
+             * @memberof SyncAction.SyncActionValue
+             * @classdesc Represents a SubscriptionsSyncV2Action.
+             * @implements ISubscriptionsSyncV2Action
+             * @constructor
+             * @param {SyncAction.SyncActionValue.ISubscriptionsSyncV2Action=} [properties] Properties to set
+             */
+            function SubscriptionsSyncV2Action(properties) {
+                this.subscriptions = [];
+                this.paidFeature = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SubscriptionsSyncV2Action subscriptions.
+             * @member {Array.<SyncAction.SyncActionValue.SubscriptionsSyncV2Action.ISubscriptionInfo>} subscriptions
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @instance
+             */
+            SubscriptionsSyncV2Action.prototype.subscriptions = $util.emptyArray;
+
+            /**
+             * SubscriptionsSyncV2Action paidFeature.
+             * @member {Array.<SyncAction.SyncActionValue.SubscriptionsSyncV2Action.IPaidFeature>} paidFeature
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @instance
+             */
+            SubscriptionsSyncV2Action.prototype.paidFeature = $util.emptyArray;
+
+            /**
+             * Creates a new SubscriptionsSyncV2Action instance using the specified properties.
+             * @function create
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {SyncAction.SyncActionValue.ISubscriptionsSyncV2Action=} [properties] Properties to set
+             * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action} SubscriptionsSyncV2Action instance
+             */
+            SubscriptionsSyncV2Action.create = function create(properties) {
+                return new SubscriptionsSyncV2Action(properties);
+            };
+
+            /**
+             * Encodes the specified SubscriptionsSyncV2Action message. Does not implicitly {@link SyncAction.SyncActionValue.SubscriptionsSyncV2Action.verify|verify} messages.
+             * @function encode
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {SyncAction.SyncActionValue.ISubscriptionsSyncV2Action} message SubscriptionsSyncV2Action message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SubscriptionsSyncV2Action.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.subscriptions != null && message.subscriptions.length)
+                    for (var i = 0; i < message.subscriptions.length; ++i)
+                        $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.encode(message.subscriptions[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.paidFeature != null && message.paidFeature.length)
+                    for (var i = 0; i < message.paidFeature.length; ++i)
+                        $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.encode(message.paidFeature[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified SubscriptionsSyncV2Action message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.SubscriptionsSyncV2Action.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {SyncAction.SyncActionValue.ISubscriptionsSyncV2Action} message SubscriptionsSyncV2Action message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SubscriptionsSyncV2Action.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a SubscriptionsSyncV2Action message from the specified reader or buffer.
+             * @function decode
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action} SubscriptionsSyncV2Action
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SubscriptionsSyncV2Action.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            if (!(message.subscriptions && message.subscriptions.length))
+                                message.subscriptions = [];
+                            message.subscriptions.push($root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.decode(reader, reader.uint32()));
+                            break;
+                        }
+                    case 2: {
+                            if (!(message.paidFeature && message.paidFeature.length))
+                                message.paidFeature = [];
+                            message.paidFeature.push($root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.decode(reader, reader.uint32()));
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a SubscriptionsSyncV2Action message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action} SubscriptionsSyncV2Action
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SubscriptionsSyncV2Action.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a SubscriptionsSyncV2Action message.
+             * @function verify
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SubscriptionsSyncV2Action.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.subscriptions != null && message.hasOwnProperty("subscriptions")) {
+                    if (!Array.isArray(message.subscriptions))
+                        return "subscriptions: array expected";
+                    for (var i = 0; i < message.subscriptions.length; ++i) {
+                        var error = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.verify(message.subscriptions[i]);
+                        if (error)
+                            return "subscriptions." + error;
+                    }
+                }
+                if (message.paidFeature != null && message.hasOwnProperty("paidFeature")) {
+                    if (!Array.isArray(message.paidFeature))
+                        return "paidFeature: array expected";
+                    for (var i = 0; i < message.paidFeature.length; ++i) {
+                        var error = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.verify(message.paidFeature[i]);
+                        if (error)
+                            return "paidFeature." + error;
+                    }
+                }
+                return null;
+            };
+
+            /**
+             * Creates a SubscriptionsSyncV2Action message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action} SubscriptionsSyncV2Action
+             */
+            SubscriptionsSyncV2Action.fromObject = function fromObject(object) {
+                if (object instanceof $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action)
+                    return object;
+                var message = new $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action();
+                if (object.subscriptions) {
+                    if (!Array.isArray(object.subscriptions))
+                        throw TypeError(".SyncAction.SyncActionValue.SubscriptionsSyncV2Action.subscriptions: array expected");
+                    message.subscriptions = [];
+                    for (var i = 0; i < object.subscriptions.length; ++i) {
+                        if (typeof object.subscriptions[i] !== "object")
+                            throw TypeError(".SyncAction.SyncActionValue.SubscriptionsSyncV2Action.subscriptions: object expected");
+                        message.subscriptions[i] = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.fromObject(object.subscriptions[i]);
+                    }
+                }
+                if (object.paidFeature) {
+                    if (!Array.isArray(object.paidFeature))
+                        throw TypeError(".SyncAction.SyncActionValue.SubscriptionsSyncV2Action.paidFeature: array expected");
+                    message.paidFeature = [];
+                    for (var i = 0; i < object.paidFeature.length; ++i) {
+                        if (typeof object.paidFeature[i] !== "object")
+                            throw TypeError(".SyncAction.SyncActionValue.SubscriptionsSyncV2Action.paidFeature: object expected");
+                        message.paidFeature[i] = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.fromObject(object.paidFeature[i]);
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a SubscriptionsSyncV2Action message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action} message SubscriptionsSyncV2Action
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            SubscriptionsSyncV2Action.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults) {
+                    object.subscriptions = [];
+                    object.paidFeature = [];
+                }
+                if (message.subscriptions && message.subscriptions.length) {
+                    object.subscriptions = [];
+                    for (var j = 0; j < message.subscriptions.length; ++j)
+                        object.subscriptions[j] = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.toObject(message.subscriptions[j], options);
+                }
+                if (message.paidFeature && message.paidFeature.length) {
+                    object.paidFeature = [];
+                    for (var j = 0; j < message.paidFeature.length; ++j)
+                        object.paidFeature[j] = $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.toObject(message.paidFeature[j], options);
+                }
+                return object;
+            };
+
+            /**
+             * Converts this SubscriptionsSyncV2Action to JSON.
+             * @function toJSON
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            SubscriptionsSyncV2Action.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for SubscriptionsSyncV2Action
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            SubscriptionsSyncV2Action.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.SubscriptionsSyncV2Action";
+            };
+
+            SubscriptionsSyncV2Action.PaidFeature = (function() {
+
+                /**
+                 * Properties of a PaidFeature.
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+                 * @interface IPaidFeature
+                 * @property {string|null} [name] PaidFeature name
+                 * @property {boolean|null} [enabled] PaidFeature enabled
+                 * @property {number|null} [limit] PaidFeature limit
+                 * @property {number|Long|null} [expirationTime] PaidFeature expirationTime
+                 */
+
+                /**
+                 * Constructs a new PaidFeature.
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+                 * @classdesc Represents a PaidFeature.
+                 * @implements IPaidFeature
+                 * @constructor
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.IPaidFeature=} [properties] Properties to set
+                 */
+                function PaidFeature(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * PaidFeature name.
+                 * @member {string|null|undefined} name
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @instance
+                 */
+                PaidFeature.prototype.name = null;
+
+                /**
+                 * PaidFeature enabled.
+                 * @member {boolean|null|undefined} enabled
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @instance
+                 */
+                PaidFeature.prototype.enabled = null;
+
+                /**
+                 * PaidFeature limit.
+                 * @member {number|null|undefined} limit
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @instance
+                 */
+                PaidFeature.prototype.limit = null;
+
+                /**
+                 * PaidFeature expirationTime.
+                 * @member {number|Long|null|undefined} expirationTime
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @instance
+                 */
+                PaidFeature.prototype.expirationTime = null;
+
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(PaidFeature.prototype, "_name", {
+                    get: $util.oneOfGetter($oneOfFields = ["name"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(PaidFeature.prototype, "_enabled", {
+                    get: $util.oneOfGetter($oneOfFields = ["enabled"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(PaidFeature.prototype, "_limit", {
+                    get: $util.oneOfGetter($oneOfFields = ["limit"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(PaidFeature.prototype, "_expirationTime", {
+                    get: $util.oneOfGetter($oneOfFields = ["expirationTime"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                /**
+                 * Creates a new PaidFeature instance using the specified properties.
+                 * @function create
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.IPaidFeature=} [properties] Properties to set
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature} PaidFeature instance
+                 */
+                PaidFeature.create = function create(properties) {
+                    return new PaidFeature(properties);
+                };
+
+                /**
+                 * Encodes the specified PaidFeature message. Does not implicitly {@link SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.verify|verify} messages.
+                 * @function encode
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.IPaidFeature} message PaidFeature message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PaidFeature.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                    if (message.enabled != null && Object.hasOwnProperty.call(message, "enabled"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).bool(message.enabled);
+                    if (message.limit != null && Object.hasOwnProperty.call(message, "limit"))
+                        writer.uint32(/* id 3, wireType 0 =*/24).int32(message.limit);
+                    if (message.expirationTime != null && Object.hasOwnProperty.call(message, "expirationTime"))
+                        writer.uint32(/* id 4, wireType 0 =*/32).int64(message.expirationTime);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified PaidFeature message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.IPaidFeature} message PaidFeature message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                PaidFeature.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a PaidFeature message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature} PaidFeature
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PaidFeature.decode = function decode(reader, length, error) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        if (tag === error)
+                            break;
+                        switch (tag >>> 3) {
+                        case 1: {
+                                message.name = reader.string();
+                                break;
+                            }
+                        case 2: {
+                                message.enabled = reader.bool();
+                                break;
+                            }
+                        case 3: {
+                                message.limit = reader.int32();
+                                break;
+                            }
+                        case 4: {
+                                message.expirationTime = reader.int64();
+                                break;
+                            }
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a PaidFeature message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature} PaidFeature
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                PaidFeature.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a PaidFeature message.
+                 * @function verify
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                PaidFeature.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.name != null && message.hasOwnProperty("name")) {
+                        properties._name = 1;
+                        if (!$util.isString(message.name))
+                            return "name: string expected";
+                    }
+                    if (message.enabled != null && message.hasOwnProperty("enabled")) {
+                        properties._enabled = 1;
+                        if (typeof message.enabled !== "boolean")
+                            return "enabled: boolean expected";
+                    }
+                    if (message.limit != null && message.hasOwnProperty("limit")) {
+                        properties._limit = 1;
+                        if (!$util.isInteger(message.limit))
+                            return "limit: integer expected";
+                    }
+                    if (message.expirationTime != null && message.hasOwnProperty("expirationTime")) {
+                        properties._expirationTime = 1;
+                        if (!$util.isInteger(message.expirationTime) && !(message.expirationTime && $util.isInteger(message.expirationTime.low) && $util.isInteger(message.expirationTime.high)))
+                            return "expirationTime: integer|Long expected";
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a PaidFeature message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature} PaidFeature
+                 */
+                PaidFeature.fromObject = function fromObject(object) {
+                    if (object instanceof $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature)
+                        return object;
+                    var message = new $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature();
+                    if (object.name != null)
+                        message.name = String(object.name);
+                    if (object.enabled != null)
+                        message.enabled = Boolean(object.enabled);
+                    if (object.limit != null)
+                        message.limit = object.limit | 0;
+                    if (object.expirationTime != null)
+                        if ($util.Long)
+                            (message.expirationTime = $util.Long.fromValue(object.expirationTime)).unsigned = false;
+                        else if (typeof object.expirationTime === "string")
+                            message.expirationTime = parseInt(object.expirationTime, 10);
+                        else if (typeof object.expirationTime === "number")
+                            message.expirationTime = object.expirationTime;
+                        else if (typeof object.expirationTime === "object")
+                            message.expirationTime = new $util.LongBits(object.expirationTime.low >>> 0, object.expirationTime.high >>> 0).toNumber();
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a PaidFeature message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature} message PaidFeature
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                PaidFeature.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (message.name != null && message.hasOwnProperty("name")) {
+                        object.name = message.name;
+                        if (options.oneofs)
+                            object._name = "name";
+                    }
+                    if (message.enabled != null && message.hasOwnProperty("enabled")) {
+                        object.enabled = message.enabled;
+                        if (options.oneofs)
+                            object._enabled = "enabled";
+                    }
+                    if (message.limit != null && message.hasOwnProperty("limit")) {
+                        object.limit = message.limit;
+                        if (options.oneofs)
+                            object._limit = "limit";
+                    }
+                    if (message.expirationTime != null && message.hasOwnProperty("expirationTime")) {
+                        if (typeof message.expirationTime === "number")
+                            object.expirationTime = options.longs === String ? String(message.expirationTime) : message.expirationTime;
+                        else
+                            object.expirationTime = options.longs === String ? $util.Long.prototype.toString.call(message.expirationTime) : options.longs === Number ? new $util.LongBits(message.expirationTime.low >>> 0, message.expirationTime.high >>> 0).toNumber() : message.expirationTime;
+                        if (options.oneofs)
+                            object._expirationTime = "expirationTime";
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this PaidFeature to JSON.
+                 * @function toJSON
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                PaidFeature.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for PaidFeature
+                 * @function getTypeUrl
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                PaidFeature.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/SyncAction.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature";
+                };
+
+                return PaidFeature;
+            })();
+
+            SubscriptionsSyncV2Action.SubscriptionInfo = (function() {
+
+                /**
+                 * Properties of a SubscriptionInfo.
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+                 * @interface ISubscriptionInfo
+                 * @property {string|null} [id] SubscriptionInfo id
+                 * @property {number|null} [tier] SubscriptionInfo tier
+                 * @property {string|null} [status] SubscriptionInfo status
+                 * @property {number|Long|null} [startTime] SubscriptionInfo startTime
+                 * @property {number|Long|null} [endTime] SubscriptionInfo endTime
+                 * @property {boolean|null} [isPlatformChanged] SubscriptionInfo isPlatformChanged
+                 * @property {string|null} [source] SubscriptionInfo source
+                 * @property {number|Long|null} [creationTime] SubscriptionInfo creationTime
+                 */
+
+                /**
+                 * Constructs a new SubscriptionInfo.
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action
+                 * @classdesc Represents a SubscriptionInfo.
+                 * @implements ISubscriptionInfo
+                 * @constructor
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.ISubscriptionInfo=} [properties] Properties to set
+                 */
+                function SubscriptionInfo(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+
+                /**
+                 * SubscriptionInfo id.
+                 * @member {string|null|undefined} id
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.id = null;
+
+                /**
+                 * SubscriptionInfo tier.
+                 * @member {number|null|undefined} tier
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.tier = null;
+
+                /**
+                 * SubscriptionInfo status.
+                 * @member {string|null|undefined} status
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.status = null;
+
+                /**
+                 * SubscriptionInfo startTime.
+                 * @member {number|Long|null|undefined} startTime
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.startTime = null;
+
+                /**
+                 * SubscriptionInfo endTime.
+                 * @member {number|Long|null|undefined} endTime
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.endTime = null;
+
+                /**
+                 * SubscriptionInfo isPlatformChanged.
+                 * @member {boolean|null|undefined} isPlatformChanged
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.isPlatformChanged = null;
+
+                /**
+                 * SubscriptionInfo source.
+                 * @member {string|null|undefined} source
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.source = null;
+
+                /**
+                 * SubscriptionInfo creationTime.
+                 * @member {number|Long|null|undefined} creationTime
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 */
+                SubscriptionInfo.prototype.creationTime = null;
+
+                // OneOf field names bound to virtual getters and setters
+                var $oneOfFields;
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_id", {
+                    get: $util.oneOfGetter($oneOfFields = ["id"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_tier", {
+                    get: $util.oneOfGetter($oneOfFields = ["tier"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_status", {
+                    get: $util.oneOfGetter($oneOfFields = ["status"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_startTime", {
+                    get: $util.oneOfGetter($oneOfFields = ["startTime"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_endTime", {
+                    get: $util.oneOfGetter($oneOfFields = ["endTime"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_isPlatformChanged", {
+                    get: $util.oneOfGetter($oneOfFields = ["isPlatformChanged"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_source", {
+                    get: $util.oneOfGetter($oneOfFields = ["source"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                // Virtual OneOf for proto3 optional field
+                Object.defineProperty(SubscriptionInfo.prototype, "_creationTime", {
+                    get: $util.oneOfGetter($oneOfFields = ["creationTime"]),
+                    set: $util.oneOfSetter($oneOfFields)
+                });
+
+                /**
+                 * Creates a new SubscriptionInfo instance using the specified properties.
+                 * @function create
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.ISubscriptionInfo=} [properties] Properties to set
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo} SubscriptionInfo instance
+                 */
+                SubscriptionInfo.create = function create(properties) {
+                    return new SubscriptionInfo(properties);
+                };
+
+                /**
+                 * Encodes the specified SubscriptionInfo message. Does not implicitly {@link SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.verify|verify} messages.
+                 * @function encode
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.ISubscriptionInfo} message SubscriptionInfo message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                SubscriptionInfo.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    if (message.tier != null && Object.hasOwnProperty.call(message, "tier"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).int32(message.tier);
+                    if (message.status != null && Object.hasOwnProperty.call(message, "status"))
+                        writer.uint32(/* id 3, wireType 2 =*/26).string(message.status);
+                    if (message.startTime != null && Object.hasOwnProperty.call(message, "startTime"))
+                        writer.uint32(/* id 4, wireType 0 =*/32).int64(message.startTime);
+                    if (message.endTime != null && Object.hasOwnProperty.call(message, "endTime"))
+                        writer.uint32(/* id 5, wireType 0 =*/40).int64(message.endTime);
+                    if (message.isPlatformChanged != null && Object.hasOwnProperty.call(message, "isPlatformChanged"))
+                        writer.uint32(/* id 6, wireType 0 =*/48).bool(message.isPlatformChanged);
+                    if (message.source != null && Object.hasOwnProperty.call(message, "source"))
+                        writer.uint32(/* id 7, wireType 2 =*/58).string(message.source);
+                    if (message.creationTime != null && Object.hasOwnProperty.call(message, "creationTime"))
+                        writer.uint32(/* id 8, wireType 0 =*/64).int64(message.creationTime);
+                    return writer;
+                };
+
+                /**
+                 * Encodes the specified SubscriptionInfo message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.ISubscriptionInfo} message SubscriptionInfo message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                SubscriptionInfo.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+
+                /**
+                 * Decodes a SubscriptionInfo message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo} SubscriptionInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                SubscriptionInfo.decode = function decode(reader, length, error) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        if (tag === error)
+                            break;
+                        switch (tag >>> 3) {
+                        case 1: {
+                                message.id = reader.string();
+                                break;
+                            }
+                        case 2: {
+                                message.tier = reader.int32();
+                                break;
+                            }
+                        case 3: {
+                                message.status = reader.string();
+                                break;
+                            }
+                        case 4: {
+                                message.startTime = reader.int64();
+                                break;
+                            }
+                        case 5: {
+                                message.endTime = reader.int64();
+                                break;
+                            }
+                        case 6: {
+                                message.isPlatformChanged = reader.bool();
+                                break;
+                            }
+                        case 7: {
+                                message.source = reader.string();
+                                break;
+                            }
+                        case 8: {
+                                message.creationTime = reader.int64();
+                                break;
+                            }
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+
+                /**
+                 * Decodes a SubscriptionInfo message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo} SubscriptionInfo
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                SubscriptionInfo.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+
+                /**
+                 * Verifies a SubscriptionInfo message.
+                 * @function verify
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                SubscriptionInfo.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    var properties = {};
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        properties._id = 1;
+                        if (!$util.isString(message.id))
+                            return "id: string expected";
+                    }
+                    if (message.tier != null && message.hasOwnProperty("tier")) {
+                        properties._tier = 1;
+                        if (!$util.isInteger(message.tier))
+                            return "tier: integer expected";
+                    }
+                    if (message.status != null && message.hasOwnProperty("status")) {
+                        properties._status = 1;
+                        if (!$util.isString(message.status))
+                            return "status: string expected";
+                    }
+                    if (message.startTime != null && message.hasOwnProperty("startTime")) {
+                        properties._startTime = 1;
+                        if (!$util.isInteger(message.startTime) && !(message.startTime && $util.isInteger(message.startTime.low) && $util.isInteger(message.startTime.high)))
+                            return "startTime: integer|Long expected";
+                    }
+                    if (message.endTime != null && message.hasOwnProperty("endTime")) {
+                        properties._endTime = 1;
+                        if (!$util.isInteger(message.endTime) && !(message.endTime && $util.isInteger(message.endTime.low) && $util.isInteger(message.endTime.high)))
+                            return "endTime: integer|Long expected";
+                    }
+                    if (message.isPlatformChanged != null && message.hasOwnProperty("isPlatformChanged")) {
+                        properties._isPlatformChanged = 1;
+                        if (typeof message.isPlatformChanged !== "boolean")
+                            return "isPlatformChanged: boolean expected";
+                    }
+                    if (message.source != null && message.hasOwnProperty("source")) {
+                        properties._source = 1;
+                        if (!$util.isString(message.source))
+                            return "source: string expected";
+                    }
+                    if (message.creationTime != null && message.hasOwnProperty("creationTime")) {
+                        properties._creationTime = 1;
+                        if (!$util.isInteger(message.creationTime) && !(message.creationTime && $util.isInteger(message.creationTime.low) && $util.isInteger(message.creationTime.high)))
+                            return "creationTime: integer|Long expected";
+                    }
+                    return null;
+                };
+
+                /**
+                 * Creates a SubscriptionInfo message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo} SubscriptionInfo
+                 */
+                SubscriptionInfo.fromObject = function fromObject(object) {
+                    if (object instanceof $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo)
+                        return object;
+                    var message = new $root.SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo();
+                    if (object.id != null)
+                        message.id = String(object.id);
+                    if (object.tier != null)
+                        message.tier = object.tier | 0;
+                    if (object.status != null)
+                        message.status = String(object.status);
+                    if (object.startTime != null)
+                        if ($util.Long)
+                            (message.startTime = $util.Long.fromValue(object.startTime)).unsigned = false;
+                        else if (typeof object.startTime === "string")
+                            message.startTime = parseInt(object.startTime, 10);
+                        else if (typeof object.startTime === "number")
+                            message.startTime = object.startTime;
+                        else if (typeof object.startTime === "object")
+                            message.startTime = new $util.LongBits(object.startTime.low >>> 0, object.startTime.high >>> 0).toNumber();
+                    if (object.endTime != null)
+                        if ($util.Long)
+                            (message.endTime = $util.Long.fromValue(object.endTime)).unsigned = false;
+                        else if (typeof object.endTime === "string")
+                            message.endTime = parseInt(object.endTime, 10);
+                        else if (typeof object.endTime === "number")
+                            message.endTime = object.endTime;
+                        else if (typeof object.endTime === "object")
+                            message.endTime = new $util.LongBits(object.endTime.low >>> 0, object.endTime.high >>> 0).toNumber();
+                    if (object.isPlatformChanged != null)
+                        message.isPlatformChanged = Boolean(object.isPlatformChanged);
+                    if (object.source != null)
+                        message.source = String(object.source);
+                    if (object.creationTime != null)
+                        if ($util.Long)
+                            (message.creationTime = $util.Long.fromValue(object.creationTime)).unsigned = false;
+                        else if (typeof object.creationTime === "string")
+                            message.creationTime = parseInt(object.creationTime, 10);
+                        else if (typeof object.creationTime === "number")
+                            message.creationTime = object.creationTime;
+                        else if (typeof object.creationTime === "object")
+                            message.creationTime = new $util.LongBits(object.creationTime.low >>> 0, object.creationTime.high >>> 0).toNumber();
+                    return message;
+                };
+
+                /**
+                 * Creates a plain object from a SubscriptionInfo message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo} message SubscriptionInfo
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                SubscriptionInfo.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (message.id != null && message.hasOwnProperty("id")) {
+                        object.id = message.id;
+                        if (options.oneofs)
+                            object._id = "id";
+                    }
+                    if (message.tier != null && message.hasOwnProperty("tier")) {
+                        object.tier = message.tier;
+                        if (options.oneofs)
+                            object._tier = "tier";
+                    }
+                    if (message.status != null && message.hasOwnProperty("status")) {
+                        object.status = message.status;
+                        if (options.oneofs)
+                            object._status = "status";
+                    }
+                    if (message.startTime != null && message.hasOwnProperty("startTime")) {
+                        if (typeof message.startTime === "number")
+                            object.startTime = options.longs === String ? String(message.startTime) : message.startTime;
+                        else
+                            object.startTime = options.longs === String ? $util.Long.prototype.toString.call(message.startTime) : options.longs === Number ? new $util.LongBits(message.startTime.low >>> 0, message.startTime.high >>> 0).toNumber() : message.startTime;
+                        if (options.oneofs)
+                            object._startTime = "startTime";
+                    }
+                    if (message.endTime != null && message.hasOwnProperty("endTime")) {
+                        if (typeof message.endTime === "number")
+                            object.endTime = options.longs === String ? String(message.endTime) : message.endTime;
+                        else
+                            object.endTime = options.longs === String ? $util.Long.prototype.toString.call(message.endTime) : options.longs === Number ? new $util.LongBits(message.endTime.low >>> 0, message.endTime.high >>> 0).toNumber() : message.endTime;
+                        if (options.oneofs)
+                            object._endTime = "endTime";
+                    }
+                    if (message.isPlatformChanged != null && message.hasOwnProperty("isPlatformChanged")) {
+                        object.isPlatformChanged = message.isPlatformChanged;
+                        if (options.oneofs)
+                            object._isPlatformChanged = "isPlatformChanged";
+                    }
+                    if (message.source != null && message.hasOwnProperty("source")) {
+                        object.source = message.source;
+                        if (options.oneofs)
+                            object._source = "source";
+                    }
+                    if (message.creationTime != null && message.hasOwnProperty("creationTime")) {
+                        if (typeof message.creationTime === "number")
+                            object.creationTime = options.longs === String ? String(message.creationTime) : message.creationTime;
+                        else
+                            object.creationTime = options.longs === String ? $util.Long.prototype.toString.call(message.creationTime) : options.longs === Number ? new $util.LongBits(message.creationTime.low >>> 0, message.creationTime.high >>> 0).toNumber() : message.creationTime;
+                        if (options.oneofs)
+                            object._creationTime = "creationTime";
+                    }
+                    return object;
+                };
+
+                /**
+                 * Converts this SubscriptionInfo to JSON.
+                 * @function toJSON
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                SubscriptionInfo.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+
+                /**
+                 * Gets the default type url for SubscriptionInfo
+                 * @function getTypeUrl
+                 * @memberof SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
+                 * @static
+                 * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+                 * @returns {string} The default type url
+                 */
+                SubscriptionInfo.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                    if (typeUrlPrefix === undefined) {
+                        typeUrlPrefix = "type.googleapis.com";
+                    }
+                    return typeUrlPrefix + "/SyncAction.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo";
+                };
+
+                return SubscriptionInfo;
+            })();
+
+            return SubscriptionsSyncV2Action;
+        })();
+
         SyncActionValue.SyncActionMessage = (function() {
 
             /**
@@ -22721,23 +25945,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SyncActionMessage _key.
-             * @member {"key"|undefined} _key
-             * @memberof SyncAction.SyncActionValue.SyncActionMessage
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SyncActionMessage.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SyncActionMessage _timestamp.
-             * @member {"timestamp"|undefined} _timestamp
-             * @memberof SyncAction.SyncActionValue.SyncActionMessage
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SyncActionMessage.prototype, "_timestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -23008,23 +26222,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * SyncActionMessageRange _lastMessageTimestamp.
-             * @member {"lastMessageTimestamp"|undefined} _lastMessageTimestamp
-             * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SyncActionMessageRange.prototype, "_lastMessageTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["lastMessageTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * SyncActionMessageRange _lastSystemMessageTimestamp.
-             * @member {"lastSystemMessageTimestamp"|undefined} _lastSystemMessageTimestamp
-             * @memberof SyncAction.SyncActionValue.SyncActionMessageRange
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(SyncActionMessageRange.prototype, "_lastSystemMessageTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["lastSystemMessageTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -23280,6 +26484,224 @@ $root.SyncAction = (function() {
             return SyncActionMessageRange;
         })();
 
+        SyncActionValue.ThreadPinAction = (function() {
+
+            /**
+             * Properties of a ThreadPinAction.
+             * @memberof SyncAction.SyncActionValue
+             * @interface IThreadPinAction
+             * @property {boolean|null} [pinned] ThreadPinAction pinned
+             */
+
+            /**
+             * Constructs a new ThreadPinAction.
+             * @memberof SyncAction.SyncActionValue
+             * @classdesc Represents a ThreadPinAction.
+             * @implements IThreadPinAction
+             * @constructor
+             * @param {SyncAction.SyncActionValue.IThreadPinAction=} [properties] Properties to set
+             */
+            function ThreadPinAction(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ThreadPinAction pinned.
+             * @member {boolean|null|undefined} pinned
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @instance
+             */
+            ThreadPinAction.prototype.pinned = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(ThreadPinAction.prototype, "_pinned", {
+                get: $util.oneOfGetter($oneOfFields = ["pinned"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            /**
+             * Creates a new ThreadPinAction instance using the specified properties.
+             * @function create
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IThreadPinAction=} [properties] Properties to set
+             * @returns {SyncAction.SyncActionValue.ThreadPinAction} ThreadPinAction instance
+             */
+            ThreadPinAction.create = function create(properties) {
+                return new ThreadPinAction(properties);
+            };
+
+            /**
+             * Encodes the specified ThreadPinAction message. Does not implicitly {@link SyncAction.SyncActionValue.ThreadPinAction.verify|verify} messages.
+             * @function encode
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IThreadPinAction} message ThreadPinAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ThreadPinAction.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.pinned != null && Object.hasOwnProperty.call(message, "pinned"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.pinned);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ThreadPinAction message, length delimited. Does not implicitly {@link SyncAction.SyncActionValue.ThreadPinAction.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {SyncAction.SyncActionValue.IThreadPinAction} message ThreadPinAction message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ThreadPinAction.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ThreadPinAction message from the specified reader or buffer.
+             * @function decode
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {SyncAction.SyncActionValue.ThreadPinAction} ThreadPinAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ThreadPinAction.decode = function decode(reader, length, error) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.SyncAction.SyncActionValue.ThreadPinAction();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    if (tag === error)
+                        break;
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.pinned = reader.bool();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ThreadPinAction message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {SyncAction.SyncActionValue.ThreadPinAction} ThreadPinAction
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ThreadPinAction.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ThreadPinAction message.
+             * @function verify
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ThreadPinAction.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.pinned != null && message.hasOwnProperty("pinned")) {
+                    properties._pinned = 1;
+                    if (typeof message.pinned !== "boolean")
+                        return "pinned: boolean expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a ThreadPinAction message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {SyncAction.SyncActionValue.ThreadPinAction} ThreadPinAction
+             */
+            ThreadPinAction.fromObject = function fromObject(object) {
+                if (object instanceof $root.SyncAction.SyncActionValue.ThreadPinAction)
+                    return object;
+                var message = new $root.SyncAction.SyncActionValue.ThreadPinAction();
+                if (object.pinned != null)
+                    message.pinned = Boolean(object.pinned);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ThreadPinAction message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {SyncAction.SyncActionValue.ThreadPinAction} message ThreadPinAction
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ThreadPinAction.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (message.pinned != null && message.hasOwnProperty("pinned")) {
+                    object.pinned = message.pinned;
+                    if (options.oneofs)
+                        object._pinned = "pinned";
+                }
+                return object;
+            };
+
+            /**
+             * Converts this ThreadPinAction to JSON.
+             * @function toJSON
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ThreadPinAction.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for ThreadPinAction
+             * @function getTypeUrl
+             * @memberof SyncAction.SyncActionValue.ThreadPinAction
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            ThreadPinAction.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/SyncAction.SyncActionValue.ThreadPinAction";
+            };
+
+            return ThreadPinAction;
+        })();
+
         SyncActionValue.TimeFormatAction = (function() {
 
             /**
@@ -23315,12 +26737,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * TimeFormatAction _isTwentyFourHourFormatEnabled.
-             * @member {"isTwentyFourHourFormatEnabled"|undefined} _isTwentyFourHourFormatEnabled
-             * @memberof SyncAction.SyncActionValue.TimeFormatAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(TimeFormatAction.prototype, "_isTwentyFourHourFormatEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["isTwentyFourHourFormatEnabled"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -23538,12 +26955,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * UGCBot _definition.
-             * @member {"definition"|undefined} _definition
-             * @memberof SyncAction.SyncActionValue.UGCBot
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(UGCBot.prototype, "_definition", {
                 get: $util.oneOfGetter($oneOfFields = ["definition"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -23764,12 +27176,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * UnarchiveChatsSetting _unarchiveChats.
-             * @member {"unarchiveChats"|undefined} _unarchiveChats
-             * @memberof SyncAction.SyncActionValue.UnarchiveChatsSetting
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(UnarchiveChatsSetting.prototype, "_unarchiveChats", {
                 get: $util.oneOfGetter($oneOfFields = ["unarchiveChats"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -23987,12 +27394,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * UserStatusMuteAction _muted.
-             * @member {"muted"|undefined} _muted
-             * @memberof SyncAction.SyncActionValue.UserStatusMuteAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(UserStatusMuteAction.prototype, "_muted", {
                 get: $util.oneOfGetter($oneOfFields = ["muted"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -24210,12 +27612,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * UsernameChatStartModeAction _chatStartMode.
-             * @member {"chatStartMode"|undefined} _chatStartMode
-             * @memberof SyncAction.SyncActionValue.UsernameChatStartModeAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(UsernameChatStartModeAction.prototype, "_chatStartMode", {
                 get: $util.oneOfGetter($oneOfFields = ["chatStartMode"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -24466,12 +27863,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * WaffleAccountLinkStateAction _linkState.
-             * @member {"linkState"|undefined} _linkState
-             * @memberof SyncAction.SyncActionValue.WaffleAccountLinkStateAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(WaffleAccountLinkStateAction.prototype, "_linkState", {
                 get: $util.oneOfGetter($oneOfFields = ["linkState"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -24729,12 +28121,7 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * WamoUserIdentifierAction _identifier.
-             * @member {"identifier"|undefined} _identifier
-             * @memberof SyncAction.SyncActionValue.WamoUserIdentifierAction
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(WamoUserIdentifierAction.prototype, "_identifier", {
                 get: $util.oneOfGetter($oneOfFields = ["identifier"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -25082,155 +28469,85 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * CallLogRecord _callResult.
-         * @member {"callResult"|undefined} _callResult
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_callResult", {
             get: $util.oneOfGetter($oneOfFields = ["callResult"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _isDndMode.
-         * @member {"isDndMode"|undefined} _isDndMode
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_isDndMode", {
             get: $util.oneOfGetter($oneOfFields = ["isDndMode"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _silenceReason.
-         * @member {"silenceReason"|undefined} _silenceReason
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_silenceReason", {
             get: $util.oneOfGetter($oneOfFields = ["silenceReason"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _duration.
-         * @member {"duration"|undefined} _duration
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_duration", {
             get: $util.oneOfGetter($oneOfFields = ["duration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _startTime.
-         * @member {"startTime"|undefined} _startTime
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_startTime", {
             get: $util.oneOfGetter($oneOfFields = ["startTime"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _isIncoming.
-         * @member {"isIncoming"|undefined} _isIncoming
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_isIncoming", {
             get: $util.oneOfGetter($oneOfFields = ["isIncoming"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _isVideo.
-         * @member {"isVideo"|undefined} _isVideo
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_isVideo", {
             get: $util.oneOfGetter($oneOfFields = ["isVideo"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _isCallLink.
-         * @member {"isCallLink"|undefined} _isCallLink
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_isCallLink", {
             get: $util.oneOfGetter($oneOfFields = ["isCallLink"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _callLinkToken.
-         * @member {"callLinkToken"|undefined} _callLinkToken
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_callLinkToken", {
             get: $util.oneOfGetter($oneOfFields = ["callLinkToken"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _scheduledCallId.
-         * @member {"scheduledCallId"|undefined} _scheduledCallId
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_scheduledCallId", {
             get: $util.oneOfGetter($oneOfFields = ["scheduledCallId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _callId.
-         * @member {"callId"|undefined} _callId
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_callId", {
             get: $util.oneOfGetter($oneOfFields = ["callId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _callCreatorJid.
-         * @member {"callCreatorJid"|undefined} _callCreatorJid
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_callCreatorJid", {
             get: $util.oneOfGetter($oneOfFields = ["callCreatorJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _groupJid.
-         * @member {"groupJid"|undefined} _groupJid
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_groupJid", {
             get: $util.oneOfGetter($oneOfFields = ["groupJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * CallLogRecord _callType.
-         * @member {"callType"|undefined} _callType
-         * @memberof SyncAction.CallLogRecord
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(CallLogRecord.prototype, "_callType", {
             get: $util.oneOfGetter($oneOfFields = ["callType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -25908,23 +29225,13 @@ $root.SyncAction = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * ParticipantInfo _userJid.
-             * @member {"userJid"|undefined} _userJid
-             * @memberof SyncAction.CallLogRecord.ParticipantInfo
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ParticipantInfo.prototype, "_userJid", {
                 get: $util.oneOfGetter($oneOfFields = ["userJid"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * ParticipantInfo _callResult.
-             * @member {"callResult"|undefined} _callResult
-             * @memberof SyncAction.CallLogRecord.ParticipantInfo
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(ParticipantInfo.prototype, "_callResult", {
                 get: $util.oneOfGetter($oneOfFields = ["callResult"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -26254,23 +29561,13 @@ $root.SyncAction = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * RecentEmojiWeight _emoji.
-         * @member {"emoji"|undefined} _emoji
-         * @memberof SyncAction.RecentEmojiWeight
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(RecentEmojiWeight.prototype, "_emoji", {
             get: $util.oneOfGetter($oneOfFields = ["emoji"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * RecentEmojiWeight _weight.
-         * @member {"weight"|undefined} _weight
-         * @memberof SyncAction.RecentEmojiWeight
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(RecentEmojiWeight.prototype, "_weight", {
             get: $util.oneOfGetter($oneOfFields = ["weight"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -26547,8 +29844,16 @@ $root.SyncAction = (function() {
      * @property {number} AI_THREAD_RENAME_ACTION=76 AI_THREAD_RENAME_ACTION value
      * @property {number} INTERACTIVE_MESSAGE_ACTION=77 INTERACTIVE_MESSAGE_ACTION value
      * @property {number} SETTINGS_SYNC_ACTION=78 SETTINGS_SYNC_ACTION value
+     * @property {number} OUT_CONTACT_ACTION=79 OUT_CONTACT_ACTION value
+     * @property {number} NCT_SALT_SYNC_ACTION=80 NCT_SALT_SYNC_ACTION value
+     * @property {number} BUSINESS_BROADCAST_CAMPAIGN_ACTION=81 BUSINESS_BROADCAST_CAMPAIGN_ACTION value
+     * @property {number} BUSINESS_BROADCAST_INSIGHTS_ACTION=82 BUSINESS_BROADCAST_INSIGHTS_ACTION value
+     * @property {number} CUSTOMER_DATA_ACTION=83 CUSTOMER_DATA_ACTION value
+     * @property {number} SUBSCRIPTIONS_SYNC_V2_ACTION=84 SUBSCRIPTIONS_SYNC_V2_ACTION value
+     * @property {number} THREAD_PIN_ACTION=85 THREAD_PIN_ACTION value
      * @property {number} SHARE_OWN_PN=10001 SHARE_OWN_PN value
      * @property {number} BUSINESS_BROADCAST_ACTION=10002 BUSINESS_BROADCAST_ACTION value
+     * @property {number} AI_THREAD_DELETE_ACTION=10003 AI_THREAD_DELETE_ACTION value
      */
     SyncAction.MutationProps = (function() {
         var valuesById = {}, values = Object.create(valuesById);
@@ -26624,8 +29929,16 @@ $root.SyncAction = (function() {
         values[valuesById[76] = "AI_THREAD_RENAME_ACTION"] = 76;
         values[valuesById[77] = "INTERACTIVE_MESSAGE_ACTION"] = 77;
         values[valuesById[78] = "SETTINGS_SYNC_ACTION"] = 78;
+        values[valuesById[79] = "OUT_CONTACT_ACTION"] = 79;
+        values[valuesById[80] = "NCT_SALT_SYNC_ACTION"] = 80;
+        values[valuesById[81] = "BUSINESS_BROADCAST_CAMPAIGN_ACTION"] = 81;
+        values[valuesById[82] = "BUSINESS_BROADCAST_INSIGHTS_ACTION"] = 82;
+        values[valuesById[83] = "CUSTOMER_DATA_ACTION"] = 83;
+        values[valuesById[84] = "SUBSCRIPTIONS_SYNC_V2_ACTION"] = 84;
+        values[valuesById[85] = "THREAD_PIN_ACTION"] = 85;
         values[valuesById[10001] = "SHARE_OWN_PN"] = 10001;
         values[valuesById[10002] = "BUSINESS_BROADCAST_ACTION"] = 10002;
+        values[valuesById[10003] = "AI_THREAD_DELETE_ACTION"] = 10003;
         return values;
     })();
 
@@ -26707,23 +30020,13 @@ $root.ChatLockSettings = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ChatLockSettings _hideLockedChats.
-         * @member {"hideLockedChats"|undefined} _hideLockedChats
-         * @memberof ChatLockSettings.ChatLockSettings
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ChatLockSettings.prototype, "_hideLockedChats", {
             get: $util.oneOfGetter($oneOfFields = ["hideLockedChats"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ChatLockSettings _secretCode.
-         * @member {"secretCode"|undefined} _secretCode
-         * @memberof ChatLockSettings.ChatLockSettings
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ChatLockSettings.prototype, "_secretCode", {
             get: $util.oneOfGetter($oneOfFields = ["secretCode"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -27005,34 +30308,19 @@ $root.UserPassword = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * UserPassword _encoding.
-         * @member {"encoding"|undefined} _encoding
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(UserPassword.prototype, "_encoding", {
             get: $util.oneOfGetter($oneOfFields = ["encoding"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * UserPassword _transformer.
-         * @member {"transformer"|undefined} _transformer
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(UserPassword.prototype, "_transformer", {
             get: $util.oneOfGetter($oneOfFields = ["transformer"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * UserPassword _transformedData.
-         * @member {"transformedData"|undefined} _transformedData
-         * @memberof UserPassword.UserPassword
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(UserPassword.prototype, "_transformedData", {
             get: $util.oneOfGetter($oneOfFields = ["transformedData"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -27403,23 +30691,13 @@ $root.UserPassword = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * TransformerArg _key.
-             * @member {"key"|undefined} _key
-             * @memberof UserPassword.UserPassword.TransformerArg
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(TransformerArg.prototype, "_key", {
                 get: $util.oneOfGetter($oneOfFields = ["key"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * TransformerArg _value.
-             * @member {"value"|undefined} _value
-             * @memberof UserPassword.UserPassword.TransformerArg
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(TransformerArg.prototype, "_value", {
                 get: $util.oneOfGetter($oneOfFields = ["value"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -27976,67 +31254,37 @@ $root.DeviceCapabilities = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * DeviceCapabilities _chatLockSupportLevel.
-         * @member {"chatLockSupportLevel"|undefined} _chatLockSupportLevel
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_chatLockSupportLevel", {
             get: $util.oneOfGetter($oneOfFields = ["chatLockSupportLevel"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _lidMigration.
-         * @member {"lidMigration"|undefined} _lidMigration
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_lidMigration", {
             get: $util.oneOfGetter($oneOfFields = ["lidMigration"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _businessBroadcast.
-         * @member {"businessBroadcast"|undefined} _businessBroadcast
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_businessBroadcast", {
             get: $util.oneOfGetter($oneOfFields = ["businessBroadcast"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _userHasAvatar.
-         * @member {"userHasAvatar"|undefined} _userHasAvatar
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_userHasAvatar", {
             get: $util.oneOfGetter($oneOfFields = ["userHasAvatar"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _memberNameTagPrimarySupport.
-         * @member {"memberNameTagPrimarySupport"|undefined} _memberNameTagPrimarySupport
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_memberNameTagPrimarySupport", {
             get: $util.oneOfGetter($oneOfFields = ["memberNameTagPrimarySupport"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * DeviceCapabilities _aiThread.
-         * @member {"aiThread"|undefined} _aiThread
-         * @memberof DeviceCapabilities.DeviceCapabilities
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(DeviceCapabilities.prototype, "_aiThread", {
             get: $util.oneOfGetter($oneOfFields = ["aiThread"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -28413,12 +31661,7 @@ $root.DeviceCapabilities = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * AiThread _supportLevel.
-             * @member {"supportLevel"|undefined} _supportLevel
-             * @memberof DeviceCapabilities.DeviceCapabilities.AiThread
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(AiThread.prototype, "_supportLevel", {
                 get: $util.oneOfGetter($oneOfFields = ["supportLevel"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -28648,6 +31891,10 @@ $root.DeviceCapabilities = (function() {
              * @memberof DeviceCapabilities.DeviceCapabilities
              * @interface IBusinessBroadcast
              * @property {boolean|null} [importListEnabled] BusinessBroadcast importListEnabled
+             * @property {boolean|null} [companionSupportEnabled] BusinessBroadcast companionSupportEnabled
+             * @property {boolean|null} [campaignSyncEnabled] BusinessBroadcast campaignSyncEnabled
+             * @property {boolean|null} [insightsSyncEnabled] BusinessBroadcast insightsSyncEnabled
+             * @property {number|null} [recipientLimit] BusinessBroadcast recipientLimit
              */
 
             /**
@@ -28673,17 +31920,68 @@ $root.DeviceCapabilities = (function() {
              */
             BusinessBroadcast.prototype.importListEnabled = null;
 
-            // OneOf field names bound to virtual getters and setters
-            var $oneOfFields;
-
             /**
-             * BusinessBroadcast _importListEnabled.
-             * @member {"importListEnabled"|undefined} _importListEnabled
+             * BusinessBroadcast companionSupportEnabled.
+             * @member {boolean|null|undefined} companionSupportEnabled
              * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
              * @instance
              */
+            BusinessBroadcast.prototype.companionSupportEnabled = null;
+
+            /**
+             * BusinessBroadcast campaignSyncEnabled.
+             * @member {boolean|null|undefined} campaignSyncEnabled
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @instance
+             */
+            BusinessBroadcast.prototype.campaignSyncEnabled = null;
+
+            /**
+             * BusinessBroadcast insightsSyncEnabled.
+             * @member {boolean|null|undefined} insightsSyncEnabled
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @instance
+             */
+            BusinessBroadcast.prototype.insightsSyncEnabled = null;
+
+            /**
+             * BusinessBroadcast recipientLimit.
+             * @member {number|null|undefined} recipientLimit
+             * @memberof DeviceCapabilities.DeviceCapabilities.BusinessBroadcast
+             * @instance
+             */
+            BusinessBroadcast.prototype.recipientLimit = null;
+
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(BusinessBroadcast.prototype, "_importListEnabled", {
                 get: $util.oneOfGetter($oneOfFields = ["importListEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_companionSupportEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["companionSupportEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_campaignSyncEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["campaignSyncEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_insightsSyncEnabled", {
+                get: $util.oneOfGetter($oneOfFields = ["insightsSyncEnabled"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+
+            // Virtual OneOf for proto3 optional field
+            Object.defineProperty(BusinessBroadcast.prototype, "_recipientLimit", {
+                get: $util.oneOfGetter($oneOfFields = ["recipientLimit"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
@@ -28713,6 +32011,14 @@ $root.DeviceCapabilities = (function() {
                     writer = $Writer.create();
                 if (message.importListEnabled != null && Object.hasOwnProperty.call(message, "importListEnabled"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.importListEnabled);
+                if (message.companionSupportEnabled != null && Object.hasOwnProperty.call(message, "companionSupportEnabled"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.companionSupportEnabled);
+                if (message.campaignSyncEnabled != null && Object.hasOwnProperty.call(message, "campaignSyncEnabled"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.campaignSyncEnabled);
+                if (message.insightsSyncEnabled != null && Object.hasOwnProperty.call(message, "insightsSyncEnabled"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).bool(message.insightsSyncEnabled);
+                if (message.recipientLimit != null && Object.hasOwnProperty.call(message, "recipientLimit"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.recipientLimit);
                 return writer;
             };
 
@@ -28751,6 +32057,22 @@ $root.DeviceCapabilities = (function() {
                     switch (tag >>> 3) {
                     case 1: {
                             message.importListEnabled = reader.bool();
+                            break;
+                        }
+                    case 2: {
+                            message.companionSupportEnabled = reader.bool();
+                            break;
+                        }
+                    case 3: {
+                            message.campaignSyncEnabled = reader.bool();
+                            break;
+                        }
+                    case 4: {
+                            message.insightsSyncEnabled = reader.bool();
+                            break;
+                        }
+                    case 5: {
+                            message.recipientLimit = reader.int32();
                             break;
                         }
                     default:
@@ -28794,6 +32116,26 @@ $root.DeviceCapabilities = (function() {
                     if (typeof message.importListEnabled !== "boolean")
                         return "importListEnabled: boolean expected";
                 }
+                if (message.companionSupportEnabled != null && message.hasOwnProperty("companionSupportEnabled")) {
+                    properties._companionSupportEnabled = 1;
+                    if (typeof message.companionSupportEnabled !== "boolean")
+                        return "companionSupportEnabled: boolean expected";
+                }
+                if (message.campaignSyncEnabled != null && message.hasOwnProperty("campaignSyncEnabled")) {
+                    properties._campaignSyncEnabled = 1;
+                    if (typeof message.campaignSyncEnabled !== "boolean")
+                        return "campaignSyncEnabled: boolean expected";
+                }
+                if (message.insightsSyncEnabled != null && message.hasOwnProperty("insightsSyncEnabled")) {
+                    properties._insightsSyncEnabled = 1;
+                    if (typeof message.insightsSyncEnabled !== "boolean")
+                        return "insightsSyncEnabled: boolean expected";
+                }
+                if (message.recipientLimit != null && message.hasOwnProperty("recipientLimit")) {
+                    properties._recipientLimit = 1;
+                    if (!$util.isInteger(message.recipientLimit))
+                        return "recipientLimit: integer expected";
+                }
                 return null;
             };
 
@@ -28811,6 +32153,14 @@ $root.DeviceCapabilities = (function() {
                 var message = new $root.DeviceCapabilities.DeviceCapabilities.BusinessBroadcast();
                 if (object.importListEnabled != null)
                     message.importListEnabled = Boolean(object.importListEnabled);
+                if (object.companionSupportEnabled != null)
+                    message.companionSupportEnabled = Boolean(object.companionSupportEnabled);
+                if (object.campaignSyncEnabled != null)
+                    message.campaignSyncEnabled = Boolean(object.campaignSyncEnabled);
+                if (object.insightsSyncEnabled != null)
+                    message.insightsSyncEnabled = Boolean(object.insightsSyncEnabled);
+                if (object.recipientLimit != null)
+                    message.recipientLimit = object.recipientLimit | 0;
                 return message;
             };
 
@@ -28831,6 +32181,26 @@ $root.DeviceCapabilities = (function() {
                     object.importListEnabled = message.importListEnabled;
                     if (options.oneofs)
                         object._importListEnabled = "importListEnabled";
+                }
+                if (message.companionSupportEnabled != null && message.hasOwnProperty("companionSupportEnabled")) {
+                    object.companionSupportEnabled = message.companionSupportEnabled;
+                    if (options.oneofs)
+                        object._companionSupportEnabled = "companionSupportEnabled";
+                }
+                if (message.campaignSyncEnabled != null && message.hasOwnProperty("campaignSyncEnabled")) {
+                    object.campaignSyncEnabled = message.campaignSyncEnabled;
+                    if (options.oneofs)
+                        object._campaignSyncEnabled = "campaignSyncEnabled";
+                }
+                if (message.insightsSyncEnabled != null && message.hasOwnProperty("insightsSyncEnabled")) {
+                    object.insightsSyncEnabled = message.insightsSyncEnabled;
+                    if (options.oneofs)
+                        object._insightsSyncEnabled = "insightsSyncEnabled";
+                }
+                if (message.recipientLimit != null && message.hasOwnProperty("recipientLimit")) {
+                    object.recipientLimit = message.recipientLimit;
+                    if (options.oneofs)
+                        object._recipientLimit = "recipientLimit";
                 }
                 return object;
             };
@@ -28915,12 +32285,7 @@ $root.DeviceCapabilities = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * LIDMigration _chatDbMigrationTimestamp.
-             * @member {"chatDbMigrationTimestamp"|undefined} _chatDbMigrationTimestamp
-             * @memberof DeviceCapabilities.DeviceCapabilities.LIDMigration
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(LIDMigration.prototype, "_chatDbMigrationTimestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["chatDbMigrationTimestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -29164,12 +32529,7 @@ $root.DeviceCapabilities = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * UserHasAvatar _userHasAvatar.
-             * @member {"userHasAvatar"|undefined} _userHasAvatar
-             * @memberof DeviceCapabilities.DeviceCapabilities.UserHasAvatar
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(UserHasAvatar.prototype, "_userHasAvatar", {
                 get: $util.oneOfGetter($oneOfFields = ["userHasAvatar"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -29429,45 +32789,25 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * LimitSharing _sharingLimited.
-         * @member {"sharingLimited"|undefined} _sharingLimited
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_sharingLimited", {
             get: $util.oneOfGetter($oneOfFields = ["sharingLimited"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _trigger.
-         * @member {"trigger"|undefined} _trigger
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_trigger", {
             get: $util.oneOfGetter($oneOfFields = ["trigger"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _limitSharingSettingTimestamp.
-         * @member {"limitSharingSettingTimestamp"|undefined} _limitSharingSettingTimestamp
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_limitSharingSettingTimestamp", {
             get: $util.oneOfGetter($oneOfFields = ["limitSharingSettingTimestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * LimitSharing _initiatedByMe.
-         * @member {"initiatedByMe"|undefined} _initiatedByMe
-         * @memberof Protocol.LimitSharing
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(LimitSharing.prototype, "_initiatedByMe", {
             get: $util.oneOfGetter($oneOfFields = ["initiatedByMe"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -29823,45 +33163,25 @@ $root.Protocol = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * MessageKey _remoteJid.
-         * @member {"remoteJid"|undefined} _remoteJid
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_remoteJid", {
             get: $util.oneOfGetter($oneOfFields = ["remoteJid"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _fromMe.
-         * @member {"fromMe"|undefined} _fromMe
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_fromMe", {
             get: $util.oneOfGetter($oneOfFields = ["fromMe"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _id.
-         * @member {"id"|undefined} _id
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_id", {
             get: $util.oneOfGetter($oneOfFields = ["id"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * MessageKey _participant.
-         * @member {"participant"|undefined} _participant
-         * @memberof Protocol.MessageKey
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(MessageKey.prototype, "_participant", {
             get: $util.oneOfGetter($oneOfFields = ["participant"]),
             set: $util.oneOfSetter($oneOfFields)

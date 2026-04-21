@@ -110,6 +110,13 @@ message SyncActionValue {
     optional AiThreadRenameAction aiThreadRenameAction = 76;
     optional InteractiveMessageAction interactiveMessageAction = 77;
     optional SettingsSyncAction settingsSyncAction = 78;
+    optional OutContactAction outContactAction = 79;
+    optional NctSaltSyncAction nctSaltSyncAction = 80;
+    optional BusinessBroadcastCampaignAction businessBroadcastCampaignAction = 81;
+    optional BusinessBroadcastInsightsAction businessBroadcastInsightsAction = 82;
+    optional CustomerDataAction customerDataAction = 83;
+    optional SubscriptionsSyncV2Action subscriptionsSyncV2Action = 84;
+    optional ThreadPinAction threadPinAction = 85;
     message AgentAction {
         optional string name = 1;
         optional int32 deviceID = 2;
@@ -144,10 +151,37 @@ message SyncActionValue {
     message BusinessBroadcastAssociationAction {
         optional bool deleted = 1;
     }
+    message BusinessBroadcastCampaignAction {
+        optional int32 deviceId = 1;
+        optional string adId = 2;
+        optional string name = 3;
+        optional string msgId = 4;
+        optional string broadcastJid = 5;
+        optional int32 reservedQuota = 6;
+        optional int64 scheduledTimestamp = 7;
+        optional int64 createTimestamp = 8;
+        optional SyncActionValue.BusinessBroadcastCampaignStatus status = 9;
+    }
+    enum BusinessBroadcastCampaignStatus {
+        DRAFT = 1;
+        SCHEDULED = 2;
+        PROCESSING = 3;
+        FAILED = 4;
+        SENT = 5;
+    }
+    message BusinessBroadcastInsightsAction {
+        optional int32 recipientCount = 1;
+        optional int32 deliveredCount = 2;
+        optional int32 readCount = 3;
+        optional int32 repliedCount = 4;
+        optional int32 quickReplyCount = 5;
+    }
     message BusinessBroadcastListAction {
         optional bool deleted = 1;
         repeated SyncActionValue.BroadcastListParticipant participants = 2;
         optional string listName = 3;
+        repeated string labelIds = 4;
+        optional string audienceExpression = 5;
     }
     message CallLogAction {
         optional CallLogRecord callLogRecord = 1;
@@ -185,6 +219,19 @@ message SyncActionValue {
     message CustomPaymentMethodsAction {
         repeated SyncActionValue.CustomPaymentMethod customPaymentMethods = 1;
     }
+    message CustomerDataAction {
+        optional string chatJid = 1;
+        optional int32 contactType = 2;
+        optional string email = 3;
+        optional string altPhoneNumbers = 4;
+        optional int64 birthday = 5;
+        optional string address = 6;
+        optional int32 acquisitionSource = 7;
+        optional int32 leadStage = 8;
+        optional int64 lastOrder = 9;
+        optional int64 createdAt = 10;
+        optional int64 modifiedAt = 11;
+    }
     message DeleteChatAction {
         optional SyncActionValue.SyncActionMessageRange messageRange = 1;
     }
@@ -210,6 +257,7 @@ message SyncActionValue {
     }
     message InteractiveMessageAction {
         optional InteractiveMessageActionMode type = 1;
+        optional string agmId = 2;
         enum InteractiveMessageActionMode {
             DISABLE_CTA = 1;
         }
@@ -241,6 +289,8 @@ message SyncActionValue {
             SERVER_ASSIGNED = 7;
             DRAFTED = 8;
             AI_HANDOFF = 9;
+            CHANNELS = 10;
+            AI_RESPONDING = 11;
         }
     }
     message LabelReorderingAction {
@@ -302,6 +352,10 @@ message SyncActionValue {
         optional bool muted = 1;
         optional int64 muteEndTimestamp = 2;
         optional bool autoMuted = 3;
+        optional int64 muteEveryoneMentionEndTimestamp = 4;
+    }
+    message NctSaltSyncAction {
+        optional bytes salt = 1;
     }
     message NewsletterSavedInterestsAction {
         optional string newsletterSavedInterests = 1;
@@ -328,6 +382,10 @@ message SyncActionValue {
     }
     message NuxAction {
         optional bool acknowledged = 1;
+    }
+    message OutContactAction {
+        optional string fullName = 1;
+        optional string firstName = 2;
     }
     message PaymentInfoAction {
         optional string cpi = 1;
@@ -408,11 +466,26 @@ message SyncActionValue {
         optional bool isDocumentsAutodownloadEnabled = 21;
         optional bool disableLinkPreviews = 22;
         optional int32 notificationToneId = 23;
+        optional MediaQualitySetting mediaUploadQuality = 24;
+        optional bool isSpellCheckEnabled = 25;
+        optional bool isEnterToSendEnabled = 26;
+        optional bool isGroupMessageNotificationEnabled = 27;
+        optional bool isGroupReactionsNotificationEnabled = 28;
+        optional bool isStatusNotificationEnabled = 29;
+        optional int32 statusNotificationToneId = 30;
+        optional bool shouldPlaySoundForCallNotification = 31;
+        optional string chatThemeId = 32;
+        optional string colorSchemeId = 33;
         enum DisplayMode {
             DISPLAY_MODE_UNKNOWN = 0;
             ALWAYS = 1;
             NEVER = 2;
             ONLY_WHEN_APP_IS_OPEN = 3;
+        }
+        enum MediaQualitySetting {
+            MEDIA_QUALITY_UNKNOWN = 0;
+            STANDARD = 1;
+            HD = 2;
         }
         enum SettingKey {
             SETTING_KEY_UNKNOWN = 0;
@@ -439,6 +512,16 @@ message SyncActionValue {
             IS_DOCUMENTS_AUTODOWNLOAD_ENABLED = 21;
             DISABLE_LINK_PREVIEWS = 22;
             NOTIFICATION_TONE_ID = 23;
+            MEDIA_UPLOAD_QUALITY = 24;
+            IS_SPELL_CHECK_ENABLED = 25;
+            IS_ENTER_TO_SEND_ENABLED = 26;
+            IS_GROUP_MESSAGE_NOTIFICATION_ENABLED = 27;
+            IS_GROUP_REACTIONS_NOTIFICATION_ENABLED = 28;
+            IS_STATUS_NOTIFICATION_ENABLED = 29;
+            STATUS_NOTIFICATION_TONE_ID = 30;
+            SHOULD_PLAY_SOUND_FOR_CALL_NOTIFICATION = 31;
+            CHAT_THEME_ID = 32;
+            COLOR_SCHEME_ID = 33;
         }
         enum SettingPlatform {
             PLATFORM_UNKNOWN = 0;
@@ -457,11 +540,22 @@ message SyncActionValue {
     message StatusPrivacyAction {
         optional StatusDistributionMode mode = 1;
         repeated string userJid = 2;
+        optional bool shareToFB = 3;
+        optional bool shareToIG = 4;
+        repeated CustomList customLists = 5;
+        message CustomList {
+            optional string listId = 1;
+            optional string name = 2;
+            optional string emoji = 3;
+            optional bool isSelected = 4;
+            repeated string userJid = 5;
+        }
         enum StatusDistributionMode {
             ALLOW_LIST = 0;
             DENY_LIST = 1;
             CONTACTS = 2;
             CLOSE_FRIENDS = 3;
+            CUSTOM_LIST = 4;
         }
     }
     message StickerAction {
@@ -484,6 +578,26 @@ message SyncActionValue {
         optional bool isAutoRenewing = 2;
         optional int64 expirationDate = 3;
     }
+    message SubscriptionsSyncV2Action {
+        repeated SubscriptionInfo subscriptions = 1;
+        repeated PaidFeature paidFeature = 2;
+        message PaidFeature {
+            optional string name = 1;
+            optional bool enabled = 2;
+            optional int32 limit = 3;
+            optional int64 expirationTime = 4;
+        }
+        message SubscriptionInfo {
+            optional string id = 1;
+            optional int32 tier = 2;
+            optional string status = 3;
+            optional int64 startTime = 4;
+            optional int64 endTime = 5;
+            optional bool isPlatformChanged = 6;
+            optional string source = 7;
+            optional int64 creationTime = 8;
+        }
+    }
     message SyncActionMessage {
         optional Protocol.MessageKey key = 1;
         optional int64 timestamp = 2;
@@ -492,6 +606,9 @@ message SyncActionValue {
         optional int64 lastMessageTimestamp = 1;
         optional int64 lastSystemMessageTimestamp = 2;
         repeated SyncActionValue.SyncActionMessage messages = 3;
+    }
+    message ThreadPinAction {
+        optional bool pinned = 1;
     }
     message TimeFormatAction {
         optional bool isTwentyFourHourFormatEnabled = 1;
@@ -649,8 +766,16 @@ enum MutationProps {
     AI_THREAD_RENAME_ACTION = 76;
     INTERACTIVE_MESSAGE_ACTION = 77;
     SETTINGS_SYNC_ACTION = 78;
+    OUT_CONTACT_ACTION = 79;
+    NCT_SALT_SYNC_ACTION = 80;
+    BUSINESS_BROADCAST_CAMPAIGN_ACTION = 81;
+    BUSINESS_BROADCAST_INSIGHTS_ACTION = 82;
+    CUSTOMER_DATA_ACTION = 83;
+    SUBSCRIPTIONS_SYNC_V2_ACTION = 84;
+    THREAD_PIN_ACTION = 85;
     SHARE_OWN_PN = 10001;
     BUSINESS_BROADCAST_ACTION = 10002;
+    AI_THREAD_DELETE_ACTION = 10003;
 }
 
 enum CollectionName {

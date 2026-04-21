@@ -53,12 +53,7 @@ $root.MdStorageChatRowOpaqueData = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ChatRowOpaqueData _draftMessage.
-         * @member {"draftMessage"|undefined} _draftMessage
-         * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ChatRowOpaqueData.prototype, "_draftMessage", {
             get: $util.oneOfGetter($oneOfFields = ["draftMessage"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -315,56 +310,31 @@ $root.MdStorageChatRowOpaqueData = (function() {
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
 
-            /**
-             * DraftMessage _text.
-             * @member {"text"|undefined} _text
-             * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DraftMessage.prototype, "_text", {
                 get: $util.oneOfGetter($oneOfFields = ["text"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * DraftMessage _omittedUrl.
-             * @member {"omittedUrl"|undefined} _omittedUrl
-             * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DraftMessage.prototype, "_omittedUrl", {
                 get: $util.oneOfGetter($oneOfFields = ["omittedUrl"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * DraftMessage _ctwaContextLinkData.
-             * @member {"ctwaContextLinkData"|undefined} _ctwaContextLinkData
-             * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DraftMessage.prototype, "_ctwaContextLinkData", {
                 get: $util.oneOfGetter($oneOfFields = ["ctwaContextLinkData"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * DraftMessage _ctwaContext.
-             * @member {"ctwaContext"|undefined} _ctwaContext
-             * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DraftMessage.prototype, "_ctwaContext", {
                 get: $util.oneOfGetter($oneOfFields = ["ctwaContext"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
 
-            /**
-             * DraftMessage _timestamp.
-             * @member {"timestamp"|undefined} _timestamp
-             * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage
-             * @instance
-             */
+            // Virtual OneOf for proto3 optional field
             Object.defineProperty(DraftMessage.prototype, "_timestamp", {
                 get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
                 set: $util.oneOfSetter($oneOfFields)
@@ -772,133 +742,73 @@ $root.MdStorageChatRowOpaqueData = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * CtwaContextData _conversionSource.
-                 * @member {"conversionSource"|undefined} _conversionSource
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_conversionSource", {
                     get: $util.oneOfGetter($oneOfFields = ["conversionSource"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _conversionData.
-                 * @member {"conversionData"|undefined} _conversionData
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_conversionData", {
                     get: $util.oneOfGetter($oneOfFields = ["conversionData"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _sourceUrl.
-                 * @member {"sourceUrl"|undefined} _sourceUrl
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_sourceUrl", {
                     get: $util.oneOfGetter($oneOfFields = ["sourceUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _sourceId.
-                 * @member {"sourceId"|undefined} _sourceId
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_sourceId", {
                     get: $util.oneOfGetter($oneOfFields = ["sourceId"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _sourceType.
-                 * @member {"sourceType"|undefined} _sourceType
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_sourceType", {
                     get: $util.oneOfGetter($oneOfFields = ["sourceType"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _title.
-                 * @member {"title"|undefined} _title
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_title", {
                     get: $util.oneOfGetter($oneOfFields = ["title"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _description.
-                 * @member {"description"|undefined} _description
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_description", {
                     get: $util.oneOfGetter($oneOfFields = ["description"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _thumbnail.
-                 * @member {"thumbnail"|undefined} _thumbnail
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_thumbnail", {
                     get: $util.oneOfGetter($oneOfFields = ["thumbnail"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _thumbnailUrl.
-                 * @member {"thumbnailUrl"|undefined} _thumbnailUrl
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_thumbnailUrl", {
                     get: $util.oneOfGetter($oneOfFields = ["thumbnailUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _mediaType.
-                 * @member {"mediaType"|undefined} _mediaType
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_mediaType", {
                     get: $util.oneOfGetter($oneOfFields = ["mediaType"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _mediaUrl.
-                 * @member {"mediaUrl"|undefined} _mediaUrl
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_mediaUrl", {
                     get: $util.oneOfGetter($oneOfFields = ["mediaUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextData _isSuspiciousLink.
-                 * @member {"isSuspiciousLink"|undefined} _isSuspiciousLink
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextData.prototype, "_isSuspiciousLink", {
                     get: $util.oneOfGetter($oneOfFields = ["isSuspiciousLink"]),
                     set: $util.oneOfSetter($oneOfFields)
@@ -1384,45 +1294,25 @@ $root.MdStorageChatRowOpaqueData = (function() {
                 // OneOf field names bound to virtual getters and setters
                 var $oneOfFields;
 
-                /**
-                 * CtwaContextLinkData _context.
-                 * @member {"context"|undefined} _context
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextLinkData.prototype, "_context", {
                     get: $util.oneOfGetter($oneOfFields = ["context"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextLinkData _sourceUrl.
-                 * @member {"sourceUrl"|undefined} _sourceUrl
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextLinkData.prototype, "_sourceUrl", {
                     get: $util.oneOfGetter($oneOfFields = ["sourceUrl"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextLinkData _icebreaker.
-                 * @member {"icebreaker"|undefined} _icebreaker
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextLinkData.prototype, "_icebreaker", {
                     get: $util.oneOfGetter($oneOfFields = ["icebreaker"]),
                     set: $util.oneOfSetter($oneOfFields)
                 });
 
-                /**
-                 * CtwaContextLinkData _phone.
-                 * @member {"phone"|undefined} _phone
-                 * @memberof MdStorageChatRowOpaqueData.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData
-                 * @instance
-                 */
+                // Virtual OneOf for proto3 optional field
                 Object.defineProperty(CtwaContextLinkData.prototype, "_phone", {
                     get: $util.oneOfGetter($oneOfFields = ["phone"]),
                     set: $util.oneOfSetter($oneOfFields)

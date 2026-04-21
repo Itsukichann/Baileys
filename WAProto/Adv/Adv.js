@@ -71,34 +71,19 @@ $root.Adv = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ADVSignedDeviceIdentityHMAC _details.
-         * @member {"details"|undefined} _details
-         * @memberof Adv.ADVSignedDeviceIdentityHMAC
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedDeviceIdentityHMAC.prototype, "_details", {
             get: $util.oneOfGetter($oneOfFields = ["details"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVSignedDeviceIdentityHMAC _hmac.
-         * @member {"hmac"|undefined} _hmac
-         * @memberof Adv.ADVSignedDeviceIdentityHMAC
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedDeviceIdentityHMAC.prototype, "_hmac", {
             get: $util.oneOfGetter($oneOfFields = ["hmac"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVSignedDeviceIdentityHMAC _accountType.
-         * @member {"accountType"|undefined} _accountType
-         * @memberof Adv.ADVSignedDeviceIdentityHMAC
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedDeviceIdentityHMAC.prototype, "_accountType", {
             get: $util.oneOfGetter($oneOfFields = ["accountType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -404,45 +389,25 @@ $root.Adv = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ADVSignedDeviceIdentity _details.
-         * @member {"details"|undefined} _details
-         * @memberof Adv.ADVSignedDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedDeviceIdentity.prototype, "_details", {
             get: $util.oneOfGetter($oneOfFields = ["details"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVSignedDeviceIdentity _accountSignatureKey.
-         * @member {"accountSignatureKey"|undefined} _accountSignatureKey
-         * @memberof Adv.ADVSignedDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedDeviceIdentity.prototype, "_accountSignatureKey", {
             get: $util.oneOfGetter($oneOfFields = ["accountSignatureKey"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVSignedDeviceIdentity _accountSignature.
-         * @member {"accountSignature"|undefined} _accountSignature
-         * @memberof Adv.ADVSignedDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedDeviceIdentity.prototype, "_accountSignature", {
             get: $util.oneOfGetter($oneOfFields = ["accountSignature"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVSignedDeviceIdentity _deviceSignature.
-         * @member {"deviceSignature"|undefined} _deviceSignature
-         * @memberof Adv.ADVSignedDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedDeviceIdentity.prototype, "_deviceSignature", {
             get: $util.oneOfGetter($oneOfFields = ["deviceSignature"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -762,56 +727,31 @@ $root.Adv = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ADVDeviceIdentity _rawId.
-         * @member {"rawId"|undefined} _rawId
-         * @memberof Adv.ADVDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVDeviceIdentity.prototype, "_rawId", {
             get: $util.oneOfGetter($oneOfFields = ["rawId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVDeviceIdentity _timestamp.
-         * @member {"timestamp"|undefined} _timestamp
-         * @memberof Adv.ADVDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVDeviceIdentity.prototype, "_timestamp", {
             get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVDeviceIdentity _keyIndex.
-         * @member {"keyIndex"|undefined} _keyIndex
-         * @memberof Adv.ADVDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVDeviceIdentity.prototype, "_keyIndex", {
             get: $util.oneOfGetter($oneOfFields = ["keyIndex"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVDeviceIdentity _accountType.
-         * @member {"accountType"|undefined} _accountType
-         * @memberof Adv.ADVDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVDeviceIdentity.prototype, "_accountType", {
             get: $util.oneOfGetter($oneOfFields = ["accountType"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVDeviceIdentity _deviceType.
-         * @member {"deviceType"|undefined} _deviceType
-         * @memberof Adv.ADVDeviceIdentity
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVDeviceIdentity.prototype, "_deviceType", {
             get: $util.oneOfGetter($oneOfFields = ["deviceType"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1167,34 +1107,19 @@ $root.Adv = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ADVSignedKeyIndexList _details.
-         * @member {"details"|undefined} _details
-         * @memberof Adv.ADVSignedKeyIndexList
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedKeyIndexList.prototype, "_details", {
             get: $util.oneOfGetter($oneOfFields = ["details"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVSignedKeyIndexList _accountSignature.
-         * @member {"accountSignature"|undefined} _accountSignature
-         * @memberof Adv.ADVSignedKeyIndexList
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedKeyIndexList.prototype, "_accountSignature", {
             get: $util.oneOfGetter($oneOfFields = ["accountSignature"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVSignedKeyIndexList _accountSignatureKey.
-         * @member {"accountSignatureKey"|undefined} _accountSignatureKey
-         * @memberof Adv.ADVSignedKeyIndexList
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVSignedKeyIndexList.prototype, "_accountSignatureKey", {
             get: $util.oneOfGetter($oneOfFields = ["accountSignatureKey"]),
             set: $util.oneOfSetter($oneOfFields)
@@ -1494,45 +1419,25 @@ $root.Adv = (function() {
         // OneOf field names bound to virtual getters and setters
         var $oneOfFields;
 
-        /**
-         * ADVKeyIndexList _rawId.
-         * @member {"rawId"|undefined} _rawId
-         * @memberof Adv.ADVKeyIndexList
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVKeyIndexList.prototype, "_rawId", {
             get: $util.oneOfGetter($oneOfFields = ["rawId"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVKeyIndexList _timestamp.
-         * @member {"timestamp"|undefined} _timestamp
-         * @memberof Adv.ADVKeyIndexList
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVKeyIndexList.prototype, "_timestamp", {
             get: $util.oneOfGetter($oneOfFields = ["timestamp"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVKeyIndexList _currentIndex.
-         * @member {"currentIndex"|undefined} _currentIndex
-         * @memberof Adv.ADVKeyIndexList
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVKeyIndexList.prototype, "_currentIndex", {
             get: $util.oneOfGetter($oneOfFields = ["currentIndex"]),
             set: $util.oneOfSetter($oneOfFields)
         });
 
-        /**
-         * ADVKeyIndexList _accountType.
-         * @member {"accountType"|undefined} _accountType
-         * @memberof Adv.ADVKeyIndexList
-         * @instance
-         */
+        // Virtual OneOf for proto3 optional field
         Object.defineProperty(ADVKeyIndexList.prototype, "_accountType", {
             get: $util.oneOfGetter($oneOfFields = ["accountType"]),
             set: $util.oneOfSetter($oneOfFields)
